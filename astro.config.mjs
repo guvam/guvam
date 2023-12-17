@@ -5,5 +5,7 @@ import solid from '@astrojs/solid-js';
 export default defineConfig({
 	// Enable Solid to support Solid JSX components.
 	integrations: [solid()],
-  outDir: './docs'
+  outDir: './docs',
+  site: 'https://guvam.github.io',
+  //base: '/my-repo',
 });

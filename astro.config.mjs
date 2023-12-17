@@ -6,6 +6,6 @@ export default defineConfig({
 	// Enable Solid to support Solid JSX components.
 	integrations: [solid()],
   outDir: './docs',
-  site: 'https://guvam.github.io',
+  site: 'https://guvam.com',
   //base: '/my-repo',
 });

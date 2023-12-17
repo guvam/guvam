@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order"
+  ],
+  "ignoreFiles": [
+    ".idea",
+    ".cache",
+    "dist",
+    "node_modules"
+  ],
+  "configBasedir" : ".",
+  "plugins": [
+    "stylelint-use-logical"
+  ],
+  "rules": {
+    "selector-class-pattern": "^[A-Z][a-zA-Z0-9]*(?:-[A-Z][a-zA-Z0-9]*)*$|^-?[a-z][a-zA-Z0-9]*(?:-[a-z0-9][a-zA-Z0-9]*)?$",
+    "csstools/use-logical": "always"
+  }
+}

@@ -1,0 +1,11 @@
+.-size-default {
+  --foundation-size: 1em;
+}
+
+.-size-small {
+  --foundation-size: 0.75em;
+}
+
+.-size-big {
+  --foundation-size: 1.5em;
+}

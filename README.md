@@ -1,1 +1,0 @@
-# guvam.github.io

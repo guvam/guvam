@@ -1,1 +1,6 @@
-<header class="Header"><a href="/">Guvam Header</a></header>
+---
+import logo from '../assets/logo.svg';
+import { Image } from 'astro:assets';
+---
+
+<header class="Header"><a href="/"><Image src={logo} alt="Guvam logo"/></a></header>

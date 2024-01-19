@@ -1,6 +1,11 @@
 ---
 import logo from '../assets/logo.svg';
 import { Image } from 'astro:assets';
+import './Header.css';
 ---
 
-<header class="Header"><a href="/"><Image src={logo} alt="Guvam logo"/></a></header>
+<header class="Header">
+  <a href="/">
+    <Image src={logo} alt="Guvam logo" class="Header-Logo"/>
+  </a>
+</header>

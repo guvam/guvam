@@ -1,0 +1,21 @@
+.Button {
+  padding: 1em;
+  cursor: pointer;
+  user-select: none;
+  border-block-end: 4px solid transparent;
+  transition-duration: 500ms;
+
+  &:hover {
+    background-color: var(--color-brand-secondary);
+    border-color: color-mix(in srgb, var(--color-brand-secondary) 50%, #000);
+  }
+
+  &.type-primary {
+    background-color: var(--color-brand-primary);
+    border-color: color-mix(in srgb, var(--color-brand-primary) 50%, #000);
+
+    &:hover {
+      background-color: color-mix(in srgb, var(--color-brand-primary) 75%, #f00);
+    }
+  }
+}

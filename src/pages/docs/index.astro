@@ -1,0 +1,36 @@
+---
+import '../../styles/globals.css';
+import BaseLayout from '../../components/BaseLayout.astro';
+import "./_index.css";
+---
+<BaseLayout title="guvam.com">
+  <div class="Docs">
+    <nav>
+      Menu
+    </nav>
+    <div>
+      {Array(20).fill(null).map(() =>
+        <section>
+          <h1 class="Text type-h1">Autocomplete</h1>
+          <p class="Text type-p">The autocomplete is a normal text input enhanced by a panel of suggested options.
+          <p>The widget is useful for setting the value of a single-line textbox in one of two types of scenarios:</p>
+          <ol class="Text type-list">
+            <li>The value for the textbox must be chosen from a predefined set of allowed values, e.g., a location field must contain a
+              valid
+              location name: <a class="Text type-link" href="#combo-box">combo box</a>.
+            </li>
+            <li>The textbox may contain any arbitrary value, but it is advantageous to suggest possible values to the user, e.g., a search
+              field
+              may suggest similar or previous searches to save the user time: <a href="#free-solo">free solo</a>.
+            </li>
+          </ol>
+          <p>It's meant to be an improved version of the "react-select" and "downshift" packages.</p>
+          <p>The value must be chosen from a predefined set of allowed values.</p>
+        </section>)}
+    </div>
+    <nav>
+      Text nav
+    </nav>
+  </div>
+
+</BaseLayout>

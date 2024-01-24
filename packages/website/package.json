@@ -1,0 +1,24 @@
+{
+  "name": "@guvam/website",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "website-dev": "astro dev",
+    "website-start": "astro dev",
+    "website-build": "astro build",
+    "website-preview": "astro preview",
+    "website-astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/lit": "^4.0.1",
+    "astro": "4.2.4",
+    "ts-node": "10.9.2",
+    "typescript": "5.3.3",
+    "@guvam/css-base": "0.1.0",
+    "@guvam/css-components": "0.1.0"
+  },
+  "dependencies": {
+    "@webcomponents/template-shadowroot": "^0.2.1",
+    "lit": "^3.1.1"
+  }
+}

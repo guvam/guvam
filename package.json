@@ -1,17 +1,36 @@
 {
-  "name": "@guvam/website",
-  "type": "module",
+  "private": true,
+  "name": "@guvam/guvam",
   "version": "0.1.0",
+  "description": "",
+  "engines": {
+    "node": ">= 18.0.0"
+  },
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 safari versions",
+    "last 2 firefox versions",
+    "last 2 edge versions",
+    "last 2 ios_saf versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guvam/theme.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guvam/theme/issues"
+  },
+  "homepage": "https://guvam.com/",
   "scripts": {
-    "website-dev": "astro dev",
-    "website-start": "astro dev",
-    "website-build": "astro build",
-    "website-preview": "astro preview",
-    "website-astro": "astro"
+    "lint": "npm run lint-ts && npm run lint-css",
+    "lint-ts": "eslint --fix",
+    "lint-css": "stylelint --fix",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@astrojs/solid-js": "3.0.2",
-    "astro": "4.0.6",
     "@types/node": "20.9.1",
     "@typescript-eslint/eslint-plugin": "6.8.0",
     "@typescript-eslint/parser": "6.8.0",
@@ -35,5 +54,8 @@
     "stylelint-use-logical": "2.1.0",
     "ts-node": "10.9.1",
     "typescript": "5.3.2"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

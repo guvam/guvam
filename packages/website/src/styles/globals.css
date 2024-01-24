@@ -1,4 +1,5 @@
-@import url('./core/index.css');
+@import url('@guvam/css-base');
+@import url('@guvam/css-components');
 @import url('./theme/index.css');
 
 .Header {

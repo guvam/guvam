@@ -1,0 +1,8 @@
+{
+  "name": "@guvam/css-base",
+  "main": "./index.css",
+  "version": "0.1.0",
+  "description": "",
+  "author": "",
+  "license": "MIT"
+}

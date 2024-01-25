@@ -1,11 +1,33 @@
 ---
-import logo from '../assets/logo.svg';
 import { Image } from 'astro:assets';
+import gitHubIcon from '../assets/logos/github.svg';
+import npmIcon from '../assets/logos/npm.svg';
 import './Header.css';
 ---
+<header class="Section separator-bottom narrow positon-fixed">
+  <div class="Section-Content justify-between">
 
-<header class="Header">
-  <a href="/">
-    <Image src={logo} alt="Guvam logo" class="Header-Logo"/>
-  </a>
+    <a href="/" class="Header-Logo"></a>
+
+    <div class="Header-Navigation">
+      <label class="Header-Button">
+        <input type="checkbox" />
+        <span hidden>Menu</span>
+      </label>
+
+      <nav class="Header-Menu">
+        <a href="/docs" class="Header-MenuItem">Docs</a>
+        <a href="/bloc" class="Header-MenuItem">Community</a>
+        <a href="https://fullreaction.com" target="_blank" class="Header-MenuItem">Enterprise &#x2197</a>
+        <a href="https://github.com/guvam/guvam" target="_blank" class="Header-MenuItem">
+          <span class="Header-MenuItemText">Github</span>
+          <Image src={gitHubIcon} alt="Github icon" />
+        </a>
+        <a href="https://npmjs.com/guvam/guvam" class="Header-MenuItem">
+          <span class="Header-MenuItemText">npm</span>
+          <Image src={npmIcon} alt="npm icon" />
+        </a>
+      </nav>
+    </div>
+  </div>
 </header>

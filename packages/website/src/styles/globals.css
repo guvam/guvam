@@ -2,34 +2,3 @@
 @import url('@guvam/css-components');
 @import url('./theme/index.css');
 
-.Header {
-  padding: 16px 24px;
-  color: var(--color-text-revers);
-  background-color: var(--color-brand-primary);
-
-  @media (width <= 600px) {
-    background-color: #17770c;
-  }
-
-  @media (width <= 1000px) and (width > 600px) {
-    background-color: darkred;
-  }
-}
-
-.Layout {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  align-items: center;
-  padding: 2em;
-}
-
-.Layout-Section {
-  inline-size: 100%;
-  max-inline-size: 600px;
-  padding: 1em;
-  background-color: #098ca6;
-}
-/* skeleton */
-
-/* state */

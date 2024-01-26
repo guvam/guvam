@@ -30,11 +30,11 @@
 
   &.type-code {
     display: block;
+    padding: 1em;
+    margin-block-end: 1em;
     font-family: monospace;
     white-space: pre;
-    background-color: #d9d9d9;
-    border-radius: 4px;
-    padding: 1em;
-    margin-bottom: 1em;
+    background-color: #2e3440;
+    border-radius: 4px
   }
 }

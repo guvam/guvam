@@ -1,5 +1,6 @@
 ---
 import Layout from '../../components/Layout.astro';
+import Code from '../../components/Code.astro';
 import './_index.css';
 import SideMenu from '../../components/Navigation/SideMenu.astro';
 import DocMenu from '../../components/Navigation/DocMenu.astro';
@@ -14,7 +15,8 @@ import DocMenu from '../../components/Navigation/DocMenu.astro';
         <main>
           <h1 class="Text type-h1">Loro - DocState and OpLog</h1>
 
-          <code is:raw class="Text type-code">.Button {
+          <Code title="file.md" lang="css" is:raw>
+.Button {
   padding: 1em;
   cursor: pointer;
   user-select: none;
@@ -34,10 +36,29 @@ import DocMenu from '../../components/Navigation/DocMenu.astro';
       background-color: color-mix(in srgb, var(--color-brand-primary) 75%, #f00);
     }
   }
-}</code>
+}
+          </Code>
 
           <p class="Type type-p">Although not explicitly exposed in the WASM interface, internally in Loro, we
             distinctly differentiate between:</p>
+
+          <Code title="file.md" lang="js" is:raw>
+import { getHighlighter } from 'shiki';
+
+const {title, lang} = Astro.props;
+
+const highlighter = await getHighlighter({
+  theme: 'nord',
+  langs: ['css', 'js'],
+});
+
+let html: string = '';
+if (Astro.slots.has('default')) {
+  const code = await Astro.slots.render('default')
+  html = highlighter.codeToHtml(code.trim(), { lang });
+}
+          </Code>
+
           <ul>
             <li>The current state of the document: DocState</li>
             <li>The edit history of the document: OpLog</li>

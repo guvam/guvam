@@ -1,11 +1,11 @@
 .Text {
   &.type-h1 {
-    font-size: 56px;
+    font-size: 36px;
     color: var(--color-text);
   }
 
   &.type-h2 {
-    font-size: 36px;
+    font-size: 28px;
     color: var(--color-text);
   }
 
@@ -26,5 +26,15 @@
 
   &.center {
     text-align: center;
+  }
+
+  &.type-code {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    background-color: #d9d9d9;
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 1em;
   }
 }

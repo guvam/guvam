@@ -1,2 +1,2 @@
-@import url("./core/index.css");
-@import url("./variants/index.css") layer(variants);
+@import url('./components/index.css') layer(theme);
+

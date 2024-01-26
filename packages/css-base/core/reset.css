@@ -62,6 +62,10 @@ meter {
   appearance: revert;
 }
 
+svg {
+  display: block;
+}
+
 ::placeholder {
   color: unset;
 }

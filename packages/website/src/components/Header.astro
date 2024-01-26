@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import gitHubIcon from '../assets/logos/github.svg';
 import npmIcon from '../assets/logos/npm.svg';
+import '../styles/globals.css';
 import './Header.css';
 ---
 <header class="Section separator-bottom narrow positon-fixed">
@@ -10,11 +11,6 @@ import './Header.css';
     <a href="/" class="Header-Logo"></a>
 
     <div class="Header-Navigation">
-      <label class="Header-Button">
-        <input type="checkbox" />
-        <span hidden>Menu</span>
-      </label>
-
       <nav class="Header-Menu">
         <a href="/docs" class="Header-MenuItem">Docs</a>
         <a href="/bloc" class="Header-MenuItem">Community</a>
@@ -28,6 +24,16 @@ import './Header.css';
           <Image src={npmIcon} alt="npm icon" />
         </a>
       </nav>
+
+      <label class="Header-Button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="4" width="20" height="2" rx="1" fill="black"/>
+          <rect x="2" y="11" width="20" height="2" rx="1" fill="black"/>
+          <rect x="2" y="18" width="20" height="2" rx="1" fill="black"/>
+        </svg>
+        <input type="checkbox" hidden />
+        <span hidden>Menu</span>
+      </label>
     </div>
   </div>
 </header>

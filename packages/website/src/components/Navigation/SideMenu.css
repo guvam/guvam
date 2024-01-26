@@ -1,0 +1,37 @@
+.SideMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+}
+
+.SideMenu-Block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-inline-start: 12px;
+}
+
+.SideMenu-Item {
+  display: flex;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: 16px;
+  color: var(--color-text);
+  border-radius: 4px;
+
+  &:hover {
+    color: #111827;
+    background-color: #F3F4F6;
+  }
+
+  &.type-active {
+    color: #004CA3;
+    background-color: #E1EEFF;
+  }
+
+  &.type-active-doc {
+    color: #111827;
+    background-color: #F3F4F6;
+  }
+}

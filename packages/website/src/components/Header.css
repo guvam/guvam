@@ -7,12 +7,14 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  inline-size: 211px;
+  inline-size: 106px;
   background-image: url("../assets/logos/guvamfull.svg");
-  block-size: 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  block-size: 24px;
 
   @media (width <= 360px) {
-    inline-size: 48px;
+    inline-size: 24px;
     background-image: url("../assets/logos/guvamicon.svg");
   }
 }
@@ -22,17 +24,28 @@
   z-index: 1;
   display: none;
   aspect-ratio: 1;
-  background-image: url('../assets/icons/menu-open.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  block-size: 48px;
 
   @media (width <= 800px) {
     display: block;
   }
 
+  & rect {
+    transition: all 000ms linear;
+    transform-origin: center;
+  }
+
   .Header-Navigation:has(:checked) & {
-    background-image: url('../assets/icons/menu-close.svg');
+    & rect:nth-child(1) {
+      transform: rotate(45deg) translateY(7px);
+    }
+
+    & rect:nth-child(2) {
+      opacity: 0;
+    }
+
+    & rect:nth-child(3) {
+      transform: rotate(-45deg) translateY(-7px);
+    }
   }
 }
 
@@ -63,6 +76,7 @@
   display: flex;
   gap: 0.5em;
   align-items: center;
+  color: var(--color-text);
 }
 
 .Header-MenuItemText {

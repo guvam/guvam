@@ -12,7 +12,11 @@
   }
 
   &.narrow {
-    padding: 2em;
+    padding: 1em;
+  }
+
+  &.full {
+    padding: 0;
   }
 }
 

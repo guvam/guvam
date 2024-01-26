@@ -3,11 +3,11 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "website-dev": "astro dev",
-    "website-start": "astro dev",
-    "website-build": "astro build",
-    "website-preview": "astro preview",
-    "website-astro": "astro"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "devDependencies": {
     "@astrojs/lit": "^4.0.1",

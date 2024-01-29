@@ -1,0 +1,21 @@
+.Started-Button{
+  padding:8px 16px;
+  color: var(--color-text-revers);
+  cursor:pointer;
+  background-color: var(--input-color);
+  border-radius:var(--input-border-radius);
+
+}
+
+.Started-Code{
+  display:flex;
+  align-items:flex-end;
+  padding:8px;
+  background-color:#fff;
+  border: solid 1px black;
+  border-radius:var(--input-border-radius);
+}
+
+.Started-Clipboard{
+  margin-inline-start:16px;
+}

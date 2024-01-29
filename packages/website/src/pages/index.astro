@@ -1,5 +1,6 @@
 ---
 import Layout from '../components/Layout.astro';
+import GetStarted from '../components/GetStarted.astro';
 ---
 <Layout title="guvam.com">
   <section class="Section">
@@ -10,8 +11,16 @@ import Layout from '../components/Layout.astro';
     </div>
   </section>
   <section class="Section">
-    <div class="SectionContent">
-      <div>Install <span>npm i @guvam/guvam</span></div>
+    <div class="Section-Content direction-mobile" style="justify-content:center"> <!-- assuming Section-content is missing justify:center -->
+      <GetStarted />
     </div>
   </section>
 </Layout>
+<!--
+  components/section.css has Section-Content, while
+  in this file it was written SectionContent.
+
+  Also I believe Section-Content is missing a justify:center
+
+  (I am not changing anything in css-components because I'm not sure if its intended)
+-->

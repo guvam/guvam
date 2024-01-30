@@ -57,7 +57,7 @@
     align-items: flex-start;
     inline-size: 100%;
     padding: min(30vh, 100rem) 2rem;
-    background-color: var(--color-surface-background);
+    background-color: var(--color-surface-card);
     transition: left 350ms ease-out;
     block-size: 100vh;
 
@@ -88,4 +88,11 @@
   aspect-ratio: 1;
   cursor: pointer;
 
+  &.type-light svg:nth-child(1) {
+    display: none;
+  }
+
+  &.type-dark svg:nth-child(2) {
+    display: none;
+  }
 }

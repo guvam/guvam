@@ -3,6 +3,7 @@
 
 :root {
   font-family: var(--font);
+  font-size: var(--text-base);
   line-height: 1.2;
   color: var(--color-text-base);
   background-color: var(--color-surface-background);

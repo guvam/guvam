@@ -33,7 +33,7 @@
   --color-status-danger: #dc3545;
   --color-status-default: #495057;
 
-  &.scheme-light {
+  &.type-light {
     color-scheme: light;
 
     /* brand */
@@ -59,7 +59,7 @@
     --color-ui-base: #004CA3;
   }
 
-  &.scheme-dark {
+  &.type-dark {
     /* brand */
     --color-primary: #3A4766;
     --color-secondary: #141285;

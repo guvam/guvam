@@ -31,7 +31,7 @@
   }
 
   & rect {
-    transition: all 000ms linear;
+    transition: all 330ms linear;
     transform-origin: center;
   }
 
@@ -57,19 +57,19 @@
 
   @media (width <= 800px) {
     position: fixed;
-    inset-block-start: 0;
-    inset-inline-start: -100%;
+    inset-block-start: -100%;
+    inset-inline-start: 0;
     flex-direction: column;
     row-gap: 2em;
     align-items: flex-start;
     inline-size: 100%;
     padding: min(30vh, 100rem) 2rem;
     background-color: #fafafa;
-    transition: left 350ms ease-out;
+    transition: top 550ms ease-out;
     block-size: 100vh;
 
     .Header-Navigation:has(:checked) & {
-      inset-inline-start: 0;
+      inset-block-start: 0;
     }
   }
 }

@@ -20,6 +20,6 @@ export class ThemeToggle extends LitElement {
   }
 
   render() {
-    return html` <slot />`;
+    return html`<slot />`;
   }
 }

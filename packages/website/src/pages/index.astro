@@ -1,17 +1,11 @@
 ---
 import Layout from '../components/Layout.astro';
+import Hero from '../components/sections/Hero.astro';
+import Elements from '../components/sections/Elements.astro';
+import Integration from '../components/sections/Integration.astro';
 ---
 <Layout title="guvam.com">
-  <section class="Section">
-    <div class="Section-Content">
-      <div>Unstyled elements</div>
-      <div>+</div>
-      <div>Themes</div>
-    </div>
-  </section>
-  <section class="Section">
-    <div class="Section-Content">
-      <div>Install <span>npm i @guvam/guvam</span></div>
-    </div>
-  </section>
+  <Hero />
+  <Elements />
+  <Integration />
 </Layout>

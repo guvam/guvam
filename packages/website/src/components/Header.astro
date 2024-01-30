@@ -9,7 +9,7 @@ import './Header.css';
 ---
 <header class="Section narrow positon-fixed">
   <div class="Section-Content justify-between">
-    <a href="/" class="Header-Logo">
+    <a href="/" class="Header-Logo" aria-label="Guvam logo">
       <Fragment set:html={logo} />
     </a>
     <div class="Header-Navigation">
@@ -21,7 +21,7 @@ import './Header.css';
           <Fragment set:html={gitHubIcon} />
         </a>
       </nav>
-      <ThemeToggle class="Header-Theme type-dark" client:load>
+      <ThemeToggle class="Header-Theme type-dark" client:load tabindex="0">
         <Fragment set:html={light} />
         <Fragment set:html={dark} />
         <span hidden>Light / Dark</span>

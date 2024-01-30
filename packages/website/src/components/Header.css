@@ -8,20 +8,21 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  inline-size: 106px;
   background-repeat: no-repeat;
   background-size: contain;
-  block-size: 24px;
 }
 
 .Header-Button {
   position: relative;
   z-index: 1;
   display: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: 32px;
   aspect-ratio: 1;
 
   @media (width <= 800px) {
-    display: block;
+    display: flex;
   }
 
   & rect {
@@ -84,7 +85,10 @@
 
 .Header-Theme {
   z-index: 1;
-  inline-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 32px;
   aspect-ratio: 1;
   cursor: pointer;
 

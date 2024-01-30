@@ -9,10 +9,28 @@ import { Clipboard } from './Clipboard';
 */
 ---
 
+
 <button class="Started-Button"> Get started</button>
+<Clipboard client:load />
   <div class ="Started-Code">
 
     <code>npm i @guvam/guvam</code>
 
-    <Clipboard  />
+
+    <Clipboard class="Started-Clipboard" copyStr="npm i @guvam/guvam" client:visible>
+      <svg  viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="Started-Svg">
+        <path
+          d="M10.5 0.75H1.5C0.675 0.75 0 1.425 0 2.25V12.75H1.5V2.25H10.5V0.75ZM12.75 3.75H4.5C3.675 3.75 3 4.425
+            3 5.25V15.75C3 16.575 3.675 17.25 4.5 17.25H12.75C13.575 17.25 14.25 16.575 14.25 15.75V5.25C14.25 4.425 13.575
+            3.75 12.75 3.75ZM12.75 15.75H4.5V5.25H12.75V15.75Z"
+          fill="black"
+        />
+      </svg>
+
+      <svg fill="#000000"  viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" class="Started-Svg">
+          <path d="M1743.858 267.012 710.747 1300.124 176.005 765.382 0 941.387l710.747 710.871 1209.24-1209.116z" fill-rule="evenodd"/>
+      </svg>
+    </Clipboard>
+
+
   </div>

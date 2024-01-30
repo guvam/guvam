@@ -23,6 +23,7 @@
   position: relative;
   z-index: 1;
   display: none;
+  cursor: pointer;
   aspect-ratio: 1;
 
   @media (width <= 800px) {
@@ -51,6 +52,7 @@
 
 .Header-Menu {
   display: flex;
+  flex-direction: row;
   column-gap: 1em;
 
   @media (width <= 800px) {
@@ -62,7 +64,7 @@
     align-items: flex-start;
     inline-size: 100%;
     padding: min(30vh, 100rem) 2rem;
-    background-color: #b6b6b6;
+    background-color: #fafafa;
     transition: left 350ms ease-out;
     block-size: 100vh;
 
@@ -72,11 +74,32 @@
   }
 }
 
+.Header-Dropdown {
+  display: flex;
+  flex-direction: row;
+
+  @media (width <= 800px) {
+    flex-direction: column;
+  }
+}
+
 .Header-MenuItem {
   display: flex;
   gap: 0.5em;
   align-items: center;
+  margin-inline-start: 10px;
   color: var(--color-text);
+  transition-duration: 250ms;
+
+  @media (width <= 800px) {
+    margin-block-start: 15px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.Header-MenuItem:hover {
+  color: black;
 }
 
 .Header-MenuItemText {
@@ -85,30 +108,4 @@
   @media (width <= 800px) {
     display: block;
   }
-}
-
-.Header-Dropdown {
-  position: relative;
-}
-
-.Header-Dropdown-Menu {
-  position: absolute;
-  inset-block-start: (100% + 0.25rem);
-  inset-inline-start: 0;
-  padding: 0.75rem;
-  pointer-events: none;
-  background-color: white;
-  border-radius: 0.25rem;
-  box-shadow: 0 2px 5px 0 black;
-  opacity: 0;
-  transition:
-    opacity 150ms ease-in-out,
-    transform 150ms ease-in-out;
-  transform: translateY(-10px);
-}
-
-.Header-Dropdown > .Link:focus + .Header-Dropdown-Menu {
-  pointer-events: auto;
-  opacity: 1;
-  transform: translateY(0);
 }

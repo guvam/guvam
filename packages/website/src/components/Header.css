@@ -1,5 +1,6 @@
 .Header-Navigation {
   display: flex;
+  column-gap: 1em;
   justify-content: space-between;
 }
 
@@ -8,15 +9,9 @@
   z-index: 1;
   flex-shrink: 0;
   inline-size: 106px;
-  background-image: url("../assets/logos/guvamfull.svg");
   background-repeat: no-repeat;
   background-size: contain;
   block-size: 24px;
-
-  @media (width <= 360px) {
-    inline-size: 24px;
-    background-image: url("../assets/logos/guvamicon.svg");
-  }
 }
 
 .Header-Button {
@@ -62,7 +57,7 @@
     align-items: flex-start;
     inline-size: 100%;
     padding: min(30vh, 100rem) 2rem;
-    background-color: #b6b6b6;
+    background-color: var(--color-surface-background);
     transition: left 350ms ease-out;
     block-size: 100vh;
 
@@ -76,7 +71,7 @@
   display: flex;
   gap: 0.5em;
   align-items: center;
-  color: var(--color-text);
+  color: var(--color-text-base);
 }
 
 .Header-MenuItemText {
@@ -85,4 +80,12 @@
   @media (width <= 800px) {
     display: block;
   }
+}
+
+.Header-Theme {
+  z-index: 1;
+  inline-size: 24px;
+  aspect-ratio: 1;
+  cursor: pointer;
+
 }

@@ -1,29 +1,12 @@
 ---
 import Layout from '../components/Layout.astro';
-import GetStarted from '../components/GetStarted.astro';
-
+import Hero from '../components/sections/Hero.astro';
+import Elements from '../components/sections/Elements.astro';
+import Integration from '../components/sections/Integration.astro';
 ---
 <Layout title="guvam.com">
-  <section class="Section">
-    <div class="Section-Content">
-      <div>Unstyled elements</div>
-      <div>+</div>
-      <div>Themes</div>
-    </div>
-  </section>
-
-  <section class="Section">
-    <div class="Section-Content direction-mobile" style="justify-content:center"> <!-- assuming Section-content is missing justify:center -->
-      <GetStarted  />
-
-    </div>
-  </section>
+  <Hero />
+  <Elements />
+  <Integration />
 </Layout>
-<!--
-  components/section.css has Section-Content, while
-  in this file it was written SectionContent.
 
-  Also I believe Section-Content is missing a justify:center
-
-  (I am not changing anything in css-components because I'm not sure if its intended)
--->

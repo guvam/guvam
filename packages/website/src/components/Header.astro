@@ -1,37 +1,40 @@
 ---
-import { Image } from 'astro:assets';
-import gitHubIcon from '../assets/logos/github.svg';
-import npmIcon from '../assets/logos/npm.svg';
+import { ThemeToggle } from './ThemeToggle';
+import gitHubIcon from '../assets/logos/github.svg?raw';
+import logo from '../assets/logos/guvamfull.svg?raw';
+import light from '../assets/icons/light.svg?raw';
+import dark from '../assets/icons/dark.svg?raw';
 import '../styles/globals.css';
 import './Header.css';
 ---
-<header class="Section separator-bottom narrow positon-fixed">
+<header class="Section narrow positon-fixed">
   <div class="Section-Content justify-between">
-
-    <a href="/" class="Header-Logo"></a>
-
+    <a href="/" class="Header-Logo" aria-label="Guvam logo">
+      <Fragment set:html={logo} />
+    </a>
     <div class="Header-Navigation">
       <nav class="Header-Menu">
-        <a href="https://docs.guvam.com/" class="Header-MenuItem">Documentation</a>
-        <a href="https://github.com/guvam/guvam/issues" class="Header-MenuItem">Community</a>
-        <!--<a href="https://fullreaction.com" target="_blank" class="Header-MenuItem">Enterprise &#x2197</a>-->
-        <a href="https://github.com/guvam/guvam" target="_blank" class="Header-MenuItem">
-          <span class="Header-MenuItemText">Github</span>
-          <Image src={gitHubIcon} alt="Github icon" />
-        </a>
-<!--
-        <a href="https://npmjs.com/guvam/guvam" class="Header-MenuItem">
-          <span class="Header-MenuItemText">npm</span>
-          <Image src={npmIcon} alt="npm icon" />
-        </a>
--->
+        <div class="Header-Dropdown">
+          <a href="https://docs.guvam.com/" class="Header-MenuItem">Documentation</a>
+          <a href="https://github.com/guvam/guvam/issues" class="Header-MenuItem">Community</a>
+          <a href="https://github.com/guvam/guvam" target="_blank" class="Header-MenuItem">
+            <span class="Header-MenuItemText">Github</span>
+            <Fragment set:html={gitHubIcon} />
+          </a>
+        </div>
       </nav>
-
+      <ThemeToggle class="Header-Theme type-dark" client:load>
+        <Fragment set:html={light} />
+        <Fragment set:html={dark} />
+        <span hidden>Light / Dark</span>
+      </ThemeToggle>
       <label class="Header-Button">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="4" width="20" height="2" rx="1" fill="black"/>
-          <rect x="2" y="11" width="20" height="2" rx="1" fill="black"/>
-          <rect x="2" y="18" width="20" height="2" rx="1" fill="black"/>
+          <rect x="2" y="4" width="20" height="2" rx="1" fill="currentColor" />
+          <rect x="2" y="11" width="20" height="2" rx="1" fill="currentColor" />
+          <rect x="2" y="11" width="20" height="2" rx="1" fill="currentColor" />
+          <rect x="2" y="11" width="20" height="2" rx="1" fill="currentColor" />
+          <rect x="2" y="18" width="20" height="2" rx="1" fill="currentColor" />
         </svg>
         <input type="checkbox" hidden />
         <span hidden>Menu</span>
@@ -39,3 +42,4 @@ import './Header.css';
     </div>
   </div>
 </header>
+

@@ -12,9 +12,7 @@
   align-items:center;
   justify-content:center;
   padding:6px 8px;
-  color: black;
-  background-color:#fff;
-  border: solid 1px black;
+  border: solid 1px var(--color-surface-border);
   border-radius:0.25em;
 
 }
@@ -40,15 +38,16 @@
 .Started-Svg{
   inline-size:17px;
   margin-block-end:12px;
+
+  &:first-child{
+    transition: transform 0.3s;
+    transform:scale(0.9)
+  }
+
+  &:first-child:hover{
+    transform: scale(1);
+  }
 }
 
-.Started-Svg:first-child{
-  transition-duration: 0.3s;
-  transform:scale(0.9)
-}
-
-.Started-Svg:first-child:hover {
-  transform: scale(1);
-}
 
 

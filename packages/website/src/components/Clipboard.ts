@@ -1,44 +1,87 @@
 import { LitElement, html } from 'lit';
-import { property, customElement, queryAssignedElements } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators.js';
 
 @customElement('started-clipboard')
 export class Clipboard extends LitElement {
-  @property({ type: Number }) count = 0;
+  // Attribute in parent element should be lowercase
+  // eg copystr = npm i @guvam/guvam
+  @property({ type: String }) copyStr = 'default';
+
+  connectedCallback(): void {
+    super.connectedCallback();
+
+    this.addEventListener('click', () => {
+      this._copyToClipboard();
+    });
+  }
+
+  render() {
+    return html` <slot />`;
+  }
+
+  private _copyToClipboard() {
+    this.classList.add('Started-Copied');
+
+    setTimeout(() => this.classList.remove('Started-Copied'), 1000);
+
+    void navigator.clipboard.writeText(this.copyStr).catch(() => {});
+  }
+}
+customElements.define('started-clipboard', Clipboard);
+
+/* static count
+
+@customElement('started-clipboard')
+export class Clipboard extends LitElement {
+  static count = 0;
+
+  connectedCallback(): void {
+    super.connectedCallback();
+    this.addEventListener('click', (e) => {
+      console.log('callback fired', Clipboard.count);
+    });
+  }
 
   protected render() {
     return html`
-      <p><button @click=${{ handleEvent: () => this._increment(), once: true }}>Click Me!</button></p>
+      <p><button @click="${Clipboard._increment}">Click Me!</button></p>
+      <p>Click count: ${Clipboard.count}</p>
+    `;
+  }
+
+  private _increment(e: Event) {
+    Clipboard.count++;
+  }
+}
+
+
+
+*/
+
+/* property count
+
+
+export class Clipboard extends LitElement {
+  @property() count = 0;
+
+  connectedCallback(): void {
+    super.connectedCallback();
+    this.addEventListener('click', (e) => {
+      console.log('callback fired', this.count);
+    });
+  }
+
+  protected render() {
+    return html`
+      <p><button @click="${this._increment}">Click Me!</button></p>
       <p>Click count: ${this.count}</p>
     `;
   }
 
   private _increment(e: Event) {
     this.count++;
-    console.log('test');
   }
 }
-customElements.define('started-clipboard', Clipboard);
 
-/*
-
-@customElement('started-clipboard')
-export class Clipboard extends LitElement {
-  @property({ type: String }) copyStr = 'npm i @guvam/guvam';
-
-  @queryAssignedElements() listItems!: HTMLElement[];
-
-  render() {
-    // eslint-disable-next-line @typescript-eslint/unbound-method
-    return html` <slot @click="${this._copyToClipboard}" /> `;
-  }
-
-  private _copyToClipboard() {
-    if (this.listItems) this.listItems[0].classList.add('Starter-Copied');
-    console.log('test');
-    // navigator is not defined
-    // void navigator.clipboard.writeText(this.copyStr).catch(() => {});
-  }
-}
-customElements.define('started-clipboard', Clipboard);
 
 */

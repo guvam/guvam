@@ -78,3 +78,42 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+@media (width <= 1220px) {
+  .Element-Showcase {
+    margin: auto;
+  }
+
+  .Element-Options-Wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Element-Header-Text {
+    margin-block-end: 15px;
+    margin-inline-end: 0;
+  }
+
+  .Element-Showcase-Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Element-Showcase-Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Element-Showcase-Button {
+    display: flex;
+    min-block-size: 29px;
+    min-inline-size: 89px;
+    margin-inline-start: 7.5px;
+    margin-inline-end: 7.5px;
+    transition-duration: 0.5s;
+  }
+}

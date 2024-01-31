@@ -31,13 +31,23 @@
   }
 
   & rect {
-    transition: all 330ms linear;
+    transition: all 350ms linear;
     transform-origin: center;
+  }
+
+  .Header-Navigation & {
+    & rect:nth-child(3) {
+      opacity: 0;
+    }
+
+    & rect:nth-child(4) {
+      opacity: 0;
+    }
   }
 
   .Header-Navigation:has(:checked) & {
     & rect:nth-child(1) {
-      transform: rotate(45deg) translateY(7px);
+      opacity: 0;
     }
 
     & rect:nth-child(2) {
@@ -45,7 +55,17 @@
     }
 
     & rect:nth-child(3) {
-      transform: rotate(-45deg) translateY(-7px);
+      opacity: 100;
+      transform: rotate(45deg);
+    }
+
+    & rect:nth-child(4) {
+      opacity: 100;
+      transform: rotate(-45deg);
+    }
+
+    & rect:nth-child(5) {
+      opacity: 0;
     }
   }
 }

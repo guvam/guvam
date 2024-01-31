@@ -1,8 +1,31 @@
 ---
 import './Elements.css';
+import ElementComponent from './section-components/Element-Component.astro';
+import SelectorArrow from '../../assets/icons/selector-arrow.svg?raw';
+import RightArrow from '../../assets/icons/arrow-right.svg?raw';
 ---
 <section class="Section">
   <div class="Section-Content">
-    <h2 class="text-h2">Elements</h2>
+  <div class="Element-Showcase">
+    <div class="Element-Showcase-Header">
+      <div class="Element-Header-Text">Elements Showcase</div>
+      <button class="Element-Header-Explore">Explore UI Elements&nbsp<Fragment set:html={RightArrow} /></button>
+    </div>
+    <div>
+    <div class="Element-Options-Wrapper">
+      <div class="Element-Showcase-Button">Size&nbsp<Fragment set:html={SelectorArrow} /></div>
+      <div class="Element-Showcase-Button">Variant&nbsp<Fragment set:html={SelectorArrow} /></div>
+      <div class="Element-Showcase-Button">Color&nbsp<Fragment set:html={SelectorArrow} /></div>
+      <div class="Element-Showcase-Button">Theme&nbsp<Fragment set:html={SelectorArrow} /></div>
+    </div>
+    <div class="Element-Showcase-Content">
+      <ElementComponent></ElementComponent>
+      <ElementComponent />
+      <ElementComponent />
+      <ElementComponent />
+      <ElementComponent />
+      <ElementComponent />
+    </div>
   </div>
+</div>
 </section>

@@ -39,6 +39,10 @@
     flex-wrap: wrap;
   }
 
+  &.center {
+    justify-content: center;
+  }
+
   &.direction-mobile {
     @media (width <= 1000px) {
       flex-direction: column;

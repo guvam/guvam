@@ -1,3 +1,80 @@
-.Elements {
+.Element-Showcase {
   display: flex;
+  flex-direction: column;
+  max-inline-size: 1250px;
+  margin: 60px;
+}
+
+.Element-Showcase-Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  inline-size: 100%;
+  justify-content: space-between;
+}
+
+.Element-Header-Text {
+  display: flex;
+  justify-self: start;
+  max-inline-size: 1400px;
+  margin-inline-end: 50px;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.Element-Header-Explore {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  block-size: 29px;
+  inline-size: 191px;
+  padding: 3px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  background-color: #343434;
+  border: 1px solid #343434;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+}
+
+.Element-Header-Explore:hover {
+  user-select: none;
+  background-color: #1f1f1f;
+}
+
+.Element-Options-Wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 25px;
+}
+
+.Element-Showcase-Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 29px;
+  inline-size: 89px;
+  padding: 3px 13px;
+  margin-inline-end: 15px;
+  font-size: 16px;
+  color: white;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #1f1f1f;
+  border: 1px solid #343434;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+}
+
+.Element-Showcase-Button:hover {
+  user-select: none;
+  background-color: #4b4b4b;
+}
+
+.Element-Showcase-Content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -27,7 +27,7 @@
   }
 
   & rect {
-    transition: all 350ms linear;
+    transition: all 250ms linear;
     transform-origin: center;
   }
 
@@ -75,14 +75,13 @@
     position: fixed;
     inset-block-start: -100%;
     inset-inline-start: 0;
-    flex-direction: column;
-    row-gap: 2em;
-    align-items: flex-start;
-    inline-size: 100%;
-    padding: min(30vh, 100rem) 2rem;
+    display: flex;
+    align-items: center;
+    inline-size: 100dvw;
+    padding: 4em 1em;
     background-color: var(--color-surface-card);
-    transition: top 550ms ease-out;
-    block-size: 100vh;
+    transition: top 250ms ease-in;
+    block-size: 100dvh;
 
     .Header-Navigation:has(:checked) & {
       inset-block-start: 0;
@@ -93,6 +92,7 @@
 .Header-Dropdown {
   display: flex;
   flex-direction: row;
+  gap: 1em;
 
   @media (width <= 800px) {
     flex-direction: column;
@@ -103,19 +103,18 @@
   display: flex;
   gap: 0.5em;
   align-items: center;
-  margin-inline-start: 10px;
-  color: var(--color-text);
-  transition-duration: 250ms;
+  color: var(--color-text-base);
+  opacity: 1;
+  transition: opacity 1250ms ease-out;
 
   @media (width <= 800px) {
-    margin-block-start: 15px;
     font-size: 24px;
-    font-weight: bold;
-  }
-}
+    opacity: 0;
 
-.Header-MenuItem:hover {
-  color: var(--color-text-base);
+    .Header-Navigation:has(:checked) & {
+      opacity: 1;
+    }
+  }
 }
 
 .Header-MenuItemText {

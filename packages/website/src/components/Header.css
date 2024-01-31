@@ -1,5 +1,6 @@
 .Header-Navigation {
   display: flex;
+  column-gap: 1em;
   justify-content: space-between;
 }
 
@@ -7,27 +8,22 @@
   position: relative;
   z-index: 1;
   flex-shrink: 0;
-  inline-size: 106px;
-  background-image: url('../assets/logos/guvamfull.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  block-size: 24px;
-
-  @media (width <= 360px) {
-    inline-size: 24px;
-    background-image: url('../assets/logos/guvamicon.svg');
-  }
 }
 
 .Header-Button {
   position: relative;
   z-index: 1;
   display: none;
-  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  inline-size: 32px;
   aspect-ratio: 1;
+  cursor: pointer;
 
   @media (width <= 800px) {
-    display: block;
+    display: flex;
   }
 
   & rect {
@@ -84,7 +80,7 @@
     align-items: flex-start;
     inline-size: 100%;
     padding: min(30vh, 100rem) 2rem;
-    background-color: #fafafa;
+    background-color: var(--color-surface-card);
     transition: top 550ms ease-out;
     block-size: 100vh;
 
@@ -119,7 +115,7 @@
 }
 
 .Header-MenuItem:hover {
-  color: black;
+  color: var(--color-text-base);
 }
 
 .Header-MenuItemText {
@@ -127,5 +123,23 @@
 
   @media (width <= 800px) {
     display: block;
+  }
+}
+
+.Header-Theme {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 32px;
+  aspect-ratio: 1;
+  cursor: pointer;
+
+  &.type-light svg:nth-child(1) {
+    display: none;
+  }
+
+  &.type-dark svg:nth-child(2) {
+    display: none;
   }
 }

@@ -3,18 +3,25 @@ import Footer from './Footer.astro';
 import Header from './Header.astro';
 const { title } = Astro.props;
 ---
-<html lang="en" class="Variables scheme-light">
+<html lang="en" class="Variables type-dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="/logo-icon.svg">
   <title>{title}</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TC6QN8QRH0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TC6QN8QRH0');
+  </script>
 </head>
 <body>
 <Header />
-<section>
   <slot />
-</section>
 <Footer />
 </body>
 </html>

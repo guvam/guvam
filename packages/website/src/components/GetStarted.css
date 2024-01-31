@@ -1,9 +1,9 @@
 .Started-Button{
   padding:6px 16px;
-  color: var(--color-text-revers);
+  color: var(--color-text-inverse);
   cursor:pointer;
-  background-color: var(--input-color);
-  border-radius:var(--input-border-radius);
+  background-color: var(--color-ui-base);
+  border-radius: 0.25em;
 
 }
 
@@ -12,9 +12,10 @@
   align-items:center;
   justify-content:center;
   padding:6px 8px;
+  color: black;
   background-color:#fff;
   border: solid 1px black;
-  border-radius:var(--input-border-radius);
+  border-radius:0.25em;
 
 }
 

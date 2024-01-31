@@ -1,7 +1,7 @@
 .Hero {
   flex-direction:column;
   justify-content:center;
-
+  inline-size:100%;
 }
 
 .Hero-Feature{
@@ -9,6 +9,7 @@
   flex-direction:column;
   align-items:center;
   justify-content:center;
+  margin:50px;
   font-size:16px;
 }
 
@@ -23,20 +24,35 @@
 
 
 .Hero-Cards{
-  inline-size:100%;
   padding:24px;
   background: linear-gradient(161.08deg, rgb(232 239 255 / 10%) -9.04%, rgb(0 84 252 / 10%) -9.03%, rgb(0 84 252 / 4%) 94.88%);
-
-
 }
 
 .Hero-Card{
-    background-color: var(--color-surface-background)
+  cursor:default;
+  background-color: var(--color-surface-background);
+
+  &:hover{
+    background-color:var(--color-surface-card);
+  }
 }
 
 .Hero-CardHeader{
   font-weight:700;
+}
 
+
+.Hero-Started{
+  display:flex;
+  gap: 2em;
+  align-items:center;
+  justify-content:center;
+  margin:50px;
+
+  @media (width <= 1000px) {
+    flex-direction: column;
+    justify-content: stretch;
+  }
 }
 
 

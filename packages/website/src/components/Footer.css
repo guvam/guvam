@@ -1,3 +1,13 @@
 .Footer {
-  display: flex;
+  padding-block-start: 2em;
+}
+
+.Footer-Logo{
+  transform: scale(0.8);
+  transform-origin: left top;
+}
+
+.Footer-Icons{
+  display:flex;
+  gap:1em;
 }

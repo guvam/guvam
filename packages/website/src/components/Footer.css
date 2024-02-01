@@ -1,5 +1,6 @@
 .Footer {
   padding-block-start: 2em;
+  border-block-start: 2px solid var(--color-surface-active);
 }
 
 .Footer-Logo{

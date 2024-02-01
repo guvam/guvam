@@ -1,7 +1,6 @@
 .Hero {
   flex-direction:column;
   justify-content:center;
-  inline-size:100%;
 }
 
 .Hero-Feature{
@@ -24,9 +23,15 @@
 
 
 
-.Hero-Cards{
+.Hero-CardBackground{
+  display:flex;
+  justify-content:center;
   padding:24px;
   background: linear-gradient(161.08deg, rgb(232 239 255 / 10%) -9.04%, rgb(0 84 252 / 10%) -9.03%, rgb(0 84 252 / 4%) 94.88%);
+}
+
+.Hero-Cards{
+  max-inline-size:1200px;
 }
 
 .Hero-Card{
@@ -55,5 +60,6 @@
     justify-content: stretch;
   }
 }
+
 
 

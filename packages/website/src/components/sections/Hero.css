@@ -6,9 +6,10 @@
 .Hero-Feature{
   display:flex;
   flex-direction:column;
+  gap:10px;
   align-items:center;
   justify-content:center;
-  margin:50px;
+  padding:106px 0 90px;
   font-size:16px;
 }
 
@@ -26,11 +27,12 @@
 .Hero-CardBackground{
   display:flex;
   justify-content:center;
-  padding:24px;
+  padding:32px;
   background: linear-gradient(161.08deg, rgb(232 239 255 / 10%) -9.04%, rgb(0 84 252 / 10%) -9.03%, rgb(0 84 252 / 4%) 94.88%);
 }
 
 .Hero-Cards{
+  gap:32px;
   max-inline-size:1200px;
 }
 
@@ -50,10 +52,10 @@
 
 .Hero-Started{
   display:flex;
-  gap: 2em;
+  gap: 10px;
   align-items:center;
   justify-content:center;
-  margin:50px;
+  padding:112px;
 
   @media (width <= 1000px) {
     flex-direction: column;

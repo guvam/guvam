@@ -3,8 +3,9 @@
 }
 
 .Footer-Logo{
-  transform: scale(0.8);
-  transform-origin: left top;
+  & svg{
+    inline-size:120px;
+  }
 }
 
 .Footer-Icons{

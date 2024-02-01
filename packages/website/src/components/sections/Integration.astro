@@ -1,5 +1,6 @@
 ---
 import solidLogo from '../../assets/integrations/solidjs.svg?raw'
+import arrowRight from '../../assets/icons/arrow-right-short.svg?raw'
 import './Integrations.css';
 ---
 <section class="Section">
@@ -15,6 +16,6 @@ import './Integrations.css';
       <Fragment set:html={solidLogo} />
       <Fragment set:html={solidLogo} />
     </div>
-    <button class="Integrations-Button">See Integrations &rarr;</button>
+    <button class="Integrations-Button">See Integrations <Fragment set:html={arrowRight} /></button>
   </div>
 </section>

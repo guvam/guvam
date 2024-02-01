@@ -1,5 +1,5 @@
 @import url('@guvam/css-base');
-@import url('@guvam/css-components');
+@import url('@guvam/theme-website');
 
 :root {
   font-family: var(--font);

@@ -1,3 +1,15 @@
 .Footer {
-  display: flex;
+  padding-block-start: 2em;
+  border-block-start: 2px solid var(--color-surface-active);
+}
+
+.Footer-Logo{
+  & svg{
+    inline-size:120px;
+  }
+}
+
+.Footer-Icons{
+  display:flex;
+  gap:1em;
 }

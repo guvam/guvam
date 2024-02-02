@@ -42,13 +42,3 @@ import './Header.css';
     </div>
   </div>
 </header>
-
-<script is:inline>
-  var theme = localStorage.getItem('theme') || 'default';
-  var isLight = (theme==='default') ? window.matchMedia('(prefers-color-scheme:light)').matches : theme === 'true';
-  var currentTheme = isLight ? 'type-light':'type-dark';
-  const themeToggle = document.querySelector('[data-theme-toggle]')
-
-  themeToggle?.classList.add(currentTheme);
-  document.documentElement.classList.add(currentTheme);
-</script>

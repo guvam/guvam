@@ -23,7 +23,7 @@ import './Header.css';
           </a>
         </div>
       </nav>
-      <ThemeToggle class="Header-Theme type-dark" client:load>
+      <ThemeToggle data-theme-toggle class="Header-Theme" client:load>
         <Fragment set:html={light} />
         <Fragment set:html={dark} />
         <span hidden>Light / Dark</span>
@@ -43,3 +43,12 @@ import './Header.css';
   </div>
 </header>
 
+<script is:inline>
+  var theme = localStorage.getItem('theme') || 'default';
+  var isLight = (theme==='default') ? window.matchMedia('(prefers-color-scheme:light)').matches : theme === 'true';
+  var currentTheme = isLight ? 'type-light':'type-dark';
+  const themeToggle = document.querySelector('[data-theme-toggle]')
+
+  themeToggle?.classList.add(currentTheme);
+  document.documentElement.classList.add(currentTheme);
+</script>

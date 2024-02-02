@@ -1,5 +1,5 @@
 {
-  "name": "@guvam/website",
+  "name": "@guvam/playground",
   "type": "module",
   "version": "0.1.0",
   "scripts": {
@@ -15,7 +15,7 @@
     "ts-node": "10.9.2",
     "typescript": "5.3.3",
     "@guvam/css-base": "0.1.0",
-    "@guvam/theme-website": "0.1.0",
+    "@guvam/theme-guvam": "0.1.0",
     "@guvam/elements": "0.1.0"
   },
   "dependencies": {

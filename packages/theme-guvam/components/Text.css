@@ -1,27 +1,27 @@
 .Text {
   &.type-h1 {
     font-size: 36px;
-    color: var(--color-text);
+    color: var(--color-text-base);
   }
 
   &.type-h2 {
     font-size: 28px;
-    color: var(--color-text);
+    color: var(--color-text-base);
   }
 
   &.type-h3 {
     font-size: 18px;
-    color: var(--color-text);
+    color: var(--color-text-base);
   }
 
   &.type-link {
     font-size: 18px;
-    color: var(--color-brand-primary);
+    color: var(--color-primary);
   }
 
   &.emphasise {
     font-weight: bold;
-    color: var(--color-brand-primary);
+    color: var(--color-primary);
   }
 
   &.center {

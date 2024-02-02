@@ -1,0 +1,23 @@
+---
+import logo from '../assets/logos/guvamfull.svg?raw';
+import npmIcon from '../assets/logos/npm.svg?raw';
+import githubIcon from '../assets/logos/github.svg?raw'
+import './Footer.css';
+---
+<footer class="Footer Section">
+  <div class="Section-Content justify-between">
+    <a href="/" aria-label="Guvam logo" class="Footer-Logo" >
+      <Fragment set:html={logo} />
+    </a>
+    <div class="Footer-Content">
+      <div class="Footer-Icons">
+        <a href="https://github.com/guvam/guvam" target="_blank">
+          <Fragment set:html={npmIcon} />
+        </a>
+        <a> <!-- add href to NPM page when available -->
+          <Fragment set:html={githubIcon} />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

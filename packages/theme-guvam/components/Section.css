@@ -13,6 +13,7 @@
 
   &.narrow {
     padding: 1em;
+    align-items: center;
   }
 
   &.full {

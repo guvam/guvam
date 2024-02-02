@@ -63,6 +63,7 @@
     "packages/theme-website",
     "packages/elements",
     "packages/blocks",
-    "packages/website"
+    "packages/website",
+    "packages/playground"
   ]
 }

@@ -1,0 +1,25 @@
+---
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
+import gitHubIcon from '../assets/logos/github.svg?raw';
+import logo from '../assets/logos/guvamfull.svg?raw';
+import light from '../assets/icons/light.svg?raw';
+import dark from '../assets/icons/dark.svg?raw';
+import './Header.css';
+---
+<header class="Section narrow positon-fixed">
+  <div class="Section-Content justify-between">
+    <a href="/" class="Header-Logo" aria-label="Guvam logo">
+      <Fragment set:html={logo} />
+    </a>
+    <div class="Header-Navigation">
+      <LanguageToggle client:load class="Header-Language" />
+      <ThemeToggle class="Header-Theme type-dark" client:load>
+        <Fragment set:html={light} />
+        <Fragment set:html={dark} />
+        <span hidden>Light / Dark</span>
+      </ThemeToggle>
+    </div>
+  </div>
+</header>
+

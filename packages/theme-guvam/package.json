@@ -1,6 +1,6 @@
 {
-  "name": "@guvam/elements",
-  "main": "./index.ts",
+  "name": "@guvam/theme-guvam",
+  "main": "./index.css",
   "version": "0.1.0",
   "description": "",
   "author": "guvam",

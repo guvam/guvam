@@ -59,6 +59,7 @@
   },
   "workspaces": [
     "packages/css-base",
+    "packages/theme-guvam",
     "packages/theme-website",
     "packages/elements",
     "packages/blocks",

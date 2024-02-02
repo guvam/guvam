@@ -1,0 +1,85 @@
+.Variables {
+  color-scheme: normal;
+
+  /* font */
+  --font: roboto;
+
+  /* elevation */
+  --block-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 20%), 0 1px 10px 0 rgb(0 0 0 / 20%);
+  --block-shadow-2: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+
+  /* text */
+  --text-base: 14px;
+  --text-small: 12px;
+  --text-h1: 64px;
+  --text-h2: 48px;
+  --text-h3: 32px;
+  --text-h4: 24px;
+
+  /* space */
+  --space-layout: 2em;
+  --space-content: 1em;
+  --space-input: 0.2em;
+
+  /* foundation */
+  --foundation-size: 1em;
+  --foundation-color: var(--color-primary);
+  --foundation-color-reverse: var(--color-text-inverse);
+
+  /* status */
+  --color-status-success: #198754;
+  --color-status-info: #098ca6;
+  --color-status-warning: #ffc107;
+  --color-status-danger: #dc3545;
+  --color-status-default: #495057;
+
+  &.type-light {
+    color-scheme: light;
+
+    /* brand */
+    --color-primary: #3A4766;
+    --color-secondary: #141285;
+    --color-accent: #4F576B;
+    --color-neutral: #656565;
+
+    /* text */
+    --color-text-base: #001A4E;
+    --color-text-heading: #1b1d1f;
+    --color-text-active: #004CA3;
+    --color-text-hover: #111827;
+    --color-text-inverse: #fff;
+
+    /* surface */
+    --color-surface-background: #FFF;
+    --color-surface-card: #E4E4E4;
+    --color-surface-active: #E1EEFF;
+    --color-surface-border: #DDD;
+
+    /* ui */
+    --color-ui-base: #004CA3;
+  }
+
+  &.type-dark {
+    /* brand */
+    --color-primary: #3A4766;
+    --color-secondary: #141285;
+    --color-accent: #4F576B;
+    --color-neutral: #656565;
+
+    /* text */
+    --color-text-base: #E1E2E3;
+    --color-text-heading: #DCDCDC;
+    --color-text-active: #004CA3;
+    --color-text-hover: #111827;
+    --color-text-inverse: #EAEAEA;
+
+    /* surface */
+    --color-surface-background: #1F1F1F;
+    --color-surface-card: #2C2C2C;
+    --color-surface-active: #333D4A;
+    --color-surface-border: #BBB;
+
+    /* ui */
+    --color-ui-base: #343434;
+  }
+}

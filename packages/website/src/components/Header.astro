@@ -23,7 +23,7 @@ import './Header.css';
           </a>
         </div>
       </nav>
-      <ThemeToggle class="Header-Theme type-dark" client:load>
+      <ThemeToggle data-theme-toggle class="Header-Theme" client:load>
         <Fragment set:html={light} />
         <Fragment set:html={dark} />
         <span hidden>Light / Dark</span>
@@ -42,4 +42,3 @@ import './Header.css';
     </div>
   </div>
 </header>
-

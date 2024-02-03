@@ -6,6 +6,8 @@ const switchBetweenClasses = (el: HTMLElement | null) => {
     const isLight = el.classList.contains('type-light');
     el.classList.toggle('type-light', !isLight);
     el.classList.toggle('type-dark', isLight);
+
+    localStorage.setItem('theme', !isLight);
   }
 };
 

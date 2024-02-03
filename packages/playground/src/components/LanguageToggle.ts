@@ -8,7 +8,7 @@ export class LanguageToggle extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('click', () => {
-      const el = document.querySelector(':root');
+      const el = document.querySelector('#content');
       if (el) {
         this.lang = el.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl';
         el.setAttribute('dir', this.lang);

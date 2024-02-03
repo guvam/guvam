@@ -3,3 +3,39 @@
   flex-direction: column;
   gap: 8px;
 }
+
+.LayoutContent {
+  inline-size: 100%;
+  padding: 1em;
+}
+
+
+.Form {
+  display: flex;
+  gap: 2em;
+  padding: 0 2em;
+}
+
+.Form-Field {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.Select {
+  display: flex;
+  min-inline-size: 100px;
+  padding: 0.5em;
+  background-color: var(--color-ui-base);
+}
+
+
+.Checkbox {
+  inline-size: 24px;
+  aspect-ratio: 1;
+  background-color: #e0cece;
+
+  &:checked {
+    background-color: #098ca6;
+  }
+}

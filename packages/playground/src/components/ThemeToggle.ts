@@ -14,7 +14,7 @@ export class ThemeToggle extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this.addEventListener('click', () => {
-      switchBetweenClasses(document.querySelector(':root'));
+      switchBetweenClasses(document.querySelector('#content'));
       switchBetweenClasses(this);
     });
   }

@@ -81,5 +81,7 @@
 
     /* ui */
     --color-ui-base: #343434;
+    --color-ui-background: #fff;
+    --ui-block-size: 3em;
   }
 }

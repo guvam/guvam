@@ -1,20 +1,50 @@
 .Button {
-  padding: var(--foundation-size);
+  display: inline-flex;
+  align-items: center;
+  block-size: var(--ui-block-size);
+  padding-inline: var(--foundation-size);
   font-size: var(--foundation-size);
+  color: var(--foundation-color-reverse);
   cursor: pointer;
   user-select: none;
-  background-color: var(--color-secondary);
+  background-color: var(--foundation-color);
+  border-radius: calc(var(--foundation-size) / 2);
   transition: background-color 250ms ease-in;
 
   &:hover {
-    border-color: color-mix(in srgb, var(--color-secondary), transparent 50%);
+    background-color: color-mix(in srgb, var(--foundation-color), transparent 50%);
   }
 
-  &.type-primary {
-    background-color: var(--color-primary);
+  &:focus-within {
 
-    &:hover {
-      background-color: color-mix(in srgb, var(--color-primary) 100%, transparent 80%);
-    }
+  }
+
+  &:active {
+
+  }
+
+  &:focus {
+    outline: 1px solid var(--foundation-color);
+    outline-offset: 4px;
+  }
+
+  &:disabled {
+
+  }
+
+  &.type-filled {
+
+  }
+
+  &.type-ghost {
+
+  }
+
+  &.type-filled {
+
+  }
+
+  &.type-icon {
+
   }
 }

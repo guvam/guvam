@@ -1,7 +1,10 @@
-.Button {
+.Dropdown {
   display: inline-flex;
   column-gap: calc(var(--ui-block-size) / 4);
   align-items: center;
+  justify-content: space-between;
+  inline-size: 100%;
+  max-inline-size: 200px;
   block-size: var(--ui-block-size);
   padding-inline: var(--foundation-size);
   font-size: var(--foundation-size);

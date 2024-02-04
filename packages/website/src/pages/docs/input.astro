@@ -3,7 +3,9 @@ import { Select } from '@guvam/elements';
 import Layout from '../../components/docs/Layout.astro';
 import Code from '../../components/docs/blocks/Code.astro';
 import Title from '../../components/docs/blocks/Title.astro';
-import code from '../../elements/highlighter.ts?raw';
+import codeCss from '../../elements/Clipboard.css?raw';
+import codeTs from '../../elements/Clipboard.ts?raw';
+import codeHtml from '../../elements/Clipboard.astro?raw';
 import light from 'bootstrap-icons/icons/lightbulb.svg?raw';
 import dark from 'bootstrap-icons/icons/moon-fill.svg?raw';
 import down from 'bootstrap-icons/icons/chevron-down.svg?raw';
@@ -11,10 +13,8 @@ import './_input.css';
 ---
 <Layout title="examples select">
 
-  <Title id="button-section">
-    class Button
-  </Title>
-
+  <h1 class="Text type-h1 margin">Input</h1>
+  <Title id="button-section">class .Button</Title>
   <div class="DocsTable">
     <div class="DocTable-Elements">
       <div>
@@ -34,42 +34,50 @@ import './_input.css';
       </div>
     </div>
     <div>
+      <div class="DocsTable-Selector">
+        .Button
+      </div>
       Button
     </div>
-    <div>
-    </div>
-
     <div>
       <button class="Button" disabled>Button</button>
     </div>
     <div>
-      .Button [disabled]
+      <div>
+        .Button [disabled]
+      </div>
+      disabled
     </div>
-    <div>disabled</div>
 
     <div>
       <button class="Button type-outline">Button</button>
     </div>
     <div>
-      .Button type-outline
+      <div class="DocsTable-Selector">
+        .Button type-outline
+      </div>
+      outline
     </div>
-    <div>outline</div>
 
     <div>
       <button class="Button type-text">Button</button>
     </div>
     <div>
-      .Button type-text
+      <div class="DocsTable-Selector">
+        .Button type-text
+      </div>
+      text
     </div>
-    <div>text</div>
 
     <div>
       <button class="Button type-link">Button</button>
     </div>
     <div>
-      .Button type-link
+      <div class="DocsTable-Selector">
+        .Button type-link
+      </div>
+      link
     </div>
-    <div>link</div>
 
     <div>
       <button class="Button icon">
@@ -77,20 +85,26 @@ import './_input.css';
       </button>
     </div>
     <div>
-      .Button icon
+      <div class="DocsTable-Selector">
+        .Button icon
+      </div>
+      icon
     </div>
-    <div>icon</div>
 
     <div>
       <button class="Button inline-wide">Button</button>
     </div>
     <div>
-      .Button inline-wide
+      <div class="DocsTable-Selector">
+        .Button inline-wide
+      </div>
+      wide
     </div>
-    <div>wide</div>
   </div>
 
-  <Code lang="js" title="highlighter.js" code={code} />
+  <!--  <Code lang="js" title="highlighter.js" code={codeTs} />
+    <Code lang="html" title="highlighter.js" code={codeHtml} />
+    <Code lang="css" title="highlighter.js" code={codeCss} />-->
 
   <!--  <Title title="Input" id="input-section" />
     <p style="display: flex; gap: 1em; flex-wrap: wrap">
@@ -106,15 +120,42 @@ import './_input.css';
     </p>-->
 
 
-  <!--
+  <Title id="dropdown-section">class .Dropdown</Title>
+  <div class="DocsTable">
+    <div class="DocTable-Elements">
+      <div>
+        <label class="Dropdown">
+          <select>
+            <option>One</option>
+            <option>Two</option>
+            <option>Three</option>
+          </select>
+          <Fragment set:html={down} />
+        </label>
+      </div>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Dropdown
+      </div>
+    </div>
 
-    <Title title="Textarea" id="Textarea-section" />
-    <Title title="Dropdown" id="Dropdown-section" />
-    <Title title="Checkbox" id="checkbox-section" />
-    <Title title="Radio" id="radio-section" />
-    <Title title="Switch" id="switch-section" />
-    <Title title="Rate" id="rate-section" />
-    <Title title="Slider" id="slider-section" />
-  -->
+    <div>
+      <button class="Dropdown" disabled>Dropdown</button>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        [disabled]
+      </div>
+      disabled</div>
+  </div>
+
+
+  <Title id="textarea-section">Textarea</Title>
+  <Title id="checkbox-section">Checkbox</Title>
+  <Title id="radio-section">Radio</Title>
+  <Title id="switch-section">Switch</Title>
+  <Title id="rate-section">Rate</Title>
+  <Title id="slider-section">Slider</Title>
 
 </Layout>

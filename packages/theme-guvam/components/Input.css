@@ -10,7 +10,7 @@
   user-select: none;
   background-color: var(--foundation-color);
   border: 1px solid transparent;
-  border-radius: calc(var(--foundation-size) / 2);
+  border-radius: calc(var(--foundation-size) / 4);
 
   &::placeholder {
     color: color-mix(in srgb, var(--foundation-color) 100%, transparent 80%);

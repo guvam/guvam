@@ -3,29 +3,25 @@ import { property, customElement } from 'lit/decorators.js';
 
 @customElement('guvam-clipboard')
 export class Clipboard extends LitElement {
+  private timeout?: number;
+
   @property({ type: String }) Value = '';
 
-  private timeout?: number;
+  @property({ type: Number }) animationTime = 1000;
 
   connectedCallback(): void {
     super.connectedCallback();
-
-    this.addEventListener('click', () => {
-      this._copyToClipboard();
-    });
+    this.addEventListener('click', () => this.copyToClipboard());
   }
 
   render() {
     return html`<slot />`;
   }
 
-  private _copyToClipboard() {
+  private copyToClipboard() {
     this.classList.add('copied');
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-    this.timeout = window.setTimeout(() => this.classList.remove('copied'), 1000);
-
-    void navigator.clipboard.writeText(this.Value).catch(() => {});
+    clearTimeout(this.timeout);
+    this.timeout = window.setTimeout(() => this.classList.remove('copied'), this.animationTime);
+    navigator.clipboard.writeText(this.Value).catch(console.info);
   }
 }

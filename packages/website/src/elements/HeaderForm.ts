@@ -25,8 +25,8 @@ export class HeaderForm extends LitElement {
 
   private formUpdate = (formEl: HTMLFormElement) => {
     const data: FormValue = {};
-    for (const x of Array.from(formEl.elements)) {
-      data[x.name] = x.checked === undefined ? x.value : x.checked;
+    for (const x of Array.from(formEl.elements) as HTMLInputElement[]) {
+      data[x.name] = x.checked ?? x.value;
     }
     window.localStorage.setItem('content', JSON.stringify(data));
     this.contentArea(data);
@@ -48,11 +48,11 @@ export class HeaderForm extends LitElement {
     const formEl = this.formEls[0];
 
     if (formEl) {
-      for (const x of formEl.elements) {
+      for (const x of Array.from(formEl.elements) as HTMLInputElement[]) {
         if (x.checked === undefined) {
-          x.value = data[x.name];
+          x.value = data[x.name].toString();
         } else {
-          x.checked = data[x.name];
+          x.checked = Boolean(data[x.name]);
         }
       }
       formEl.addEventListener('change', () => {

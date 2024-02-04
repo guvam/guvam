@@ -1,8 +1,10 @@
 ---
-const { title, id } = Astro.props;
+const { id } = Astro.props;
 ---
 
 <h2 class="Text type-h2" id={id}>
-  <a href={'#' + id}>{title}</a>
+  <a href={'#' + id}>
+    <slot />
+  </a>
 </h2>
 

@@ -1,12 +1,19 @@
 ---
 import { highlighter } from '../../../elements/highlighter';
 import './Code.css';
+import { Clipboard } from '../../../elements/Clipboard';
+import clipboard from '../../../assets/icons/clipboard.svg?raw';
+import checkmark from '../../../assets/icons/checkmark.svg?raw';
 
 const { title, lang, code } = Astro.props;
 const html = highlighter.codeToHtml(code.trim(), { lang });
 ---
 <figure class="Code">
   <figcaption>{title}</figcaption>
+  <Clipboard class="Clipboard" client:load value={html}>
+    <Fragment set:html={clipboard} />
+    <Fragment set:html={checkmark} />
+  </Clipboard>
 
   <div set:html={html} class="Text type-code"></div>
 </figure>

@@ -2,78 +2,125 @@
 import { Select } from '@guvam/elements';
 import Layout from '../../components/docs/Layout.astro';
 import Code from '../../components/docs/blocks/Code.astro';
-import code from 'packages/website/src/components/docs/code-highlighter.ts?raw';
+import code from '../../elements/highlighter.ts?raw';
 import Title from '../../components/docs/blocks/Title.astro';
 import light from '../../assets/icons/light.svg?raw';
 import dark from '../../assets/icons/dark.svg?raw';
 import down from '../../assets/icons/arrow-down.svg?raw';
+import './_input.css';
 ---
 <Layout title="examples select">
 
-  <Title title="Button" id="button-section" />
+  <Title id="button-section" >
+    class Button
+  </Title>
 
-  <!--<table>
-    <thead>
-    <tr>
-      <td>class</td>
-      <td>type</td>
-      <td>description</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Button</td>
-      <td>type</td>
-      <td>description</td>
-    </tr>
-    <tr>
-      <td>class</td>
-      <td>type</td>
-      <td>description</td>
-    </tr>
-    <tr>
-      <td>class</td>
-      <td>type</td>
-      <td>description</td>
-    </tr>
-    </tbody>
-  </table>
-
-  <Code lang="js" title="high-light.js" code={code} />-->
-  <p style="display: flex; gap: 1em; flex-wrap: wrap">
-    <button class="Button">Button</button>
-    <button class="Button" disabled>Button</button>
-    <button class="Button type-outline">Button</button>
-    <button class="Button type-text">Button</button>
-    <button class="Button type-link">Button</button>
-    <button class="Button icon">A</button>
-    <button class="Button icon">
-      <Fragment set:html={dark} />
-    </button>
-    <button class="Button inline-wide">Button</button>
-    <button class="Button">
-      <Fragment set:html={light} />
+  <div class="DocsTable">
+    <div>
+      <button class="Button">Button</button>
+    </div>
+    <div>
       Button
-    </button>
+    </div>
+    <div>
+      <Code lang="js" title="highlighter.js" code={code} />
+    </div>
 
-    <button class="Button">
-      Select me Button
-      <Fragment set:html={down} />
-    </button>
-  </p>
+    <div>
+      <button class="Button" disabled>Button</button>
+    </div>
+    <div>
+      .Button [disabled]
+    </div>
+    <div>disabled</div>
 
-  <Title title="Input" id="input-section" />
-  <p style="display: flex; gap: 1em; flex-wrap: wrap">
-    <input type="text" placeholder="placeholder" class="Input" />
-    <input type="text" placeholder="placeholder" class="Input type-outline" />
-    <input type="text" placeholder="placeholder" class="Input" disabled />
-    <input type="text" placeholder="placeholder" class="Input" />
-    <input type="text" placeholder="placeholder" class="Input" />
-    <input type="text" placeholder="placeholder" class="Input" />
-    <input type="text" placeholder="placeholder" class="Input" />
-    <input type="text" placeholder="placeholder" class="Input" />
-    <input type="text" placeholder="placeholder" class="Input" />
-  </p>
+    <div>
+      <button class="Button type-outline">Button</button>
+    </div>
+    <div>
+      .Button type-outline
+    </div>
+    <div>disabled</div>
+
+    <div>
+      <button class="Button type-text">Button</button>
+    </div>
+    <div>
+      .Button type-text
+    </div>
+    <div>disabled</div>
+
+    <div>
+      <button class="Button type-link">Button</button>
+    </div>
+    <div>
+      .Button type-link
+    </div>
+    <div>disabled</div>
+
+    <div>
+      <button class="Button icon">A</button>
+    </div>
+    <div>
+      .Button icon
+    </div>
+    <div>disabled</div>
+
+    <div>
+      <button class="Button icon">
+        <Fragment set:html={dark} />
+      </button>
+    </div>
+    <div>
+      .Button icon
+    </div>
+    <div>disabled</div>
+
+    <div>
+      <button class="Button inline-wide">Button</button>
+    </div>
+    <div>
+      .Button inline-wide
+    </div>
+    <div>disabled</div>
+
+    <div>
+      <button class="Button">
+        <Fragment set:html={light} />
+        Button
+      </button>
+    </div>
+    <div>
+      .Button
+    </div>
+    <div>disabled</div>
+
+    <div>
+      <button class="Button">
+        Select me Button
+        <Fragment set:html={down} />
+      </button>
+    </div>
+    <div>
+      .Button
+    </div>
+    <div>disabled</div>
+  </div>
+
+
+
+  <!--  <Title title="Input" id="input-section" />
+    <p style="display: flex; gap: 1em; flex-wrap: wrap">
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input type-outline" />
+      <input type="text" placeholder="placeholder" class="Input" disabled />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+    </p>-->
 
 
   <!--

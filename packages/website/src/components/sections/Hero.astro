@@ -1,8 +1,8 @@
 ---
 import './Hero.css';
 import { Clipboard } from '../../elements/Clipboard';
-import clipboard from '../../assets/icons/clipboard.svg?raw'
-import checkmark from '../../assets/icons/checkmark.svg?raw'
+import clipboard from '../../assets/icons/clipboard.svg?raw';
+import checkmark from '../../assets/icons/checkmark.svg?raw';
 ---
 <section class="Hero">
   <div class="Hero-Feature">
@@ -51,18 +51,12 @@ import checkmark from '../../assets/icons/checkmark.svg?raw'
   </div>
   <div class="Hero-Started">
     <a class="Button -color-neutral" href="/docs">Get started</a>
-    <div class="Started-Code">
+    <div class="Input type-outline -color-neutral">
       <code>npm i @guvam/guvam</code>
-      <div class="Started-ClipboardWrapper">
-        <Clipboard class="Started-Clipboard" value="npm i @guvam/guvam" client:load>
-          <div class="Started-Svg">
-            <Fragment set:html={clipboard} />
-          </div>
-          <div class="Started-Svg">
-            <Fragment set:html={checkmark} />
-          </div>
-        </Clipboard>
-      </div>
+      <Clipboard class="Clipboard" value="npm i @guvam/guvam" client:load>
+        <Fragment set:html={clipboard} />
+        <Fragment set:html={checkmark} />
+      </Clipboard>
     </div>
   </div>
 </section>

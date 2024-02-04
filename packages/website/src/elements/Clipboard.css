@@ -1,0 +1,18 @@
+.Clipboard {
+  display: block;
+  inline-size: 20px;
+  block-size: 20px;
+  overflow: hidden;
+  cursor: pointer;
+
+  & svg {
+    inline-size: 16px;
+    block-size: 16px;
+    margin: 2px;
+    transition: translate 300ms ease-in-out;
+
+    .Clipboard.copied & {
+      translate: 0 -20px;
+    }
+  }
+}

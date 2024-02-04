@@ -48,7 +48,6 @@
   font-weight: 700;
 }
 
-
 .Hero-Started {
   display: flex;
   gap: 10px;
@@ -63,47 +62,6 @@
 }
 
 
-/* TODO replace whith theme */
-.Started-Code {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 8px;
-  border: solid 1px var(--color-surface-border);
-  border-radius: 0.25em;
-}
-
-.Started-ClipboardWrapper {
-  inline-size: 20px;
-  block-size: 20px;
-  margin-inline-start: 16px;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.Started-Clipboard {
-  position: relative;
-  inset-block-end: 0;
-  transition: 0.5s;
-}
-
-.Started-Copied {
-  inset-block-end: 30px;
-}
-
-.Started-Svg {
-  inline-size: 17px;
-  margin-block-end: 12px;
-
-  &:first-child {
-    transition: transform 0.3s;
-    transform: scale(0.9)
-  }
-
-  &:first-child:hover {
-    transform: scale(1);
-  }
-}
 
 
 

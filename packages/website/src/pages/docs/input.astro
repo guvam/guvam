@@ -2,28 +2,41 @@
 import { Select } from '@guvam/elements';
 import Layout from '../../components/docs/Layout.astro';
 import Code from '../../components/docs/blocks/Code.astro';
-import code from '../../elements/highlighter.ts?raw';
 import Title from '../../components/docs/blocks/Title.astro';
-import light from '../../assets/icons/light.svg?raw';
-import dark from '../../assets/icons/dark.svg?raw';
-import down from '../../assets/icons/arrow-down.svg?raw';
+import code from '../../elements/highlighter.ts?raw';
+import light from 'bootstrap-icons/icons/lightbulb.svg?raw';
+import dark from 'bootstrap-icons/icons/moon-fill.svg?raw';
+import down from 'bootstrap-icons/icons/chevron-down.svg?raw';
 import './_input.css';
 ---
 <Layout title="examples select">
 
-  <Title id="button-section" >
+  <Title id="button-section">
     class Button
   </Title>
 
   <div class="DocsTable">
-    <div>
-      <button class="Button">Button</button>
+    <div class="DocTable-Elements">
+      <div>
+        <button class="Button">Button</button>
+      </div>
+      <div>
+        <button class="Button">
+          <Fragment set:html={light} />
+          Button
+        </button>
+      </div>
+      <div>
+        <button class="Button">
+          Select me Button
+          <Fragment set:html={down} />
+        </button>
+      </div>
     </div>
     <div>
       Button
     </div>
     <div>
-      <Code lang="js" title="highlighter.js" code={code} />
     </div>
 
     <div>
@@ -40,7 +53,7 @@ import './_input.css';
     <div>
       .Button type-outline
     </div>
-    <div>disabled</div>
+    <div>outline</div>
 
     <div>
       <button class="Button type-text">Button</button>
@@ -48,7 +61,7 @@ import './_input.css';
     <div>
       .Button type-text
     </div>
-    <div>disabled</div>
+    <div>text</div>
 
     <div>
       <button class="Button type-link">Button</button>
@@ -56,15 +69,7 @@ import './_input.css';
     <div>
       .Button type-link
     </div>
-    <div>disabled</div>
-
-    <div>
-      <button class="Button icon">A</button>
-    </div>
-    <div>
-      .Button icon
-    </div>
-    <div>disabled</div>
+    <div>link</div>
 
     <div>
       <button class="Button icon">
@@ -74,7 +79,7 @@ import './_input.css';
     <div>
       .Button icon
     </div>
-    <div>disabled</div>
+    <div>icon</div>
 
     <div>
       <button class="Button inline-wide">Button</button>
@@ -82,32 +87,10 @@ import './_input.css';
     <div>
       .Button inline-wide
     </div>
-    <div>disabled</div>
-
-    <div>
-      <button class="Button">
-        <Fragment set:html={light} />
-        Button
-      </button>
-    </div>
-    <div>
-      .Button
-    </div>
-    <div>disabled</div>
-
-    <div>
-      <button class="Button">
-        Select me Button
-        <Fragment set:html={down} />
-      </button>
-    </div>
-    <div>
-      .Button
-    </div>
-    <div>disabled</div>
+    <div>wide</div>
   </div>
 
-
+  <Code lang="js" title="highlighter.js" code={code} />
 
   <!--  <Title title="Input" id="input-section" />
     <p style="display: flex; gap: 1em; flex-wrap: wrap">

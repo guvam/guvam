@@ -1,0 +1,11 @@
+---
+import clipboard from 'bootstrap-icons/icons/copy.svg?raw';
+import checkmark from 'bootstrap-icons/icons/check.svg?raw';
+import { Clipboard } from './Clipboard';
+import './Clipboard.css';
+const { value } = Astro.props;
+---
+<Clipboard class="Clipboard" value="npm i @guvam/guvam" client:load>
+  <Fragment set:html={clipboard} />
+  <Fragment set:html={checkmark} />
+</Clipboard>

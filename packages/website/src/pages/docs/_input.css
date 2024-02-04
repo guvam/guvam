@@ -1,5 +1,13 @@
 .DocsTable {
   display: grid;
   grid-template-columns: 220px 200px 1fr;
-  gap: 1em
+  gap: 1em;
+
+  &>:nth-child(3n - 2) {
+    display: grid;
+    gap: 0.5em;
+    padding: 8px;
+    background-color: #2d2d2d;
+    border-radius: 4px;
+  }
 }

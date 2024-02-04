@@ -1,6 +1,5 @@
 import { LitElement, html } from 'lit';
 import { property, customElement } from 'lit/decorators.js';
-import './Clipboard.css';
 
 @customElement('guvam-clipboard')
 export class Clipboard extends LitElement {

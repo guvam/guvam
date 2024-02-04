@@ -10,4 +10,11 @@
   --shiki-token-string-expression: #C00;
   --shiki-token-punctuation: #D00;
   --shiki-token-link: #E00;
+
+  position: relative;
+
+  .Clipboard {
+    position: absolute;
+    inset: 4px 4px auto auto;
+  }
 }

@@ -21,6 +21,7 @@
   "dependencies": {
     "@webcomponents/template-shadowroot": "^0.2.1",
     "lit": "^3.1.1",
-    "shiki": "0.14.7"
+    "shiki": "0.14.7",
+    "bootstrap-icons": "1.11.3"
   }
 }

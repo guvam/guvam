@@ -1,0 +1,13 @@
+.Code {
+  --shiki-color-text: #EEE;
+  --shiki-color-background: #333;
+  --shiki-token-constant: #600;
+  --shiki-token-string: #700;
+  --shiki-token-comment: #800;
+  --shiki-token-keyword: #900;
+  --shiki-token-parameter: #A00;
+  --shiki-token-function: #B00;
+  --shiki-token-string-expression: #C00;
+  --shiki-token-punctuation: #D00;
+  --shiki-token-link: #E00;
+}

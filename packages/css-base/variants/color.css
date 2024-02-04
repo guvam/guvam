@@ -22,3 +22,21 @@
   --foundation-color: var(--color-status-danger);
   --foundation-color-reverse: var(--color-text-inverse);
 }
+
+
+.-color-primary {
+  --foundation-color: var(--color-primary);
+  --foundation-color-reverse: var(--color-text-inverse);
+}
+.-color-secondary {
+  --foundation-color: var(--color-secondary);
+  --foundation-color-reverse: var(--color-text-inverse);
+}
+.-color-accent {
+  --foundation-color: var(--color-accent);
+  --foundation-color-reverse: var(--color-text-inverse);
+}
+.-color-neutral {
+  --foundation-color: var(--color-neutral);
+  --foundation-color-reverse: var(--color-text-inverse);
+}

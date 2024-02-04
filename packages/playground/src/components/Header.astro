@@ -1,12 +1,8 @@
 ---
-import { ThemeToggle } from './ThemeToggle';
-import { LanguageToggle } from './LanguageToggle';
-import gitHubIcon from '../assets/logos/github.svg?raw';
 import logo from '../assets/logos/guvamfull.svg?raw';
-import light from '../assets/icons/light.svg?raw';
-import dark from '../assets/icons/dark.svg?raw';
 import './Header.css';
-import * as console from 'console';
+import { HeaderForm } from '../components/header-form';
+
 ---
 <header class="Section narrow positon-fixed">
   <div class="Section-Content justify-between">
@@ -14,98 +10,58 @@ import * as console from 'console';
       <Fragment set:html={logo} />
     </a>
     <div class="Header-Navigation">
-      <script is:inline>
-        const contentArea = (data) => {
-          const el = document.querySelector('#content');
-          const classNames = [
-            'LayoutContent',
-            'Variables',
-            `-color-${data.color}`,
-            `-size-${data.size}`,
-            `-spacing-${data.spacing}`,
-            `type-${data.theme}`,
-          ];
-          el.setAttribute('class', classNames.join(' '));
-          el.setAttribute('dir', data.direction);
-        };
-
-        const formUpdate = (formEl) => {
-          const data = {};
-          for (const x of formEl.elements) {
-            data[x.name] = x.checked === undefined ? x.value : x.checked;
-          }
-          window.localStorage.setItem('content', JSON.stringify(data));
-          contentArea(data);
-        };
-
-        addEventListener('load', () => {
-          const initData = {
-            color: 'success',
-            size: 'default',
-            spacing: 'default',
-            direction: 'left',
-            theme: 'left'
-          };
-          const storageData = window.localStorage.getItem('content');
-          const data = storageData === null ? initData : JSON.parse(storageData);
-
-          const formEl = document.querySelector('#form');
-          for (const x of formEl.elements) {
-            if (x.checked === undefined) {
-              x.value = data[x.name];
-            } else {
-              x.checked = data[x.name];
-            }
-          }
-          contentArea(data);
-        });
-      </script>
-      <form onchange="formUpdate(this);" class="Form" id="form">
-        <div class="Form-Field">
-          <label for="color">Color</label>
-          <select class="Select" name="color" id="color">
-            <option value="default" selected>default</option>
-            <option value="success">success</option>
-            <option value="info">info</option>
-            <option value="warning">warning</option>
-            <option value="danger">danger</option>
-          </select>
-        </div>
-        <div class="Form-Field">
-          <label for="size">Size</label>
-          <select class="Select" name="size" id="size">
-            <option value="xsmall">x-small</option>
-            <option value="small">small</option>
-            <option value="default" selected>default</option>
-            <option value="big">big</option>
-            <option value="xbig">x-big</option>
-          </select>
-        </div>
-        <div class="Form-Field">
-          <label for="spacing">Spacing</label>
-          <select class="Select" name="spacing" id="spacing">
-            <option value="x-small">x-small</option>
-            <option value="small">small</option>
-            <option value="default" selected>default</option>
-            <option value="big">big</option>
-            <option value="x-big">x-big</option>
-          </select>
-        </div>
-        <div class="Form-Field">
-          <label for="direction">Direction</label>
-          <select class="Select" name="direction" id="direction">
-            <option value="ltr" selected>left</option>
-            <option value="rtl">right</option>
-          </select>
-        </div>
-        <div class="Form-Field">
-          <label for="theme">Theme</label>
-          <select class="Select" name="theme" id="theme" >
-            <option value="light" selected>light</option>
-            <option value="dark">dark</option>
-          </select>
-        </div>
-      </form>
+      <HeaderForm client:load>
+        <form class="Form">
+          <div class="Form-Field">
+            <label for="color">Color</label>
+            <select class="Select" name="color" id="color">
+              <option value="default" selected>default</option>
+              <option value="success">success</option>
+              <option value="info">info</option>
+              <option value="warning">warning</option>
+              <option value="danger">danger</option>
+              <option value="primary">primary</option>
+              <option value="secondary">secondary</option>
+              <option value="accent">accent</option>
+              <option value="neutral">neutral</option>
+            </select>
+          </div>
+          <div class="Form-Field">
+            <label for="size">Size</label>
+            <select class="Select" name="size" id="size">
+              <option value="xsmall">x-small</option>
+              <option value="small">small</option>
+              <option value="default" selected>default</option>
+              <option value="big">big</option>
+              <option value="xbig">x-big</option>
+            </select>
+          </div>
+          <div class="Form-Field">
+            <label for="spacing">Spacing</label>
+            <select class="Select" name="spacing" id="spacing">
+              <option value="x-small">x-small</option>
+              <option value="small">small</option>
+              <option value="default" selected>default</option>
+              <option value="big">big</option>
+              <option value="x-big">x-big</option>
+            </select>
+          </div>
+          <div class="Form-Field">
+            <label for="direction">Direction</label>
+            <select class="Select" name="direction" id="direction">
+              <option value="ltr" selected>left</option>
+              <option value="rtl">right</option>
+            </select>
+          </div>
+          <div class="Form-Field">
+            <label for="theme">Theme</label>
+            <select class="Select" name="theme" id="theme">
+              <option value="light" selected>light</option>
+              <option value="dark">dark</option>
+            </select>
+          </div>
+        </form>
+      </HeaderForm>
     </div>
   </div>
 </header>

@@ -9,7 +9,7 @@
   --block-shadow-2: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
 
   /* text */
-  --text-base: 14px;
+  --text-base: 16px;
   --text-small: 12px;
   --text-h1: 64px;
   --text-h2: 48px;
@@ -61,9 +61,9 @@
 
   &.type-dark {
     /* brand */
-    --color-primary: #3A4766;
-    --color-secondary: #141285;
-    --color-accent: #4F576B;
+    --color-primary: #00bd87;
+    --color-secondary: #8f4cce;
+    --color-accent: #54c8da;
     --color-neutral: #656565;
 
     /* text */
@@ -82,6 +82,9 @@
     /* ui */
     --color-ui-base: #343434;
     --color-ui-background: #fff;
-    --ui-block-size: 3em;
+    --color-ui-active: #696908;
+    --color-ui-disabled: #fff; /* TODO */
+    --color-ui-hover: #fff; /* TODO */
+    --ui-block-size: 2em;
   }
 }

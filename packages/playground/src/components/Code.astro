@@ -1,0 +1,12 @@
+---
+import { highlighter } from './code-highlighter';
+import './Code.css';
+
+const { title, lang, code } = Astro.props;
+const html = highlighter.codeToHtml(code.trim(), { lang });
+---
+<figure class="Code">
+  <figcaption>{title}</figcaption>
+
+  <div set:html={html} class="Text type-code"></div>
+</figure>

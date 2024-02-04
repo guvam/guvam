@@ -1,5 +1,6 @@
 .Button {
   display: inline-flex;
+  column-gap: calc(var(--ui-block-size) / 4);
   align-items: center;
   block-size: var(--ui-block-size);
   padding-inline: var(--foundation-size);
@@ -8,43 +9,64 @@
   cursor: pointer;
   user-select: none;
   background-color: var(--foundation-color);
+  border: 1px solid transparent;
   border-radius: calc(var(--foundation-size) / 2);
-  transition: background-color 250ms ease-in;
 
-  &:hover {
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:has(svg:first-child) {
+    padding-inline-start: calc(var(--foundation-size) / 2);
+  }
+
+  &:has(svg:last-child) {
+    padding-inline-end: calc(var(--foundation-size) / 2);
+  }
+
+  &:not(:disabled):hover {
     background-color: color-mix(in srgb, var(--foundation-color), transparent 50%);
   }
 
-  &:focus-within {
-
+  &:not(:disabled):active {
+    background-color: var(--color-ui-active);
   }
 
-  &:active {
-
-  }
-
-  &:focus {
+  &:not(:disabled):focus-within {
     outline: 1px solid var(--foundation-color);
-    outline-offset: 4px;
+    outline-offset: 2px;
   }
 
-  &:disabled {
-
+  & svg {
+    inline-size: calc(var(--ui-block-size) / 2);
+    block-size: calc(var(--ui-block-size) / 2);
   }
 
-  &.type-filled {
-
+  &.type-outline {
+    background-color: transparent;
+    border-color: var(--foundation-color);
   }
 
-  &.type-ghost {
-
+  &.type-text {
+    background-color: transparent;
   }
 
-  &.type-filled {
-
+  &.type-link {
+    text-decoration: underline;
+    background-color: transparent;
   }
 
-  &.type-icon {
+  &.icon {
+    justify-content: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
 
+    &:has(svg) {
+      padding-inline: 0;
+    }
+  }
+
+  &.inline-wide {
+    padding-inline: calc(3 * var(--foundation-size));
   }
 }

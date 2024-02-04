@@ -1,0 +1,9 @@
+import{s as m,t as u}from"./custom-element.4JEvFqI0.js";import{x as d}from"./lit-html.Z3QJor2R.js";/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */const p=(o,t,e)=>(e.configurable=!0,e.enumerable=!0,Reflect.decorate&&typeof t!="object"&&Object.defineProperty(o,t,e),e);/**
+ * @license
+ * Copyright 2021 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */function h(o){return(t,e)=>{const{slot:n,selector:r}=o??{},s="slot"+(n?`[name=${n}]`:":not([name])");return p(t,e,{get(){const c=this.renderRoot?.querySelector(s),l=c?.assignedElements(o)??[];return r===void 0?l:l.filter(f=>f.matches(r))}})}}var g=Object.defineProperty,b=Object.getOwnPropertyDescriptor,i=(o,t,e,n)=>{for(var r=n>1?void 0:n?b(t,e):t,s=o.length-1,c;s>=0;s--)(c=o[s])&&(r=(n?c(t,e,r):c(r))||r);return n&&r&&g(t,e,r),r};let a=class extends m{constructor(){super(...arguments),this.contentArea=o=>{const t=["LayoutContent","Variables",`-color-${o.color}`,`-size-${o.size}`,`-spacing-${o.spacing}`,`type-${o.theme}`],e=document.querySelector("#content");e&&(e.setAttribute("class",t.join(" ")),e.setAttribute("dir",o.direction.toString()))},this.formUpdate=o=>{const t={};for(const e of Array.from(o.elements))t[e.name]=e.checked??e.value;window.localStorage.setItem("content",JSON.stringify(t)),this.contentArea(t)}}connectedCallback(){super.connectedCallback();const o={color:"success",size:"default",spacing:"default",direction:"left",theme:"left"},t=window.localStorage.getItem("content"),e=t===null?o:JSON.parse(t),n=this.formEls[0];if(n){for(const r of Array.from(n.elements))r.checked===void 0?r.value=e[r.name].toString():r.checked=!!e[r.name];n.addEventListener("change",()=>{this.formUpdate(n)}),this.contentArea(e)}}render(){return d` <slot />`}};i([h({selector:"form"})],a.prototype,"formEls",2);a=i([u("header-form")],a);export{a as HeaderForm};

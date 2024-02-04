@@ -1,0 +1,33 @@
+---
+import '../../styles/globals.css';
+import './Layout.css';
+import Header from './Header.astro';
+import Footer from '../Footer.astro';
+const { title } = Astro.props;
+---
+<html lang="en" class="Variables type-dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/logo-icon.svg">
+  <title>{title}</title>
+</head>
+<body>
+<Header />
+<section class="Section narrow">
+  <div class="Section-Content" style="min-block-size: 75dvh">
+    <nav class="PageNav" style="width: 220px">
+      <a href="/docs/input">input</a>
+      <a href="/docs/navigation-action">navigation & action</a>
+      <a href="/docs/feedback">feedback</a>
+      <a href="/docs/content-display">content & display</a>
+      <a href="/docs/layout">layout</a>
+    </nav>
+    <div id="content" class="LayoutContent Variables">
+      <slot />
+    </div>
+  </div>
+</section>
+<Footer />
+</body>
+</html>

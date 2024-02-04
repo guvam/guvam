@@ -1,0 +1,18 @@
+---
+import logo from '../../assets/logos/guvamfull.svg?raw';
+import './Header.css';
+import { HeaderForm } from '../../elements/HeaderForm';
+import StyleSelector from '../blocks/StyleSelector.astro';
+
+---
+<header class="Section narrow positon-fixed">
+  <div class="Section-Content justify-between">
+    <a href="/" class="Header-Logo" aria-label="Guvam logo">
+      <Fragment set:html={logo} />
+    </a>
+    <div class="Header-Navigation">
+      <StyleSelector />
+    </div>
+  </div>
+</header>
+

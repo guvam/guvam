@@ -1,7 +1,6 @@
 /* https://nordhealth.design/tokens/#border-radius */
 
 /* https://tr.designtokens.org/format/ */
-/*
 
 :root {
   --font-icon: material, serif;
@@ -16,22 +15,21 @@
   --layer-modal: 600;
   --layer-popover: 700;
   --layer-tooltip: 800;
-  --app-bg: Canvas; !* Background of application content or documents *!
-  --app-text: CanvasText; !* Text color in application content or documents *!
-  --link: LinkText; !* Text of non-active, non-visited links *!
-  --link-active: ActiveText; !* Text of active links *!
-  --link-visited: VisitedText; !* Text of visited links *!
-  --emph-bg: Mark; !* Background of text that has been specially marked (such as by the HTML mark element) *!
-  --emph: MarkText; !* Text that has been specially marked (such as by the HTML mark element) *!
-  --ui-bg: AccentColor; !* Background of accented user interface controls *!
-  --ui-text: AccentColorText; !* Text of accented user interface controls *!
-  --button-border: ButtonBorder; !* Base border color of controls *!
-  --button-bg: ButtonFace; !* Background color of controls *!
-  --button-text: ButtonText; !* Text color of controls *!
-  --input-bg: Field; !* Background of input fields *!
-  --input-text: FieldText; !* Text in input fields *!
-  --disabled: GrayText; !* Text color for disabled items (e.g. a disabled control) *!
-  --selected-bg: Highlight; !* Background of selected items *!
-  --selected: HighlightText; !* Text color of selected items *!
+  --app-bg: Canvas; /* Background of application content or documents */
+  --app-text: CanvasText; /* Text color in application content or documents */
+  --link: LinkText; /* Text of non-active, non-visited links */
+  --link-active: ActiveText; /* Text of active links */
+  --link-visited: VisitedText; /* Text of visited links */
+  --emph-bg: Mark; /* Background of text that has been specially marked (such as by the HTML mark element) */
+  --emph: MarkText; /* Text that has been specially marked (such as by the HTML mark element) */
+  --ui-bg: AccentColor; /* Background of accented user interface controls */
+  --ui-text: AccentColorText; /* Text of accented user interface controls */
+  --button-border: ButtonBorder; /* Base border color of controls */
+  --button-bg: ButtonFace; /* Background color of controls */
+  --button-text: ButtonText; /* Text color of controls */
+  --input-bg: Field; /* Background of input fields */
+  --input-text: FieldText; /* Text in input fields */
+  --disabled: GrayText; /* Text color for disabled items (e.g. a disabled control) */
+  --selected-bg: Highlight; /* Background of selected items */
+  --selected: HighlightText; /* Text color of selected items */
 }
-*/

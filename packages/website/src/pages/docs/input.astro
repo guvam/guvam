@@ -1,0 +1,161 @@
+---
+import { Select } from '@guvam/elements';
+import Layout from '../../components/docs/Layout.astro';
+import Code from '../../components/blocks/Code.astro';
+import Title from '../../components/blocks/Title.astro';
+import codeCss from '../../elements/Clipboard.css?raw';
+import codeTs from '../../elements/Clipboard.ts?raw';
+import codeHtml from '../../elements/Clipboard.astro?raw';
+import light from 'bootstrap-icons/icons/lightbulb.svg?raw';
+import dark from 'bootstrap-icons/icons/moon-fill.svg?raw';
+import down from 'bootstrap-icons/icons/chevron-down.svg?raw';
+import './_input.css';
+---
+<Layout title="examples select">
+
+  <h1 class="Text type-h1 margin">Input</h1>
+  <Title id="button-section">class .Button</Title>
+  <div class="DocsTable">
+    <div class="DocTable-Elements">
+      <div>
+        <button class="Button">Button</button>
+      </div>
+      <div>
+        <button class="Button">
+          <Fragment set:html={light} />
+          Button
+        </button>
+      </div>
+      <div>
+        <button class="Button">
+          Select me Button
+          <Fragment set:html={down} />
+        </button>
+      </div>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Button
+      </div>
+      Button
+    </div>
+    <div>
+      <button class="Button" disabled>Button</button>
+    </div>
+    <div>
+      <div>
+        .Button [disabled]
+      </div>
+      disabled
+    </div>
+
+    <div>
+      <button class="Button type-outline">Button</button>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Button type-outline
+      </div>
+      outline
+    </div>
+
+    <div>
+      <button class="Button type-text">Button</button>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Button type-text
+      </div>
+      text
+    </div>
+
+    <div>
+      <button class="Button type-link">Button</button>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Button type-link
+      </div>
+      link
+    </div>
+
+    <div>
+      <button class="Button icon">
+        <Fragment set:html={dark} />
+      </button>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Button icon
+      </div>
+      icon
+    </div>
+
+    <div>
+      <button class="Button inline-wide">Button</button>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Button inline-wide
+      </div>
+      wide
+    </div>
+  </div>
+
+  <!--  <Code lang="js" title="highlighter.js" code={codeTs} />
+    <Code lang="html" title="highlighter.js" code={codeHtml} />
+    <Code lang="css" title="highlighter.js" code={codeCss} />-->
+
+  <!--  <Title title="Input" id="input-section" />
+    <p style="display: flex; gap: 1em; flex-wrap: wrap">
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input type-outline" />
+      <input type="text" placeholder="placeholder" class="Input" disabled />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+      <input type="text" placeholder="placeholder" class="Input" />
+    </p>-->
+
+
+  <Title id="dropdown-section">class .Dropdown</Title>
+  <div class="DocsTable">
+    <div class="DocTable-Elements">
+      <div>
+        <label class="Dropdown">
+          <select>
+            <option>One</option>
+            <option>Two</option>
+            <option>Three</option>
+          </select>
+          <Fragment set:html={down} />
+        </label>
+      </div>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        .Dropdown
+      </div>
+    </div>
+
+    <div>
+      <button class="Dropdown" disabled>Dropdown</button>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        [disabled]
+      </div>
+      disabled</div>
+  </div>
+
+
+  <Title id="textarea-section">Textarea</Title>
+  <Title id="checkbox-section">Checkbox</Title>
+  <Title id="radio-section">Radio</Title>
+  <Title id="switch-section">Switch</Title>
+  <Title id="rate-section">Rate</Title>
+  <Title id="slider-section">Slider</Title>
+
+</Layout>

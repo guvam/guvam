@@ -1,24 +1,45 @@
 .-color-default {
   --foundation-color: var(--color-status-default);
-  --foundation-color-reverse: var(--color-text-revers);
+  --foundation-color-reverse: var(--color-text-inverse);
 }
 
 .-color-success {
   --foundation-color: var(--color-status-success);
-  --foundation-color-reverse: var(--color-text-revers);
+  --foundation-color-reverse: var(--color-text-inverse);
 }
 
 .-color-info {
   --foundation-color: var(--color-status-info);
-  --foundation-color-reverse: var(--color-text-revers);
+  --foundation-color-reverse: var(--color-text-inverse);
 }
 
 .-color-warning {
   --foundation-color: var(--color-status-warning);
-  --foundation-color-reverse: var(--color-text-revers);
+  --foundation-color-reverse: var(--color-text-inverse);
 }
 
 .-color-danger {
   --foundation-color: var(--color-status-danger);
-  --foundation-color-reverse: var(--color-text-revers);
+  --foundation-color-reverse: var(--color-text-inverse);
+}
+
+
+.-color-primary {
+  --foundation-color: var(--color-primary);
+  --foundation-color-reverse: var(--color-text-inverse);
+}
+
+.-color-secondary {
+  --foundation-color: var(--color-secondary);
+  --foundation-color-reverse: var(--color-text-inverse);
+}
+
+.-color-accent {
+  --foundation-color: var(--color-accent);
+  --foundation-color-reverse: var(--color-text-inverse);
+}
+
+.-color-neutral {
+  --foundation-color: var(--color-neutral);
+  --foundation-color-reverse: var(--color-text-inverse);
 }

@@ -1,11 +1,19 @@
+.-size-xsmall {
+  --foundation-size: 0.6em;
+}
+
+.-size-small {
+  --foundation-size: 0.8em;
+}
+
 .-size-default {
   --foundation-size: 1em;
 }
 
-.-size-small {
-  --foundation-size: 0.75em;
+.-size-big {
+  --foundation-size: 1.2em;
 }
 
-.-size-big {
-  --foundation-size: 1.5em;
+.-size-xbig {
+  --foundation-size: 1.4em;
 }

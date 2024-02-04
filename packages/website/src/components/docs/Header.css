@@ -1,0 +1,136 @@
+.Header-Navigation {
+  display: flex;
+  column-gap: 1em;
+  justify-content: space-between;
+}
+
+.Header-Logo {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Header-Button {
+  position: relative;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  inline-size: 32px;
+  aspect-ratio: 1;
+  cursor: pointer;
+
+  @media (width <= 800px) {
+    display: flex;
+  }
+
+  & rect {
+    transition: all 250ms linear;
+    transform-origin: center;
+  }
+
+  .Header-Navigation & {
+    & rect:nth-child(3) {
+      opacity: 0;
+    }
+
+    & rect:nth-child(4) {
+      opacity: 0;
+    }
+  }
+
+  .Header-Navigation:has(:checked) & {
+    & rect:nth-child(1) {
+      opacity: 0;
+    }
+
+    & rect:nth-child(2) {
+      opacity: 0;
+    }
+
+    & rect:nth-child(3) {
+      opacity: 100;
+      transform: rotate(45deg);
+    }
+
+    & rect:nth-child(4) {
+      opacity: 100;
+      transform: rotate(-45deg);
+    }
+
+    & rect:nth-child(5) {
+      opacity: 0;
+    }
+  }
+}
+
+.Header-Language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 32px;
+  padding: 4px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-surface-card);
+  }
+}
+
+.Header-Dropdown {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+
+  @media (width <= 800px) {
+    flex-direction: column;
+  }
+}
+
+.Header-MenuItem {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  color: var(--color-text-base);
+  opacity: 1;
+  transition: opacity 1250ms ease-out;
+
+  @media (width <= 800px) {
+    font-size: 24px;
+    opacity: 0;
+
+    .Header-Navigation:has(:checked) & {
+      opacity: 1;
+    }
+  }
+}
+
+.Header-MenuItemText {
+  display: none;
+
+  @media (width <= 800px) {
+    display: block;
+  }
+}
+
+.Header-Theme {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 32px;
+  aspect-ratio: 1;
+  cursor: pointer;
+
+  &.type-light svg:nth-child(1) {
+    display: none;
+  }
+
+  &.type-dark svg:nth-child(2) {
+    display: none;
+  }
+}

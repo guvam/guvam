@@ -1,10 +1,11 @@
 ---
-import { ThemeToggle } from './ThemeToggle';
+import { ThemeToggle } from '../elements/ThemeToggle';
 import gitHubIcon from '../assets/logos/github.svg?raw';
 import logo from '../assets/logos/guvamfull.svg?raw';
-import light from '../assets/icons/light.svg?raw';
-import dark from '../assets/icons/dark.svg?raw';
-import '../styles/globals.css';
+
+import light from 'bootstrap-icons/icons/sun-fill.svg?raw';
+import dark from 'bootstrap-icons/icons/moon-fill.svg?raw';
+
 import './Header.css';
 ---
 <header class="Section narrow positon-fixed">
@@ -15,7 +16,7 @@ import './Header.css';
     <div class="Header-Navigation">
       <nav class="Header-Menu">
         <div class="Header-Dropdown">
-          <a href="https://docs.guvam.com/" class="Header-MenuItem">Documentation</a>
+          <a href="/docs" class="Header-MenuItem">Documentation</a>
           <a href="https://github.com/guvam/guvam/issues" class="Header-MenuItem">Community</a>
           <a href="https://github.com/guvam/guvam" target="_blank" class="Header-MenuItem">
             <span class="Header-MenuItemText">Github</span>

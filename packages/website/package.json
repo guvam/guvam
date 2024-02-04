@@ -10,15 +10,18 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@astrojs/lit": "^4.0.1",
-    "astro": "4.2.4",
+    "@astrojs/lit": "4.0.1",
+    "astro": "4.2.8",
     "ts-node": "10.9.2",
     "typescript": "5.3.3",
     "@guvam/css-base": "0.1.0",
-    "@guvam/css-components": "0.1.0"
+    "@guvam/theme-guvam": "0.1.0",
+    "@guvam/elements": "0.1.0"
   },
   "dependencies": {
     "@webcomponents/template-shadowroot": "^0.2.1",
-    "lit": "^3.1.1"
+    "lit": "^3.1.1",
+    "shiki": "0.14.7",
+    "bootstrap-icons": "1.11.3"
   }
 }

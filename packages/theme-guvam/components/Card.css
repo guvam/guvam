@@ -1,0 +1,40 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background-color: #1F282C;
+  border-radius: 0.5em;
+  transition-duration: 500ms;
+
+  &:hover {
+    background-color: #333c46;
+  }
+
+  &.type-light {
+    background-color: #3f4854;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    transition: 300ms ease-in-out;
+
+    &:hover {
+      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+      transform: scale(1.02);
+    }
+  }
+}
+
+.Card-Container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+
+  @media (width <= 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.Card-Header {
+  font-size: 24px;
+  color: var(--color-primary);
+  text-align: center;
+}

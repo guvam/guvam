@@ -1,0 +1,17 @@
+.Form {
+  display: flex;
+  gap: 2em;
+}
+
+.Form-Field {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.Select {
+  display: flex;
+  min-inline-size: 100px;
+  padding: 0.5em;
+  background-color: var(--color-ui-base);
+}

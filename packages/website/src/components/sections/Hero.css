@@ -1,67 +1,69 @@
 .Hero {
-  flex-direction:column;
-  justify-content:center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.Hero-Feature{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  align-items:center;
-  justify-content:center;
-  padding:106px 0 90px;
-  font-size:16px;
+.Hero-Feature {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 106px 0 90px;
+  font-size: 16px;
 }
 
-.Hero-Gradient{
+.Hero-Gradient {
   font-size: 72px;
-  font-weight:800;
-  color:transparent;
-  text-align:center;
-  background:linear-gradient(to right, #2F4F96,#30845E);
-  background-clip:text;
+  font-weight: 800;
+  color: transparent;
+  text-align: center;
+  background: linear-gradient(to right, #2F4F96, #30845E);
+  background-clip: text;
 }
 
 
-
-.Hero-CardBackground{
-  display:flex;
-  justify-content:center;
-  padding:32px;
+.Hero-CardBackground {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
   background: linear-gradient(161.08deg, rgb(232 239 255 / 10%) -9.04%, rgb(0 84 252 / 10%) -9.03%, rgb(0 84 252 / 4%) 94.88%);
 }
 
-.Hero-Cards{
-  gap:32px;
-  max-inline-size:1200px;
+.Hero-Cards {
+  gap: 32px;
+  max-inline-size: 1200px;
 }
 
-.Hero-Card{
-  cursor:default;
+.Hero-Card {
+  cursor: default;
   background-color: var(--color-surface-background);
 
-  &:hover{
-    background-color:var(--color-surface-card);
+  &:hover {
+    background-color: var(--color-surface-card);
   }
 }
 
-.Hero-CardHeader{
-  font-weight:700;
+.Hero-CardHeader {
+  font-weight: 700;
 }
 
-
-.Hero-Started{
-  display:flex;
+.Hero-Started {
+  display: flex;
   gap: 10px;
-  align-items:center;
-  justify-content:center;
-  padding:112px;
+  align-items: center;
+  justify-content: center;
+  padding: 112px;
 
   @media (width <= 1000px) {
     flex-direction: column;
     justify-content: stretch;
   }
 }
+
+
+
+
 
 
 

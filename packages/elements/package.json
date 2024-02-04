@@ -1,0 +1,8 @@
+{
+  "name": "@guvam/elements",
+  "main": "./index.ts",
+  "version": "0.1.0",
+  "description": "",
+  "author": "guvam",
+  "license": "MIT"
+}

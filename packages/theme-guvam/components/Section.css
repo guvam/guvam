@@ -50,4 +50,8 @@
   &.width-constrained {
     max-inline-size: 760px;
   }
+
+  &.column {
+    flex-direction: column;
+  }
 }

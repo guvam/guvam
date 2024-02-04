@@ -1,8 +1,51 @@
 ---
 import './Elements.css';
+import ElementBlock from '../blocks/ElementBlock.astro';
+import rightArrow from 'bootstrap-icons/icons/arrow-right.svg?raw';
+import StyleSelector from '../blocks/StyleSelector.astro';
+import Clipboard from '../../elements/Clipboard.astro';
 ---
 <section class="Section">
-  <div class="Section-Content">
-    <h2 class="text-h2">Elements</h2>
+  <div class="Section-Content column">
+
+    <div class="Element-Header">
+      <h2 class="Text type-h1">Elements Showcase</h2>
+      <a class="Button -color-neutral" href="/docs">
+        Explore UI Elements&nbsp
+        <Fragment set:html={rightArrow} />
+      </a>
+    </div>
+
+    <StyleSelector />
+
+    <div id="content">
+      <div class="Element-Showcase">
+        <ElementBlock>
+          <button class="Button">Button</button>
+        </ElementBlock>
+        <ElementBlock>
+          <button class="Button type-outline">Button</button>
+        </ElementBlock>
+        <ElementBlock>
+          <button class="Dropdown">
+            Dropdown
+            <Fragment set:html={rightArrow} />
+          </button>
+        </ElementBlock>
+        <ElementBlock>
+          <button class="Button icon">
+            <Clipboard />
+          </button>
+        </ElementBlock>
+        <ElementBlock>
+          <button class="Button icon">
+            <Fragment set:html={rightArrow} />
+          </button>
+        </ElementBlock>
+        <ElementBlock>
+          <input type="text" class="Input type-outline" placeholder="Mobile number" />
+        </ElementBlock>
+      </div>
+    </div>
   </div>
 </section>

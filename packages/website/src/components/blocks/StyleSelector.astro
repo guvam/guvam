@@ -1,0 +1,56 @@
+---
+import { HeaderForm } from '../../elements/HeaderForm';
+import './StyleSelector.css';
+---
+<HeaderForm client:load>
+  <form class="Form">
+    <div class="Form-Field">
+      <label for="color">Color</label>
+      <select class="Select" name="color" id="color">
+        <option value="default" selected>default</option>
+        <option value="success">success</option>
+        <option value="info">info</option>
+        <option value="warning">warning</option>
+        <option value="danger">danger</option>
+        <option value="primary">primary</option>
+        <option value="secondary">secondary</option>
+        <option value="accent">accent</option>
+        <option value="neutral">neutral</option>
+      </select>
+    </div>
+    <div class="Form-Field">
+      <label for="size">Size</label>
+      <select class="Select" name="size" id="size">
+        <option value="xsmall">x-small</option>
+        <option value="small">small</option>
+        <option value="default" selected>default</option>
+        <option value="big">big</option>
+        <option value="xbig">x-big</option>
+      </select>
+    </div>
+    <div class="Form-Field">
+      <label for="spacing">Spacing</label>
+      <select class="Select" name="spacing" id="spacing">
+        <option value="x-small">x-small</option>
+        <option value="small">small</option>
+        <option value="default" selected>default</option>
+        <option value="big">big</option>
+        <option value="x-big">x-big</option>
+      </select>
+    </div>
+    <div class="Form-Field">
+      <label for="direction">Direction</label>
+      <select class="Select" name="direction" id="direction">
+        <option value="ltr" selected>left</option>
+        <option value="rtl">right</option>
+      </select>
+    </div>
+    <div class="Form-Field">
+      <label for="theme">Theme</label>
+      <select class="Select" name="theme" id="theme">
+        <option value="light" selected>light</option>
+        <option value="dark">dark</option>
+      </select>
+    </div>
+  </form>
+</HeaderForm>

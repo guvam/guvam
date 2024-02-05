@@ -1,13 +1,14 @@
 import { LitElement, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
+import { property, customElement, queryAssignedElements } from 'lit/decorators.js';
 
 @customElement('guvam-accordionitem')
 export class AccordionItem extends LitElement {
   @property({ type: Boolean }) isOpen = false;
 
+  @queryAssignedElements({ selector: '.Accordion-Content' }) contentSlot!: HTMLElement[];
+
   connectedCallback(): void {
     super.connectedCallback();
-    // Since parentElement is an astro island
 
     this.addEventListener('click', () => {
       this.toggleOpen();
@@ -19,8 +20,8 @@ export class AccordionItem extends LitElement {
   }
 
   toggleOpen() {
-    this.isOpen = !this.isOpen;
-    this.classList.toggle('Accordion-Active');
+    this.contentSlot[0].classList.toggle('Accordion-Active');
+    this.isOpen = this.contentSlot[0].classList.contains('Accordion-Active');
     console.log('toggled');
   }
 }

@@ -23,7 +23,7 @@
   transition: max-block-size 0.2s ease-out;
 }
 
-.Accordion-Active > .Accordion-Content{
+.Accordion-Active{
     max-block-size:100px;
 }
 

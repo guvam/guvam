@@ -1,12 +1,12 @@
 {
-  "name": "@guvam/theme-guvam",
-  "main": "./index.css",
+  "name": "@guvam/guvam",
+  "main": "./index.ts",
   "version": "0.1.1",
+  "license": "MIT",
   "author": {
     "name": "Guvam OU",
     "url": "https://guvam.com"
   },
-  "license": "MIT",
   "description": "UI primitives for websites",
   "homepage": "https://guvam.com/docs",
   "repository": {

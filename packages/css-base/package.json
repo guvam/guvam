@@ -1,16 +1,21 @@
 {
   "name": "@guvam/css-base",
   "main": "./index.css",
-  "version": "0.1.0",
-  "description": "css reset",
+  "version": "0.1.1",
+  "description": "CSS reset",
   "keywords": [
     "css",
     "reset"
   ],
-  "author": "Guvam OU",
+  "author": {
+    "name": "Guvam OU",
+    "url": "https://guvam.com"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/guvam/guvam.git"
   }
 }
+
+

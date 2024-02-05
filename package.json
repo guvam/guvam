@@ -60,10 +60,8 @@
   "workspaces": [
     "packages/css-base",
     "packages/theme-guvam",
-    "packages/theme-website",
-    "packages/elements",
+    "packages/guvam",
     "packages/blocks",
-    "packages/website",
-    "packages/playground"
+    "packages/website"
   ]
 }

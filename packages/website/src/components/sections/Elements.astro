@@ -4,6 +4,8 @@ import ElementBlock from '../blocks/ElementBlock.astro';
 import rightArrow from 'bootstrap-icons/icons/arrow-right.svg?raw';
 import StyleSelector from '../blocks/StyleSelector.astro';
 import Clipboard from '../../elements/Clipboard.astro';
+import Accordion from '../../elements/Accordion/Accordion.astro';
+import AccordionItem from '../../elements/Accordion/AccordionItem.astro';
 ---
 <section class="Section">
   <div class="Section-Content column">
@@ -24,7 +26,21 @@ import Clipboard from '../../elements/Clipboard.astro';
           <button class="Button">Button</button>
         </ElementBlock>
         <ElementBlock>
-          <button class="Button type-outline">Button</button>
+          <Accordion>
+            <AccordionItem>
+              <span slot="Accordion-Header">header</span>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            </AccordionItem>
+            <AccordionItem>
+              <span slot="Accordion-Header">header</span>
+              <span>content</span>
+            </AccordionItem>
+            <AccordionItem>
+              <span slot="Accordion-Header">header</span>
+              <span>content</span>
+            </AccordionItem>
+          </Accordion>
+
         </ElementBlock>
         <ElementBlock>
           <button class="Dropdown">

@@ -3,6 +3,10 @@ import { Select } from '@guvam/elements';
 import Layout from '../../components/docs/Layout.astro';
 import Code from '../../components/blocks/Code.astro';
 import Title from '../../components/blocks/Title.astro';
+
+import Accordion from '../../elements/Accordion/Accordion.astro';
+import AccordionItem from '../../elements/Accordion/AccordionItem.astro';
+
 import codeCss from '../../elements/Clipboard.css?raw';
 import codeTs from '../../elements/Clipboard.ts?raw';
 import codeHtml from '../../elements/Clipboard.astro?raw';
@@ -19,18 +23,70 @@ import './_input.css';
   <Title id="dialog-section">class .Dialog</Title>
   <Title id="accordion-section">class .Accordion</Title>
   <div class="DocsTable">
-    <div>
-      <ul class="Accordion">
-        {[1,2,3,4,5].map(x => <li>
-          <div>Title</div>
-          <div>It’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fan</div>
-        </li>)}
-      </ul>
+    <div class="DocTable-Elements">
+      <div>
+        <Accordion>
+          <AccordionItem>
+            <span slot="Accordion-Header">header</span>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header">header</span>
+            <span>content</span>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header">header</span>
+            <span>content</span>
+          </AccordionItem>
+        </Accordion>
+      </div>
+
+      <div>
+
+      </div>
+
     </div>
     <div>
-      .Button [disabled]
+      <div class="DocsTable-Selector">
+        Unstyled Accordion
+      </div>
     </div>
-    <div>disabled</div>
+    <div class="DocTable-Elements">
+      <div>
+        <Accordion>
+          <AccordionItem >
+            <span slot="Accordion-Header" class="Card">header</span>
+            <div class="Card">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header" class="Card">header</span>
+            <Accordion>
+              <AccordionItem >
+                <span slot="Accordion-Header" class="Card">header</span>
+                <span class="Card">content</span>
+              </AccordionItem>
+              <AccordionItem>
+                <span slot="Accordion-Header" class="Card">header</span>
+                <span class="Card">content</span>
+              </AccordionItem>
+            </Accordion>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header" class="Card">header</span>
+            <span class="Card">content</span>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header" class="Card">header</span>
+            <span class="Card">content</span>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">
+        Nested, Styled Accordion
+      </div>
+    </div>
   </div>
   <Title id="tabs-section">class .Tabs</Title>
   <Title id="slides-section">class .Slides</Title>

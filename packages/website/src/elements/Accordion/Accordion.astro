@@ -1,7 +1,17 @@
 ---
+import { Accordion } from './Accordion'
 import './Accordion.css'
+
+const { singleOpen } = Astro.props;
+
+
+console.log(singleOpen)
 ---
 
-<div class="Accordion-Root">
+<Accordion  class="Accordion-Root" singleopen={false} client:load>
+
   <slot />
-</div>
+
+</Accordion>
+
+

@@ -33,7 +33,16 @@ import AccordionItem from '../../elements/Accordion/AccordionItem.astro';
             </AccordionItem>
             <AccordionItem>
               <span slot="Accordion-Header">header</span>
-              <span>content</span>
+              <Accordion>
+                <AccordionItem>
+                  <span slot="Accordion-Header">header</span>
+                  <span>content</span>
+                </AccordionItem>
+                <AccordionItem>
+                  <span slot="Accordion-Header">header</span>
+                  <span>content</span>
+                </AccordionItem>
+              </Accordion>
             </AccordionItem>
             <AccordionItem>
               <span slot="Accordion-Header">header</span>

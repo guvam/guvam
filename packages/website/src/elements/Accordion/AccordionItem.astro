@@ -1,17 +1,26 @@
 ---
-import { AccordionItem } from './AccordionItem'
 import './Accordion.css'
+
+
 ---
 
 
-  <AccordionItem class="Accordion-Item" client:load>
-    <div class="Accordion-Header">
-      <slot name="Accordion-Header" />
-    </div>
+<div class="Accordion-Item">
+  <div class="Accordion-Header">
+    <slot name="Accordion-Header" />
+  </div>
+  <section class="Accordion-AnimationWrapper">
+    <div class="Accordion-Animation">
+      <div class="Accordion-TransformWrapper">
+        <div class="Accordion-Content">
 
-    <div class="Accordion-Content">
-      <slot />
-    </div>
+          <slot />
 
-  </AccordionItem>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
 

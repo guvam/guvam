@@ -1,17 +1,8 @@
-.Accordion-Root{
-  inline-size:100%;
-  max-block-size:300px;
-
-}
-
 .Accordion-Item{
   display:grid;
-  flex-direction:column;
   grid-template-rows:0fr;
-  inline-size:100%;
   overflow: hidden;
   cursor:default;
-  border: 1px solid white;
 }
 
 

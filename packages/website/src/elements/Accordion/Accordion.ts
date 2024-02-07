@@ -9,9 +9,10 @@ export class Accordion extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
+
     console.log(this.singleOpen);
     this.accordionItems.forEach((el) => {
-      el.addEventListener('click', (e) => {
+      el.firstElementChild?.addEventListener('click', (e) => {
         e.stopPropagation();
         this.toggleOpen(el);
       });

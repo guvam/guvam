@@ -1,14 +1,15 @@
 ---
 import './Accordion.css'
 
-
+const { class: className, ...rest} = Astro.props;
 ---
 
 
-<div class="Accordion-Item">
+<div class:list={["Accordion-Item",className]}, {...rest} >
   <div class="Accordion-Header">
     <slot name="Accordion-Header" />
   </div>
+
   <section class="Accordion-AnimationWrapper">
     <div class="Accordion-Animation">
       <div class="Accordion-TransformWrapper">
@@ -20,7 +21,6 @@ import './Accordion.css'
       </div>
     </div>
   </section>
-
 
 </div>
 

@@ -25,10 +25,10 @@ import './_input.css';
   <div class="DocsTable">
     <div class="DocTable-Elements">
       <div>
-        <Accordion>
+        <Accordion singleopen>
           <AccordionItem>
             <span slot="Accordion-Header">header</span>
-            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <div>content</div>
           </AccordionItem>
           <AccordionItem>
             <span slot="Accordion-Header">header</span>
@@ -53,23 +53,26 @@ import './_input.css';
     </div>
     <div class="DocTable-Elements">
       <div>
-        <Accordion>
-          <AccordionItem >
+        <Accordion singleopen>
+          <AccordionItem>
             <span slot="Accordion-Header" class="Card">header</span>
-            <div class="Card">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <span class="Card">content</span>
           </AccordionItem>
           <AccordionItem>
             <span slot="Accordion-Header" class="Card">header</span>
-            <Accordion>
-              <AccordionItem >
-                <span slot="Accordion-Header" class="Card">header</span>
-                <span class="Card">content</span>
-              </AccordionItem>
-              <AccordionItem>
-                <span slot="Accordion-Header" class="Card">header</span>
-                <span class="Card">content</span>
-              </AccordionItem>
-            </Accordion>
+            <div style="margin-left:15px">
+              <Accordion>
+                <AccordionItem>
+                  <span slot="Accordion-Header" class="Card" >header</span>
+                  <span class="Card">content</span>
+                </AccordionItem>
+                <AccordionItem>
+                  <span slot="Accordion-Header" class="Card">header</span>
+                  <span class="Card">content</span>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
           </AccordionItem>
           <AccordionItem>
             <span slot="Accordion-Header" class="Card">header</span>

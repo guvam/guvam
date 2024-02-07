@@ -1,0 +1,18 @@
+---
+import './Tabs.css'
+
+const {label} = Astro.props;
+
+---
+
+<div class="Tab Card">
+  <button class="Tab-Header">
+    {label}
+  </button>
+
+  <div class="Tab-Content">
+    <slot />
+  </div>
+</div>
+
+

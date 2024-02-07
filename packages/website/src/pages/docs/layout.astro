@@ -2,6 +2,8 @@
 import Layout from '../../components/docs/Layout.astro';
 import Title from '../../components/blocks/Title.astro';
 import './_input.css';
+import Tabs from '../../elements/Tabs/Tabs.astro';
+import Tab from '../../elements/Tabs/Tab.astro';
 ---
 <Layout title="examples select">
   <h1 class="Text type-h1 margin">Layout</h1>
@@ -25,6 +27,21 @@ import './_input.css';
     <div>disabled</div>
   </div>
   <Title id="tabs-section">class .Tabs</Title>
+
+  <Tabs>
+    <Tab label="Tab1">
+        content1
+    </Tab>
+    <Tab label="Tab2">
+        content2
+    </Tab>
+    <Tab label="Tab3">
+        content3
+    </Tab>
+    <div slot="tab-content">test</div>
+  </Tabs>
+
+
   <Title id="slides-section">class .Slides</Title>
   <div class="DocsTable">
     <div>

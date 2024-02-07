@@ -1,14 +1,26 @@
 ---
-import { AccordionItem } from './AccordionItem';
-import './Accordion.css';
+import './Accordion.css'
+
+const { class: className, ...rest} = Astro.props;
 ---
 
-<AccordionItem class="Accordion-Item" client:load>
+
+<div class:list={["Accordion-Item",className]}, {...rest} >
   <div class="Accordion-Header">
     <slot name="Accordion-Header" />
   </div>
 
-  <div class="Accordion-Content">
-    <slot />
-  </div>
-</AccordionItem>
+  <section class="Accordion-AnimationWrapper">
+    <div class="Accordion-Animation">
+      <div class="Accordion-TransformWrapper">
+        <div class="Accordion-Content">
+
+          <slot />
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+

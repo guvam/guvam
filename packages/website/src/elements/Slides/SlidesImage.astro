@@ -1,12 +1,14 @@
 ---
 import { SlidesContent } from './SlidesContent';
 import './Slides.css';
+
+const { class: className, src: sourcename } = Astro.props;
 ---
 
 <SlidesContent>
   <div class="Slides-Image-Wrapper">
     <div class="Slides-Image">
-      <slot />
+      <img src={sourcename} />
     </div>
   </div>
 </SlidesContent>

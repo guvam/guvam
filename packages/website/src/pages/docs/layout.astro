@@ -14,7 +14,10 @@ import light from 'bootstrap-icons/icons/lightbulb.svg?raw';
 import dark from 'bootstrap-icons/icons/moon-fill.svg?raw';
 import down from 'bootstrap-icons/icons/chevron-down.svg?raw';
 import './_input.css';
+import Slides from '../../elements/Slides/Slides.astro';
+import SlidesImage from '../../elements/Slides/SlidesImage.astro';
 ---
+
 <Layout title="examples select">
   <h1 class="Text type-h1 margin">Layout</h1>
   <Title id="container-section">class .Container</Title>
@@ -41,15 +44,10 @@ import './_input.css';
         </Accordion>
       </div>
 
-      <div>
-
-      </div>
-
+      <div></div>
     </div>
     <div>
-      <div class="DocsTable-Selector">
-        Unstyled Accordion
-      </div>
+      <div class="DocsTable-Selector">Unstyled Accordion</div>
     </div>
     <div class="DocTable-Elements">
       <div>
@@ -63,7 +61,7 @@ import './_input.css';
             <div style="margin-left:15px">
               <Accordion>
                 <AccordionItem>
-                  <span slot="Accordion-Header" class="Card" >header</span>
+                  <span slot="Accordion-Header" class="Card">header</span>
                   <span class="Card">content</span>
                 </AccordionItem>
                 <AccordionItem>
@@ -72,7 +70,6 @@ import './_input.css';
                 </AccordionItem>
               </Accordion>
             </div>
-
           </AccordionItem>
           <AccordionItem>
             <span slot="Accordion-Header" class="Card">header</span>
@@ -86,24 +83,18 @@ import './_input.css';
       </div>
     </div>
     <div>
-      <div class="DocsTable-Selector">
-        Nested, Styled Accordion
-      </div>
+      <div class="DocsTable-Selector">Nested, Styled Accordion</div>
     </div>
   </div>
   <Title id="tabs-section">class .Tabs</Title>
   <Title id="slides-section">class .Slides</Title>
   <div class="DocsTable">
     <div>
-      <ul class="Slide">
-        {[1,2,3,4,5].map(x => <li>
-          <img src="https://placehold.co/200x100" alt="placeholder" />
-        </li>)}
-      </ul>
+      <Slides>
+        <SlidesImage />
+      </Slides>
     </div>
-    <div>
-      .Button [disabled]
-    </div>
+    <div>.Button [disabled]</div>
     <div>disabled</div>
   </div>
   <Title id="form-section">class .Form</Title>

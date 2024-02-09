@@ -1,4 +1,25 @@
 
-.Tab > .Tab-Content{
-  visibility:hidden;
+
+.Tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1em;
+  margin:20px;
+
+}
+
+.Tab-Window{
+  flex-basis:100%;
+}
+
+.Tab-Window > *{
+  display:none;
+}
+
+.Tab-Header{
+  color:red;
+}
+
+.Tab-Window > .Tab-Active{
+  display:block;
 }

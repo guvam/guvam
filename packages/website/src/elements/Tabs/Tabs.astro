@@ -2,15 +2,14 @@
 import { Tabs } from './Tabs'
 import './Tabs.css'
 ---
-<Tabs>
-  <div class="Tab-Headers">
-    <slot />
-  </div>
+
+
+<Tabs class="Tabs" client:load>
+  <slot name="tab-header" />
 
   <div class="Tab-Window">
-    <slot name="tab-content"></slot>
+      <slot name="tab-content"></slot>
   </div>
 </Tabs>
-
 
 

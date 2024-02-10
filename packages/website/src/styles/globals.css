@@ -1,14 +1,6 @@
 @import url('@guvam/css-base');
 @import url('@guvam/theme-guvam');
 
-.Variables {
-  font-family: var(--font);
-  font-size: var(--text-base);
-  line-height: 1.2;
-  color: var(--color-text-base);
-  background-color: var(--color-surface-background);
-}
-
 @font-face {
   font-family: roboto;
   font-style: normal;

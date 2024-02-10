@@ -8,7 +8,7 @@
   block-size: var(--ui-block-size);
   padding-inline: var(--foundation-size);
   font-size: var(--foundation-size);
-  color: var(--foundation-color-reverse);
+  color: var(--foundation-color-inverse);
   cursor: pointer;
   user-select: none;
   background-color: var(--foundation-color);

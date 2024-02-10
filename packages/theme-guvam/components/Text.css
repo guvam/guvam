@@ -1,44 +1,62 @@
 .Text {
+  font-size: var(--g-font-size-l);
+  color: var(--g-color-text);
+
   &.type-h1 {
-    font-size: 36px;
-    color: var(--color-text-base);
+    font-size: var(--g-font-size-xxxl);
+    color: var(--g-color-text);
   }
 
   &.type-h2 {
-    font-size: 28px;
-    color: var(--color-text-base);
+    font-size: var(--g-font-size-xxl);
+    color: var(--g-color-text);
   }
 
   &.type-h3 {
-    font-size: 18px;
-    color: var(--color-text-base);
+    font-size: var(--g-font-size-xl);
+    font-weight: var(--g-font-weight-heading);
+    color: var(--g-color-text);
   }
 
   &.type-link {
-    font-size: 18px;
-    color: var(--color-primary);
+    font-size: var(--g-font-size-l);
+    color: var(--g-color-link);
   }
 
-  &.emphasise {
-    font-weight: bold;
-    color: var(--color-primary);
-  }
-
-  &.center {
-    text-align: center;
+  &.type-p {
+    font-size: var(--g-font-size-l);
+    color: var(--g-color-text);
   }
 
   &.type-code {
     display: block;
     padding: 1em;
     margin-block-end: 1em;
-    font-family: monospace;
+    font-family: var(--g-font-family-code);
     white-space: pre;
     background-color: #2e3440;
-    border-radius: 4px
+    border-radius: var(--g-border-radius-sharp);
+  }
+
+  &.emphasise {
+    font-weight: var(--g-font-weight-strong);
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  .Text-Content &:not(:last-child) {
+    margin-block-end: 1em;
   }
 
   &.margin {
     margin-block-end: 1em;
+  }
+}
+
+.Text-Content {
+  &.center {
+    text-align: center;
   }
 }

@@ -1,90 +1,198 @@
 .Variables {
-  color-scheme: normal;
-
-  /* font */
-  --font: roboto;
-
-  /* elevation */
-  --block-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 20%), 0 1px 10px 0 rgb(0 0 0 / 20%);
-  --block-shadow-2: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
-
-  /* text */
-  --text-base: 16px;
-  --text-small: 12px;
-  --text-h1: 64px;
-  --text-h2: 48px;
-  --text-h3: 32px;
-  --text-h4: 24px;
-
-  /* space */
-  --space-layout: 2em;
-  --space-content: 1em;
-  --space-input: 0.2em;
-
-  /* foundation */
-  --foundation-size: 1em;
-  --foundation-color: var(--color-primary);
-  --foundation-color-reverse: var(--color-text-inverse);
-
-  /* status */
-  --color-status-success: #198754;
-  --color-status-info: #098ca6;
-  --color-status-warning: #ffc107;
-  --color-status-danger: #dc3545;
-  --color-status-default: #495057;
-
   &.type-light {
     color-scheme: light;
 
-    /* brand */
-    --color-primary: #3A4766;
-    --color-secondary: #141285;
-    --color-accent: #4F576B;
-    --color-neutral: #656565;
+    /* font */
+    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --g-font-family-code: "Nordhealth Mono", monospace, monospace;
+    --g-font-family-icon: "Nordhealth Mono", monospace, monospace;
+    --g-font-size-xxxl: 2.25rem;
+    --g-font-size-xxl: 1.5rem;
+    --g-font-size-xl: 1.25rem;
+    --g-font-size-l: 1rem;
+    --g-font-size-m: 0.875rem;
+    --g-font-size-s: 0.75rem;
+    --g-font-size-xs: 0.6875rem;
+    --g-font-weight: 400;
+    --g-font-weight-active: 500;
+    --g-font-weight-heading: 600;
+    --g-font-weight-strong: 670;
+    --g-line-height-tight: 1.15;
+    --g-line-height-heading: 1.2;
+    --g-line-height-caption: 1.3;
+    --g-line-height: 1.5;
+    --g-line-height-form: 20px;
+    --g-color-text: rgb(12 26 61);
+    --g-color-text-weak: rgb(54 67 74);
+    --g-color-text-weaker: rgb(102 118 128);
+    --g-color-text-weakest: rgb(178 186 191);
+    --g-color-inverse: rgb(255 255 255);
+    --g-color-selected-text: rgb(255 255 255);
+    --g-color-selected-background: rgb(255 255 255);
 
-    /* text */
-    --color-text-base: #001A4E;
-    --color-text-heading: #1b1d1f;
-    --color-text-active: #004CA3;
-    --color-text-hover: #111827;
-    --color-text-inverse: #fff;
+    /* link */
+    --g-color-link: rgb(53 89 199);
+    --g-color-link-active: rgb(53 89 199);
+    --g-color-link-pressed: rgb(53 89 199);
+
+    /* heading */
+    --g-color-heading: rgb(53 89 199);
+    --g-color-heading-inverse: rgb(53 89 199);
+
+    /* color */
+
+    /* weak, strong, border, status : color-mix */
+    --g-color-primary: rgb(103 208 188);
+    --g-color-secondary: rgb(239 199 68);
+    --g-color-accent: rgb(176 161 99);
+    --g-color-neutral: rgb(85 89 93);
+    --g-color-muted: rgb(196 200 203);
+    --g-color-error: rgb(210 64 35);
+    --g-color-danger: rgb(178 48 21);
+    --g-color-success: rgb(17 118 39);
+    --g-color-warning: rgb(148 105 0);
+    --g-color-highlight: rgb(121 58 175);
+    --g-color-info: rgb(52 81 178);
+    --g-color-progress: rgb(1 109 131);
 
     /* surface */
-    --color-surface-background: #FFF;
-    --color-surface-card: #E4E4E4;
-    --color-surface-active: #E1EEFF;
-    --color-surface-border: #DDD;
+    --g-color-background: rgb(255 255 255);
+    --g-color-border: rgb(216 222 228);
+    --g-space-xxl: 72px;
+    --g-space-xl: 36px;
+    --g-space-l: 24px;
+    --g-space-m: 16px;
+    --g-space-s: 8px;
+    --g-space-xs: 4px;
+    --g-border-radius-sharp: 0.02em;
+    --g-border-radius-s: 3px;
+    --g-border-radius: 5px;
+    --g-border-radius-pill: 999px;
+    --g-border-radius-circle: 50%;
 
-    /* ui */
-    --color-ui-base: #004CA3;
+    /* elevation */
+    --g-box-shadow: 0 1px 3px rgb(12 12 12 / 9%);
+    --g-box-shadow-header: 0 1px 5px rgb(12 12 12 / 5%);
+    --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
+    --g-box-shadow-nav: 0 0 0 1px var(--g-color-border), 0 5px 17px rgb(12 12 12 / 14%);
+    --g-box-shadow-popout: 0 4px 12px rgb(12 12 12 / 15%), 0 0 0 1px rgb(0 0 0 / 5%);
+    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
+
+    /* input */
+    --g-input-block-min: 2em;
+    --g-input-background: #d9d9d9;
+    --g-input-text: #d9d9d9;
+    --g-input-active: #d9d9d9;
+    --g-input-disabled: #5d5d5d;
+    --g-input-focus: #28483c;
+    --g-input-hover: #d8e7e6;
+    --g-input-ring: #d8e7e6;
+    --g-button-text: #d8e7e6;
+    --g-button-background: #d8e7e6;
+    --g-button-border: #d8e7e6;
+
+    /* transition */
+    --g-transition-quickly: 100ms ease;
+    --g-transition-slowly: 250ms ease;
+    --g-transition-mobile: 400ms ease;
   }
 
   &.type-dark {
-    /* brand */
-    --color-primary: #00bd87;
-    --color-secondary: #8f4cce;
-    --color-accent: #54c8da;
-    --color-neutral: #656565;
+    color-scheme: dark;
 
-    /* text */
-    --color-text-base: #E1E2E3;
-    --color-text-heading: #DCDCDC;
-    --color-text-active: #004CA3;
-    --color-text-hover: #111827;
-    --color-text-inverse: #EAEAEA;
+    /* font */
+    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    --g-font-family-code: "Nordhealth Mono", monospace, monospace;
+    --g-font-family-icon: "Nordhealth Mono", monospace, monospace;
+    --g-font-size-xxxl: 2.25rem;
+    --g-font-size-xxl: 1.5rem;
+    --g-font-size-xl: 1.25rem;
+    --g-font-size-l: 1rem;
+    --g-font-size-m: 0.875rem;
+    --g-font-size-s: 0.75rem;
+    --g-font-size-xs: 0.6875rem;
+    --g-font-weight: 400;
+    --g-font-weight-active: 500;
+    --g-font-weight-heading: 600;
+    --g-font-weight-strong: 670;
+    --g-line-height-tight: 1.15;
+    --g-line-height-heading: 1.2;
+    --g-line-height-caption: 1.3;
+    --g-line-height: 1.5;
+    --g-line-height-form: 20px;
+    --g-color-text: #E1E2E3;
+    --g-color-text-weak: rgb(54 67 74);
+    --g-color-text-weaker: rgb(102 118 128);
+    --g-color-text-weakest: rgb(178 186 191);
+    --g-color-inverse: rgb(255 255 255);
+    --g-color-selected-text: rgb(255 255 255);
+    --g-color-selected-background: rgb(255 255 255);
+
+    /* link */
+    --g-color-link: rgb(53 89 199);
+    --g-color-link-active: rgb(53 89 199);
+    --g-color-link-pressed: rgb(53 89 199);
+
+    /* heading */
+    --g-color-heading: #DCDCDC;
+    --g-color-heading-inverse: rgb(53 89 199);
+
+    /* color */
+
+    /* weak, strong, border, status : color-mix */
+    --g-color-primary: #3A4766;
+    --g-color-secondary: #141285;
+    --g-color-accent: #4F576B;
+    --g-color-neutral: rgb(85 89 93);
+    --g-color-muted: rgb(196 200 203);
+    --g-color-error: rgb(210 64 35);
+    --g-color-danger: rgb(178 48 21);
+    --g-color-success: rgb(17 118 39);
+    --g-color-warning: rgb(148 105 0);
+    --g-color-highlight: rgb(121 58 175);
+    --g-color-info: rgb(52 81 178);
+    --g-color-progress: rgb(1 109 131);
 
     /* surface */
-    --color-surface-background: #1F1F1F;
-    --color-surface-card: #2C2C2C;
-    --color-surface-active: #333D4A;
-    --color-surface-border: #BBB;
+    --g-color-background: #1F1F1F;
+    --g-color-popover-background: #3a3a3a;
+    --g-color-border: #333;
+    --g-space-xxl: 72px;
+    --g-space-xl: 36px;
+    --g-space-l: 24px;
+    --g-space-m: 16px;
+    --g-space-s: 8px;
+    --g-space-xs: 4px;
+    --g-border-radius-sharp: 0.02em;
+    --g-border-radius-s: 3px;
+    --g-border-radius: 5px;
+    --g-border-radius-pill: 999px;
+    --g-border-radius-circle: 50%;
 
-    /* ui */
-    --color-ui-base: #343434;
-    --color-ui-background: #fff;
-    --color-ui-active: #696908;
-    --color-ui-disabled: #fff; /* TODO */
-    --color-ui-hover: #fff; /* TODO */
-    --ui-block-size: 2em;
+    /* elevation */
+    --g-box-shadow: 0 1px 3px rgb(12 12 12 / 9%);
+    --g-box-shadow-header: 0 1px 5px rgb(12 12 12 / 5%);
+    --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
+    --g-box-shadow-nav: 0 0 0 1px var(--g-color-border), 0 5px 17px rgb(12 12 12 / 14%);
+    --g-box-shadow-popout: 0 4px 12px rgb(12 12 12 / 15%), 0 0 0 1px rgb(0 0 0 / 5%);
+    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
+
+    /* input */
+    --g-input-block-min: 2em;
+    --g-input-background: #d9d9d9;
+    --g-input-text: #d9d9d9;
+    --g-input-active: #d9d9d9;
+    --g-input-disabled: #5d5d5d;
+    --g-input-focus: #28483c;
+    --g-input-hover: #d8e7e6;
+    --g-input-ring: #d8e7e6;
+    --g-button-text: #d8e7e6;
+    --g-button-background: #d8e7e6;
+    --g-button-border: #626262;
+
+    /* transition */
+    --g-transition-quickly: 100ms ease;
+    --g-transition-slowly: 250ms ease;
+    --g-transition-mobile: 400ms ease;
   }
 }

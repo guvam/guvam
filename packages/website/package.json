@@ -14,9 +14,9 @@
     "astro": "4.2.8",
     "ts-node": "10.9.2",
     "typescript": "5.3.3",
-    "@guvam/css-base": "0.1.0",
-    "@guvam/theme-guvam": "0.1.0",
-    "@guvam/elements": "0.1.0"
+    "@guvam/css-base": "0.1.1",
+    "@guvam/theme-guvam": "0.1.1",
+    "@guvam/guvam": "0.1.1"
   },
   "dependencies": {
     "@webcomponents/template-shadowroot": "^0.2.1",

@@ -6,4 +6,5 @@ export default defineConfig({
   outDir: '../../docs',
   site: 'https://guvam.com',
   integrations: [lit()],
+  devToolbar: { enabled: false },
 });

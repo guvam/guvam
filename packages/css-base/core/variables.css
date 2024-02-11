@@ -1,0 +1,35 @@
+:root {
+  --g-font-family-icon: material, serif;
+  --g-font-family-code: monospace;
+  --g-font-family-text: ui-sans-serif, system-ui, -apple-system, roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif;
+  --g-color-text: CanvasText;
+  --g-color-background: Canvas;
+  --g-color-link: LinkText;
+  --g-color-link-active: ActiveText;
+  --g-color-link-visited: VisitedText;
+  --g-color-highlight-background: Mark;
+  --g-color-highlight: MarkText;
+  --g-input-highlight-background: AccentColor;
+  --g-input-highlight-text: AccentColorText;
+  --g-input-background: Field;
+  --g-input-text: FieldText;
+  --g-input-disabled: GrayText;
+  --g-button-border: ButtonBorder;
+  --g-button-background: ButtonFace;
+  --g-button-text: ButtonText;
+  --g-color-selected-text: Highlight;
+  --g-color-selected-background: HighlightText;
+}
+
+.Variables {
+  --foundation-size: 1em;
+  --foundation-color: var(--g-color-text);
+  --foundation-color-inverse: var(--g-color-background);
+
+  font-family: var(--g-font-family-text);
+  font-size: var(--g-font-size-l);
+  line-height: var(--g-line-height);
+  color: var(--g-color-text);
+  color-scheme: normal;
+  background-color: var(--g-color-background);
+}

@@ -1,27 +1,95 @@
 ---
-import '../../styles/globals.css';
-import './Layout.css';
 import Header from './Header.astro';
 import Footer from '../Footer.astro';
+import Analytics from '../blocks/Analytics.astro';
+import ThemeLoading from '../blocks/ThemeLoading.astro';
+import '../../styles/globals.css';
+import './Layout.css';
+
 const { title } = Astro.props;
 ---
-<html lang="en" class="Variables type-dark">
+<html lang="en" class="Variables">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="/logo-icon.svg">
   <title>{title}</title>
+  <Analytics />
+  <ThemeLoading />
 </head>
 <body>
 <Header />
 <section class="Section narrow">
   <div class="Section-Content" style="min-block-size: 75dvh">
     <nav class="PageNav" style="width: 220px">
-      <a href="/docs/input">input</a>
-      <a href="/docs/navigation-action">navigation & action</a>
-      <a href="/docs/feedback">feedback</a>
-      <a href="/docs/content-display">content & display</a>
-      <a href="/docs/layout">layout</a>
+      <details class="PageNav-Block" open>
+        <summary class="Text type-h3">getting started</summary>
+        <div class="PageNav-Links">
+          <a href="/docs">installation</a>
+          <a href="/docs/structure">css structure</a>
+          <a href="/docs/variables">variables</a>
+        </div>
+      </details>
+
+      <details class="PageNav-Block" open>
+        <summary class="Text type-h3">primitives</summary>
+        <div class="PageNav-Links">
+          <a href="/docs/variables">variables</a>
+          <a href="/docs/layout">layout</a>
+          <a href="/docs/text">text</a>
+        </div>
+      </details>
+
+      <details class="PageNav-Block" open>
+        <summary class="Text type-h3">form</summary>
+        <div class="PageNav-Links">
+          <a href="/docs/input">input</a>
+          <a href="/docs/button">button</a>
+          <a href="/docs/dropdown">dropdown</a>
+          <a href="/docs/input-group">input group</a>
+          <a href="/docs/checkbox">checkbox</a>
+          <a href="/docs/radio">radio</a>
+          <a href="/docs/switch">switch</a>
+          <a href="/docs/rate">rate</a>
+          <a href="/docs/slider">slider</a>
+        </div>
+      </details>
+
+      <details class="PageNav-Block" open>
+        <summary class="Text type-h3">navigation & action</summary>
+        <div class="PageNav-Links">
+          <a href="/docs/clipboard">Clipboard</a>
+          <a href="/docs/breadcrumb">Breadcrumb</a>
+          <a href="/docs/float">Float</a>
+          <a href="/docs/link">Link</a>
+          <a href="/docs/menu">Menu</a>
+          <a href="/docs/pagination">Pagination</a>
+        </div>
+      </details>
+
+      <details class="PageNav-Block" open>
+        <summary class="Text type-h3">feedback</summary>
+        <div class="PageNav-Links">
+          <a href="/docs/alert">Alert</a>
+          <a href="/docs/loading">Loading</a>
+          <a href="/docs/progressBar">ProgressBar</a>
+          <a href="/docs/tooltip">Tooltip</a>
+        </div>
+      </details>
+
+      <details class="PageNav-Block" open>
+        <summary class="Text type-h3">content & display</summary>
+        <div class="PageNav-Links">
+          <a href="/docs/avatar">Avatar</a>
+          <a href="/docs/badge">Badge</a>
+          <a href="/docs/chip">Chip</a>
+          <a href="/docs/icon">Icon</a>
+          <a href="/docs/image">Image</a>
+          <a href="/docs/list">List</a>
+          <a href="/docs/table">Table</a>
+          <a href="/docs/text">Text</a>
+        </div>
+      </details>
     </nav>
     <div id="content" class="LayoutContent Variables">
       <slot />

@@ -23,19 +23,19 @@
     color: var(--g-color-link);
   }
 
+  &.hashbang {
+    position: relative;
+
+    &:hover::before {
+      position: absolute;
+      inset-inline-start: -1em;
+      content: '#';
+    }
+  }
+
   &.type-p {
     font-size: var(--g-font-size-l);
     color: var(--g-color-text);
-  }
-
-  &.type-code {
-    display: block;
-    padding: 1em;
-    margin-block-end: 1em;
-    font-family: var(--g-font-family-code);
-    white-space: pre;
-    background-color: #2e3440;
-    border-radius: var(--g-border-radius-sharp);
   }
 
   &.emphasise {

@@ -1,12 +1,45 @@
 ---
 import { highlighter } from '../../elements/highlighter';
 import Clipboard from '../../elements/Clipboard.astro';
+import * as prettier from 'prettier';
 import './Code.css';
 
-const { title, lang, code } = Astro.props;
-const html = highlighter.codeToHtml(code.trim(), { lang });
+const { lang, type } = Astro.props;
+
+const prettierOptions: prettier.Options = {
+  'parser': lang,
+  'arrowParens': 'always',
+  'bracketSameLine': false,
+  'bracketSpacing': true,
+  'semi': true,
+  'experimentalTernaries': false,
+  'singleQuote': false,
+  'jsxSingleQuote': false,
+  'quoteProps': 'as-needed',
+  'trailingComma': 'all',
+  'singleAttributePerLine': false,
+  'htmlWhitespaceSensitivity': 'css',
+  'vueIndentScriptAndStyle': false,
+  'proseWrap': 'preserve',
+  'insertPragma': false,
+  'printWidth': 140,
+  'requirePragma': false,
+  'tabWidth': 2,
+  'useTabs': false,
+  'embeddedLanguageFormatting': 'auto'
+};
+
+let code = await Astro.slots.render('default');
+code = code?.replaceAll(/<template.*template>/g, '');
+const codeFormatted = await prettier.format(code, prettierOptions);
+const html = highlighter.codeToHtml(codeFormatted, { lang });
 ---
-<figure class="Code">
-  <Clipboard value={code} />
-  <div set:html={html} class="Text type-code" style="overflow: auto"></div>
-</figure>
+<div class="Code" class:list={type}>
+  <div class="Code-Example">
+    <slot />
+  </div>
+  <div class="Code-Block">
+    <Clipboard value={codeFormatted} />
+    <div set:html={html} />
+  </div>
+</div>

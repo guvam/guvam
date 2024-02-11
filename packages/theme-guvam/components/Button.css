@@ -24,24 +24,16 @@
     background-color: var(--button-color-disabled);
   }
 
-  &:has(svg:first-child) {
-    padding-inline-start: 1em;
-  }
-
-  &:has(svg:last-child) {
-    padding-inline-end: 1em;
-  }
-
   &:not(:disabled):hover {
     background-color: var(--button-color-hover);
   }
 
   &:not(:disabled):active {
     background-color: var(--button-color-hover);
-    translate: 0 1px;
+    scale: 0.98;
   }
 
-  &:not(:disabled):focus-within {
+  &:not(:disabled):focus-visible {
     background-color: var(--button-color-hover);
     outline: 2px solid var(--button-color-hover);
     outline-offset: 2px;
@@ -54,7 +46,7 @@
 
   &.type-outline {
     background-color: transparent;
-    border-color: var(--button-color);
+    border-color: var(--g-button-border);
   }
 
   &.type-text {
@@ -69,11 +61,8 @@
   &.icon {
     justify-content: center;
     aspect-ratio: 1;
-    border-radius: 50%;
-
-    &:has(svg) {
-      padding-inline: 0;
-    }
+    padding: 0;
+    border-radius: var(--g-border-radius-circle);
   }
 
   &.inline-wide {

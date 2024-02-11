@@ -1,1 +1,2 @@
-export * from './src/Select';
+export * from './src/Dropdown';
+export * from './src/Input';

@@ -155,7 +155,8 @@
 
     /* surface */
     --g-color-background: #1F1F1F;
-    --g-color-border: #BBB;
+    --g-color-popover-background: #3a3a3a;
+    --g-color-border: #333;
     --g-space-xxl: 72px;
     --g-space-xl: 36px;
     --g-space-l: 24px;
@@ -187,7 +188,7 @@
     --g-input-ring: #d8e7e6;
     --g-button-text: #d8e7e6;
     --g-button-background: #d8e7e6;
-    --g-button-border: #d8e7e6;
+    --g-button-border: #626262;
 
     /* transition */
     --g-transition-quickly: 100ms ease;

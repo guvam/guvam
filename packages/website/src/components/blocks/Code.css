@@ -1,20 +1,48 @@
 .Code {
-  --shiki-color-text: #EEE;
-  --shiki-color-background: #333;
-  --shiki-token-constant: #600;
-  --shiki-token-string: #700;
-  --shiki-token-comment: #800;
-  --shiki-token-keyword: #900;
-  --shiki-token-parameter: #A00;
-  --shiki-token-function: #B00;
-  --shiki-token-string-expression: #C00;
-  --shiki-token-punctuation: #D00;
-  --shiki-token-link: #E00;
+  margin-block-end: 3em;
+}
 
+.Code-Example {
+  --b: var(--g-color-background);
+  --l: var(--g-color-border);
+
+  padding: 1em;
+  background-image: repeating-linear-gradient(45deg,
+    var(--b) 0,
+    var(--b) 19px,
+    var(--l) 19px,
+    var(--l) 20px
+  );
+  border: 1px solid var(--g-color-border);
+  border-start-start-radius: var(--g-border-radius);
+  border-start-end-radius: var(--g-border-radius);
+
+  .Code.block & {
+    block-size: 240px;
+  }
+}
+
+.Code-Block {
   position: relative;
+  display: block;
+  padding: 1em;
+  overflow: auto;
+  font-family: var(--g-font-family-code);
+  background-color: #2e3440;
+  border-end-start-radius: var(--g-border-radius);
+  border-end-end-radius: var(--g-border-radius);
 
   .Clipboard {
     position: absolute;
     inset: 4px 4px auto auto;
+    display: none;
+
+    .Code-Block:hover & {
+      display: block;
+    }
+  }
+
+  & code {
+    white-space: pre;
   }
 }

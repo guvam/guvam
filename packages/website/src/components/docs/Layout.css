@@ -1,11 +1,24 @@
 .PageNav {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+
+.PageNav-Block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-block-end: 2em;
+}
+
+.PageNav-Links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding-inline-start: 0.5em;
+  border-inline-start: 1px solid var(--g-color-border);
 }
 
 .LayoutContent {
   inline-size: 100%;
   padding: 1em;
 }
-

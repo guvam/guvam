@@ -1,0 +1,20 @@
+.Slides {
+  display: block;
+  inline-size: 600px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--g-color-background);
+}
+
+.Slides-Inner {
+  position: relative;
+  inset: 0;
+}
+
+.Slides-Item {
+  position: absolute;
+
+  img {
+    display: block;
+  }
+}

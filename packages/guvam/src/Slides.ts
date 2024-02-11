@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit';
 import { property, customElement, queryAssignedElements } from 'lit/decorators.js';
 
-@customElement('guvam-accordionitem')
-export class AccordionItem extends LitElement {
+@customElement('guvam-slides')
+export class Slides extends LitElement {
   @property({ type: Boolean }) isOpen = false;
 
   @queryAssignedElements({ selector: '.Slides-Content' }) contentSlot!: HTMLElement[];

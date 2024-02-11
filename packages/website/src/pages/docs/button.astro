@@ -1,0 +1,84 @@
+---
+import Layout from '../../components/docs/Layout.astro';
+import Title from '../../components/blocks/Title.astro';
+import Code from '../../components/blocks/Code.astro';
+---
+<Layout title="guvam documentation: Button">
+  <h1 class="Text type-h1 margin">Button</h1>
+  <table class="Table">
+    <thead>
+      <tr>
+        <td>Class name</td>
+        <td>Type</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Button</td>
+        <td>component</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.type-outline</td>
+        <td>modifier</td>
+        <td>modifier modifier modifier</td>
+      </tr>
+      <tr>
+        <td>[disabled]</td>
+        <td>attribute</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <Title id="button">Button with link</Title>
+  <Code lang="html">
+    <button class="Button">
+      Button
+    </button>
+  </Code>
+
+  <Title id="button-outline">Outline button</Title>
+  <Code lang="html">
+    <button class="Button type-outline">
+      Button
+    </button>
+  </Code>
+
+  <Title id="button-text">Text button</Title>
+  <Code lang="html">
+    <button class="Button type-text">
+      Button
+    </button>
+  </Code>
+
+  <Title id="button-link">Link button</Title>
+  <Code lang="html">
+    <button class="Button type-link">
+      Button
+    </button>
+  </Code>
+
+  <Title id="button-icon">Icon button</Title>
+  <Code lang="html">
+    <button class="Button icon">
+      <i class="Icon-alarm" />
+    </button>
+  </Code>
+
+  <Title id="button-select">Button with icon</Title>
+  <Code lang="html">
+    <button class="Button">
+      Select me Button
+      <i class="Icon-arrow-down-short" />
+    </button>
+  </Code>
+
+  <Title id="button-disabled">Button disabled</Title>
+  <Code lang="html">
+    <button class="Button" disabled>
+      Disabled button
+    </button>
+  </Code>
+</Layout>

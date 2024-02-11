@@ -1,0 +1,16 @@
+.Table {
+  inline-size: 100%;
+  margin-block-end: 4em;
+
+  thead {
+    background-color: var(--g-color-border);
+  }
+
+  tr {
+    border-block-end: 1px solid var(--g-color-border);
+  }
+
+  td {
+    padding: 0.5em;
+  }
+}

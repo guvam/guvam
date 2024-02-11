@@ -1,9 +1,0 @@
-.ElementBlock {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  padding: 2em;
-  background-color: var(--color-surface-card);
-  border-radius: 8px;
-}

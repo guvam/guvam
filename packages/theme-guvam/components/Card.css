@@ -1,40 +1,36 @@
 .Card {
+  --card-surface: #2C2C2C;
+
   display: flex;
   flex-direction: column;
   gap: 1em;
   padding: 1em;
-  background-color: #1F282C;
-  border-radius: 0.5em;
-  transition-duration: 500ms;
-
-  &:hover {
-    background-color: #333c46;
-  }
+  background-color: var(--card-surface);
+  border-radius: var(--g-border-radius);
+  transition: var(--g-transition-slowly);
 
   &.type-light {
-    background-color: #3f4854;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    transition: 300ms ease-in-out;
+    background-color: color-mix(in srgb, var(--card-surface), transparent 20%);
+    box-shadow: var(--g-box-shadow-card);
+  }
 
-    &:hover {
-      box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
-      transform: scale(1.02);
-    }
+  &.type-square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    padding: 2em;
+    border-radius: 8px;
   }
 }
 
-.Card-Container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-
-  @media (width <= 1000px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.Card-Heading {
+  font-size: var(--g-font-size-xl);
+  font-weight: var(--g-font-weight-heading);
+  color: var(--g-color-primary);
 }
 
-.Card-Header {
-  font-size: 24px;
-  color: var(--color-primary);
-  text-align: center;
+.Card-Body {
+  font-size: var(--g-font-size-l);
+  color: var(--g-color-text);
 }

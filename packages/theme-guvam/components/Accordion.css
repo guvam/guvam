@@ -1,10 +1,9 @@
-.Accordion-Item{
-  display:grid;
+.Accordion-Item {
+  display: grid;
   grid-template-rows:0fr;
   overflow: hidden;
-  cursor:default;
+  cursor: default;
 }
-
 
 .Accordion-AnimationWrapper {
   display: grid;
@@ -13,12 +12,12 @@
   transition: grid-template-rows 0.4s ease-out;
 }
 
-.Accordion-Active > .Accordion-AnimationWrapper{
+.Accordion-Active > .Accordion-AnimationWrapper {
   grid-template-rows: 1fr;
 }
 
-.Accordion-Animation{
-  min-block-size:0
+.Accordion-Animation {
+  min-block-size: 0
 }
 
 .Accordion-TransformWrapper {
@@ -27,12 +26,8 @@
   transform: translateY(-100%);
 }
 
-
-.Accordion-Active .Accordion-AnimationWrapper, .Accordion-TransformWrapper
-{
+.Accordion-Active .Accordion-AnimationWrapper, .Accordion-TransformWrapper {
   visibility: visible;
-  transition: transform 0.4s ease-out visibility 0s linear;
+  transition: transform 0.4s ease-out, visibility 0s linear;
   transform: translateY(0);
 }
-
-

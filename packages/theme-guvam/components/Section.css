@@ -26,7 +26,7 @@
   gap: 2em;
   inline-size: 100%;
   max-inline-size: 1200px;
-
+  margin: auto;
 
   &.justify-between {
     justify-content: space-between;
@@ -53,5 +53,20 @@
 
   &.column {
     flex-direction: column;
+  }
+}
+
+.Section-Grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  inline-size: 100%;
+
+  @media (width <= 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (width <= 500px) {
+    grid-template-columns: 1fr;
   }
 }

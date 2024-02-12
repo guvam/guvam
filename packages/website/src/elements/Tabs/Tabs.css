@@ -2,24 +2,23 @@
 
 .Tabs{
   display:flex;
-  flex-wrap:wrap;
+  flex-flow:row;
   gap:1em;
   margin:20px;
-
 }
 
-.Tab-Window{
-  flex-basis:100%;
+.Tab-Headers{
+  display:flex;
+  flex-direction:column;
+  gap:1em;
 }
 
-.Tab-Window > *{
+
+
+.Tab-Contents > *{
   display:none;
 }
 
-.Tab-Header{
-  color:red;
-}
-
-.Tab-Window > .Tab-Active{
+.Tab-Active{
   display:block;
 }

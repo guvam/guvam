@@ -26,13 +26,16 @@ export class Tabs extends LitElement {
   }
 
   openTab(el: Element | null) {
-    if (el) el.classList.add('Tab-Active');
-    const children = this.contentsParent[0].children;
+    if (el) {
+      el.classList.add('Tab-Active');
 
-    for (let i = 0; i < children.length; i++) {
-      const child = children.item(i);
-      if (child != el) {
-        child?.classList.remove('Tab-Active');
+      const children = this.contentsParent[0].children;
+
+      for (let i = 0; i < children.length; i++) {
+        const child = children.item(i);
+        if (child != el) {
+          child?.classList.remove('Tab-Active');
+        }
       }
     }
   }

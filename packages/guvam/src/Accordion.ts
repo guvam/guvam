@@ -5,11 +5,11 @@ import { property, customElement, queryAssignedElements } from 'lit/decorators.j
 export class Accordion extends LitElement {
   @property({ type: Boolean }) singleOpen = false;
 
-  @queryAssignedElements({ selector: '.Accordion-Item', flatten: false }) accordionItems!: HTMLElement[];
+  @queryAssignedElements({ selector: '[data-target="accordion-item"]' }) accordionItems!: HTMLElement[];
 
   connectedCallback(): void {
     super.connectedCallback();
-
+    console.log(this.accordionItems);
     this.accordionItems.forEach((el) => {
       el.firstElementChild?.addEventListener('click', (e) => {
         e.stopPropagation();

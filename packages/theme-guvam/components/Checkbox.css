@@ -1,0 +1,38 @@
+.Checkbox {
+  --checkbox-color: var(--g-input-background);
+  --checkbox-color-hover: var(--g-input-hover);
+  --checkbox-color-disabled: var(--g-input-disabled);
+  --checkbox-size: 25px;
+
+  position: relative;
+  inline-size:25px;
+  block-size:25px;
+  cursor: pointer;
+  background-color:var(--checkbox-color);
+  border:1px black solid;
+  border-radius: 4px;
+
+  &:disabled {
+    cursor: default;
+    background-color: var(--checkbox-color-disabled);
+  }
+
+  &:not(:disabled):hover {
+    background-color: var(--checkbox-color-hover);
+  }
+
+  &:not(:disabled):checked
+  {
+    background-color:var(--g-color-primary);
+  }
+
+  &:not(:disabled):checked::after{
+    display: inline-flex;
+    align-self:center;
+    inline-size: 100%;
+    block-size: 100%;
+    content: '';
+    background-image: url('bootstrap-icons/icons/check.svg');
+    background-size: 100% 100%;
+  }
+}

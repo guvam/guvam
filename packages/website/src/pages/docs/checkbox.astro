@@ -2,7 +2,6 @@
 import Layout from '../../components/docs/Layout.astro';
 import Title from '../../components/blocks/Title.astro';
 import Code from '../../components/blocks/Code.astro';
-
 ---
 <Layout title="guvam documentation: Checkbox">
   <h1 class="Text type-h1 margin">Checkbox</h1>
@@ -33,16 +32,33 @@ import Code from '../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="checkbox"></Title>
+  <Title id="checkbox">Checkbox</Title>
   <Code lang="html">
-    <div >
-      <input class="Checkbox" type="checkbox"/>
-      <label>Checkbox</label>
-      <input class="Checkbox" disabled type="checkbox"/>
-      <label>Disabled</label>
-    </div>
+    <div>
+      <label>
+        <input class="Checkbox" type="checkbox">
+          1
+      </label>
 
+      <label>
+        <input class="Checkbox" type="checkbox" checked/>
+          2
+      </label>
+    </div>
   </Code>
 
+  <Title id="checkbox">Disabled Checkbox</Title>
+  <Code lang="html">
+    <div>
+      <label>
+        <input class="Checkbox" disabled type="checkbox"/>
+        Disabled
+      </label>
+      <label>
+        <input class="Checkbox" type="checkbox" disabled checked/>
+        Disabled
+      </label>
+    </div>
+  </Code>
 
 </Layout>

@@ -2,21 +2,26 @@
   --checkbox-color: var(--g-input-background);
   --checkbox-color-hover: var(--g-input-hover);
   --checkbox-color-disabled: var(--g-input-disabled);
-  --checkbox-size: 16px;
-
+  --checkbox-color-check: var(--g-color-text);
+  --checkbox-size: 20px;
 
   inline-size:var(--checkbox-size);
   block-size:var(--checkbox-size); /* testing purposes */
+  font-family: bootstrap-icons;
+  font-size:var(--checkbox-size);
   line-height: 1;
+  color:var(--checkbox-color-check);
   text-align:center;
+  vertical-align:middle;
   cursor: pointer;
   background-color:var(--checkbox-color);
   border:1px black solid;
   border-radius: 4px;
 
   &:disabled {
+    color: color-mix(in hsl, var(--checkbox-color-check), transparent 40%);
     cursor: default;
-    background-color: var(--checkbox-color-disabled);
+    background-color: var(--checkbox-color-disabled)
   }
 
   &:not(:disabled):hover {
@@ -36,15 +41,15 @@
 
   &::before{
     visibility:hidden;
-    content: url('./check.svg');
-
+    content: "\f26e";
   }
 
-  &:not(:disabled):checked::before{
+  &:checked::before{
     visibility: visible;
   }
+
 }
 
-/*
-  content: url('bootstrap-icons/icons/check.svg')
-*/
+
+
+

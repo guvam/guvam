@@ -18,3 +18,20 @@
     display: block;
   }
 }
+
+.Slides-Button {
+  all: unset;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.Slides-Button > * {
+  stroke: white;
+  fill: black;
+  width: 2rem;
+  height: 2rem;
+}

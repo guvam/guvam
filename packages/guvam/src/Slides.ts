@@ -5,12 +5,31 @@ import { property, customElement, queryAssignedElements } from 'lit/decorators.j
 export class Slides extends LitElement {
   @property({ type: Boolean }) isOpen = false;
 
-  @queryAssignedElements({ selector: '.Slides-Content' }) contentSlot!: HTMLElement[];
+  @queryAssignedElements({ selector: "[data-target= 'slides-images']" }) imagesWrapper!: HTMLElement[];
+
+  @queryAssignedElements({ selector: "[data-target= 'left-button']" }) imagesSliderLeft!: HTMLElement[];
+
+  @queryAssignedElements({ selector: "[data-target= 'right-button']" }) imagesSliderRight!: HTMLElement[];
+
+  private totalImages = 0;
+
+  private imageIndex = 0;
 
   connectedCallback(): void {
     super.connectedCallback();
+    console.log(this.imagesWrapper[0].children);
 
-    this.addEventListener('click', () => {
+    this.totalImages = this.imagesWrapper[0].children.length;
+
+    this.imagesSliderLeft[0].addEventListener('click', () => {
+      if (this.imageIndex > 0) this.imageIndex--;
+      else this.imageIndex = this.totalImages - 1;
+      this.toggleOpen();
+    });
+
+    this.imagesSliderRight[0].addEventListener('click', () => {
+      if (this.imageIndex < this.totalImages - 1) this.imageIndex++;
+      else this.imageIndex = 0;
       this.toggleOpen();
     });
   }
@@ -20,8 +39,9 @@ export class Slides extends LitElement {
   }
 
   toggleOpen() {
-    this.contentSlot[0].classList.toggle('Slides-Current');
-    this.isOpen = this.contentSlot[0].classList.contains('Slides-Current');
-    console.log('toggled');
+    for (let i = 0; i < this.totalImages; i++) {
+      const child = this.imagesWrapper[0].children.item(i);
+      child?.classList.toggle('Slide-Active', i == this.imageIndex);
+    }
   }
 }

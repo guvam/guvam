@@ -32,7 +32,7 @@ import Code from '../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="radio">Radio Button with link</Title>
+  <Title id="radio">Radio Button</Title>
   <Code lang="html">
     <label>
       <input class="Radio" type="radio" name="doc-radio"> 1
@@ -40,9 +40,22 @@ import Code from '../../components/blocks/Code.astro';
     <label>
       <input class="Radio" type="radio" name="doc-radio"> 2
     </label>
+
   </Code>
 
 
+  <Title id="radio">Radio Button disabled</Title>
+  <Code lang="html">
+    <label>
+      <input class="Radio" type="radio" checked name="doc-radio-disabled" disabled> 1
+    </label>
+    <label>
+      <input class="Radio" type="radio" name="doc-radio-disabled" disabled> 2
+    </label>
+    <label>
+      <input class="Radio" type="radio" name="doc-radio-disabled" disabled> 3
+    </label>
+  </Code>
 
 
 </Layout>

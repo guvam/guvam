@@ -2,7 +2,7 @@
   --radio-color: var(--g-input-background);
   --radio-color-hover: var(--g-input-hover);
   --radio-color-disabled: var(--g-input-disabled);
-
+  --radio-color-active: var(--g-input-focus);
 
 
   display:inline-flex;
@@ -11,6 +11,7 @@
   inline-size:20px;
   block-size:20px;
   vertical-align:middle;
+  cursor:pointer;
   background-color:var(--radio-color);
   border: solid lightgrey 1px;
   border-radius:50%;
@@ -18,15 +19,19 @@
   &:disabled {
     cursor: default;
     background-color: var(--radio-color-disabled);
+
   }
 
   &:checked{
-    border-color:red;
+    border-color:var(--radio-color-active);
   }
 
+  &:disabled:checked{
+    border-color:lightgrey;
+  }
 
   &:not(:disabled):hover, &:not(:disabled):focus-visible {
-    outline: 2px solid var(--radio-color-hover);
+    outline: 2px solid color-mix(in hsl, var(--radio-color-active), transparent 40%);
     outline-offset: 2px;
   }
 
@@ -35,7 +40,7 @@
     inline-size:50%;
     block-size:50%;
     content:'';
-    background-color:red;
+    background-color:var(--radio-color-active);
     border-radius:50%
   }
 }

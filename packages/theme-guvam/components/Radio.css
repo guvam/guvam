@@ -1,0 +1,45 @@
+.Radio{
+  --radio-color: var(--g-input-background);
+  --radio-color-hover: var(--g-input-hover);
+  --radio-color-disabled: var(--g-input-disabled);
+
+
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  inline-size:20px;
+  block-size:20px;
+  vertical-align:middle;
+  background-color:var(--radio-color);
+  border: solid lightgrey 1px;
+  border-radius:50%;
+
+  &:disabled {
+    cursor: default;
+    background-color: var(--radio-color-disabled);
+  }
+
+  &:checked{
+    border-color:red;
+  }
+
+
+  &:not(:disabled):hover, &:not(:disabled):focus-visible {
+    outline: 2px solid var(--radio-color-hover);
+    outline-offset: 2px;
+  }
+
+  &:checked::after{
+    display:inline-block;
+    inline-size:50%;
+    block-size:50%;
+    content:'';
+    background-color:red;
+    border-radius:50%
+  }
+}
+
+
+
+

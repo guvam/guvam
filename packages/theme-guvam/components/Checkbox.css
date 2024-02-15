@@ -1,41 +1,40 @@
 .Checkbox {
-  --checkbox-color: var(--g-input-background);
-  --checkbox-color-hover: var(--g-input-hover);
-  --checkbox-color-disabled: var(--g-input-disabled);
-  --checkbox-color-check: var(--g-color-text);
-  --checkbox-size: 20px;
+  --checkbox-background-color: var(--g-input-background);
+  --checkbox-hover: var(--g-input-hover);
+  --checkbox-disabled: var(--g-input-disabled);
+  --checkbox-checkmark: var(--g-input-text);
+  --checkbox-checked-background: var(--g-input-focus);
 
-  inline-size:var(--checkbox-size);
-  block-size:var(--checkbox-size); /* testing purposes */
+  inline-size:20px;
+  block-size:20px;
   font-family: bootstrap-icons;
-  font-size:var(--checkbox-size);
+  font-size:20px;
   line-height: 1;
-  color:var(--checkbox-color-check);
+  color:var(--checkbox-checkmark);
   text-align:center;
   vertical-align:middle;
   cursor: pointer;
-  background-color:var(--checkbox-color);
+  background-color:var(--checkbox-background-color);
   border:1px black solid;
   border-radius: 4px;
 
   &:disabled {
-    color: color-mix(in hsl, var(--checkbox-color-check), transparent 40%);
+    color: color-mix(in hsl, var(--checkbox-checkmark), transparent 60%);
     cursor: default;
-    background-color: var(--checkbox-color-disabled)
+    background-color: var(--checkbox-disabled)
   }
 
   &:not(:disabled):hover {
-    background-color: var(--checkbox-color-hover);
+    background-color: var(--checkbox-hover);
   }
 
   &:not(:disabled):checked
   {
-    background-color:var(--g-color-primary);
+    background-color:var(--checkbox-checked-background);
   }
 
   &:not(:disabled):focus-visible {
-    background-color: var(--checkbox-color-hover);
-    outline: 2px solid var(--checkbox-color-hover);
+    outline: 2px solid var(--checkbox-hover);
     outline-offset: 2px;
   }
 

@@ -35,14 +35,12 @@ export class Slides extends LitElement {
       this.toggleOpen();
     });
 
-    // I think this is correct? Haven't tested yet
-    // and not sure if this is the correct method
-    // used a combination of MDN docs and asking GPT how to textContent worked
-    // not sure how to integrate into Slides.astro due to how the buttons are created
     for (let i = 0; i < this.totalImages; i++) {
       const button = document.createElement('button');
       button.textContent = `Button ${i + 1}`;
       button.classList.add('Slider-Button-Bottom');
+      button.setAttribute('data-target', `button-${i}`);
+
       button.addEventListener('click', () => {
         this.imageIndex = i;
         this.toggleOpen();

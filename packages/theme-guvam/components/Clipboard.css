@@ -5,7 +5,8 @@
   overflow: hidden;
   cursor: pointer;
 
-  & svg {
+  & i {
+    display: block;
     inline-size: 16px;
     block-size: 16px;
     margin: 2px;

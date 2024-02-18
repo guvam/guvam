@@ -134,16 +134,16 @@
   aspect-ratio: 1;
   cursor: pointer;
 
-  & svg{
+  & i {
     display:none;
   }
 
 
-  &.type-dark svg:nth-child(1) {
+  &.type-dark i:nth-child(1) {
     display: inline;
   }
 
-  &.type-light svg:nth-child(2) {
+  &.type-light i:nth-child(2) {
     display: inline;
   }
 }

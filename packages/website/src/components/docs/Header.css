@@ -126,11 +126,11 @@
   aspect-ratio: 1;
   cursor: pointer;
 
-  &.type-light svg:nth-child(1) {
+  &.type-light i:nth-child(1) {
     display: none;
   }
 
-  &.type-dark svg:nth-child(2) {
+  &.type-dark i:nth-child(2) {
     display: none;
   }
 }

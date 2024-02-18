@@ -1,7 +1,13 @@
 /* stylelint-disable */
 
+.Icon,[class*=" Icon-"],[class^="Icon-"] {
+  display: inline-flex;
+  align-items: center;
+}
+
 .Icon::before,[class*=" Icon-"]::before,[class^="Icon-"]::before {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   block-size: 1em;
   aspect-ratio: 1;
   font-family: bootstrap-icons;

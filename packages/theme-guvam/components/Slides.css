@@ -1,0 +1,37 @@
+.Slides {
+  display: block;
+  inline-size: 600px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--g-color-background);
+}
+
+.Slides-Inner {
+  position: relative;
+  inset: 0;
+}
+
+.Slides-Item {
+  position: absolute;
+
+  img {
+    display: block;
+  }
+}
+
+.Slides-Button {
+  all: unset;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.Slides-Button > * {
+  stroke: white;
+  fill: black;
+  width: 2rem;
+  height: 2rem;
+}

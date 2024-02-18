@@ -1,0 +1,69 @@
+---
+import Layout from '../../components/docs/Layout.astro';
+import Title from '../../components/blocks/Title.astro';
+import Code from '../../components/blocks/Code.astro';
+import { Slides } from '@guvam/guvam';
+---
+
+<Layout title="guvam documentation: Slides">
+  <h1 class="Text type-h1 margin">Slides</h1>
+  <table class="Table">
+    <thead>
+      <tr>
+        <td>Class name</td>
+        <td>Type</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>guvam-slides</td>
+        <td>element</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Slides</td>
+        <td>style</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.type-outline</td>
+        <td>modifier</td>
+        <td>modifier modifier modifier</td>
+      </tr>
+      <tr>
+        <td>[disabled]</td>
+        <td>attribute</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <Slides client:load />
+
+  <Title id="dropdown">Slides</Title>
+  <Code lang="html" type="inline">
+    <guvam-slides class="Slides">
+      <button class="Button" data-target="left-button">Bata</button>
+      <button class="Button" data-target="right-button">Batata</button>
+      <div data-target="bottom-button"></div>
+      <div class="Slides-Inner" data-target="slides-images">
+        <div class="Slides-Item Slide-Active">
+          <img src="https://placehold.co/600x400" alt="placeholder" />
+        </div>
+        <div class="Slides-Item">
+          <img src="https://placehold.co/600x400" alt="placeholder" />
+        </div>
+        <div class="Slides-Item">
+          <img src="https://placehold.co/600x400" alt="placeholder" />
+        </div>
+        <div class="Slides-Item">
+          <img src="https://placehold.co/600x400" alt="placeholder" />
+        </div>
+        <div class="Slides-Item">
+          <img src="https://placehold.co/600x400" alt="placeholder" />
+        </div>
+      </div>
+    </guvam-slides>
+  </Code>
+</Layout>

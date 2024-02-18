@@ -1,10 +1,25 @@
 ---
+import { Select } from '@guvam/elements';
 import Layout from '../../components/docs/Layout.astro';
+import Code from '../../components/blocks/Code.astro';
 import Title from '../../components/blocks/Title.astro';
+
+import Accordion from '../../elements/Accordion/Accordion.astro';
+import AccordionItem from '../../elements/Accordion/AccordionItem.astro';
+
+import codeCss from '../../elements/Clipboard.css?raw';
+import codeTs from '../../elements/Clipboard.ts?raw';
+import codeHtml from '../../elements/Clipboard.astro?raw';
+import light from 'bootstrap-icons/icons/lightbulb.svg?raw';
+import dark from 'bootstrap-icons/icons/moon-fill.svg?raw';
+import down from 'bootstrap-icons/icons/chevron-down.svg?raw';
 import './_input.css';
+import Slides from '../../elements/Slides/Slides.astro';
+import SlidesImage from '../../elements/Slides/SlidesImage.astro';
 import Tabs from '../../elements/Tabs/Tabs.astro';
 import Tab from '../../elements/Tabs/Tab.astro';
 ---
+
 <Layout title="examples select">
   <h1 class="Text type-h1 margin">Layout</h1>
   <Title id="container-section">class .Container</Title>
@@ -13,18 +28,65 @@ import Tab from '../../elements/Tabs/Tab.astro';
   <Title id="dialog-section">class .Dialog</Title>
   <Title id="accordion-section">class .Accordion</Title>
   <div class="DocsTable">
-    <div>
-      <ul class="Accordion">
-        {[1,2,3,4,5].map(x => <li>
-          <div>Title</div>
-          <div>It’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fan</div>
-        </li>)}
-      </ul>
+    <div class="DocTable-Elements">
+      <div>
+        <Accordion singleopen>
+          <AccordionItem>
+            <span slot="Accordion-Header">header</span>
+            <div>content</div>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header">header</span>
+            <span>content</span>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header">header</span>
+            <span>content</span>
+          </AccordionItem>
+        </Accordion>
+      </div>
+
+      <div></div>
     </div>
     <div>
-      .Button [disabled]
+      <div class="DocsTable-Selector">Unstyled Accordion</div>
     </div>
-    <div>disabled</div>
+    <div class="DocTable-Elements">
+      <div>
+        <Accordion singleopen>
+          <AccordionItem>
+            <span slot="Accordion-Header" class="Card">header</span>
+            <span class="Card">content</span>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header" class="Card">header</span>
+            <div style="margin-left:15px">
+              <Accordion>
+                <AccordionItem>
+                  <span slot="Accordion-Header" class="Card">header</span>
+                  <span class="Card">content</span>
+                </AccordionItem>
+                <AccordionItem>
+                  <span slot="Accordion-Header" class="Card">header</span>
+                  <span class="Card">content</span>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header" class="Card">header</span>
+            <span class="Card">content</span>
+          </AccordionItem>
+          <AccordionItem>
+            <span slot="Accordion-Header" class="Card">header</span>
+            <span class="Card">content</span>
+          </AccordionItem>
+        </Accordion>
+      </div>
+    </div>
+    <div>
+      <div class="DocsTable-Selector">Nested, Styled Accordion</div>
+    </div>
   </div>
   <Title id="tabs-section">class .Tabs</Title>
 
@@ -51,15 +113,11 @@ import Tab from '../../elements/Tabs/Tab.astro';
   <Title id="slides-section">class .Slides</Title>
   <div class="DocsTable">
     <div>
-      <ul class="Slide">
-        {[1,2,3,4,5].map(x => <li>
-          <img src="https://placehold.co/200x100" alt="placeholder" />
-        </li>)}
-      </ul>
+      <Slides>
+        <SlidesImage src={srcname}/>
+      </Slides>
     </div>
-    <div>
-      .Button [disabled]
-    </div>
+    <div>.Button [disabled]</div>
     <div>disabled</div>
   </div>
   <Title id="form-section">class .Form</Title>

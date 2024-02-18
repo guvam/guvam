@@ -1,0 +1,20 @@
+.Accordion-Item {
+  display: grid;
+  overflow: hidden;
+  cursor: default;
+}
+
+.Accordion-Content {
+  display: grid;
+  grid-template-rows: 0;
+
+  .Accordion-Active & {
+    grid-template-rows: 1fr;
+  }
+ }
+
+
+
+
+
+

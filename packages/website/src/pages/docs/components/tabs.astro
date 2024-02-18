@@ -1,0 +1,65 @@
+---
+import Layout from '../../../components/docs/Layout.astro';
+import Title from '../../../components/blocks/Title.astro';
+import Code from '../../../components/blocks/Code.astro';
+import { Tabs } from '@guvam/guvam';
+---
+<Layout title="Tabs Guvam Component">
+  <h1 class="Text type-h1 margin">Tabs</h1>
+  <table class="Table">
+    <thead>
+    <tr>
+      <td>Class name</td>
+      <td>Type</td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>guvam-tabs</td>
+      <td>element</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tabs</td>
+      <td>style</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.type-outline</td>
+      <td>modifier</td>
+      <td>modifier modifier modifier</td>
+    </tr>
+    <tr>
+      <td>[disabled]</td>
+      <td>attribute</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <Tabs client:load />
+  <Title id="tabs">Tabs</Title>
+  <Code lang="html" type="block">
+    <guvam-tabs class="Tabs">
+      <div class="Tab-Headers" data-target="Tab-Headers">
+        <button class="Button type-text">
+          tab1
+        </button>
+        <button class="Button type-text">
+          tab2
+        </button>
+        <button class="Button type-text">
+          tab3
+        </button>
+      </div>
+
+      <div class="Tab-Contents Card" data-target="Tab-Contents">
+        <div>content1</div>
+        <div>content2</div>
+        <div>content3</div>
+      </div>
+
+    </guvam-tabs>
+  </Code>
+</Layout>

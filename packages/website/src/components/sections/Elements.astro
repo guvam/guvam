@@ -1,8 +1,7 @@
 ---
-import './Elements.css';
-import rightArrow from 'bootstrap-icons/icons/arrow-right.svg?raw';
 import StyleSelector from '../blocks/StyleSelector.astro';
 import Clipboard from '../../elements/Clipboard.astro';
+import './Elements.css';
 ---
 <section class="Section Element">
   <div class="Section-Content column">
@@ -11,7 +10,7 @@ import Clipboard from '../../elements/Clipboard.astro';
       <h2 class="Text type-h1">Elements Showcase</h2>
       <a class="Button -color-neutral" href="/docs">
         Explore UI Elements&nbsp
-        <Fragment set:html={rightArrow} />
+        <i class="Icon-arrow-right" />
       </a>
     </div>
 
@@ -28,7 +27,7 @@ import Clipboard from '../../elements/Clipboard.astro';
         <div class="Card type-square">
           <button class="Button">
             Dropdown
-            <Fragment set:html={rightArrow} />
+            <i class="Icon-arrow-right" />
           </button>
         </div>
         <div class="Card type-square">
@@ -38,7 +37,7 @@ import Clipboard from '../../elements/Clipboard.astro';
         </div>
         <div class="Card type-square">
           <button class="Button icon">
-            <Fragment set:html={rightArrow} />
+            <i class="Icon-arrow-right" />
           </button>
         </div>
         <div class="Card type-square">

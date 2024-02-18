@@ -1,0 +1,72 @@
+---
+import Layout from '../../../components/docs/Layout.astro';
+import Title from '../../../components/blocks/Title.astro';
+import Code from '../../../components/blocks/Code.astro';
+import { Accordion  } from '@guvam/guvam';
+---
+<Layout title="Accordion Guvam Component">
+  <h1 class="Text type-h1 margin">Accordion</h1>
+  <table class="Table">
+    <thead>
+    <tr>
+      <td>Class name</td>
+      <td>Type</td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>guvam-accordion</td>
+      <td>element</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Accordion</td>
+      <td>style</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.type-outline</td>
+      <td>modifier</td>
+      <td>modifier modifier modifier</td>
+    </tr>
+    <tr>
+      <td>[disabled]</td>
+      <td>attribute</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <Accordion client:load />
+
+  <Title id="dropdown">Accordion</Title>
+  <Code lang="html" type="block">
+    <guvam-accordion class="Accordion">
+      <div class='Accordion-Item' data-target="accordion-item">
+        <div class="Accordion-Header">
+          header
+        </div>
+        <div class="Accordion-Content">
+          content
+        </div>
+      </div>
+      <div class='Accordion-Item' data-target="accordion-item">
+        <div class="Accordion-Header">
+          header
+        </div>
+        <div class="Accordion-Content">
+          content
+        </div>
+      </div>
+      <div class='Accordion-Item' data-target="accordion-item">
+        <div class="Accordion-Header">
+          header
+        </div>
+        <div class="Accordion-Content">
+          content
+        </div>
+      </div>
+    </guvam-accordion>
+  </Code>
+</Layout>

@@ -1,0 +1,66 @@
+---
+import Layout from '../../components/docs/Layout.astro';
+import Title from '../../components/blocks/Title.astro';
+import './_input.css';
+import Tabs from '../../elements/Tabs/Tabs.astro';
+import Tab from '../../elements/Tabs/Tab.astro';
+---
+<Layout title="examples select">
+  <h1 class="Text type-h1 margin">Layout</h1>
+  <Title id="container-section">class .Container</Title>
+  <Title id="card-section">class .Card</Title>
+  <Title id="list-section">class .List</Title>
+  <Title id="dialog-section">class .Dialog</Title>
+  <Title id="accordion-section">class .Accordion</Title>
+  <div class="DocsTable">
+    <div>
+      <ul class="Accordion">
+        {[1,2,3,4,5].map(x => <li>
+          <div>Title</div>
+          <div>It’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fanIt’s common to build DIY air purifiers by basically strapping a filter to a fan</div>
+        </li>)}
+      </ul>
+    </div>
+    <div>
+      .Button [disabled]
+    </div>
+    <div>disabled</div>
+  </div>
+  <Title id="tabs-section">class .Tabs</Title>
+
+  <Tabs>
+    <button slot="tab-header" class="Card">
+        tab1
+    </button>
+    <button slot="tab-header" class="Card">
+      tab2
+    </button>
+    <button slot="tab-header" disabled class="Card">
+        tab3
+    </button>
+
+    <div slot="tab-content">test1</div>
+
+    <div slot="tab-content">test2</div>
+
+    <div slot="tab-content">test3</div>
+
+  </Tabs>
+
+
+  <Title id="slides-section">class .Slides</Title>
+  <div class="DocsTable">
+    <div>
+      <ul class="Slide">
+        {[1,2,3,4,5].map(x => <li>
+          <img src="https://placehold.co/200x100" alt="placeholder" />
+        </li>)}
+      </ul>
+    </div>
+    <div>
+      .Button [disabled]
+    </div>
+    <div>disabled</div>
+  </div>
+  <Title id="form-section">class .Form</Title>
+</Layout>

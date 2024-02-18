@@ -1,0 +1,50 @@
+.Radio{
+  --radio-background-color: var(--g-input-background);
+  --radio-hover: color-mix(in hsl, var(--g-input-hover), transparent 60%);
+  --radio-disabled: var(--g-input-disabled);
+  --radio-active: var(--g-input-focus);
+  --radio-border: var(--g-input-ring);
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  inline-size:20px;
+  block-size:20px;
+  vertical-align:middle;
+  cursor:pointer;
+  background-color:var(--radio-background-color);
+  border: solid var(--radio-border) 1px;
+  border-radius:50%;
+
+  &:disabled {
+    cursor: default;
+    background-color: var(--radio-disabled);
+
+  }
+
+  &:checked{
+    border-color:var(--radio-active);
+  }
+
+  &:disabled:checked{
+    border-color:lightgrey;
+  }
+
+  &:not(:disabled):hover, &:not(:disabled):focus-visible {
+    outline: 2px solid var(--radio-hover);
+    outline-offset: 2px;
+  }
+
+  &:checked::after{
+    display:inline-block;
+    inline-size:50%;
+    block-size:50%;
+    content:'';
+    background-color:var(--radio-active);
+    border-radius:50%
+  }
+}
+
+
+
+

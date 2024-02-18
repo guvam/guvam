@@ -1,0 +1,12 @@
+---
+const { type } = Astro.props;
+const value = {
+  'element': '-color-primary',
+  'attribute': '-color-accent',
+  'style': '-color-success',
+  'variable': '-color-neutral'
+};
+---
+<div class={`Badge ${value[type] ?? '-color-default'}`}>
+  {value[type]? type: ''}
+</div>

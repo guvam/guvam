@@ -1,0 +1,24 @@
+
+
+.Tabs{
+  display:flex;
+  flex-flow:row;
+  gap:1em;
+  margin:20px;
+}
+
+.Tab-Headers{
+  display:flex;
+  flex-direction:column;
+  gap:1em;
+}
+
+
+
+.Tab-Contents > *{
+  display:none;
+}
+
+.Tab-Active{
+  display:block;
+}

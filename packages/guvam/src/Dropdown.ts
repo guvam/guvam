@@ -21,5 +21,3 @@ export class Dropdown extends LitElement {
     return html` <slot />`;
   }
 }
-
-/*customElements.define('guvam-dropdown', Dropdown);*/

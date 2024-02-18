@@ -1,0 +1,25 @@
+.Collapse {
+  display: grid;
+}
+
+.Collapse-Action {
+  padding: 1em;
+  cursor: pointer;
+  background-color: #2F4F96;
+}
+
+.Collapse-Content {
+  display: grid;
+  grid-template-rows: 0fr;
+  background-color: #2f8a96;
+
+  /* transition: grid-template-rows 500ms ease-out; */
+
+  .Collapse[open] & {
+    grid-template-rows: 1fr;
+  }
+}
+
+.inner {
+  overflow: hidden;
+}

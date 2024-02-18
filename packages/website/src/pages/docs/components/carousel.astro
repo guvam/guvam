@@ -2,11 +2,11 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Slides } from '@guvam/guvam';
+import { Carousel } from '@guvam/guvam';
 ---
 
-<Layout title="Slides Guvam Component">
-  <h1 class="Text type-h1 margin">Slides</h1>
+<Layout title="Carousel Guvam Component">
+  <h1 class="Text type-h1 margin">Carousel</h1>
   <table class="Table">
     <thead>
       <tr>
@@ -39,11 +39,11 @@ import { Slides } from '@guvam/guvam';
     </tbody>
   </table>
 
-  <Slides client:load />
+  <Carousel client:load />
 
   <Title id="dropdown">Slides</Title>
   <Code lang="html" type="inline">
-    <guvam-slides class="Slides">
+    <guvam-carousel class="Slides">
       <button class="Button" data-target="left-button">Bata</button>
       <button class="Button" data-target="right-button">Batata</button>
       <div data-target="bottom-button"></div>
@@ -64,6 +64,6 @@ import { Slides } from '@guvam/guvam';
           <img src="https://placehold.co/600x400" alt="placeholder" />
         </div>
       </div>
-    </guvam-slides>
+    </guvam-carousel>
   </Code>
 </Layout>

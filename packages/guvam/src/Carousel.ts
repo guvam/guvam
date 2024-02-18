@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit';
 import { property, customElement, queryAssignedElements } from 'lit/decorators.js';
 
-@customElement('guvam-slides')
-export class Slides extends LitElement {
+@customElement('guvam-carousel')
+export class Carousel extends LitElement {
   @property({ type: Boolean }) isOpen = false;
 
   @queryAssignedElements({ selector: "[data-target= 'slides-images']" }) imagesWrapper!: HTMLElement[];

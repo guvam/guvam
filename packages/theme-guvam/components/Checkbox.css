@@ -1,0 +1,54 @@
+.Checkbox {
+  --checkbox-background-color: var(--g-input-background);
+  --checkbox-hover: var(--g-input-hover);
+  --checkbox-disabled: var(--g-input-disabled);
+  --checkbox-checkmark: var(--g-input-text);
+  --checkbox-checked-background: var(--g-input-focus);
+
+  inline-size:20px;
+  block-size:20px;
+  font-family: bootstrap-icons;
+  font-size:20px;
+  line-height: 1;
+  color:var(--checkbox-checkmark);
+  text-align:center;
+  vertical-align:middle;
+  cursor: pointer;
+  background-color:var(--checkbox-background-color);
+  border:1px black solid;
+  border-radius: 4px;
+
+  &:disabled {
+    color: color-mix(in hsl, var(--checkbox-checkmark), transparent 60%);
+    cursor: default;
+    background-color: var(--checkbox-disabled)
+  }
+
+  &:not(:disabled):hover {
+    background-color: var(--checkbox-hover);
+  }
+
+  &:not(:disabled):checked
+  {
+    background-color:var(--checkbox-checked-background);
+  }
+
+  &:not(:disabled):focus-visible {
+    outline: 2px solid var(--checkbox-hover);
+    outline-offset: 2px;
+  }
+
+  &::before{
+    visibility:hidden;
+    content: "\f26e";
+  }
+
+  &:checked::before{
+    visibility: visible;
+  }
+
+}
+
+
+
+

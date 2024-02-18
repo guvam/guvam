@@ -1,0 +1,61 @@
+---
+import Layout from '../../../components/docs/Layout.astro';
+import Title from '../../../components/blocks/Title.astro';
+import Code from '../../../components/blocks/Code.astro';
+---
+<Layout title="Radio Guvam Component">
+  <h1 class="Text type-h1 margin">Radio Button</h1>
+  <table class="Table">
+    <thead>
+      <tr>
+        <td>Class name</td>
+        <td>Type</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Radio Button</td>
+        <td>component</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.type-outline</td>
+        <td>modifier</td>
+        <td>modifier modifier modifier</td>
+      </tr>
+      <tr>
+        <td>[disabled]</td>
+        <td>attribute</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <Title id="radio">Radio Button</Title>
+  <Code lang="html">
+    <label>
+      <input class="Radio" type="radio" name="doc-radio"> 1
+    </label>
+    <label>
+      <input class="Radio" type="radio" name="doc-radio"> 2
+    </label>
+
+  </Code>
+
+
+  <Title id="radio">Radio Button disabled</Title>
+  <Code lang="html">
+    <label>
+      <input class="Radio" type="radio" checked name="doc-radio-disabled" disabled> 1
+    </label>
+    <label>
+      <input class="Radio" type="radio" name="doc-radio-disabled" disabled> 2
+    </label>
+    <label>
+      <input class="Radio" type="radio" name="doc-radio-disabled" disabled> 3
+    </label>
+  </Code>
+
+
+</Layout>

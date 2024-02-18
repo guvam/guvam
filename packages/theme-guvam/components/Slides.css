@@ -22,16 +22,15 @@
 .Slides-Button {
   all: unset;
   position: absolute;
+  inset-block: 0;
   display: block;
-  top: 0;
-  bottom: 0;
   padding: 1rem;
   cursor: pointer;
 }
 
 .Slides-Button > * {
-  stroke: white;
+  inline-size: 2rem;
+  block-size: 2rem;
   fill: black;
-  width: 2rem;
-  height: 2rem;
+  stroke: white;
 }

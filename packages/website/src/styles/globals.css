@@ -1,6 +1,10 @@
 @import url('@guvam/css-base');
 @import url('@guvam/theme-guvam');
 
+:root {
+  font-size: 14px;
+}
+
 @font-face {
   font-family: roboto;
   font-style: normal;

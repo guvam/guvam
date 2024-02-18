@@ -7,4 +7,8 @@ export default defineConfig({
   site: 'https://guvam.com',
   integrations: [lit()],
   devToolbar: { enabled: false },
+  redirects: {
+    '/docs': '/docs/installation',
+    '/docs/components': '/docs/installation',
+  }
 });

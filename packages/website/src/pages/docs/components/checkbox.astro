@@ -1,0 +1,64 @@
+---
+import Layout from '../../../components/docs/Layout.astro';
+import Title from '../../../components/blocks/Title.astro';
+import Code from '../../../components/blocks/Code.astro';
+---
+<Layout title="Checkbox Guvam Component">
+  <h1 class="Text type-h1 margin">Checkbox</h1>
+  <table class="Table">
+    <thead>
+      <tr>
+        <td>Class name</td>
+        <td>Type</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Checkbox</td>
+        <td>component</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.type-outline</td>
+        <td>modifier</td>
+        <td>modifier modifier modifier</td>
+      </tr>
+      <tr>
+        <td>[disabled]</td>
+        <td>attribute</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <Title id="checkbox">Checkbox</Title>
+  <Code lang="html">
+    <div>
+      <label>
+        <input class="Checkbox" type="checkbox">
+          1
+      </label>
+
+      <label>
+        <input class="Checkbox" type="checkbox" checked/>
+          2
+      </label>
+    </div>
+  </Code>
+
+  <Title id="checkbox">Disabled Checkbox</Title>
+  <Code lang="html">
+    <div>
+      <label>
+        <input class="Checkbox" disabled type="checkbox"/>
+        Disabled
+      </label>
+      <label>
+        <input class="Checkbox" type="checkbox" disabled checked/>
+        Disabled
+      </label>
+    </div>
+  </Code>
+
+</Layout>

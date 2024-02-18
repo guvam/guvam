@@ -24,7 +24,7 @@
   }
 
   &:not(:disabled):active {
-
+    background-color: var(--g-input-active);
   }
 
   &:not(:disabled):focus-visible {

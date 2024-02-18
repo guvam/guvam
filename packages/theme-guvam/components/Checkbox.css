@@ -7,7 +7,9 @@
 
   inline-size:20px;
   block-size:20px;
+  /* stylelint-disable */
   font-family: bootstrap-icons;
+  /* stylelint-enable */
   font-size:20px;
   line-height: 1;
   color:var(--checkbox-checkmark);

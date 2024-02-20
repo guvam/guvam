@@ -17,23 +17,41 @@ export class Carousel extends LitElement {
 
   private imageIndex = 0;
 
+  toggleOpen() {
+    for (let i = 0; i < this.totalImages; i++) {
+      const child = this.imagesWrapper[0].children.item(i);
+      const button = this.imageSliderBottom[0].querySelector(`[data-target='button-${i}']`);
+
+      if (child && button) {
+        child.classList.toggle('Slide-Active', i === this.imageIndex);
+        button.classList.toggle('Active-Button', i === this.imageIndex);
+      }
+    }
+  }
+
   connectedCallback(): void {
     super.connectedCallback();
-    console.log(this.imagesWrapper[0].children);
 
-    this.totalImages = this.imagesWrapper[0].children.length;
+    if (this.imagesWrapper[0]) {
+      console.log(this.imagesWrapper[0].children);
+      this.totalImages = this.imagesWrapper[0].children.length;
+    }
 
-    this.imagesSliderLeft[0].addEventListener('click', () => {
-      if (this.imageIndex > 0) this.imageIndex--;
-      else this.imageIndex = this.totalImages - 1;
-      this.toggleOpen();
-    });
+    if (this.imagesSliderLeft[0]) {
+      this.imagesSliderLeft[0].addEventListener('click', () => {
+        if (this.imageIndex > 0) this.imageIndex--;
+        else this.imageIndex = this.totalImages - 1;
+        this.toggleOpen();
+      });
+    }
 
-    this.imagesSliderRight[0].addEventListener('click', () => {
-      if (this.imageIndex < this.totalImages - 1) this.imageIndex++;
-      else this.imageIndex = 0;
-      this.toggleOpen();
-    });
+    if (this.imagesSliderRight[0]) {
+      this.imagesSliderRight[0].addEventListener('click', () => {
+        if (this.imageIndex < this.totalImages - 1) this.imageIndex++;
+        else this.imageIndex = 0;
+        this.toggleOpen();
+      });
+    }
 
     for (let i = 0; i < this.totalImages; i++) {
       const button = document.createElement('button');
@@ -56,12 +74,5 @@ export class Carousel extends LitElement {
 
   render() {
     return html`<slot />`;
-  }
-
-  toggleOpen() {
-    for (let i = 0; i < this.totalImages; i++) {
-      const child = this.imagesWrapper[0].children.item(i);
-      child?.classList.toggle('Slide-Active', i == this.imageIndex);
-    }
   }
 }

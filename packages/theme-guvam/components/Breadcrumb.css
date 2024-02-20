@@ -1,1 +1,22 @@
-.Breadcrumbs {}
+.Breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-block-end: 1rem;
+}
+
+.Breadcrumbs-Item {
+  & + .breadcrumb-item {
+    padding-inline-start: 1em;
+
+    &::before {
+      float: inline-start;
+      padding-inline-end: 1em;
+      content: '/';
+    }
+  }
+
+  &.active {
+    color: var(--g-color-link-active);
+  }
+}

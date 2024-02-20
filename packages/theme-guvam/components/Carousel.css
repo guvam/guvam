@@ -26,9 +26,16 @@
 .Slides-Button {
   position: absolute;
   inset-block-start: 50%;
-  padding: 1rem;
   cursor: pointer;
   z-index: 1;
+}
+
+.Slides-Button > * {
+  fill: rgba(255, 255, 255, 0.5);
+}
+
+.Slides-Button > *:hover {
+  fill: rgb(255, 255, 255);
 }
 
 .Slides-Button[data-target='left-button'] {
@@ -53,6 +60,23 @@
 }
 
 .Slider-Button-Bottom {
+  flex: 0 1 auto;
+  width: 30px;
+  height: 5px;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  transition-duration: 0.5s;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.Slider-Button-Bottom:hover {
+  cursor: pointer;
+}
+
+.Active-Button {
+  transition-duration: 0.5s;
+  background-color: #ffffff;
 }
 
 [data-target='bottom-button'] > * {

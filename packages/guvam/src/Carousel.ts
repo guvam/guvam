@@ -42,6 +42,10 @@ export class Carousel extends LitElement {
       button.setAttribute('data-target', `button-${i}`);
 
       button.addEventListener('click', () => {
+        this.imageSliderBottom[0].querySelectorAll('button').forEach((btn) => {
+          btn.classList.remove('Active-Button');
+        });
+        button.classList.add('Active-Button');
         this.imageIndex = i;
         this.toggleOpen();
       });

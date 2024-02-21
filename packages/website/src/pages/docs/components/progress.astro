@@ -4,7 +4,7 @@ import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 ---
 <Layout title="Progress Guvam Component">
-  <h1 class="Text type-h1 margin">Input</h1>
+  <h1 class="Text type-h1 margin">Progress</h1>
   <table class="Table">
     <thead>
     <tr>
@@ -20,7 +20,7 @@ import Code from '../../../components/blocks/Code.astro';
       <td></td>
     </tr>
     <tr>
-      <td>.Input</td>
+      <td>.Progress</td>
       <td>style</td>
       <td></td>
     </tr>
@@ -37,9 +37,15 @@ import Code from '../../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Progress Indeterminate</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <div class="Progress" />
   </Code>
+
+  <Title id="input">Progress Linear</Title>
+  <Code lang="html" type="inline">
+    <div class="Progress linear" />
+  </Code>
+
 
 </Layout>

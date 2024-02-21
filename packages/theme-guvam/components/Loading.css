@@ -1,19 +1,21 @@
 .Loading {
+  --loading-color:var(--g-color-primary);
+
   position: relative;
   inline-size: 48px;
   block-size: 48px;
   border-radius: 50%;
-  animation: rotate 2s linear infinite
-}
+  animation: rotate 2s linear infinite;
 
-.Loading::before {
-  position: absolute;
-  inset: 0;
-  box-sizing: border-box;
-  content: " ";
-  border: 5px solid #FFF;
-  border-radius: 50%;
-  animation: prix-clip-fix 2s linear infinite ;
+  &::before{
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    content: " ";
+    border: 5px solid var(--loading-color);
+    border-radius: 50%;
+    animation: border-clip 2s linear infinite ;
+  }
 }
 
 @keyframes rotate {
@@ -21,16 +23,19 @@
   100%   {transform: rotate(360deg)}
 }
 
-@keyframes prix-clip-fix {
+@keyframes border-clip {
     0%     {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
     12.5%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
     25%    {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
     37.5%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
     50%    {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 
-    62.5%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
-    75%    {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
-    100%   {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    62.5%  {clip-path:polygon(50% 50%,100% 0,100% 0,100% 100%,0 100%,0 0)}
 
+    75%    {clip-path: polygon(50% 50%, 100% 100%, 100% 0,100% 100%,0 100%,0 0)}
+    75.1%   {clip-path:polygon(50% 50%, 100% 100%, 100% 100%,100% 100%,0 100%,0 0)}
+    87.5%  {clip-path:polygon(50% 50%, 0% 100%, 100% 100%, 100% 100%, 0% 100%, 0% 0%)}
+    87.6% {clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 0%)}
+    100%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
 
 }

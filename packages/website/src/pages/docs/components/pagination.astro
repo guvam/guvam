@@ -4,7 +4,7 @@ import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 ---
 <Layout title="Pagination Guvam Component">
-  <h1 class="Text type-h1 margin">Input</h1>
+  <h1 class="Text type-h1 margin">Pagination</h1>
   <table class="Table">
     <thead>
     <tr>
@@ -20,7 +20,7 @@ import Code from '../../../components/blocks/Code.astro';
       <td></td>
     </tr>
     <tr>
-      <td>.Input</td>
+      <td>.Pagination</td>
       <td>style</td>
       <td></td>
     </tr>
@@ -37,9 +37,21 @@ import Code from '../../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Pagination</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <ul class="Pagination">
+      <li>
+        <label><input type="radio" name="doc-pagination">1</label>
+      </li>
+      <li>
+        <label><input type="radio" name="doc-pagination">2</label>
+      </li>
+      <li>
+        <label><input type="radio" name="doc-pagination">3</label>
+      </li><li>
+        <label><input type="radio" name="doc-pagination">4</label>
+      </li>
+    </ul>
   </Code>
 
 </Layout>

@@ -1,1 +1,41 @@
-.Pagination {}
+.Pagination {
+  --pagination-background:var(--g-input-background);
+  --pagination-hover:var(--g-input-hover);
+  --pagination-background-active:var(--g-input-focus);
+  --pagination-text:var(--g-color-primary);
+  --pagination-text-active:var(--g-input-text);
+
+  display:flex;
+  gap:1em;
+
+  & li{
+    inline-size:24px;
+    block-size:24px;
+    color:var(--pagination-text);
+    cursor:pointer;
+    background-color:var(--pagination-background);
+    border-radius:50%;
+  }
+
+  & li:has(input:checked)
+  {
+    color:var(--pagination-text-active);
+    background-color:var(--pagination-background-active);
+  }
+
+
+  & li:has(input:focus), li:not(:disabled):hover {
+    outline: 2px solid var(--pagination-hover);
+    outline-offset: 3px;
+  }
+
+  & label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    inline-size:100%;
+    block-size:100%;
+  }
+
+
+}

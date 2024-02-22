@@ -96,12 +96,12 @@ import { Alert } from '@guvam/guvam';
 
   <Title id="input">Alert with Dismiss</Title>
   <Code lang="html" type="inline">
-    <guvam-alert>
+    <Alert>
       <div class="Alert Alert-Dismissable" data-target="alert" role="alert">
         a closable Alert with a button
-        <button class="Alert-Button" aria-label="Close">X</button>
+        <button class="Alert-Button" data-target="close-button" aria-label="Close">X</button>
         <div></div>
       </div>
-    </guvam-alert>
-  </Code></Layout
->
+    </Alert>
+  </Code>
+</Layout>

@@ -2,9 +2,10 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
+import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Slider Guvam Component">
-  <h1 class="Text type-h1 margin">Input</h1>
+  <h1 class="Text type-h1 margin">Slider</h1>
   <table class="Table">
     <thead>
     <tr>
@@ -15,31 +16,26 @@ import Code from '../../../components/blocks/Code.astro';
     </thead>
     <tbody>
     <tr>
-      <td>guvam-input</td>
-      <td>element</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.Input</td>
-      <td>style</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.type-outline</td>
-      <td>modifier</td>
+      <td>.Slider</td>
+      <td><Badge type="style" /></td>
       <td></td>
     </tr>
     <tr>
       <td>[disabled]</td>
-      <td>attribute</td>
+      <td><Badge type="modifier" /></td>
       <td></td>
     </tr>
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="slider">Slider</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <input type="range" class="Slider"/>
+  </Code>
+
+  <Title id="Slider disabled">Input Disabled</Title>
+  <Code lang="html" type="inline">
+    <input type="range" class="Slider" disabled />
   </Code>
 
 </Layout>

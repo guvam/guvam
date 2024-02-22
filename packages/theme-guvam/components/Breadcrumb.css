@@ -1,17 +1,18 @@
-.Breadcrumbs {
+.Breadcrumb {
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   margin-block-end: 1rem;
 }
 
-.Breadcrumbs-Item {
-  & + .breadcrumb-item {
+.Breadcrumb-Item {
+  &:nth-child(n + 2) {
     padding-inline-start: 1em;
 
     &::before {
       float: inline-start;
       padding-inline-end: 1em;
+      color: var(--g-color-text);
       content: '/';
     }
   }

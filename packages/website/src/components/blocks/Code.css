@@ -8,10 +8,10 @@
 
   padding: 1em;
   background-image: repeating-linear-gradient(45deg,
-    var(--b) 0,
-    var(--b) 19px,
-    var(--l) 19px,
-    var(--l) 20px
+  var(--b) 0,
+  var(--b) 19px,
+  var(--l) 19px,
+  var(--l) 20px
   );
   border: 1px solid var(--g-color-border);
   border-start-start-radius: var(--g-border-radius);
@@ -26,7 +26,7 @@
   position: relative;
   display: block;
   padding: 1em;
-  overflow: auto;
+  overflow: hidden;
   font-family: var(--g-font-family-code);
   background-color: #2e3440;
   border-end-start-radius: var(--g-border-radius);
@@ -40,6 +40,10 @@
     .Code-Block:hover & {
       display: block;
     }
+  }
+
+  & > div {
+    overflow: auto;
   }
 
   & code {

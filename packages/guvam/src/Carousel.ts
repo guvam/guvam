@@ -1,78 +1,67 @@
 import { LitElement, html } from 'lit';
-import { property, customElement, queryAssignedElements } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators.js';
 
 @customElement('guvam-carousel')
 export class Carousel extends LitElement {
-  @property({ type: Boolean }) isOpen = false;
+  @property({ type: Number, reflect: true }) index = -1;
 
-  @queryAssignedElements({ selector: "[data-target= 'slides-images']" }) imagesWrapper!: HTMLElement[];
+  private slides!: HTMLElement[];
 
-  @queryAssignedElements({ selector: "[data-target= 'left-button']" }) imagesSliderLeft!: HTMLElement[];
+  private indicators!: HTMLElement[];
 
-  @queryAssignedElements({ selector: "[data-target= 'right-button']" }) imagesSliderRight!: HTMLElement[];
+  private controlPrev!: HTMLElement | null;
 
-  @queryAssignedElements({ selector: "[data-target= 'bottom-button']" }) imageSliderBottom!: HTMLElement[];
-
-  private totalImages = 0;
-
-  private imageIndex = 0;
-
-  toggleOpen() {
-    for (let i = 0; i < this.totalImages; i++) {
-      const child = this.imagesWrapper[0].children.item(i);
-      const button = this.imageSliderBottom[0].querySelector(`[data-target='button-${i}']`);
-
-      if (child && button) {
-        child.classList.toggle('Slide-Active', i === this.imageIndex);
-        button.classList.toggle('Active-Button', i === this.imageIndex);
-      }
-    }
-  }
+  private controlNext!: HTMLElement | null;
 
   connectedCallback(): void {
     super.connectedCallback();
 
-    if (this.imagesWrapper[0]) {
-      console.log(this.imagesWrapper[0].children);
-      this.totalImages = this.imagesWrapper[0].children.length;
+    this.slides = Array.from(this.querySelectorAll("[data-target='carousel-slide']"));
+    this.indicators = Array.from(this.querySelectorAll("[data-target='carousel-indicator']"));
+    this.controlPrev = this.querySelector("[data-target='carousel-control-prev']");
+    this.controlNext = this.querySelector("[data-target='carousel-control-next']");
+
+    this.controlPrev?.addEventListener('click', () => this.setIndex(this.calcIndex(-1)));
+    this.controlNext?.addEventListener('click', () => this.setIndex(this.calcIndex(1)));
+    this.indicators?.forEach((el) =>
+      el.addEventListener('click', (ev) => {
+        const index = this.indicators.findIndex((indicator) => indicator === ev.target);
+        this.setIndex(index);
+      }),
+    );
+
+    if (this.index === -1) {
+      const index = this.slides.findIndex((el) => el.classList.contains('active'));
+      this.index = index === -1 ? 0 : index;
     }
 
-    if (this.imagesSliderLeft[0]) {
-      this.imagesSliderLeft[0].addEventListener('click', () => {
-        if (this.imageIndex > 0) this.imageIndex--;
-        else this.imageIndex = this.totalImages - 1;
-        this.toggleOpen();
-      });
-    }
+    this.setIndex(this.index);
+  }
 
-    if (this.imagesSliderRight[0]) {
-      this.imagesSliderRight[0].addEventListener('click', () => {
-        if (this.imageIndex < this.totalImages - 1) this.imageIndex++;
-        else this.imageIndex = 0;
-        this.toggleOpen();
-      });
-    }
+  private calcIndex(change: number) {
+    return (this.slides.length + this.index + change) % this.slides.length;
+  }
 
-    for (let i = 0; i < this.totalImages; i++) {
-      const button = document.createElement('button');
-      button.textContent = `Button ${i + 1}`;
-      button.classList.add('Slider-Button-Bottom');
-      button.setAttribute('data-target', `button-${i}`);
+  setIndex(index: number) {
+    this.index = index;
 
-      button.addEventListener('click', () => {
-        this.imageSliderBottom[0].querySelectorAll('button').forEach((btn) => {
-          btn.classList.remove('Active-Button');
-        });
-        button.classList.add('Active-Button');
-        this.imageIndex = i;
-        this.toggleOpen();
-      });
+    this.slides.forEach((_, i) => {
+      this.slides[i].classList.toggle('active', i === index);
+      this.slides[i].classList.toggle('prev', i === this.calcIndex(-1));
+      this.slides[i].classList.toggle('next', i === this.calcIndex(1));
+      this.indicators[i].classList.toggle('active', i === index);
+    });
 
-      this.imageSliderBottom[0].appendChild(button);
-    }
+    this.dispatchEvent(
+      new CustomEvent('index', {
+        detail: { index },
+        bubbles: true,
+        composed: true,
+      }),
+    );
   }
 
   render() {
-    return html`<slot />`;
+    return html` <slot />`;
   }
 }

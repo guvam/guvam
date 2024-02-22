@@ -1,0 +1,13 @@
+:root {
+  @media screen and (width < 800px) {
+    --g-media-screen: mobile;
+  }
+
+  @media screen and (width >= 800px) and (width < 1000px){
+    --g-media-screen: tablet;
+  }
+
+  @media screen and (width >= 1200px) {
+    --g-media-screen: desktop;
+  }
+}

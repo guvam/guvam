@@ -2,71 +2,112 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Carousel } from '@guvam/guvam';
 import Badge from '../../../components/blocks/Badge.astro';
----
+import { Carousel } from '@guvam/guvam';
 
+const slides = [0, 1, 2, 3, 4];
+const active = 0
+---
 <Layout title="Carousel Guvam Component">
   <h1 class="Text type-h1 margin">Carousel</h1>
   <table class="Table">
     <thead>
-      <tr>
-        <td>Name</td>
-        <td>Type</td>
-        <td>Description</td>
-      </tr>
+    <tr>
+      <td>Name</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>guvam-carousel</td>
-        <td>
-          <Badge type="element">element</Badge>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Slides</td>
-        <td>style</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>.type-outline</td>
-        <td>modifier</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>[disabled]</td>
-        <td>attribute</td>
-        <td></td>
-      </tr>
-    </tbody>
+    <tr>
+      <td>guvam-carousel</td>
+      <td>
+        <Badge type="element">element</Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td>
+        <Badge type="attribute"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>setIndex</td>
+      <td>
+        <Badge type="method"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>index</td>
+      <td>
+        <Badge type="event"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>carousel-slide</td>
+      <td>
+        <Badge type="target"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>carousel-indicator</td>
+      <td>
+        <Badge type="target"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>carousel-control-prev</td>
+      <td>
+        <Badge type="target"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>carousel-control-next</td>
+      <td>
+        <Badge type="target"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.Carousel</td>
+      <td>
+        <Badge type="class"></Badge>
+      </td>
+      <td></td>
+    </tr>
   </table>
 
   <Carousel client:load />
 
-  <Title id="dropdown">Slides</Title>
+  <Title id="carousel">Carousel</Title>
   <Code lang="html" type="inline">
-    <guvam-carousel class="Slides">
-      <button class="Button" data-target="left-button">Bata</button>
-      <button class="Button" data-target="right-button">Batata</button>
-      <div data-target="bottom-button"></div>
-      <div class="Slides-Inner" data-target="slides-images">
-        <div class="Slides-Item Slide-Active">
-          <img src="https://placehold.co/600x400" alt="placeholder" />
-        </div>
-        <div class="Slides-Item">
-          <img src="https://placehold.co/600x400" alt="placeholder" />
-        </div>
-        <div class="Slides-Item">
-          <img src="https://placehold.co/600x400" alt="placeholder" />
-        </div>
-        <div class="Slides-Item">
-          <img src="https://placehold.co/600x400" alt="placeholder" />
-        </div>
-        <div class="Slides-Item">
-          <img src="https://placehold.co/600x400" alt="placeholder" />
-        </div>
+    <guvam-carousel class="Carousel" index="0">
+      <div class="Carousel-SlideList">
+        {slides.map((item) =>
+          <div class="Carousel-Slide" class:list={{ 'active': item === active }} data-target="carousel-slide">
+            <img class="Image" src="https://placehold.co/600x400/333/FFF" alt="Image" />
+          </div>
+        )}
       </div>
+      <div class="Carousel-IndicatorList">
+        {slides.map((item) =>
+          <button class="Carousel-Indicator" class:list={{ 'active': item === active }}
+                  data-target="carousel-indicator"></button>
+        )}
+      </div>
+      <button class="Carousel-Control type-prev" data-target="carousel-control-prev">
+        <i class="Icon-arrow-left" />
+      </button>
+      <button class="Carousel-Control type-next" data-target="carousel-control-next">
+        <i class="Icon-arrow-right" />
+      </button>
     </guvam-carousel>
   </Code>
 </Layout>

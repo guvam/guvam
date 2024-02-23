@@ -1,1 +1,21 @@
-.Link {}
+.Link {
+  --link-color:var(--g-color-link);
+  --link-active-color:var(--g-color-link-active);
+  --link-pressed-color:var(--g-color-link-pressed);
+
+
+  color:var(--link-color);
+  text-decoration-line:underline;
+
+  &:hover{
+    color:var(--link-active-color);
+  }
+
+  &:active{
+    color:var(--link-pressed-color);
+  }
+
+  &.type-undecorated{
+    text-decoration-line:none;
+  }
+}

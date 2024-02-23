@@ -1,1 +1,42 @@
-.Avatar {}
+.Avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 50px;
+  block-size: 50px;
+  overflow: hidden;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+}
+
+.bg-primary {
+  background-color: var(--g-color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--g-color-secondary);
+}
+
+.bg-neutral {
+  background-color: var(--g-color-neutral);
+}
+
+.Rounded {
+  border-radius: 50%;
+}
+
+.Shadow {
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+}
+
+.Square {
+  border-radius: 5%;
+}
+
+.Avatar img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

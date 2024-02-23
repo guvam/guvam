@@ -2,6 +2,7 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
+import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Switch Guvam Component">
   <h1 class="Text type-h1 margin">Switch</h1>
@@ -15,19 +16,28 @@ import Code from '../../../components/blocks/Code.astro';
     </thead>
     <tbody>
       <tr>
-        <td>Switch</td>
-        <td>component</td>
-        <td></td>
+        <td>
+          input [type="checkbox"]
+        </td>
+        <td>
+          <Badge type="element">element</Badge>
+        </td>
+        <td>Switch HTML Element</td>
       </tr>
       <tr>
-        <td>.type-outline</td>
-        <td>modifier</td>
-        <td></td>
+        <td>.Switch</td>
+        <td><Badge type="class"></Badge></td>
+        <td>Switch element style</td>
+      </tr>
+      <tr>
+        <td>[checked]</td>
+        <td><Badge type="attribute"></Badge></td>
+        <td>Toggled on switch</td>
       </tr>
       <tr>
         <td>[disabled]</td>
-        <td>attribute</td>
-        <td></td>
+        <td><Badge type="attribute"></Badge></td>
+        <td>Disabled switch element</td>
       </tr>
     </tbody>
   </table>

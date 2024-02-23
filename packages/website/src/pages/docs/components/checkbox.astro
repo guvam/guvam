@@ -2,6 +2,7 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
+import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Checkbox Guvam Component">
   <h1 class="Text type-h1 margin">Checkbox</h1>
@@ -15,19 +16,28 @@ import Code from '../../../components/blocks/Code.astro';
     </thead>
     <tbody>
       <tr>
-        <td>Checkbox</td>
-        <td>component</td>
-        <td></td>
+        <td>
+          input [type="checkbox"]
+        </td>
+        <td>
+          <Badge type="element"></Badge>
+        </td>
+        <td>Checkbox HTML Element</td>
       </tr>
       <tr>
-        <td>.type-outline</td>
-        <td>modifier</td>
-        <td></td>
+        <td>.Checkbox</td>
+        <td><Badge type="class"></Badge></td>
+        <td>Checkbox element style</td>
+      </tr>
+      <tr>
+        <td>[checked]</td>
+        <td><Badge type="attribute"></Badge></td>
+        <td>Checked box</td>
       </tr>
       <tr>
         <td>[disabled]</td>
-        <td>attribute</td>
-        <td></td>
+        <td><Badge type="attribute"></Badge></td>
+        <td>Disabled box</td>
       </tr>
     </tbody>
   </table>

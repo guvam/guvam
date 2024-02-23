@@ -26,7 +26,8 @@
   }
 
   &:disabled{
-    background-color:var(--slider-disabled-background);
+    cursor:default;
+    background-color:var(--slider-disabled-background)
   }
 
   &:disabled::-webkit-slider-thumb{

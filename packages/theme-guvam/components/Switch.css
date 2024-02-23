@@ -24,11 +24,9 @@
   }
 
   &:disabled{
+    cursor:default;
     background-color:var(--switch-disabled-background);
   }
-
-
-
 
   &::before{
     display:inline-block;

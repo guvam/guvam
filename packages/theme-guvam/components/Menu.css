@@ -1,1 +1,39 @@
-.Menu {}
+.Menu {
+  position: relative;
+}
+
+.Menu-Items {
+  position: absolute;
+  inset: 0 auto auto 0;
+  display:none;
+  margin: 0;
+  background-color: var(--g-color-popover-background);
+  border: 1px solid var(--g-color-border);
+  border-radius: var(--g-border-radius);
+  box-shadow: var(--g-box-shadow-card);
+  transform: translate(0, 2em);
+
+  .Menu[open] & {
+    display: block;
+  }
+}
+
+.Menu-Item {
+  --menu-hover: color-mix(in hsl, var(--g-color-popover-background), black 20%);
+
+  display:block;
+  padding:8px;
+
+  &:hover{
+    background-color:var(--menu-hover);
+  }
+
+  &:focus-visible{
+    background-color:var(--menu-hover);
+  }
+}
+
+.Menu-Separator{
+  display:block;
+  border-block-start: 2px solid rgb(0 0 0 / 20%);
+}

@@ -3,43 +3,58 @@ import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 ---
+
 <Layout title="Avatar Guvam Component">
   <h1 class="Text type-h1 margin">Input</h1>
   <table class="Table">
     <thead>
-    <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Description</td>
-    </tr>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>guvam-input</td>
-      <td>element</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.Input</td>
-      <td>style</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.type-outline</td>
-      <td>modifier</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>[disabled]</td>
-      <td>attribute</td>
-      <td></td>
-    </tr>
+      <tr>
+        <td>guvam-input</td>
+        <td>element</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.Input</td>
+        <td>style</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.type-outline</td>
+        <td>modifier</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>[disabled]</td>
+        <td>attribute</td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Standard Rounded Avatar</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <img src="https://www.gstatic.com/webp/gallery/4.webp" class="Avatar Rounded" alt="Avatar" />
   </Code>
 
+  <Title id="input">Rounded Avatar with Shadow</Title>
+  <Code lang="html" type="inline">
+    <img src="https://www.gstatic.com/webp/gallery/4.webp" class="Avatar Rounded Shadow" alt="Avatar" />
+  </Code>
+
+  <Title id="input">A Square Avatar</Title>
+  <Code lang="html" type="inline">
+    <img src="https://www.gstatic.com/webp/gallery/4.webp" class="Avatar Square" alt="Avatar" />
+  </Code>
+
+  <Title id="input">Imageless Avatar</Title>
+  <Code class="Avatar-Wrapper" lang="html" type="inline">
+    <div class="Avatar Rounded bg-primary">H</div>
+  </Code>
 </Layout>

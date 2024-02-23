@@ -11,6 +11,10 @@
   border-radius: 6px;
 }
 
+.Icon-x-lg {
+  margin-block-start: 4px;
+}
+
 .Alert-Link {
   font-weight: bold;
 }

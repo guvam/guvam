@@ -1,36 +1,81 @@
-.Slides {
-  display: block;
+.Carousel {
+  --carousel-control: var(--g-color-neutral);
+  --carousel-active: var(--g-color-info);
+
+  position: relative;
+  display: flex;
   inline-size: 600px;
   aspect-ratio: 3 / 2;
   overflow: hidden;
-  background-color: var(--g-color-background);
 }
 
-.Slides-Inner {
-  position: relative;
-  inset: 0;
-}
-
-.Slides-Item {
+.Carousel-Slide {
   position: absolute;
+  inset: 0;
+  transition: all var(--g-transition-slowly);
 
-  img {
-    display: block;
+  &.prev {
+    z-index: 1;
+    translate: -100% 0;
+  }
+
+  &.active {
+    z-index: 2;
+    translate: 0 0;
+  }
+
+  &.next {
+    z-index: 1;
+    translate: 100% 0;
   }
 }
 
-.Slides-Button {
-  all: unset;
+.Carousel-IndicatorList {
   position: absolute;
-  inset-block: 0;
-  display: block;
-  padding: 1rem;
-  cursor: pointer;
+  inset-block-end: 1em;
+  z-index: 10;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+  inline-size: 100%;
 }
 
-.Slides-Button > * {
-  inline-size: 2rem;
-  block-size: 2rem;
-  fill: black;
-  stroke: white;
+.Carousel-Indicator {
+  inline-size: 2em;
+  block-size: 0.5em;
+  cursor: pointer;
+  background-color: var(--carousel-control);
+  transition: all var(--g-transition-slowly);
+
+  &.active {
+    background-color: var(--carousel-active);
+  }
 }
+
+.Carousel-Control {
+  position: absolute;
+  inset-block-start: calc(50% - 1em);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2em;
+  block-size: 2em;
+  font-size: 3em;
+  color: var(--carousel-control);
+  cursor: pointer;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.type-prev {
+    inset-inline-start: 0;
+  }
+
+  &.type-next {
+    inset-inline-end: 0;
+  }
+}
+

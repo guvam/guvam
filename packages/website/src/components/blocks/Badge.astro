@@ -3,8 +3,11 @@ const { type } = Astro.props;
 const value = {
   'element': '-color-primary',
   'attribute': '-color-accent',
-  'style': '-color-success',
-  'variable': '-color-neutral'
+  'target': '-color-accent',
+  'event': '-color-accent',
+  'method': '-color-accent',
+  'class': '-color-success',
+  'modifier': '-color-neutral'
 };
 ---
 <div class={`Badge ${value[type] ?? '-color-default'}`}>

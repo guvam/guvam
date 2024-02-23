@@ -18,15 +18,15 @@ const prettierOptions: prettier.Options = {
   'quoteProps': 'as-needed',
   'trailingComma': 'all',
   'singleAttributePerLine': false,
-  'htmlWhitespaceSensitivity': 'css',
+  'htmlWhitespaceSensitivity': 'strict',
   'vueIndentScriptAndStyle': false,
-  'proseWrap': 'preserve',
+  'proseWrap': 'never',
   'insertPragma': false,
   'printWidth': 140,
   'requirePragma': false,
   'tabWidth': 2,
   'useTabs': false,
-  'embeddedLanguageFormatting': 'auto'
+  'embeddedLanguageFormatting': 'auto',
 };
 
 let code = await Astro.slots.render('default');

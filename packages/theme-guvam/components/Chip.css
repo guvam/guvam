@@ -1,1 +1,18 @@
-.Chip {}
+.Chip {
+  display: inline-block;
+  block-size: 50px;
+  padding: 0 25px;
+  font-size: 16px;
+  line-height: 50px;
+  color: white;
+  background-color: var(--g-color-primary);
+  border-radius: 25px;
+}
+
+.Chip img {
+  float: inline-start;
+  inline-size: 50px;
+  block-size: 50px;
+  margin: 0 10px 0 -25px;
+  border-radius: 50%;
+}

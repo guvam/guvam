@@ -9,6 +9,14 @@
   border-radius: 25px;
 }
 
+.bg-secondary {
+  background-color: var(--g-color-secondary);
+}
+
+.bg-neutral {
+  background-color: var(--g-color-neutral);
+}
+
 .Chip img {
   float: inline-start;
   inline-size: 50px;

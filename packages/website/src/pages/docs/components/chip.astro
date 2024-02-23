@@ -38,11 +38,28 @@ import Code from '../../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Standard Chip</Title>
   <Code lang="html" type="inline">
     <div class="Chip">
       <img src="https://www.gstatic.com/webp/gallery/2.webp" alt="Icon" />
       Example
+    </div>
+  </Code>
+
+  <Title id="input">Alternate Background Options (Includes Several Others)</Title>
+  <Code lang="html" type="inline">
+    <div class="Chip bg-neutral">
+      <img src="https://www.gstatic.com/webp/gallery/2.webp" alt="Icon" />
+      Example
+    </div>
+  </Code>
+
+  <Title id="input">Alternate Background Options (Includes Several Others)</Title>
+  <Code lang="html" type="inline">
+    <div class="Chip bg-neutral">
+      <img src="https://www.gstatic.com/webp/gallery/2.webp" alt="Icon" />
+      Example
+      <span class="Chip-Close" onclick="this.parentElement.style.display='none'">&times;</span>
     </div>
   </Code>
 </Layout>

@@ -3,43 +3,63 @@ import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 ---
+
 <Layout title="Chip Guvam Component">
   <h1 class="Text type-h1 margin">Input</h1>
   <table class="Table">
     <thead>
-    <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Description</td>
-    </tr>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>guvam-input</td>
-      <td>element</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.Input</td>
-      <td>style</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.type-outline</td>
-      <td>modifier</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>[disabled]</td>
-      <td>attribute</td>
-      <td></td>
-    </tr>
+      <tr>
+        <td>guvam-input</td>
+        <td>element</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.Input</td>
+        <td>style</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.type-outline</td>
+        <td>modifier</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>[disabled]</td>
+        <td>attribute</td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Standard Chip</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <div class="Chip">
+      <img src="https://www.gstatic.com/webp/gallery/2.webp" alt="Icon" />
+      Example
+    </div>
   </Code>
 
+  <Title id="input">Alternate Background Options (Includes Several Others)</Title>
+  <Code lang="html" type="inline">
+    <div class="Chip bg-neutral">
+      <img src="https://www.gstatic.com/webp/gallery/2.webp" alt="Icon" />
+      Example
+    </div>
+  </Code>
+
+  <Title id="input">Closeable Chip</Title>
+  <Code lang="html" type="inline">
+    <div class="Chip">
+      <img src="https://www.gstatic.com/webp/gallery/2.webp" alt="Icon" />
+      Click the X to close!
+      <span class="Chip-Close" onclick="this.parentElement.style.display='none'"><i class="Icon-x-lg"></i></span>
+    </div>
+  </Code>
 </Layout>

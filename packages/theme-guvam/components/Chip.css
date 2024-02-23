@@ -1,7 +1,8 @@
 .Chip {
+  position: relative;
   display: inline-block;
   block-size: 50px;
-  padding: 0 25px;
+  padding: 0 30px;
   font-size: 16px;
   line-height: 50px;
   color: white;
@@ -23,4 +24,18 @@
   block-size: 50px;
   margin: 0 10px 0 -25px;
   border-radius: 50%;
+}
+
+.Chip-Close {
+  position: absolute;
+  inset-block-start: 50%;
+  float: inline-end;
+  margin-inline-start: 4px;
+  margin-block-start: 2px;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.Chip-Close:hover {
+  color: rgba(245, 245, 245, 0.8);
 }

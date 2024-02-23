@@ -1,1 +1,81 @@
-.Alert {}
+.Alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-inline-size: 800px;
+  max-block-size: 250px;
+  margin: 15px auto;
+  padding: 15px;
+  font-size: 15px;
+  background-color: var(--g-color-primary);
+  border-radius: 6px;
+}
+
+.Icon-x-lg {
+  margin-block-start: 4px;
+}
+
+.Alert-Link {
+  font-weight: bold;
+}
+
+.Alert-Heading {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.Alert-Icons {
+  gap: 10px;
+}
+
+.Alert-Dismissable {
+  display: flex;
+  flex-direction: row;
+}
+
+.Alert-Button {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.Alert-Extended {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Alert-Link:hover {
+  color: rgb(255, 255, 255);
+}
+
+.Alert-Secondary {
+  background-color: var(--g-color-secondary);
+}
+
+.Alert-Muted {
+  background-color: var(--g-color-muted);
+}
+
+.Alert-Danger {
+  background-color: var(--g-color-danger);
+}
+
+.Alert-Success {
+  background-color: var(--g-color-success);
+}
+
+.Alert-Warning {
+  background-color: var(--g-color-warning);
+}
+
+.Alert-Neutral {
+  background-color: var(--g-color-neutral);
+}
+
+.Alert-Error {
+  background-color: var(--g-color-error);
+}
+
+.Alert-Highlight {
+  background-color: var(--g-color-highlight);
+}

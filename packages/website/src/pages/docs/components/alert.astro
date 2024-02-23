@@ -2,6 +2,7 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
+import { Alert } from '@guvam/guvam';
 ---
 
 <Layout title="Alert Guvam Component">
@@ -38,8 +39,55 @@ import Code from '../../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Alert</Title>
+  <Code class="Alert-Wrapper" lang="html" type="inline">
+    <div class="Alert" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Secondary" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Muted" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Danger" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Success" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Warning" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Neutral" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Error" role="alert">A basic Alert, no inputs or function</div>
+    <div class="Alert Alert-Highlight" role="alert">A basic Alert, no inputs or function</div>
+  </Code>
+
+  <Title id="input">Alert with Link</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <div class="Alert" role="alert">An Alert containing &nbsp;<a href="#" class="Alert-Link">an example link.</a></div>
+    <div class="Alert Alert-Danger" role="alert">
+      An Alert containing &nbsp;<a href="#" class="Alert-Link">an example link.</a>
+    </div>
+    <div class="Alert Alert-Success" role="alert">
+      An Alert containing &nbsp;<a href="#" class="Alert-Link">an example link.</a>
+    </div>
+  </Code>
+
+  <Title id="input">Alert with Content</Title>
+  <Code lang="html" type="inline">
+    <div class="Alert Alert-Extended" role="alert">
+      <div class="Alert-Heading">Lorem Ipsum</div>
+      <p>
+        In here is where we'd normally have a small chunk of the Lorem Ipsum text, however I'm too lazy to generate and
+        copy it, so instead we will simply have this writing.
+      </p>
+    </div>
+  </Code>
+
+  <Title id="input">Alert with Icon</Title>
+  <Code lang="html" type="inline">
+    <div class="Alert Alert-Icons" role="alert">
+      <i class="Icon-exclamation-triangle-fill"></i>An Alert including an icon within the display
+    </div>
+  </Code>
+
+  <Title id="input">Alert with Dismiss</Title>
+  <Code lang="html" type="inline">
+    <Alert>
+      <div class="Alert Alert-Dismissable" data-target="alert" role="alert">
+        a closable Alert with a button
+        <button class="Alert-Button" data-target="close-button" aria-label="Close"><i class="Icon-x-lg"></i></button>
+      </div>
+    </Alert>
   </Code>
 </Layout>

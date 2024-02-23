@@ -11,25 +11,21 @@ export class Alert extends LitElement {
     super.connectedCallback();
 
     this.addEventListener('close-alert', () => {
-      this.closeAlert();
+      console.log('Alert!');
     });
 
-    const closeButton = this.shadowRoot?.querySelector('[data-target="close-button"]') as HTMLButtonElement | null;
-    if (closeButton) {
-      closeButton.addEventListener('click', () => {
-        this.dispatchCloseEvent();
-      });
-    }
-  }
+    const closeButton = this.querySelector('[data-target="close-button"]');
 
-  dispatchCloseEvent() {
-    this.dispatchEvent(new CustomEvent('close-alert'));
+    closeButton?.addEventListener('click', () => {
+      this.closeAlert();
+    });
   }
 
   closeAlert() {
-    const alert = this.shadowRoot?.querySelector('[data-target="alert"]');
+    const alert = this.querySelector('[data-target="alert"]');
     if (alert instanceof HTMLElement) {
       alert.style.display = 'none';
+      this.dispatchEvent(new CustomEvent('close-alert', { bubbles: true, composed: true }));
     }
   }
 }

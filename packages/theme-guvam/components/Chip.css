@@ -1,41 +1,13 @@
 .Chip {
-  position: relative;
-  display: inline-block;
-  block-size: 50px;
-  padding: 0 30px;
-  font-size: 16px;
-  line-height: 50px;
-  color: white;
-  background-color: var(--g-color-primary);
-  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 3em;
+  padding: 0.25em;
+  color: var(--foundation-color-inverse);
+  background-color: var(--foundation-color);
+  border-radius: var(--g-border-radius-pill);
 }
 
-.bg-secondary {
-  background-color: var(--g-color-secondary);
-}
-
-.bg-neutral {
-  background-color: var(--g-color-neutral);
-}
-
-.Chip img {
-  float: inline-start;
-  inline-size: 50px;
-  block-size: 50px;
-  margin: 0 10px 0 -25px;
-  border-radius: 50%;
-}
-
-.Chip-Close {
-  position: absolute;
-  inset-block-start: 50%;
-  float: inline-end;
-  margin-inline-start: 4px;
-  margin-block-start: 2px;
-  cursor: pointer;
-  transform: translateY(-50%);
-}
-
-.Chip-Close:hover {
-  color: rgba(245, 245, 245, 0.8);
+.Chip-Content {
+  margin-inline: 1em;
 }

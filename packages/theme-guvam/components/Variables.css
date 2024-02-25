@@ -64,7 +64,7 @@
     --g-space-m: 16px;
     --g-space-s: 8px;
     --g-space-xs: 4px;
-    --g-border-radius-sharp: 0.02em;
+    --g-border-radius-sharp: 0.4em;
     --g-border-radius-s: 3px;
     --g-border-radius: 5px;
     --g-border-radius-pill: 999px;
@@ -142,7 +142,7 @@
     /* weak, strong, border, status : color-mix */
     --g-color-primary: #3A4766;
     --g-color-secondary: #141285;
-    --g-color-accent: #4F576B;
+    --g-color-accent: #3d3c3c;
     --g-color-neutral: rgb(85 89 93);
     --g-color-muted: rgb(196 200 203);
     --g-color-error: rgb(210 64 35);
@@ -163,7 +163,7 @@
     --g-space-m: 16px;
     --g-space-s: 8px;
     --g-space-xs: 4px;
-    --g-border-radius-sharp: 0.02em;
+    --g-border-radius-sharp: 0.4em;
     --g-border-radius-s: 3px;
     --g-border-radius: 5px;
     --g-border-radius-pill: 999px;
@@ -185,7 +185,7 @@
     --g-input-disabled: #5d5d5d;
     --g-input-focus: #28483c;
     --g-input-hover: #d8e7e6;
-    --g-input-ring: #d8e7e6;
+    --g-input-ring: #204ea1;
     --g-button-text: #d8e7e6;
     --g-button-background: #d8e7e6;
     --g-button-border: #626262;

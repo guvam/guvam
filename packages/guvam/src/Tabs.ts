@@ -1,42 +1,54 @@
 import { LitElement, html } from 'lit';
-import { customElement, queryAssignedElements } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 @customElement('guvam-tabs')
 export class Tabs extends LitElement {
-  @queryAssignedElements({ selector: '[data-target="Tab-Headers"]' }) headersParent!: HTMLElement[];
+  @property({ type: Number, reflect: true }) index = -1;
 
-  @queryAssignedElements({ selector: '[data-target="Tab-Contents"]' }) contentsParent!: HTMLElement[];
+  private controls!: NodeListOf<HTMLElement>;
+
+  private contents!: NodeListOf<HTMLElement>;
 
   connectedCallback(): void {
     super.connectedCallback();
 
-    const headers = this.headersParent[0].children;
+    this.controls = this.querySelectorAll('[data-target="tab-control"]');
 
-    for (let i = 0; i < headers.length; i++) {
-      headers.item(i)?.addEventListener('click', () => {
-        const content = this.contentsParent[0].children.item(i);
-        this.openTab(content);
-        console.log('clicked');
-      });
+    this.contents = this.querySelectorAll('[data-target="tab-content"]');
+
+    this.controls?.forEach((el) =>
+      el.addEventListener('click', (ev) => {
+        const index = Array.from(this.controls).findIndex((indicator) => indicator === ev.target);
+        this.setIndex(index);
+      }),
+    );
+
+    if (this.index === -1) {
+      const index = Array.from(this.controls).findIndex((el) => el.classList.contains('active'));
+      this.index = index === -1 ? 0 : index;
     }
+
+    this.setIndex(this.index);
   }
 
   render() {
     return html`<slot />`;
   }
 
-  openTab(el: Element | null) {
-    if (el) {
-      el.classList.add('Tab-Active');
+  setIndex(index: number) {
+    this.index = index;
 
-      const children = this.contentsParent[0].children;
+    this.controls.forEach((_, i) => {
+      this.controls[i].classList.toggle('active', i === index);
+      this.contents[i].classList.toggle('active', i === index);
+    });
 
-      for (let i = 0; i < children.length; i++) {
-        const child = children.item(i);
-        if (child != el) {
-          child?.classList.remove('Tab-Active');
-        }
-      }
-    }
+    this.dispatchEvent(
+      new CustomEvent('tabs-change', {
+        detail: { index },
+        bubbles: true,
+        composed: true,
+      }),
+    );
   }
 }

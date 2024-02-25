@@ -12,7 +12,12 @@
 .Carousel-Slide {
   position: absolute;
   inset: 0;
+  display: flex;align-items: center;
+  justify-content: center;
+  font-size: 10em;
+  background-color: var(--g-color-accent);
   transition: all var(--g-transition-slowly);
+  object-fit: cover;
 
   &.prev {
     z-index: 1;

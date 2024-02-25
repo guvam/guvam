@@ -1,18 +1,29 @@
 import { LitElement, html } from 'lit';
-import { property, customElement, queryAssignedElements } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators.js';
 
 @customElement('guvam-collapse')
 export class Collapse extends LitElement {
   @property({ type: Boolean, reflect: true }) open = false;
 
-  @queryAssignedElements({ selector: '[data-target="collapse-action"]' }) collapseAction!: HTMLElement[];
+  private control!: HTMLElement | null;
 
   connectedCallback(): void {
     super.connectedCallback();
-    this.collapseAction.forEach((el) => {
-      el.addEventListener('click', () => {
-        this.open = !this.open;
-      });
+
+    this.control = this.querySelector('[data-target="collapse-control"]');
+
+    this.control?.addEventListener('click', () => {
+      this.open = !this.open;
+
+      this.dispatchEvent(
+        new CustomEvent('collapse-open', {
+          detail: {
+            open: this.open,
+          },
+          bubbles: true,
+          composed: true,
+        }),
+      );
     });
   }
 

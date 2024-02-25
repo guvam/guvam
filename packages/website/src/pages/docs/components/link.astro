@@ -2,6 +2,7 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
+import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Link Guvam Component">
   <h1 class="Text type-h1 margin">Link</h1>
@@ -15,38 +16,23 @@ import Code from '../../../components/blocks/Code.astro';
     </thead>
     <tbody>
     <tr>
-      <td>guvam-input</td>
-      <td>element</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>.Link</td>
-      <td>style</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.type-outline</td>
-      <td>modifier</td>
+      <td><Badge type="class" /></td>
       <td></td>
     </tr>
     <tr>
       <td>.type-undecorated</td>
-      <td>modifier</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>[disabled]</td>
-      <td>attribute</td>
+      <td><Badge type="modifier" /></td>
       <td></td>
     </tr>
     </tbody>
   </table>
 
-  <Title id="input">Link</Title>
+  <Title id="link">Link</Title>
   <Code lang="html" type="inline">
     <a href="#" class="Link"> Link to the past </a>
   </Code>
-  <Title id="input">Link</Title>
+  <Title id="link-undecorated">Link undecorated</Title>
   <Code lang="html" type="inline">
     <a href="#" class="Link type-undecorated"> Link to the past </a>
   </Code>

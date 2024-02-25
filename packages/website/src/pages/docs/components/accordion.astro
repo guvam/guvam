@@ -55,10 +55,10 @@ import Badge from '../../../components/blocks/Badge.astro';
 
   <Title id="dropdown">Accordion</Title>
   <!--<Code lang="html" type="block">-->
-  <guvam-accordion class="Accordion">
+  <guvam-accordion class="Accordion" single>
     {[1, 2, 3, 4].map(i =>
-      <guvam-collapse class="Collapse">
-        <button class="Collapse-Action" data-target="collapse-action">
+      <guvam-collapse class="Collapse" open={i === 1}>
+        <button class="Collapse-Action" data-target="collapse-control">
           Collapse item #{i}
         </button>
         <div class="Collapse-Content">

@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.Menu-Items {
+.Menu-Dropdown {
   position: absolute;
   inset: 0 auto auto 0;
   display:none;
@@ -17,6 +17,7 @@
     display: block;
   }
 }
+
 
 .Menu-Item {
   --menu-hover: color-mix(in hsl, var(--g-color-popover-background), black 20%);

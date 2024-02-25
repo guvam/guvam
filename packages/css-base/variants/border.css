@@ -1,0 +1,15 @@
+.-border-default {
+  border-radius: var(--g-border-radius);
+}
+
+.-border-sharp {
+  border-radius: var(--g-border-radius-sharp);
+}
+
+.-border-pill {
+  border-radius: var(--g-border-radius-pill);
+}
+
+.-border-circle {
+  border-radius: var(--g-border-radius-circle);
+}

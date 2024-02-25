@@ -5,8 +5,8 @@ import Code from '../../../components/blocks/Code.astro';
 import Badge from '../../../components/blocks/Badge.astro';
 import { Carousel } from '@guvam/guvam';
 
-const slides = [0, 1, 2, 3, 4];
-const active = 0
+const slides = ['Fun', 'Smile', 'Laugh', 'Happy', 'Grin'];
+const active = 0;
 ---
 <Layout title="Carousel Guvam Component">
   <h1 class="Text type-h1 margin">Carousel</h1>
@@ -41,7 +41,7 @@ const active = 0
       <td></td>
     </tr>
     <tr>
-      <td>index</td>
+      <td>carousel-change</td>
       <td>
         <Badge type="event"></Badge>
       </td>
@@ -82,6 +82,41 @@ const active = 0
       </td>
       <td></td>
     </tr>
+    <tr>
+      <td>.Carousel-SlideList</td>
+      <td>
+        <Badge type="class"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.Carousel-Slide</td>
+      <td>
+        <Badge type="class"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.Carousel-IndicatorList</td>
+      <td>
+        <Badge type="class"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.Carousel-Indicator</td>
+      <td>
+        <Badge type="class"></Badge>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.Carousel-Control</td>
+      <td>
+        <Badge type="class"></Badge>
+      </td>
+      <td></td>
+    </tr>
   </table>
 
   <Carousel client:load />
@@ -90,23 +125,23 @@ const active = 0
   <Code lang="html" type="inline">
     <guvam-carousel class="Carousel" index="0">
       <div class="Carousel-SlideList">
-        {slides.map((item) =>
-          <div class="Carousel-Slide" class:list={{ 'active': item === active }} data-target="carousel-slide">
-            <img class="Image" src="https://placehold.co/600x400/333/FFF" alt="Image" />
+        {slides.map((item, index) =>
+          <div class="Carousel-Slide" class:list={{ 'active': index === active }} data-target="carousel-slide">
+            {item}
           </div>
         )}
       </div>
       <div class="Carousel-IndicatorList">
-        {slides.map((item) =>
-          <button class="Carousel-Indicator" class:list={{ 'active': item === active }}
+        {slides.map((item, index) =>
+          <button class="Carousel-Indicator" class:list={{ 'active': index === active }}
                   data-target="carousel-indicator"></button>
         )}
       </div>
       <button class="Carousel-Control type-prev" data-target="carousel-control-prev">
-        <i class="Icon-arrow-left" />
+        <i class="Icon arrow-left" />
       </button>
       <button class="Carousel-Control type-next" data-target="carousel-control-next">
-        <i class="Icon-arrow-right" />
+        <i class="Icon arrow-right" />
       </button>
     </guvam-carousel>
   </Code>

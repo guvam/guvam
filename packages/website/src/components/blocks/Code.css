@@ -20,6 +20,12 @@
   .Code.block & {
     block-size: 240px;
   }
+
+  .Code.list & {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
 }
 
 .Code-Block {

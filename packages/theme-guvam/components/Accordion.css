@@ -1,20 +1,5 @@
-.Accordion-Item {
-  display: grid;
-  overflow: hidden;
-  cursor: default;
+.Accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
-
-.Accordion-Content {
-  display: grid;
-  grid-template-rows: 0;
-
-  .Accordion-Active & {
-    grid-template-rows: 1fr;
-  }
- }
-
-
-
-
-
-

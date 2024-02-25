@@ -53,7 +53,7 @@ export class Carousel extends LitElement {
     });
 
     this.dispatchEvent(
-      new CustomEvent('index', {
+      new CustomEvent('carousel-change', {
         detail: { index },
         bubbles: true,
         composed: true,

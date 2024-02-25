@@ -1,4 +1,5 @@
-@import url("./color.css");
-@import url("./size.css");
-@import url("./space.css");
-@import url("./elevated.css");
+@import url("border.css");
+@import url("color.css");
+@import url("size.css");
+@import url("space.css");
+@import url("elevation.css");

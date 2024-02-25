@@ -25,7 +25,7 @@ export class Alert extends LitElement {
     const alert = this.querySelector('[data-target="alert"]');
     if (alert instanceof HTMLElement) {
       alert.style.display = 'none';
-      this.dispatchEvent(new CustomEvent('close-alert', { bubbles: true, composed: true }));
+      this.dispatchEvent(new CustomEvent('alert-close', { bubbles: true, composed: true }));
     }
   }
 }

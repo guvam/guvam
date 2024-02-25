@@ -1,24 +1,18 @@
-
-
-.Tabs{
-  display:flex;
-  flex-flow:row;
-  gap:1em;
-  margin:20px;
+.Tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
 }
 
-.Tab-Headers{
-  display:flex;
-  flex-direction:column;
-  gap:1em;
+.Tab-Headers {
+  display: flex;
+  gap: 0.5em;
 }
 
+.Tab-Content {
+  display: none;
 
-
-.Tab-Contents > *{
-  display:none;
-}
-
-.Tab-Active{
-  display:block;
+  &.active {
+    display: block;
+  }
 }

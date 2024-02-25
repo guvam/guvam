@@ -2,6 +2,7 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
+import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Pagination Guvam Component">
   <h1 class="Text type-h1 margin">Pagination</h1>
@@ -15,23 +16,13 @@ import Code from '../../../components/blocks/Code.astro';
     </thead>
     <tbody>
     <tr>
-      <td>guvam-input</td>
-      <td>element</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>.Pagination</td>
-      <td>style</td>
+      <td><Badge type="class" /></td>
       <td></td>
     </tr>
     <tr>
-      <td>.type-outline</td>
-      <td>modifier</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>[disabled]</td>
-      <td>attribute</td>
+      <td>.Pagination-Link</td>
+      <td><Badge type="class" /></td>
       <td></td>
     </tr>
     </tbody>
@@ -39,19 +30,14 @@ import Code from '../../../components/blocks/Code.astro';
 
   <Title id="input">Pagination</Title>
   <Code lang="html" type="inline">
-    <ul class="Pagination">
-      <li>
-        <label><input type="radio" name="doc-pagination">1</label>
-      </li>
-      <li>
-        <label><input type="radio" name="doc-pagination">2</label>
-      </li>
-      <li>
-        <label><input type="radio" name="doc-pagination">3</label>
-      </li><li>
-        <label><input type="radio" name="doc-pagination">4</label>
-      </li>
-    </ul>
+    <nav class="Pagination">
+      <a class="Pagination-Link" href="#">Previous</a>
+      <a class="Pagination-Link" href="#">1</a>
+      <a class="Pagination-Link" href="#">2</a>
+      <a class="Pagination-Link" href="#">3</a>
+      <a class="Pagination-Link" href="#">4</a>
+      <a class="Pagination-Link" href="#">Next</a>
+    </nav>
   </Code>
 
 </Layout>

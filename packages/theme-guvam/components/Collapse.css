@@ -1,25 +1,23 @@
 .Collapse {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .Collapse-Action {
   padding: 1em;
+  overflow: hidden;
   cursor: pointer;
-  background-color: #2F4F96;
+  background-color: var(--g-color-neutral);
 }
 
 .Collapse-Content {
-  display: grid;
-  grid-template-rows: 0fr;
-  background-color: #2f8a96;
+  display: none;
+  padding: 1em;
+  overflow: hidden;
+  background-color: var(--g-color-accent);
 
-  /* transition: grid-template-rows 500ms ease-out; */
-
-  .Collapse[open] & {
-    grid-template-rows: 1fr;
+  .Collapse[open] > & {
+    display: block;
   }
 }
 
-.inner {
-  overflow: hidden;
-}

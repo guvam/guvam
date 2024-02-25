@@ -1,1 +1,9 @@
-.Image {}
+.Image {
+  display: inline-block;
+  min-inline-size: 0;
+
+  &.fluid {
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+}

@@ -1,0 +1,23 @@
+.-elevated-default {
+  box-shadow: var(--g-box-shadow);
+}
+
+.-elevation-header {
+  box-shadow: var(--g-box-shadow-header);
+}
+
+.-elevation-card {
+  box-shadow: var(--g-box-shadow-card);
+}
+
+.-elevation-nav {
+  box-shadow: var(--g-box-shadow-nav);
+}
+
+.-elevation-popout {
+  box-shadow: var(--g-box-shadow-popout);
+}
+
+.-elevation-modal {
+  box-shadow: var(--g-box-shadow-modal);
+}

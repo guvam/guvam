@@ -3,6 +3,7 @@ import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 import { Dropdown } from '@guvam/guvam';
+import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Menu Guvam Component">
   <h1 class="Text type-h1 margin">Menu</h1>
@@ -16,23 +17,8 @@ import { Dropdown } from '@guvam/guvam';
     </thead>
     <tbody>
     <tr>
-      <td>guvam-input</td>
-      <td>element</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>.Menu</td>
-      <td>style</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.type-outline</td>
-      <td>modifier</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>[disabled]</td>
-      <td>attribute</td>
+      <td><Badge type="class" /></td>
       <td></td>
     </tr>
     </tbody>
@@ -45,7 +31,7 @@ import { Dropdown } from '@guvam/guvam';
       <button class="Button" data-target="button">
         Menu
       </button>
-      <ul class="Menu-Items">
+      <ul class="Menu-Dropdown">
         <li class="Menu-Item"><input type="text" class="Input"/></li>
         <div class="Menu-Separator" />
         <li><a class="Menu-Item" href="#">Action</a></li>

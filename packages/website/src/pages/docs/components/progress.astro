@@ -28,14 +28,19 @@ import Badge from '../../../components/blocks/Badge.astro';
     </tbody>
   </table>
 
-  <Title id="progress">Progress Indeterminate</Title>
+  <Title id="progress">Progress Linear</Title>
   <Code lang="html" type="inline">
-    <div class="Progress" />
+    <progress class="Progress" value="70" max="100" />
+  </Code>
+
+  <Title id="progress-indeterminate">Progress Indeterminate</Title>
+  <Code lang="html" type="inline">
+    <progress class="Progress" />
   </Code>
 
   <Title id="progress-linear">Progress Linear</Title>
   <Code lang="html" type="inline">
-    <div class="Progress linear" />
+    <progress class="Progress linear" />
   </Code>
 
 </Layout>

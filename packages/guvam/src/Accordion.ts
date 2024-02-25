@@ -1,38 +1,38 @@
 import { LitElement, html } from 'lit';
-import { property, customElement, queryAssignedElements } from 'lit/decorators.js';
+import { property, customElement } from 'lit/decorators.js';
 
 @customElement('guvam-accordion')
 export class Accordion extends LitElement {
-  @property({ type: Boolean }) singleOpen = false;
+  @property({ type: Boolean, reflect: true }) single = false;
 
-  @queryAssignedElements({ selector: '[data-target="accordion-item"]' }) accordionItems!: HTMLElement[];
+  private controls!: NodeListOf<HTMLElement>;
 
   connectedCallback(): void {
     super.connectedCallback();
-    console.log(this.accordionItems);
-    this.accordionItems.forEach((el) => {
-      el.firstElementChild?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        this.toggleOpen(el);
-      });
+
+    this.controls = this.querySelectorAll('guvam-collapse');
+
+    this.addEventListener('collapse-open', (ev) => {
+      if (this.single) {
+        const index = Array.from(this.controls).findIndex((el) => el === ev.target);
+        this.setIndex(index);
+      }
     });
+
+    if (this.single) {
+      const index = Array.from(this.controls).findIndex((el) => el.getAttribute('open') === '');
+      this.setIndex(index);
+    }
   }
 
   render() {
     return html`<slot />`;
   }
 
-  toggleOpen(el: HTMLElement) {
-    el.classList.toggle('Accordion-Active');
-    if (el.classList.contains('Accordion-Active') && this.singleOpen) {
-      this.closeAllExcept(el);
-    }
-  }
-
-  closeAllExcept(el: HTMLElement) {
-    this.accordionItems.forEach((element) => {
-      if (el !== element) {
-        element.classList.remove('Accordion-Active');
+  setIndex(index: number) {
+    this.controls.forEach((element, i) => {
+      if (index !== i) {
+        element.removeAttribute('open');
       }
     });
   }

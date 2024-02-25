@@ -1,0 +1,30 @@
+::-webkit-scrollbar {
+  inline-size: 8px;
+  block-size: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track:active {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #555;
+}

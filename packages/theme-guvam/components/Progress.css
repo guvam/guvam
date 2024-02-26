@@ -1,13 +1,3 @@
-/*
-:indeterminate
--moz-orient
-::-moz-progress-bar
-::-webkit-progress-bar
-::-webkit-progress-value
-::-webkit-progress-inner-element
-*/
-
-
 .Progress {
   --progress-background: var(--g-input-background);
   --progress-active: var(--g-input-focus);
@@ -35,6 +25,7 @@
     transition:width 0.5s;
   }
 
+  /* Transition not working on -moz-progress-bar */
   &::-moz-progress-bar {
     background-color:var(--progress-active);
   }

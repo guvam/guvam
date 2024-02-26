@@ -3,8 +3,8 @@ import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 ---
-<Layout title="Input Group Guvam Component">
-  <h1 class="Text type-h1 margin">Input</h1>
+<Layout title="Input Group Group Guvam Component">
+  <h1 class="Text type-h1 margin">Input Group</h1>
   <table class="Table">
     <thead>
     <tr>
@@ -20,7 +20,7 @@ import Code from '../../../components/blocks/Code.astro';
       <td></td>
     </tr>
     <tr>
-      <td>.Input</td>
+      <td>.Input Group</td>
       <td>style</td>
       <td></td>
     </tr>
@@ -37,9 +37,72 @@ import Code from '../../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Input Group</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <div style="display:flex; flex-direction:column; gap:1em">
+      <div class="InputGroup">
+        <span class="input-group-text">@</span>
+        <input type="text" class="Input" />
+
+      </div>
+
+      <div class="InputGroup">
+        <input type="text" class="Input" />
+        <span class="input-group-text">@</span>
+        <input type="text" class="Input" />
+      </div>
+      <div class="InputGroup">
+        <input type="text" class="Input" />
+        <span class="input-group-text">.com</span>
+      </div>
+      <div class="InputGroup">
+        <span class="input-group-text">Text area</span>
+        <textarea class="Input type-textarea"></textarea>
+      </div>
+    </div>
   </Code>
+
+  <Title id="input">Multiple addons and inputs</Title>
+  <Code lang="html" type="inline">
+    <div style="display:flex; flex-direction:column; gap:1em">
+      <div class="InputGroup">
+        <span class="input-group-text">First and last name</span>
+        <input type="text" class="Input" />
+        <input type="text" class="Input" />
+      </div>
+
+      <div class="InputGroup">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">0.00</span>
+        <input type="text" class="Input" />
+      </div>
+      <div class="InputGroup">
+        <input type="text" class="Input" />
+        <span class="input-group-text">.com</span>
+      </div>
+    </div>
+  </Code>
+
+  <Title id="input">Components in addons</Title>
+  <Code lang="html" type="inline">
+    <div style="display:flex; flex-direction:column; gap:1em">
+
+      <div class="InputGroup">
+        <button class="Button input-group-text">First and last name</button>
+        <input type="text" class="Input" />
+      </div>
+
+      <div class="InputGroup">
+        <span class="input-group-text">
+          <input type="radio" class="Radio">
+        </span>
+        <span class="input-group-text">
+          <input type="checkbox" class="Switch">
+        </span>
+        <input type="text" class="Input" />
+      </div>
+    </div>
+  </Code>
+
 
 </Layout>

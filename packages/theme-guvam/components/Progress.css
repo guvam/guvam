@@ -18,7 +18,7 @@
   overflow:hidden;
   background-color:var(--progress-background);
 
-  &::before {
+  &:indeterminate::before{
     position: absolute;
     inset: 0;
     box-sizing: border-box;
@@ -29,8 +29,19 @@
     animation:progress-indeterminate 1.5s linear infinite;
   }
 
-  &.linear::before{
-    animation:progress-linear 3s linear infinite;
+
+  &::-webkit-progress-value{
+    background-color:var(--progress-active);
+    transition:width 0.5s;
+  }
+
+  &::-moz-progress-bar {
+    background-color:var(--progress-active);
+  }
+
+  &:indeterminate::-moz-progress-bar{
+    background-color:var(--progress-active);
+    animation:progress-indeterminate 1.5s linear infinite;
   }
 }
 
@@ -42,9 +53,5 @@
   100% {clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}
 }
 
-@keyframes progress-linear {
-  0% {clip-path: polygon(0 0, 0 0, 0 100%, 0 100%)}
-  100% {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)}
-}
 
 

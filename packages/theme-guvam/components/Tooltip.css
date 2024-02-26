@@ -1,1 +1,116 @@
-.Tooltip {}
+/*
+  * clicking button messes up tooltip
+
+  * write tooltip hover behavior
+*/
+
+
+.Tooltip {
+  position:absolute;
+  z-index:1;
+  inline-size:fit-content;
+  block-size:fit-content;
+  padding:6px;
+  margin:auto;
+  text-align:center;
+  visibility:hidden;
+  background-color:black;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s, margin 0.3s;
+
+  &.top{
+    inset-block-end:100%;
+    inset-inline:0 0;
+    margin-block-end:15px;
+  }
+
+  &.top-left{
+    inset-block-end:100%;
+    inset-inline-start: 0;
+    margin-block-end:15px;
+  }
+
+  &.top-right{
+    inset-block-end:100%;
+    inset-inline-end:0;
+    margin-block-end:15px;
+  }
+
+
+
+  &.right{
+    inset-inline-start:100%;
+    margin-inline-start:15px;
+  }
+
+  &.right-start{
+    inset-block-start:0;
+    inset-inline-start:100%;
+    margin-inline-start:15px;
+  }
+
+  &.right-end{
+    inset-block-end:0;
+    inset-inline-start:100%;
+    margin-inline-start:15px;
+  }
+
+
+
+  &.left{
+    inset-inline-end:100%;
+    margin-inline-end:15px;
+
+  }
+
+  &.left-start{
+    inset-block-start:0;
+    inset-inline-end:100%;
+    margin-inline-end:15px;
+  }
+
+  &.left-end{
+    inset-block-end:0;
+    inset-inline-end:100%;
+    margin-inline-end:15px;
+  }
+
+  &.bottom{
+    inset-block-start:100%;
+    inset-inline: 0 0;
+    margin-block-start:15px;
+  }
+
+  &.bottom-start{
+    inset-block-start:100%;
+    inset-inline-start:0;
+    margin-block-start:15px;
+  }
+
+  &.bottom-end{
+    inset-block-start:100%;
+    inset-inline-end:0;
+    margin-block-start:15px;
+  }
+}
+
+.has-tooltip{
+  position:relative;
+  inline-size:300px;
+  block-size:300px;
+  margin:0;
+
+
+  &:not(:hover) .Tooltip{
+    margin:0;
+  }
+
+  &:hover{
+    & .Tooltip{
+      visibility:visible;
+      opacity:1;
+    }
+  }
+}
+
+

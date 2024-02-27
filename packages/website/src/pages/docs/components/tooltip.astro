@@ -41,38 +41,34 @@ import Code from '../../../components/blocks/Code.astro';
 
   <Title id="input">Tooltip</Title>
   <Code lang="html" type="inline">
-    <div class="has-tooltip">
-        <button class="Button Tooltip-Target">button</button>
-        <span class="Tooltip bottom">tooltip</span>
-
-    </div>
-
+    <button class="Button has-tooltip">
+      button
+      <span class="Tooltip bottom">tooltip</span>
+    </button>
   </Code>
 
 
   <Title id="input">Tooltip directions</Title>
   <Code lang="html" type="inline">
-    <div class="has-tooltip">
-        <div class="Card type-square Tooltip-Target" style="  inline-size:300px;block-size:300px;">
-          Hover over me
-        </div>
-        <span class="Tooltip top-left">tooltip</span>
-        <span class="Tooltip top">tooltip</span>
-        <span class="Tooltip top-right">tooltip</span>
+    <div class="Card type-square has-tooltip" style="  inline-size:300px;block-size:300px;">
+      Hover over me
+      <span class="Tooltip top-left">tooltip</span>
+      <span class="Tooltip top">tooltip</span>
+      <span class="Tooltip top-right">tooltip</span>
 
-        <span class="Tooltip right-start">tooltip</span>
-        <span class="Tooltip right">tooltip</span>
-        <span class="Tooltip right-end">tooltip</span>
+      <span class="Tooltip right-start">tooltip</span>
+      <span class="Tooltip right">tooltip</span>
+      <span class="Tooltip right-end">tooltip</span>
 
-        <span class="Tooltip left">tooltip</span>
-        <span class="Tooltip left-start">tooltip</span>
-        <span class="Tooltip left-end">tooltip</span>
+      <span class="Tooltip left">tooltip</span>
+      <span class="Tooltip left-start">tooltip</span>
+      <span class="Tooltip left-end">tooltip</span>
 
-        <span class="Tooltip bottom">tooltip</span>
-        <span class="Tooltip bottom-right">tooltip</span>
-        <span class="Tooltip bottom-left">tooltip</span>
+      <span class="Tooltip bottom">tooltip</span>
+      <span class="Tooltip bottom-right">tooltip</span>
+      <span class="Tooltip bottom-left">tooltip</span>
+
     </div>
-
   </Code>
 
 </Layout>

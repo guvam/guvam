@@ -7,6 +7,7 @@
   margin:0;
   font-size:var(--g-font-size-s);
   text-align:center;
+  cursor:default;
   visibility:hidden;
   background-color:var(--g-color-popover-background);
   border-radius: var(--g-border-radius);
@@ -30,8 +31,6 @@
     inset-block-end:100%;
     inset-inline-end:0;
   }
-
-
 
   &.right{
     inset-block: 0 0;
@@ -85,9 +84,10 @@
   }
 }
 
-.Tooltip-Target{
-  &:hover, &:focus-visible{
-    & ~ .Tooltip{
+.has-tooltip{
+  position:relative;
+
+  &:hover .Tooltip, &:focus-visible .Tooltip{
       visibility:visible;
       opacity:1;
 
@@ -106,14 +106,9 @@
       &.bottom, &.bottom-left, &.bottom-right{
         margin-block-start:15px;
       }
-    }
+
   }
 }
 
 
-.has-tooltip{
-  position:relative;
-  inline-size:fit-content;
-  block-size:fit-content;
-}
 

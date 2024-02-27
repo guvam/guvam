@@ -20,17 +20,13 @@ import Badge from '../../../components/blocks/Badge.astro';
       <td><Badge type="class" /></td>
       <td>Progress element style</td>
     </tr>
-    <tr>
-      <td>.linear</td>
-      <td><Badge type="modifier"></Badge></td>
-      <td>Linear progress bar</td>
-    </tr>
     </tbody>
   </table>
 
-  <Title id="progress">Progress Linear</Title>
+  <Title id="progress">Progress</Title>
   <Code lang="html" type="inline">
-    <progress class="Progress" value="70" max="100" />
+    <span>click for progress</span>
+    <progress class="Progress" value="0" max="100" onclick="value+=10" />
   </Code>
 
   <Title id="progress-indeterminate">Progress Indeterminate</Title>
@@ -38,9 +34,6 @@ import Badge from '../../../components/blocks/Badge.astro';
     <progress class="Progress" />
   </Code>
 
-  <Title id="progress-linear">Progress Linear</Title>
-  <Code lang="html" type="inline">
-    <progress class="Progress linear" />
-  </Code>
+
 
 </Layout>

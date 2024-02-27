@@ -3,9 +3,10 @@
     color-scheme: light;
 
     /* font */
-    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    --g-font-family-code: "Nordhealth Mono", monospace, monospace;
-    --g-font-family-icon: "Nordhealth Mono", monospace, monospace;
+    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji';
+    --g-font-family-code: 'Nordhealth Mono', monospace, monospace;
+    --g-font-family-icon: 'Nordhealth Mono', monospace, monospace;
     --g-font-size-xxxl: 2.25rem;
     --g-font-size-xxl: 1.5rem;
     --g-font-size-xl: 1.25rem;
@@ -76,7 +77,8 @@
     --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
     --g-box-shadow-nav: 0 0 0 1px var(--g-color-border), 0 5px 17px rgb(12 12 12 / 14%);
     --g-box-shadow-popout: 0 4px 12px rgb(12 12 12 / 15%), 0 0 0 1px rgb(0 0 0 / 5%);
-    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
+    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%),
+      0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
 
     /* input */
     --g-input-block-min: 2em;
@@ -101,9 +103,10 @@
     color-scheme: dark;
 
     /* font */
-    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    --g-font-family-code: "Nordhealth Mono", monospace, monospace;
-    --g-font-family-icon: "Nordhealth Mono", monospace, monospace;
+    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji';
+    --g-font-family-code: 'Nordhealth Mono', monospace, monospace;
+    --g-font-family-icon: 'Nordhealth Mono', monospace, monospace;
     --g-font-size-xxxl: 2.25rem;
     --g-font-size-xxl: 1.5rem;
     --g-font-size-xl: 1.25rem;
@@ -120,7 +123,7 @@
     --g-line-height-caption: 1.3;
     --g-line-height: 1.5;
     --g-line-height-form: 20px;
-    --g-color-text: #E1E2E3;
+    --g-color-text: #e1e2e3;
     --g-color-text-weak: rgb(54 67 74);
     --g-color-text-weaker: rgb(102 118 128);
     --g-color-text-weakest: rgb(178 186 191);
@@ -134,13 +137,13 @@
     --g-color-link-pressed: rgb(53 89 199);
 
     /* heading */
-    --g-color-heading: #DCDCDC;
+    --g-color-heading: #dcdcdc;
     --g-color-heading-inverse: rgb(53 89 199);
 
     /* color */
 
     /* weak, strong, border, status : color-mix */
-    --g-color-primary: #3A4766;
+    --g-color-primary: #3a4766;
     --g-color-secondary: #141285;
     --g-color-accent: #3d3c3c;
     --g-color-neutral: rgb(85 89 93);
@@ -154,7 +157,7 @@
     --g-color-progress: rgb(1 109 131);
 
     /* surface */
-    --g-color-background: #1F1F1F;
+    --g-color-background: #1f1f1f;
     --g-color-popover-background: #3a3a3a;
     --g-color-border: #333;
     --g-space-xxl: 72px;
@@ -175,7 +178,8 @@
     --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
     --g-box-shadow-nav: 0 0 0 1px var(--g-color-border), 0 5px 17px rgb(12 12 12 / 14%);
     --g-box-shadow-popout: 0 4px 12px rgb(12 12 12 / 15%), 0 0 0 1px rgb(0 0 0 / 5%);
-    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
+    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%),
+      0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
 
     /* input */
     --g-input-block-min: 2em;

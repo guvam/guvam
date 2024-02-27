@@ -1,0 +1,60 @@
+/*
+  * Make modal scrollable
+
+
+
+  After both modal and tooltip are merged to main,
+  check if tooltips work in modal
+*/
+
+.Modal {
+  position:fixed;
+  inset-block-start:10%;
+  inset-inline:0;
+  z-index:1;
+  display:none;
+  flex-direction:column;
+  justify-content:space-between;
+  inline-size:600px;
+  margin:auto;
+  background-color: var(--g-color-background);
+  border: 2px solid var(--g-color-border);
+  border-radius:var(--g-border-radius);
+
+  &[open]{
+    display:flex;
+  }
+
+  &.type-static{
+    position:static;
+    margin:0;
+  }
+
+  &::backdrop{
+    background-color:black;
+    opacity:0.4;
+  }
+}
+
+.Modal-Heading{
+  padding: 18px;
+  font-size:var(--g-font-size-xl);
+}
+
+.Modal-Body{
+  flex-grow:1;
+  padding: 18px;
+  margin-block-end:24px;
+  border-block-start:1px solid var(--g-color-border);
+
+}
+
+.Modal-Footer
+{
+  display:flex;
+  gap:1em;
+  justify-content:flex-end;
+  padding: 18px;
+  border-block-start:1px solid var(--g-color-border);
+}
+

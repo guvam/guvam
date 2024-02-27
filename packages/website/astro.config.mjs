@@ -8,7 +8,6 @@ export default defineConfig({
   integrations: [lit()],
   devToolbar: { enabled: false },
   redirects: {
-    '/docs': '/docs/installation',
-    '/docs/components': '/docs/installation',
+    '/docs/components': '/docs',
   }
 });

@@ -4,7 +4,7 @@ import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 ---
 <Layout title="Tooltip Guvam Component">
-  <h1 class="Text type-h1 margin">Input</h1>
+  <h1 class="Text type-h1 margin">Tooltip</h1>
   <table class="Table">
     <thead>
     <tr>
@@ -20,7 +20,7 @@ import Code from '../../../components/blocks/Code.astro';
       <td></td>
     </tr>
     <tr>
-      <td>.Input</td>
+      <td>.Tooltip</td>
       <td>style</td>
       <td></td>
     </tr>
@@ -37,9 +37,38 @@ import Code from '../../../components/blocks/Code.astro';
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+
+
+  <Title id="input">Tooltip</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <button class="Button has-tooltip">
+      button
+      <span class="Tooltip bottom">tooltip</span>
+    </button>
+  </Code>
+
+
+  <Title id="input">Tooltip directions</Title>
+  <Code lang="html" type="inline">
+    <div class="Card type-square has-tooltip" style="  inline-size:300px;block-size:300px;">
+      Hover over me
+      <span class="Tooltip top-left">tooltip</span>
+      <span class="Tooltip top">tooltip</span>
+      <span class="Tooltip top-right">tooltip</span>
+
+      <span class="Tooltip right-start">tooltip</span>
+      <span class="Tooltip right">tooltip</span>
+      <span class="Tooltip right-end">tooltip</span>
+
+      <span class="Tooltip left">tooltip</span>
+      <span class="Tooltip left-start">tooltip</span>
+      <span class="Tooltip left-end">tooltip</span>
+
+      <span class="Tooltip bottom">tooltip</span>
+      <span class="Tooltip bottom-right">tooltip</span>
+      <span class="Tooltip bottom-left">tooltip</span>
+
+    </div>
   </Code>
 
 </Layout>

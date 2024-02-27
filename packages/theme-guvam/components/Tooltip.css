@@ -1,1 +1,114 @@
-.Tooltip {}
+.Tooltip {
+  position:absolute;
+  z-index:1;
+  inline-size:fit-content;
+  block-size:fit-content;
+  padding:6px;
+  margin:0;
+  font-size:var(--g-font-size-s);
+  text-align:center;
+  cursor:default;
+  visibility:hidden;
+  background-color:var(--g-color-popover-background);
+  border-radius: var(--g-border-radius);
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s, margin 0.3s;
+
+
+
+  &.top{
+    inset-block-end:100%;
+    inset-inline: 0 0;
+    margin: 0 auto;
+  }
+
+  &.top-left{
+    inset-block-end:100%;
+    inset-inline-start: 0;
+  }
+
+  &.top-right{
+    inset-block-end:100%;
+    inset-inline-end:0;
+  }
+
+  &.right{
+    inset-block: 0 0;
+    inset-inline-start:100%;
+    margin: auto 0;
+  }
+
+  &.right-start{
+    inset-block-start:0;
+    inset-inline-start:100%;
+  }
+
+  &.right-end{
+    inset-block-end:0;
+    inset-inline-start:100%;
+
+  }
+
+  &.left{
+    inset-block: 0 0;
+    inset-inline-end:100%;
+    margin: auto 0;
+  }
+
+  &.left-start{
+    inset-block-start:0;
+    inset-inline-end:100%;
+
+  }
+
+  &.left-end{
+    inset-block-end:0;
+    inset-inline-end:100%;
+
+  }
+
+  &.bottom{
+    inset-block-start:100%;
+    inset-inline: 0 0;
+    margin: 0 auto;
+  }
+
+  &.bottom-right{
+    inset-block-start:100%;
+    inset-inline-start:0;
+  }
+
+  &.bottom-left{
+    inset-block-start:100%;
+    inset-inline-end:0;
+  }
+}
+
+.has-tooltip{
+  position:relative;
+
+  &:hover .Tooltip, &:focus-visible .Tooltip{
+      visibility:visible;
+      opacity:1;
+
+      &.top, &.top-left, &.top-right{
+        margin-block-end:15px;
+      }
+
+      &.left, &.left-start, &.left-end{
+        margin-inline-end:15px;
+      }
+
+      &.right, &.right-start, &.right-end{
+        margin-inline-start:15px;
+      }
+
+      &.bottom, &.bottom-left, &.bottom-right{
+        margin-block-start:15px;
+      }
+
+  }
+}
+
+
+

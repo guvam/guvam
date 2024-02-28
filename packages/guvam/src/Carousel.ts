@@ -18,11 +18,16 @@ export class Carousel extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
+    const autoSlide = this.hasAttribute('auto-Slide');
+
+    if (autoSlide) {
+      this.startAutoSlide();
+    }
+
     this.slides = Array.from(this.querySelectorAll("[data-target='carousel-slide']"));
     this.indicators = Array.from(this.querySelectorAll("[data-target='carousel-indicator']"));
     this.controlPrev = this.querySelector("[data-target='carousel-control-prev']");
     this.controlNext = this.querySelector("[data-target='carousel-control-next']");
-    if (this.classList.contains('Auto-Slide')) this.startAutoSlide();
     this.controlPrev?.addEventListener('click', () => this.setIndex(this.calcIndex(-1)));
     this.controlNext?.addEventListener('click', () => this.setIndex(this.calcIndex(1)));
     this.indicators?.forEach((el) =>

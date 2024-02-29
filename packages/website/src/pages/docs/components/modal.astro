@@ -2,7 +2,7 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-
+import { Modal } from '@guvam/guvam';
 
 ---
 <Layout title="Modal Guvam Component">
@@ -38,51 +38,89 @@ import Code from '../../../components/blocks/Code.astro';
     </tr>
     </tbody>
   </table>
+  <Modal client:load />
 
   <Title id="input">Modal styling</Title>
   <Code lang="html" type="inline">
-    <dialog open class="Modal type-static">
-      <h1 class="Modal-Heading">Modal Heading</h1>
-      <div class="Modal-Body type-bordered">
-        Et voluptatem sit eveniet inventore quis natus et.
-        Voluptatem voluptates dolores dolores.
-        Illum qui occaecati incidunt ipsam atque quos ab.
-        Aperiam est voluptatem exercitationem.
-        Delectus magnam dolor vitae aperiam iure.
-        Praesentium nihil quo ea eligendi ut et mollitia accusantium.
-
-      </div>
-      <div class="Modal-Footer">
-        <button class="Button type-outline">close</button>
-        <button class="Button">Save Changes</button>
-      </div>
-    </dialog>
+    <guvam-modal>
+      <dialog class="Modal type-static" open data-target="modal-window">
+        <div class="Modal-Window">
+          <h1 class="Modal-Heading">
+            <span>Modal Heading</span>
+            <button class="Modal-Close" data-target="modal-close">
+              <i class="Icon x"></i>
+            </button>
+          </h1>
+          <div class="Modal-Body type-bordered">
+            Modal Body
+            <button class="Button has-tooltip">
+              Tooltip Test
+              <span class="Tooltip right">tooltip</span>
+            </button>
+          </div>
+          <div class="Modal-Footer">
+            <button class="Button type-outline" data-target="modal-close">Close</button>
+            <button class="Button">Save Changes</button>
+          </div>
+        </div>
+      </dialog>
+    </guvam-modal>
   </Code>
 
   <Title id="input">Modal in action</Title>
   <Code lang="html" type="inline">
-    <button class="Button" data-modal-opener>Click me</button>
-    <dialog class="Modal" data-modal>
-      <h1 class="Modal-Heading">Modal Heading</h1>
-      <div class="Modal-Body type-bordered">
-          Modal Body
-          <button class="Button has-tooltip">
-            Tooltip Test
-            <span class="Tooltip right">tooltip</span>
-          </button>
-      </div>
-      <form class="Modal-Footer">
-        <button class="Button type-outline">close</button>
-        <button class="Button">Save Changes</button>
-      </form>
-    </dialog>
+    <guvam-modal>
+      <button class="Button" data-target="modal-opener">Click me</button>
+      <dialog class="Modal type-centered" data-target="modal">
+        <div class="Modal-Window">
+          <h1 class="Modal-Heading">
+            <span>Modal Heading</span>
+            <button class="Modal-Close" data-target="modal-close">
+              <i class="Icon x"></i>
+            </button>
+          </h1>
+          <div class="Modal-Body type-bordered">
+            Modal Body
+            <button class="Button has-tooltip">
+              Tooltip Test
+              <span class="Tooltip right">tooltip</span>
+            </button>
+          </div>
+          <div class="Modal-Footer">
+            <button class="Button type-outline" data-target="modal-close">Close</button>
+            <button class="Button">Save Changes</button>
+          </div>
+        </div>
+      </dialog>
+    </guvam-modal>
+  </Code>
 
 
-    <script is-inline>
-      const modalButton= document.querySelector('[data-modal-opener]');
-      const modal= document.querySelector('[data-modal]')
-
-      modalButton.addEventListener('click', ()=>  modal.showModal())
-    </script>
+  <Title id="input">Modal with static backdrop</Title>
+  <Code lang="html" type="inline">
+    <guvam-modal staticbackdrop>
+      <button class="Button" data-target="modal-opener">Click me</button>
+      <dialog class="Modal" data-target="modal">
+        <div class="Modal-Window">
+          <h1 class="Modal-Heading">
+            <span>Modal Heading</span>
+            <button class="Modal-Close" data-target="modal-close">
+              <i class="Icon x"></i>
+            </button>
+          </h1>
+          <div class="Modal-Body type-bordered">
+            Modal Body
+            <button class="Button has-tooltip">
+              Tooltip Test
+              <span class="Tooltip right">tooltip</span>
+            </button>
+          </div>
+          <div class="Modal-Footer">
+            <button class="Button type-outline" data-target="modal-close">Close</button>
+            <button class="Button">Save Changes</button>
+          </div>
+        </div>
+      </dialog>
+    </guvam-modal>
   </Code>
 </Layout>

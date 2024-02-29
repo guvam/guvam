@@ -5,3 +5,4 @@ export * from './src/Dropdown';
 export * from './src/Carousel';
 export * from './src/Tabs';
 export * from './src/Alert';
+export * from './src/Modal';

@@ -13,14 +13,21 @@ export class Carousel extends LitElement {
 
   private controlNext!: HTMLElement | null;
 
+  private autoSlideInterval: NodeJS.Timeout | null = null;
+
   connectedCallback(): void {
     super.connectedCallback();
+
+    const autoSlide = this.hasAttribute('auto-Slide');
+
+    if (autoSlide) {
+      this.startAutoSlide();
+    }
 
     this.slides = Array.from(this.querySelectorAll("[data-target='carousel-slide']"));
     this.indicators = Array.from(this.querySelectorAll("[data-target='carousel-indicator']"));
     this.controlPrev = this.querySelector("[data-target='carousel-control-prev']");
     this.controlNext = this.querySelector("[data-target='carousel-control-next']");
-
     this.controlPrev?.addEventListener('click', () => this.setIndex(this.calcIndex(-1)));
     this.controlNext?.addEventListener('click', () => this.setIndex(this.calcIndex(1)));
     this.indicators?.forEach((el) =>
@@ -36,6 +43,17 @@ export class Carousel extends LitElement {
     }
 
     this.setIndex(this.index);
+  }
+
+  private startAutoSlide() {
+    this.autoSlideInterval = setInterval(() => this.setIndex(this.calcIndex(1)), 5000);
+  }
+
+  private stopAutoSlide() {
+    if (this.autoSlideInterval !== null) {
+      clearInterval(this.autoSlideInterval);
+      this.autoSlideInterval = null;
+    }
   }
 
   private calcIndex(change: number) {
@@ -59,6 +77,11 @@ export class Carousel extends LitElement {
         composed: true,
       }),
     );
+
+    if (this.autoSlideInterval !== null) {
+      this.stopAutoSlide();
+      this.startAutoSlide();
+    }
   }
 
   render() {

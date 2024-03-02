@@ -1,1 +1,66 @@
-.List {}
+.List-Group {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.List-Item {
+  position: relative;
+  display: flex;
+  inline-size: 400px;
+  block-size: 50px;
+  padding: 0.75rem 1.25rem;
+  margin-block-end: -1px;
+  background-color: var(--g-color-neutral);
+  border: 1px solid rgba(0, 0, 0, 0.225);
+}
+
+.List-Item:first-child {
+  border-start-start-radius: 0.4rem;
+  border-start-end-radius: 0.4rem;
+}
+
+.List-Item:last-child {
+  border-end-start-radius: 0.4rem;
+  border-end-end-radius: 0.4rem;
+}
+
+.Active {
+  background-color: var(--g-color-progress) !important;
+}
+
+.Disabled {
+  color: #a0a0a0;
+}
+
+.Item-Primary {
+  background-color: var(--g-color-primary);
+}
+
+.Item-Secondary {
+  background-color: var(--g-color-secondary);
+}
+
+.Item-Accent {
+  background-color: var(--g-color-accent);
+}
+
+.Item-Muted {
+  background-color: var(--g-color-muted);
+}
+
+.Item-Error {
+  background-color: var(--g-color-error);
+}
+
+.Item-Success {
+  background-color: var(--g-color-success);
+}
+
+.Item-Highlight {
+  background-color: var(--g-color-highlight);
+}
+
+.Item-Info {
+  background-color: var(--g-color-info);
+}

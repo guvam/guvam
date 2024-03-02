@@ -3,43 +3,96 @@ import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 ---
+
 <Layout title="List Guvam Component">
   <h1 class="Text type-h1 margin">Input</h1>
   <table class="Table">
     <thead>
-    <tr>
-      <td>Name</td>
-      <td>Type</td>
-      <td>Description</td>
-    </tr>
+      <tr>
+        <td>Name</td>
+        <td>Type</td>
+        <td>Description</td>
+      </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>guvam-input</td>
-      <td>element</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.Input</td>
-      <td>style</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>.type-outline</td>
-      <td>modifier</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>[disabled]</td>
-      <td>attribute</td>
-      <td></td>
-    </tr>
+      <tr>
+        <td>guvam-input</td>
+        <td>element</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.Input</td>
+        <td>style</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>.type-outline</td>
+        <td>modifier</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>[disabled]</td>
+        <td>attribute</td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 
-  <Title id="input">Input</Title>
+  <Title id="input">Basic List Group</Title>
   <Code lang="html" type="inline">
-    <input type="text" class="Input" />
+    <ul class="List-Group">
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+    </ul>
   </Code>
 
+  <Title id="input">Lists with active items</Title>
+  <Code lang="html" type="inline">
+    <ul class="List-Group">
+      <li class="List-Item Active">Active List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+    </ul>
+  </Code>
+
+  <Title id="input">Lists with disabled items</Title>
+  <Code lang="html" type="inline">
+    <ul class="List-Group">
+      <li class="List-Item Disabled">Disabled List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+      <li class="List-Item">Basic List Item</li>
+    </ul>
+  </Code>
+
+  <Title id="input">Lists with buttons/links</Title>
+  <Code lang="html" type="inline">
+    <div class="List-Group">
+      <button type="button" class="List-Item Button Active"> Active List Item </button>
+      <button type="button" class="List-Item Button">Basic List Item</button>
+      <button type="button" class="List-Item Button">Basic List Item</button>
+      <button type="button" class="List-Item Button">Basic List Item</button>
+      <button type="button" class="List-Item Button" disabled>Disabled List Item</button>
+    </div>
+  </Code>
+
+  <Title id="input">Contextual Lists</Title>
+  <Code lang="html" type="inline">
+    <ul class="List-Group">
+      <li class="List-Item Item-Primary">Basic List Item</li>
+      <li class="List-Item Item-Secondary">Basic List Item</li>
+      <li class="List-Item Item-Accent">Basic List Item</li>
+      <li class="List-Item Item-Muted">Basic List Item</li>
+      <li class="List-Item Item-Error">Basic List Item</li>
+      <li class="List-Item Item-Success">Basic List Item</li>
+      <li class="List-Item Item-Highlight">Basic List Item</li>
+      <li class="List-Item Item-Info">Basic List Item</li>
+    </ul>
+  </Code>
 </Layout>

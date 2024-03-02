@@ -1,0 +1,126 @@
+---
+import Layout from '../../../components/docs/Layout.astro';
+import Title from '../../../components/blocks/Title.astro';
+import Code from '../../../components/blocks/Code.astro';
+import { Modal } from '@guvam/guvam';
+
+---
+<Layout title="Modal Guvam Component">
+  <h1 class="Text type-h1 margin">Modal</h1>
+  <table class="Table">
+    <thead>
+    <tr>
+      <td>Name</td>
+      <td>Type</td>
+      <td>Description</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>guvam-input</td>
+      <td>element</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.Modal</td>
+      <td>style</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>.type-outline</td>
+      <td>modifier</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>[disabled]</td>
+      <td>attribute</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <Modal client:load />
+
+  <Title id="input">Modal styling</Title>
+  <Code lang="html" type="inline">
+    <guvam-modal>
+      <dialog class="Modal type-static" open data-target="modal-window">
+        <div class="Modal-Window">
+          <h1 class="Modal-Heading">
+            <span>Modal Heading</span>
+            <button class="Modal-Close" data-target="modal-close">
+              <i class="Icon x"></i>
+            </button>
+          </h1>
+          <div class="Modal-Body type-bordered">
+            Modal Body
+            <button class="Button has-tooltip">
+              Tooltip Test
+              <span class="Tooltip right">tooltip</span>
+            </button>
+          </div>
+          <div class="Modal-Footer">
+            <button class="Button type-outline" data-target="modal-close">Close</button>
+            <button class="Button">Save Changes</button>
+          </div>
+        </div>
+      </dialog>
+    </guvam-modal>
+  </Code>
+
+  <Title id="input">Vertically Centered Modal</Title>
+  <Code lang="html" type="inline">
+    <guvam-modal>
+      <button class="Button" data-target="modal-opener">Click me</button>
+      <dialog class="Modal type-centered" data-target="modal">
+        <div class="Modal-Window">
+          <h1 class="Modal-Heading">
+            <span>Modal Heading</span>
+            <button class="Modal-Close" data-target="modal-close">
+              <i class="Icon x"></i>
+            </button>
+          </h1>
+          <div class="Modal-Body type-bordered">
+            Modal Body
+            <button class="Button has-tooltip">
+              Tooltip Test
+              <span class="Tooltip right">tooltip</span>
+            </button>
+          </div>
+          <div class="Modal-Footer">
+            <button class="Button type-outline" data-target="modal-close">Close</button>
+            <button class="Button">Save Changes</button>
+          </div>
+        </div>
+      </dialog>
+    </guvam-modal>
+  </Code>
+
+
+  <Title id="input">Modal with static backdrop</Title>
+  <Code lang="html" type="inline">
+    <guvam-modal staticbackdrop>
+      <button class="Button" data-target="modal-opener">Click me</button>
+      <dialog class="Modal" data-target="modal">
+        <div class="Modal-Window">
+          <h1 class="Modal-Heading">
+            <span>Modal Heading</span>
+            <button class="Modal-Close" data-target="modal-close">
+              <i class="Icon x"></i>
+            </button>
+          </h1>
+          <div class="Modal-Body type-bordered">
+            Modal Body
+            <button class="Button has-tooltip">
+              Tooltip Test
+              <span class="Tooltip right">tooltip</span>
+            </button>
+          </div>
+          <div class="Modal-Footer">
+            <button class="Button type-outline" data-target="modal-close">Close</button>
+            <button class="Button">Save Changes</button>
+          </div>
+        </div>
+      </dialog>
+    </guvam-modal>
+  </Code>
+</Layout>

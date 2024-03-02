@@ -1,0 +1,96 @@
+.Modal {
+  position:fixed;
+  inset-block-start:10%;
+  inset-inline:0;
+  z-index:1;
+
+
+
+  &[open]{
+    display:flex;
+  }
+
+  &.type-static{
+    position:static;
+    margin:0;
+
+
+  }
+
+  &.type-centered{
+    inset-block-start:50%;
+    transform:translateY(-50%);
+  }
+
+  &::backdrop{
+    background-color:black;
+    opacity:0.4;
+  }
+
+
+
+}
+
+.Modal-Window{
+  flex-direction:column;
+  justify-content:space-between;
+  inline-size:600px;
+  margin:auto;
+  background-color: var(--g-color-background);
+  border: 2px solid var(--g-color-border);
+  border-radius:var(--g-border-radius);
+
+}
+
+.Modal-Heading{
+  display:flex;
+  justify-content:space-between;
+  padding: 24px;
+  font-size:var(--g-font-size-xl);
+}
+
+.Modal-Body{
+  flex-grow:1;
+  padding: 24px;
+  margin-block-end:24px;
+  border-block-start:1px solid var(--g-color-border);
+}
+
+.Modal-Footer
+{
+  display:flex;
+  gap:1em;
+  justify-content:flex-end;
+  padding: 24px;
+  border-block-start:1px solid var(--g-color-border);
+}
+
+.Modal-Close{
+  --text-color: var(--g-color-text);
+  --text-hover: color-mix(in hsl, var(--text-color), black 20%);
+
+  display:inline-flex;
+  align-items:center;
+  text-align:center;
+  cursor:pointer;
+  border-radius: var(--g-border-radius);
+
+  & .Icon{
+    inline-size:fit-content;
+    block-size:fit-content;
+    font-size:36px;
+  }
+
+
+
+  &:hover{
+    color:var(--text-hover);
+
+  }
+
+  &:focus-visible{
+    outline:2px solid var(--text-hover)
+  }
+}
+
+

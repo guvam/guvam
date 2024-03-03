@@ -38,6 +38,10 @@
   border-end-start-radius: var(--g-border-radius);
   border-end-end-radius: var(--g-border-radius);
 
+  .Code.type-code & {
+    border-radius: var(--g-border-radius);
+  }
+
   .Clipboard {
     position: absolute;
     inset: 4px 4px auto auto;

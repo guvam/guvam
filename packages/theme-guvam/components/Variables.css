@@ -1,4 +1,7 @@
 .Variables {
+  --foundation-color: var(--g-color-primary);
+  --foundation-color-inverse: var(--g-color-inverse);
+
   &.type-light {
     color-scheme: light;
 

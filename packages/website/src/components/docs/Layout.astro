@@ -1,5 +1,5 @@
 ---
-import Header from './Header.astro';
+import Header from '../Header.astro';
 import Footer from '../Footer.astro';
 import Analytics from '../blocks/Analytics.astro';
 import ThemeLoading from '../blocks/ThemeLoading.astro';
@@ -19,7 +19,7 @@ const { title } = Astro.props;
 </head>
 <body>
 <Header />
-<section class="Section narrow">
+<section class="Section narrow" style="margin-block: 5em">
   <div class="Section-Content" style="min-block-size: 75dvh">
     <nav class="PageNav" style="width: 220px">
 
@@ -27,12 +27,12 @@ const { title } = Astro.props;
         <summary class="Text type-h3">Getting Started</summary>
         <div class="PageNav-Links">
           <a href="/docs">Installation</a>
-          <a href="/docs/structure">Structure</a>
+<!--          <a href="/docs/structure">Structure</a>
           <a href="/docs/theming">Theming</a>
           <a href="/docs/variables">Variables</a>
           <a href="/docs/layout">Layout</a>
           <a href="/docs/typography">Typography</a>
-          <a href="/docs/integrations">Integrations</a>
+          <a href="/docs/integrations">Integrations</a>-->
         </div>
       </details>
 

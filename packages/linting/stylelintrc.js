@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['stylelint-config-standard', 'stylelint-config-recess-order', 'stylelint-prettier/recommended'],
-  ignoreFiles: ['.idea', '.cache', 'dist', 'node_modules', 'coverage'],
+  ignoreFiles: ['.idea', '.cache', 'dist', 'node_modules', 'coverage', 'docs'],
   configBasedir: '.',
   plugins: ['stylelint-use-logical'],
   rules: {

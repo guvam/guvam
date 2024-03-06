@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  ignorePatterns: ['node_modules', '.idea', 'coverage', 'dist', '.eslintrc.js', '.stylelintrc.js'],
+  ignorePatterns: ['node_modules', '.idea', 'coverage', 'dist', '.eslintrc.js', '.stylelintrc.js', 'docs'],
   env: {
     node: true,
     es6: true,

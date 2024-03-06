@@ -46,8 +46,8 @@
     }
   },
   "lint-staged": {
-    "*.ts": ["eslint -c .eslintrc.js","tsc-files -noEmit"],
-    "*.css": "stylelint -c .stylelintrc.js"
+    "packages/**/*.ts": ["eslint -c .eslintrc.js","tsc-files -noEmit"],
+    "packages/**/*.css": "stylelint -c .stylelintrc.js"
   },
   "workspaces": [
     "packages/elements",

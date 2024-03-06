@@ -25,27 +25,39 @@
   },
   "homepage": "https://guvam.com/",
   "scripts": {
-    "lint": "npm run lint-ts && npm run lint-css",
-    "lint-ts": "eslint",
-    "lint-css": "stylelint",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "9.0.11",
     "@types/node": "20.11.24",
     "@guvam/linting": "0.1.0",
-    "solid-js": "1.8.15",
     "ts-node": "10.9.2",
     "typescript": "5.3.3",
     "vitest": "1.3.1",
-    "@vitest/coverage-v8": "1.3.1"
+    "@vitest/coverage-v8": "1.3.1",
+    "lint-staged": "15.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ],
+    "*.css": [
+      "stylelint --fix"
+    ]
   },
   "workspaces": [
-    "packages/css-base",
-    "packages/theme-guvam",
+    "packages/elements",
     "packages/guvam",
     "packages/linting",
-    "packages/blocks",
+    "packages/styles",
+    "packages/theme-guvam",
     "packages/website"
   ]
 }

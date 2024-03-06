@@ -1,41 +1,36 @@
-/*
-  CSS selectors dont work if put under a selector with -moz-range-thumb
-  on non-mozzila browsers
-*/
-
 .Slider {
   --slider-background: var(--g-input-background);
-  --slider-active-background:var(--g-input-focus);
+  --slider-active-background: var(--g-input-focus);
   --slider-thumb: color-mix(in hsl, var(--slider-active-background), white 40%);
-  --slider-disabled-background:var(--g-input-disabled);
+  --slider-disabled-background: var(--g-input-disabled);
   --slider-disabled-thumb: color-mix(in hsl, var(--slider-disabled-background), black 20%);
   --slider-hover: color-mix(in hsl, var(--g-input-hover), transparent 60%);
 
-  block-size:8px;
-  cursor:pointer;
-  background-color:var(--slider-background);
+  block-size: 8px;
+  cursor: pointer;
+  background-color: var(--slider-background);
   border-radius: 30px;
 
-  &::-webkit-slider-thumb{
-    inline-size:18px;
-    block-size:18px;
-    appearance:none;
+  &::-webkit-slider-thumb {
+    inline-size: 18px;
+    block-size: 18px;
+    appearance: none;
     background: var(--slider-thumb);
-    border-radius:50%;
+    border-radius: 50%;
     transition: outline-width 0.1s ease-in-out;
   }
 
-  &:disabled{
-    cursor:default;
-    background-color:var(--slider-disabled-background)
+  &:disabled {
+    cursor: default;
+    background-color: var(--slider-disabled-background);
   }
 
-  &:disabled::-webkit-slider-thumb{
-    background-color:var(--slider-disabled-thumb);
+  &:disabled::-webkit-slider-thumb {
+    background-color: var(--slider-disabled-thumb);
   }
 
   &:disabled::-moz-range-thumb {
-    background-color:var(--slider-disabled-thumb);
+    background-color: var(--slider-disabled-thumb);
   }
 
   &:not(:disabled):hover::-webkit-slider-thumb {
@@ -43,16 +38,16 @@
     outline-offset: 3px;
   }
 
-  &:not(:disabled):active::-webkit-slider-thumb{
-    outline:5px solid var(--slider-hover);
+  &:not(:disabled):active::-webkit-slider-thumb {
+    outline: 5px solid var(--slider-hover);
   }
 
-  &::-moz-range-thumb {
-    inline-size:18px;
-    block-size:18px;
-    appearance:none;
+  &::-moz-range-thumb { /* stylelint-disable-line */
+    inline-size: 18px;
+    block-size: 18px;
+    appearance: none;
     background: var(--slider-thumb);
-    border-radius:50%;
+    border-radius: 50%;
     transition: outline-width 0.1s ease-in-out;
   }
 
@@ -62,6 +57,6 @@
   }
 
   &:not(:disabled):active::-moz-range-thumb {
-    outline:5px solid var(--slider-hover);
+    outline: 5px solid var(--slider-hover);
   }
 }

@@ -29,7 +29,7 @@
     &:hover::before {
       position: absolute;
       inset-inline-start: -1em;
-      content: '#';
+      content: "#";
     }
   }
 

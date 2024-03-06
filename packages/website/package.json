@@ -2,6 +2,7 @@
   "name": "@guvam/website",
   "type": "module",
   "version": "0.1.0",
+  "packageManager": "yarn@1.22.21",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

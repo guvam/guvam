@@ -5,7 +5,7 @@
 .Menu-Dropdown {
   position: absolute;
   inset: 0 auto auto 0;
-  display:none;
+  display: none;
   margin: 0;
   background-color: var(--g-color-popover-background);
   border: 1px solid var(--g-color-border);
@@ -18,23 +18,22 @@
   }
 }
 
-
 .Menu-Item {
   --menu-hover: color-mix(in hsl, var(--g-color-popover-background), black 20%);
 
-  display:block;
-  padding:8px;
+  display: block;
+  padding: 8px;
 
-  &:hover{
-    background-color:var(--menu-hover);
+  &:hover {
+    background-color: var(--menu-hover);
   }
 
-  &:focus-visible{
-    background-color:var(--menu-hover);
+  &:focus-visible {
+    background-color: var(--menu-hover);
   }
 }
 
-.Menu-Separator{
-  display:block;
+.Menu-Separator {
+  display: block;
   border-block-start: 2px solid rgb(0 0 0 / 20%);
 }

@@ -12,9 +12,8 @@
   & > * {
     border: 1px solid var(--input-group-border-color);
     border-inline-start: none;
-    border-radius: 0
+    border-radius: 0;
   }
-
 
   & > *:first-child {
     border-inline-start: 1px solid var(--input-group-border-color);

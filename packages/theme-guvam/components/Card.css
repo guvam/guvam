@@ -1,5 +1,5 @@
 .Card {
-  --card-surface: #2C2C2C;
+  --card-surface: #2c2c2c;
 
   display: flex;
   flex-direction: column;

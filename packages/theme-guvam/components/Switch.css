@@ -1,63 +1,59 @@
-.Switch{
+.Switch {
   --switch-background: var(--g-input-background);
   --switch-button: color-mix(in hsl, var(--switch-background), white 60%);
-  --switch-active-background:var(--g-input-focus);
+  --switch-active-background: var(--g-input-focus);
   --switch-active-button: color-mix(in hsl, var(--switch-active-background), white 40%);
-  --switch-disabled-background:var(--g-input-disabled);
+  --switch-disabled-background: var(--g-input-disabled);
   --switch-disabled-button: color-mix(in hsl, var(--switch-disabled-background), black 20%);
   --switch-hover: color-mix(in hsl, var(--g-input-hover), transparent 60%);
 
-
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  inline-size:40px;
-  block-size:12px;
-  cursor:pointer;
-  background-color:var(--switch-background);
-  border: solid 1px var();
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 40px;
+  block-size: 12px;
+  cursor: pointer;
+  background-color: var(--switch-background);
+  border: solid 1px var(--radio-border);
   border-radius: 30px;
   transition: background-color 0.2s ease-in-out;
 
-  &:checked{
-    background-color:var(--switch-active-background);
+  &:checked {
+    background-color: var(--switch-active-background);
   }
 
-  &:disabled{
-    cursor:default;
-    background-color:var(--switch-disabled-background);
+  &:disabled {
+    cursor: default;
+    background-color: var(--switch-disabled-background);
   }
 
-  &::before{
-    display:inline-block;
-    flex-shrink:0;
-    inline-size:18px;
-    block-size:18px;
-    content:'';
-    border-radius:50%;
+  &::before {
+    display: inline-block;
+    flex-shrink: 0;
+    inline-size: 18px;
+    block-size: 18px;
+    content: "";
+    border-radius: 50%;
     transition: margin 0.2s ease-in-out;
   }
 
-
-  &:not(:checked)::before{
-    margin-inline-end:calc(50% + 5px);
-    background-color:var(--switch-button);
+  &:not(:checked)::before {
+    margin-inline-end: calc(50% + 5px);
+    background-color: var(--switch-button);
   }
 
-  &:checked::before{
-    margin-inline-start:calc(50% + 5px);
-    background-color:var(--switch-active-button);
+  &:checked::before {
+    margin-inline-start: calc(50% + 5px);
+    background-color: var(--switch-active-button);
   }
 
-  &:disabled::before{
-    background-color:var(--switch-disabled-button);
-
+  &:disabled::before {
+    background-color: var(--switch-disabled-button);
   }
 
-  &:not(:disabled):focus-visible::before, &:not(:disabled):hover::before {
+  &:not(:disabled):focus-visible::before,
+  &:not(:disabled):hover::before {
     outline: 2px solid var(--switch-hover);
     outline-offset: 3px;
-
   }
 }
-

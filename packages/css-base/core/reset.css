@@ -1,6 +1,14 @@
 :root {
   box-sizing: border-box;
-  font-family: ui-sans-serif, system-ui, -apple-system, roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    roboto,
+    "Helvetica Neue",
+    arial,
+    "Noto Sans",
+    sans-serif;
   color: CanvasText;
   background-color: Canvas;
 }

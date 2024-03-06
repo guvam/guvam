@@ -23,7 +23,6 @@
   --foundation-color-inverse: var(--g-color-inverse);
 }
 
-
 .-color-primary {
   --foundation-color: var(--g-color-primary);
   --foundation-color-inverse: var(--g-color-inverse);

@@ -135,9 +135,8 @@
   cursor: pointer;
 
   & i {
-    display:none;
+    display: none;
   }
-
 
   &.type-dark i:nth-child(1) {
     display: inline;

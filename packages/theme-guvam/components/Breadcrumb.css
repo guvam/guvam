@@ -13,7 +13,7 @@
       float: inline-start;
       padding-inline-end: 1em;
       color: var(--g-color-text);
-      content: '/';
+      content: "/";
     }
   }
 

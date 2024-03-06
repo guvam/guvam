@@ -3,46 +3,56 @@
   --progress-active: var(--g-input-focus);
 
   position: relative;
-  inline-size:100%;
-  block-size:8px;
-  overflow:hidden;
-  background-color:var(--progress-background);
+  inline-size: 100%;
+  block-size: 8px;
+  overflow: hidden;
+  background-color: var(--progress-background);
 
-  &:indeterminate::before{
+  &:indeterminate::before {
     position: absolute;
     inset: 0;
     box-sizing: border-box;
-    inline-size:110%;
-    block-size:8px;
+    inline-size: 110%;
+    block-size: 8px;
     content: " ";
-    background-color:var(--progress-active);
-    animation:progress-indeterminate 1.5s linear infinite;
+    background-color: var(--progress-active);
+    animation: progress-indeterminate 1.5s linear infinite;
   }
 
-
-  &::-webkit-progress-value{
-    background-color:var(--progress-active);
-    transition:width 0.5s;
+  &::-webkit-progress-value {
+    background-color: var(--progress-active);
+    transition: width 0.5s;
   }
 
   /* Transition not working on -moz-progress-bar */
   &::-moz-progress-bar {
-    background-color:var(--progress-active);
+    background-color: var(--progress-active);
   }
 
-  &:indeterminate::-moz-progress-bar{
-    background-color:var(--progress-active);
-    animation:progress-indeterminate 1.5s linear infinite;
+  &:indeterminate::-moz-progress-bar {
+    background-color: var(--progress-active);
+    animation: progress-indeterminate 1.5s linear infinite;
   }
 }
 
 @keyframes progress-indeterminate {
-  0%  {clip-path: polygon(0 0, 0 0, 0 100%, 0 100%)}
-  25% {clip-path:polygon(0 0, 25% 0, 25% 100%, 0 100%)}
-  50% {clip-path: polygon(15% 0, 50% 0, 50% 100%, 15% 100%)}
-  75% {clip-path: polygon(30% 0, 75% 0, 75% 100%, 30% 100%)}
-  100% {clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%)}
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  25% {
+    clip-path: polygon(0 0, 25% 0, 25% 100%, 0 100%);
+  }
+
+  50% {
+    clip-path: polygon(15% 0, 50% 0, 50% 100%, 15% 100%);
+  }
+
+  75% {
+    clip-path: polygon(30% 0, 75% 0, 75% 100%, 30% 100%);
+  }
+
+  100% {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+  }
 }
-
-
-

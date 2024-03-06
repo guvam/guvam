@@ -3,7 +3,7 @@
     --g-media-screen: mobile;
   }
 
-  @media screen and (width >= 800px) and (width < 1000px){
+  @media screen and (width >= 800px) and (width < 1000px) {
     --g-media-screen: tablet;
   }
 

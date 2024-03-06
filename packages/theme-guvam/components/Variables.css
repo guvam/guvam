@@ -6,10 +6,10 @@
     color-scheme: light;
 
     /* font */
-    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji';
-    --g-font-family-code: 'Nordhealth Mono', monospace, monospace;
-    --g-font-family-icon: 'Nordhealth Mono', monospace, monospace;
+    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji";
+    --g-font-family-code: "Nordhealth Mono", monospace, monospace;
+    --g-font-family-icon: "Nordhealth Mono", monospace, monospace;
     --g-font-size-xxxl: 2.25rem;
     --g-font-size-xxl: 1.5rem;
     --g-font-size-xl: 1.25rem;
@@ -80,8 +80,8 @@
     --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
     --g-box-shadow-nav: 0 0 0 1px var(--g-color-border), 0 5px 17px rgb(12 12 12 / 14%);
     --g-box-shadow-popout: 0 4px 12px rgb(12 12 12 / 15%), 0 0 0 1px rgb(0 0 0 / 5%);
-    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%),
-      0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
+    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%),
+      0 0 0 1px rgb(0 0 0 / 5%);
 
     /* input */
     --g-input-block-min: 2em;
@@ -106,10 +106,10 @@
     color-scheme: dark;
 
     /* font */
-    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, 'Segoe UI', helvetica, arial, sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji';
-    --g-font-family-code: 'Nordhealth Mono', monospace, monospace;
-    --g-font-family-icon: 'Nordhealth Mono', monospace, monospace;
+    --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji";
+    --g-font-family-code: "Nordhealth Mono", monospace, monospace;
+    --g-font-family-icon: "Nordhealth Mono", monospace, monospace;
     --g-font-size-xxxl: 2.25rem;
     --g-font-size-xxl: 1.5rem;
     --g-font-size-xl: 1.25rem;
@@ -181,8 +181,8 @@
     --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
     --g-box-shadow-nav: 0 0 0 1px var(--g-color-border), 0 5px 17px rgb(12 12 12 / 14%);
     --g-box-shadow-popout: 0 4px 12px rgb(12 12 12 / 15%), 0 0 0 1px rgb(0 0 0 / 5%);
-    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%),
-      0 11px 15px -7px rgb(12 12 12 / 10%), 0 0 0 1px rgb(0 0 0 / 5%);
+    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%),
+      0 0 0 1px rgb(0 0 0 / 5%);
 
     /* input */
     --g-input-block-min: 2em;

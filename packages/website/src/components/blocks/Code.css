@@ -7,12 +7,7 @@
   --l: var(--g-color-border);
 
   padding: 1em;
-  background-image: repeating-linear-gradient(45deg,
-  var(--b) 0,
-  var(--b) 19px,
-  var(--l) 19px,
-  var(--l) 20px
-  );
+  background-image: repeating-linear-gradient(45deg, var(--b) 0, var(--b) 19px, var(--l) 19px, var(--l) 20px);
   border: 1px solid var(--g-color-border);
   border-start-start-radius: var(--g-border-radius);
   border-start-end-radius: var(--g-border-radius);

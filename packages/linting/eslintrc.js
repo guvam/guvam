@@ -20,7 +20,7 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        printWidth: 140,
+        printWidth: 120,
       },
     ],
     'import/no-extraneous-dependencies': 'off',
@@ -36,7 +36,7 @@ module.exports = {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: ['packages/*/tsconfig.json'],
+        project: ['tsconfig.json'],
       },
     },
   },

@@ -1,20 +1,26 @@
 .Breadcrumb {
+  --breadcrumb-separator: "/";
+
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  margin-block-end: 1rem;
+  overflow: hidden;
+}
+
+.Breadcrumb-Icon {
+  padding: 0.25em;
 }
 
 .Breadcrumb-Item {
-  &:nth-child(n + 2) {
-    padding-inline-start: 1em;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  white-space: nowrap;
 
-    &::before {
-      float: inline-start;
-      padding-inline-end: 1em;
-      color: var(--g-color-text);
-      content: "/";
-    }
+  &:nth-child(n + 2)::before {
+    padding-inline: 0.5em;
+    color: var(--g-color-text);
+    content: var(--breadcrumb-separator);
   }
 
   &.active {

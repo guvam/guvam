@@ -1,12 +1,13 @@
 .Button {
   --button-color: var(--g-color-neutral);
-  --button-color-hover: color-mix(in hsl, var(--g-color-neutral), black 20%);
+  --button-color-hover: color-mix(in hsl, var(--g-color-neutral), black 40%);
   --button-color-disabled: color-mix(in hsl, var(--g-color-neutral), transparent 40%);
 
+  position: relative;
   display: inline-flex;
+  flex-shrink: 0;
   column-gap: 1em;
   align-items: center;
-  min-block-size: 2em;
   padding-inline: 1em;
   font-size: 1em;
   color: var(--g-color-inverse);
@@ -17,6 +18,7 @@
   border-radius: var(--g-border-radius);
   box-shadow: var(--g-box-shadow);
   transition: transform var(--g-transition-slowly);
+  min-block-size: 2em;
 
   &:disabled {
     color: #999;
@@ -51,6 +53,7 @@
 
   &.type-text {
     background-color: transparent;
+    min-block-size: auto;
   }
 
   &.type-link {
@@ -58,14 +61,48 @@
     background-color: transparent;
   }
 
-  &.icon {
+  &.tool {
     justify-content: center;
     aspect-ratio: 1;
     padding: 0;
+    font-size: 18px;
+    border-radius: var(--g-border-radius);
+    min-block-size: 2em;
+  }
+
+  &.icon {
+    justify-content: center;
+    inline-size: 2em;
+    aspect-ratio: 1;
+    padding: 0;
+    background-color: transparent;
     border-radius: var(--g-border-radius-circle);
+    block-size: 2em;
+  }
+
+  &.ui {
+    justify-content: center;
+    inline-size: 2em;
+    aspect-ratio: 1;
+    padding: 0;
+    background-color: transparent;
+    border-radius: var(--g-border-radius-sharp);
+    block-size: 2em;
   }
 
   &.inline-wide {
     padding-inline: 3em;
+  }
+
+  &.inline-none {
+    padding-inline: 0;
+  }
+
+  &.active {
+    background-color: var(--g-color-selected);
+  }
+
+  &.selected {
+    background-color: var(--g-color-hover);
   }
 }

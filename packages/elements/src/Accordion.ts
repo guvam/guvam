@@ -1,16 +1,10 @@
-import { LitElement, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
-
-@customElement('guvam-accordion')
-export class Accordion extends LitElement {
-  @property({ type: Boolean, reflect: true }) single = false;
-
+export class Accordion extends HTMLElement {
+  private single = false;
   private controls!: NodeListOf<HTMLElement>;
 
   connectedCallback(): void {
-    super.connectedCallback();
-
-    this.controls = this.querySelectorAll('guvam-collapse');
+    this.single = this.getAttribute('single') !== null;
+    this.controls = this.querySelectorAll('gm-collapse');
 
     this.addEventListener('collapse-open', (ev) => {
       if (this.single) {
@@ -25,10 +19,6 @@ export class Accordion extends LitElement {
     }
   }
 
-  render() {
-    return html`<slot />`;
-  }
-
   setIndex(index: number) {
     this.controls.forEach((element, i) => {
       if (index !== i) {
@@ -37,3 +27,5 @@ export class Accordion extends LitElement {
     });
   }
 }
+
+customElements.define('gm-accordion', Accordion);

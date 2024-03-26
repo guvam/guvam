@@ -1,9 +1,5 @@
-import { LitElement, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
-
-@customElement('guvam-carousel')
-export class Carousel extends LitElement {
-  @property({ type: Number, reflect: true }) index = -1;
+export class Carousel extends HTMLElement {
+  private index = -1;
 
   private slides!: HTMLElement[];
 
@@ -16,8 +12,6 @@ export class Carousel extends LitElement {
   private autoSlideInterval: NodeJS.Timeout | null = null;
 
   connectedCallback(): void {
-    super.connectedCallback();
-
     const autoSlide = this.hasAttribute('auto-Slide');
 
     if (autoSlide) {
@@ -83,8 +77,6 @@ export class Carousel extends LitElement {
       this.startAutoSlide();
     }
   }
-
-  render() {
-    return html` <slot />`;
-  }
 }
+
+customElements.define('gm-carousel', Carousel);

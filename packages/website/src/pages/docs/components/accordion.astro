@@ -2,7 +2,6 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Accordion, Collapse } from '../../../../../elements';
 import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Accordion Guvam Component">
@@ -50,14 +49,11 @@ import Badge from '../../../components/blocks/Badge.astro';
     </tbody>
   </table>
 
-  <Accordion client:load />
-  <Collapse client:load />
-
   <Title id="dropdown">Accordion</Title>
   <!--<Code lang="html" type="block">-->
-  <guvam-accordion class="Accordion" single>
+  <gm-accordion class="Accordion" single>
     {[1, 2, 3, 4].map(i =>
-      <guvam-collapse class="Collapse" open={i === 1}>
+      <gm-collapse class="Collapse" open={i === 1}>
         <button class="Collapse-Action" data-target="collapse-control">
           Collapse item #{i}
         </button>
@@ -82,7 +78,7 @@ import Badge from '../../../components/blocks/Badge.astro';
             the transition does limit overflow.
           </div>
         </div>
-      </guvam-collapse>)}
-  </guvam-accordion>
+      </gm-collapse>)}
+  </gm-accordion>
   <!--</Code>-->
 </Layout>

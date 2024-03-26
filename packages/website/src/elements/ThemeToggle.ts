@@ -1,6 +1,3 @@
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-
 const switchBetweenClasses = (el: HTMLElement | null) => {
   if (el) {
     const isLight = el.classList.contains('type-light');
@@ -11,17 +8,13 @@ const switchBetweenClasses = (el: HTMLElement | null) => {
   }
 };
 
-@customElement('theme-toggle')
-export class ThemeToggle extends LitElement {
+export class ThemeToggle extends HTMLElement {
   connectedCallback() {
-    super.connectedCallback();
     this.addEventListener('click', () => {
       switchBetweenClasses(document.querySelector(':root'));
       switchBetweenClasses(this);
     });
   }
-
-  render() {
-    return html`<slot />`;
-  }
 }
+
+customElements.define('ws-theme-toggle', ThemeToggle);

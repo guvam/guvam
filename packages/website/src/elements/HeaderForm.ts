@@ -1,12 +1,6 @@
-import { LitElement, html } from 'lit';
-import { customElement, queryAssignedElements } from 'lit/decorators.js';
-
 type FormValue = Record<string, string | boolean>;
 
-@customElement('header-form')
-export class HeaderForm extends LitElement {
-  @queryAssignedElements({ selector: 'form' }) formEls!: HTMLFormElement[];
-
+export class HeaderForm extends HTMLElement {
   private contentArea = (data: FormValue) => {
     const classNames = [
       'LayoutContent',
@@ -33,8 +27,6 @@ export class HeaderForm extends LitElement {
   };
 
   connectedCallback(): void {
-    super.connectedCallback();
-
     const initData = {
       color: 'success',
       size: 'default',
@@ -45,7 +37,7 @@ export class HeaderForm extends LitElement {
     const storageData = window.localStorage.getItem('content');
     const data: FormValue = storageData === null ? initData : JSON.parse(storageData);
 
-    const formEl = this.formEls[0];
+    const formEl = this.querySelector('form');
 
     if (formEl) {
       for (const x of Array.from(formEl.elements) as HTMLInputElement[]) {
@@ -61,8 +53,6 @@ export class HeaderForm extends LitElement {
       this.contentArea(data);
     }
   }
-
-  render() {
-    return html` <slot />`;
-  }
 }
+
+customElements.define('ws-header-form', HeaderForm);

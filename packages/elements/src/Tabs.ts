@@ -1,17 +1,9 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-
-@customElement('guvam-tabs')
-export class Tabs extends LitElement {
-  @property({ type: Number, reflect: true }) index = -1;
-
+export class Tabs extends HTMLElement {
+  private index = -1;
   private controls!: NodeListOf<HTMLElement>;
-
   private contents!: NodeListOf<HTMLElement>;
 
   connectedCallback(): void {
-    super.connectedCallback();
-
     this.controls = this.querySelectorAll('[data-target="tab-control"]');
 
     this.contents = this.querySelectorAll('[data-target="tab-content"]');
@@ -31,10 +23,6 @@ export class Tabs extends LitElement {
     this.setIndex(this.index);
   }
 
-  render() {
-    return html`<slot />`;
-  }
-
   setIndex(index: number) {
     this.index = index;
 
@@ -52,3 +40,5 @@ export class Tabs extends LitElement {
     );
   }
 }
+
+customElements.define('gm-tabs', Tabs);

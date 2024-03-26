@@ -2,8 +2,6 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Modal } from '../../../../../elements';
-
 ---
 <Layout title="Modal Guvam Component">
   <h1 class="Text type-h1 margin">Modal</h1>
@@ -38,11 +36,10 @@ import { Modal } from '../../../../../elements';
     </tr>
     </tbody>
   </table>
-  <Modal client:load />
 
   <Title id="input">Modal styling</Title>
   <Code lang="html" type="inline">
-    <guvam-modal>
+    <gm-modal>
       <dialog class="Modal type-static" open data-target="modal-window">
         <div class="Modal-Window">
           <h1 class="Modal-Heading">
@@ -64,12 +61,12 @@ import { Modal } from '../../../../../elements';
           </div>
         </div>
       </dialog>
-    </guvam-modal>
+    </gm-modal>
   </Code>
 
   <Title id="input">Vertically Centered Modal</Title>
   <Code lang="html" type="inline">
-    <guvam-modal>
+    <gm-modal>
       <button class="Button" data-target="modal-opener">Click me</button>
       <dialog class="Modal type-centered" data-target="modal">
         <div class="Modal-Window">
@@ -92,13 +89,13 @@ import { Modal } from '../../../../../elements';
           </div>
         </div>
       </dialog>
-    </guvam-modal>
+    </gm-modal>
   </Code>
 
 
   <Title id="input">Modal with static backdrop</Title>
   <Code lang="html" type="inline">
-    <guvam-modal staticbackdrop>
+    <gm-modal static>
       <button class="Button" data-target="modal-opener">Click me</button>
       <dialog class="Modal" data-target="modal">
         <div class="Modal-Window">
@@ -121,6 +118,6 @@ import { Modal } from '../../../../../elements';
           </div>
         </div>
       </dialog>
-    </guvam-modal>
+    </gm-modal>
   </Code>
 </Layout>

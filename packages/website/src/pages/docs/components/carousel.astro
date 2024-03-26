@@ -3,7 +3,6 @@ import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
 import Badge from '../../../components/blocks/Badge.astro';
-import { Carousel } from '../../../../../elements';
 
 const slides = ['Fun', 'Smile', 'Laugh', 'Happy', 'Grin'];
 const active = 0;
@@ -21,7 +20,7 @@ const active = 0;
     </thead>
     <tbody>
       <tr>
-        <td>guvam-carousel</td>
+        <td>gm-carousel</td>
         <td>
           <Badge type="element">element</Badge>
         </td>
@@ -121,11 +120,9 @@ const active = 0;
     </tbody>
   </table>
 
-  <Carousel client:load />
-
   <Title id="carousel">Carousel</Title>
   <Code lang="html" type="inline">
-    <guvam-carousel class="Carousel" index="0">
+    <gm-carousel class="Carousel" index="0">
       <div class="Carousel-SlideList">
         {
           slides.map((item, index) => (
@@ -152,12 +149,12 @@ const active = 0;
       <button class="Carousel-Control type-next" data-target="carousel-control-next">
         <i class="Icon arrow-right"></i>
       </button>
-    </guvam-carousel>
+    </gm-carousel>
   </Code>
 
   <Title id="carousel">Fade In Carousel</Title>
   <Code lang="html" type="inline">
-    <guvam-carousel class="Carousel" index="0">
+    <gm-carousel class="Carousel" index="0">
       <div class="Carousel-SlideList">
         {
           slides.map((item, index) => (
@@ -184,12 +181,12 @@ const active = 0;
       <button class="Carousel-Control type-next" data-target="carousel-control-next">
         <i class="Icon arrow-right"></i>
       </button>
-    </guvam-carousel>
+    </gm-carousel>
   </Code>
 
   <Title id="carousel">Auto-Sliding Carousel</Title>
   <Code lang="html" type="inline">
-    <guvam-carousel class="Carousel" index="0" auto-Slide>
+    <gm-carousel class="Carousel" index="0" auto-Slide>
       <div class="Carousel-SlideList">
         {
           slides.map((item, index) => (
@@ -216,6 +213,6 @@ const active = 0;
       <button class="Carousel-Control type-next" data-target="carousel-control-next">
         <i class="Icon arrow-right"></i>
       </button>
-    </guvam-carousel>
+    </gm-carousel>
   </Code>
 </Layout>

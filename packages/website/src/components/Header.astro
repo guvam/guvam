@@ -1,5 +1,4 @@
 ---
-import { ThemeToggle } from '../elements/ThemeToggle';
 import gitHubIcon from '../assets/logos/github.svg?raw';
 import logo from '../assets/logos/guvamfull.svg?raw';
 
@@ -21,11 +20,11 @@ import './Header.css';
           </a>
         </div>
       </nav>
-      <ThemeToggle data-theme-toggle class="Header-Theme" client:load>
+      <w-theme-toggle data-theme-toggle class="Header-Theme">
         <i class="Icon sun-fill" />
         <i class="Icon moon-fill" />
         <span hidden>Light / Dark</span>
-      </ThemeToggle>
+      </w-theme-toggle>
       <label class="Header-Button">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="4" width="20" height="2" rx="1" fill="currentColor" />

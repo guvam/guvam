@@ -1,15 +1,5 @@
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-
-@customElement('guvam-alert')
-export class Alert extends LitElement {
-  render() {
-    return html`<slot />`;
-  }
-
+export class Alert extends HTMLElement {
   connectedCallback() {
-    super.connectedCallback();
-
     this.addEventListener('close-alert', () => {
       console.log('Alert!');
     });
@@ -29,3 +19,5 @@ export class Alert extends LitElement {
     }
   }
 }
+
+customElements.define('gm-alert', Alert);

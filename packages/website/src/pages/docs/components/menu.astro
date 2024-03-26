@@ -2,7 +2,6 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Dropdown } from '../../../../../elements';
 import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Menu Guvam Component">
@@ -24,10 +23,9 @@ import Badge from '../../../components/blocks/Badge.astro';
     </tbody>
   </table>
 
-  <Dropdown client:load />
   <Title id="dropdown">Dropdown</Title>
   <Code lang="html" type="block">
-    <guvam-dropdown class="Menu">
+    <gm-dropdown class="Menu">
       <button class="Button" data-target="button">
         Menu
       </button>
@@ -39,7 +37,7 @@ import Badge from '../../../components/blocks/Badge.astro';
         <div class="Menu-Separator" />
         <li><a class="Menu-Item" href="#">Something else here</a></li>
       </ul>
-    </guvam-dropdown>
+    </gm-dropdown>
   </Code>
 
 </Layout>

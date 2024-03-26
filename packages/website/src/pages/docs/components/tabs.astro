@@ -2,7 +2,6 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Tabs } from '../../../../../elements';
 import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Tabs Guvam Component">
@@ -58,10 +57,9 @@ import Badge from '../../../components/blocks/Badge.astro';
     </tbody>
   </table>
 
-  <Tabs client:load />
   <Title id="tabs">Tabs</Title>
   <Code lang="html" type="list">
-    <guvam-tabs class="Tabs">
+    <gm-tabs class="Tabs">
       <div class="Tab-Headers">
         <button class="Button type-text" data-target="tab-control">
           tab1
@@ -79,6 +77,6 @@ import Badge from '../../../components/blocks/Badge.astro';
         <div class="Tab-Content" data-target="tab-content">but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
         <div class="Tab-Content" data-target="tab-content">And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
       </div>
-    </guvam-tabs>
+    </gm-tabs>
   </Code>
 </Layout>

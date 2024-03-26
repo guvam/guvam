@@ -1,9 +1,5 @@
-import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
-
-@customElement('guvam-modal')
-export class Modal extends LitElement {
-  @property({ type: Boolean }) staticBackdrop = false;
+export class Modal extends HTMLElement {
+  private static = false;
 
   private modalOpener!: NodeListOf<HTMLElement>;
 
@@ -11,15 +7,7 @@ export class Modal extends LitElement {
 
   private modalClosers!: NodeListOf<HTMLElement>;
 
-  connectedCallback(): void {
-    this.initialize();
-  }
-
-  render() {
-    return html`<slot />`;
-  }
-
-  initialize() {
+  connectedCallback() {
     this.modalOpener = this.querySelectorAll('[data-target="modal-opener"]');
     this.modalClosers = this.querySelectorAll('[data-target="modal-close"]');
     this.modal = this.querySelectorAll('[data-target="modal"]')[0] as HTMLDialogElement;
@@ -34,7 +22,7 @@ export class Modal extends LitElement {
       });
     });
 
-    if (this.staticBackdrop)
+    if (this.static)
       this.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') e.preventDefault();
       });
@@ -45,3 +33,5 @@ export class Modal extends LitElement {
       });
   }
 }
+
+customElements.define('gm-modal', Modal);

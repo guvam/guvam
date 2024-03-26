@@ -2,7 +2,6 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Alert } from '../../../../../elements';
 import Badge from '../../../components/blocks/Badge.astro';
 ---
 
@@ -76,7 +75,7 @@ import Badge from '../../../components/blocks/Badge.astro';
 
   <Title id="alert-close">Alert with Dismiss</Title>
   <Code lang="html" type="inline">
-    <Alert>
+    <gm-alert>
       <div class="Alert Alert-Dismissable" data-target="alert" role="alert">
         <p class="Alert-Content">
         a closable Alert with a button
@@ -85,6 +84,6 @@ import Badge from '../../../components/blocks/Badge.astro';
           <i class="Icon x-lg"></i>
         </button>
       </div>
-    </Alert>
+    </gm-alert>
   </Code>
 </Layout>

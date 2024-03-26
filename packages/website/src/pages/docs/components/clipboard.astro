@@ -2,7 +2,6 @@
 import Layout from '../../../components/docs/Layout.astro';
 import Title from '../../../components/blocks/Title.astro';
 import Code from '../../../components/blocks/Code.astro';
-import { Clipboard } from '../../../../../elements';
 import Badge from '../../../components/blocks/Badge.astro';
 ---
 <Layout title="Clipboard Guvam Component">
@@ -38,13 +37,12 @@ import Badge from '../../../components/blocks/Badge.astro';
     </tr>
     </tbody>
   </table>
-  <Clipboard client:load />
 
   <Title id="input">Input</Title>
   <Code lang="html" type="inline">
-    <guvam-clipboard class="Clipboard" value="code">
+    <gm-clipboard class="Clipboard" value="code">
       <div class="Icon clipboard" />
       <div class="Icon check" />
-    </guvam-clipboard>
+    </gm-clipboard>
   </Code>
 </Layout>

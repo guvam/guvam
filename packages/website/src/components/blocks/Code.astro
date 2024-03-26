@@ -1,6 +1,5 @@
 ---
-import { highlighter } from '../../elements/highlighter';
-import Clipboard from '../../elements/Clipboard.astro';
+import { highlighter } from '../utils/highlighter';
 import * as prettier from 'prettier';
 import './Code.css';
 
@@ -35,12 +34,12 @@ const codeFormatted = await prettier.format(code, prettierOptions);
 const html = highlighter.codeToHtml(codeFormatted, { lang });
 const showExample = onlyCode === undefined;
 ---
-<div class="Code" class:list={{...type, 'type-code': onlyCode === true}}>
+<div class="Code" class:list={{[type]: true, 'type-code': onlyCode === true}}>
   {showExample && <div class="Code-Example">
     <slot />
   </div>}
   <div class="Code-Block">
-    <Clipboard value={codeFormatted} />
+    <gm-clipboard value={codeFormatted} />
     <div set:html={html} />
   </div>
 </div>

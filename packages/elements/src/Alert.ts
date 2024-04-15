@@ -19,5 +19,3 @@ export class Alert extends HTMLElement {
     }
   }
 }
-
-customElements.define('gm-alert', Alert);

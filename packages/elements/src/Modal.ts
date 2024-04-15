@@ -33,5 +33,3 @@ export class Modal extends HTMLElement {
       });
   }
 }
-
-customElements.define('gm-modal', Modal);

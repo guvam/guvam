@@ -40,5 +40,3 @@ export class Tabs extends HTMLElement {
     );
   }
 }
-
-customElements.define('gm-tabs', Tabs);

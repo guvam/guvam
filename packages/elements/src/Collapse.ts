@@ -24,5 +24,3 @@ export class Collapse extends HTMLElement {
     });
   }
 }
-
-customElements.define('gm-collapse', Collapse);

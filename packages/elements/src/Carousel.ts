@@ -78,5 +78,3 @@ export class Carousel extends HTMLElement {
     }
   }
 }
-
-customElements.define('gm-carousel', Carousel);

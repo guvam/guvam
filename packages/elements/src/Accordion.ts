@@ -27,5 +27,3 @@ export class Accordion extends HTMLElement {
     });
   }
 }
-
-customElements.define('gm-accordion', Accordion);

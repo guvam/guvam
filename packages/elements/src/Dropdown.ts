@@ -8,5 +8,3 @@ export class Dropdown extends HTMLElement {
     });
   }
 }
-
-customElements.define('gm-dropdown', Dropdown);

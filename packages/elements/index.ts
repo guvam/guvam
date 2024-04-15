@@ -1,11 +1,11 @@
-export * from './src/Modal';
-export * from './src/Accordion';
-export * from './src/Collapse';
-export * from './src/Clipboard';
-export * from './src/Dropdown';
+export * from './src/Modal.wc';
+export * from './src/Accordion.wc';
+export * from './src/Collapse.wc';
+export * from './src/Clipboard.wc';
+export * from './src/Dropdown.wc';
 
 /*
-export * from './src/Carousel';
-export * from './src/Tabs';
-export * from './src/Alert';
+export * from './src/Carousel.wc';
+export * from './src/Tabs.wc';
+export * from './src/Alert.wc';
 */

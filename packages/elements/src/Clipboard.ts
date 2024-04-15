@@ -16,5 +16,3 @@ export class Clipboard extends HTMLElement {
     navigator.clipboard.writeText(this.value).catch(console.info);
   }
 }
-
-customElements.define('gm-clipboard', Clipboard);

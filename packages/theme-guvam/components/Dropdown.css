@@ -5,6 +5,7 @@
 .Dropdown-Menu {
   position: absolute;
   inset: 0 auto auto 0;
+  z-index: 1;
   display: none;
   min-inline-size: 10rem;
   padding: 0.5rem 0;

@@ -19,5 +19,11 @@
     "graphics",
     "ui"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "types": "./index.d.ts",
+  "files": [
+    "./index.ts",
+    "./index.d.ts",
+    "./src/**"
+  ]
 }

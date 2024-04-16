@@ -37,23 +37,20 @@
 .Modal-Heading {
   display: flex;
   justify-content: space-between;
-  padding: 24px;
+  padding: 12px;
   font-size: var(--g-font-size-xl);
 }
 
 .Modal-Body {
   flex-grow: 1;
-  padding: 24px;
-  margin-block-end: 24px;
-  border-block-start: 1px solid var(--g-color-border);
+  padding: 12px;
 }
 
 .Modal-Footer {
   display: flex;
   gap: 1em;
   justify-content: flex-end;
-  padding: 24px;
-  border-block-start: 1px solid var(--g-color-border);
+  padding: 12px;
 }
 
 .Modal-Close {

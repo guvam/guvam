@@ -32,4 +32,8 @@ export class Modal extends HTMLElement {
         if (e.target === this.modal) this.modal.close();
       });
   }
+
+  open() {
+    this.modal.showModal();
+  }
 }

@@ -9,6 +9,7 @@ module.exports = {
     '.stylelintrc.js',
     'docs',
     'src/main.ts',
+    'index.d.ts',
   ],
   env: {
     node: true,

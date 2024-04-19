@@ -23,6 +23,7 @@
 *::after {
   box-sizing: inherit;
   min-inline-size: 0;
+  scrollbar-gutter: stable;
 }
 
 a,

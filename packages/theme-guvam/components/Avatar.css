@@ -5,7 +5,7 @@
   inline-size: 3em;
   block-size: 3em;
   overflow: hidden;
-  color: var(--foundation-color-inverse);
-  background-color: var(--foundation-color);
+  color: var(--root-color-text);
+  background-color: var(--root-color-surface);
   object-fit: cover;
 }

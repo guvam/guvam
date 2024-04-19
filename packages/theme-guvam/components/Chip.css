@@ -3,8 +3,8 @@
   align-items: center;
   min-block-size: 3em;
   padding: 0.25em;
-  color: var(--foundation-color-inverse);
-  background-color: var(--foundation-color);
+  color: var(--root-color-text);
+  background-color: var(--root-color-surface);
   border-radius: var(--g-border-radius-pill);
 }
 

@@ -1,0 +1,110 @@
+---
+import Layout from '../../../components/docs/Layout.astro';
+---
+<Layout title="Installation Guvam">
+
+  <div style="padding: 1em">
+    <gm-dropdown>
+      <button class="Button" data-target="action">
+        Button
+        <i class="Icon chevron-down"></i>
+      </button>
+      <menu class="Dropdown" data-target="popover" popover>
+        <li><a class="Dropdown-Item" href="#">Action</a></li>
+        <li><a class="Dropdown-Item" href="#">Another action</a></li>
+        <li><a class="Dropdown-Item" href="#">Something else here</a></li>
+      </menu>
+    </gm-dropdown>
+  </div>
+  <div style="padding: 1em">
+    <gm-dropdown position="left">
+      <button class="Button" data-target="action">
+        Button
+        <i class="Icon chevron-down"></i>
+      </button>
+      <menu class="Dropdown" data-target="popover" popover>
+        <li class="Dropdown-Item"><input type="text" class="Input" /></li>
+        <li><a class="Dropdown-Item" href="#">Action</a></li>
+        <li><a class="Dropdown-Item" href="#">Another action</a></li>
+        <li><a class="Dropdown-Item" href="#">Something else here</a></li>
+      </menu>
+    </gm-dropdown>
+
+  </div>
+
+  <div style="padding: 1em">
+    <gm-modal>
+      <button class="Button" data-target="modal-opener">Click me</button>
+      <dialog class="Modal type-centered" data-target="modal">
+        <h1 class="Modal-Heading">
+          <span>Modal Heading</span>
+          <button class="Button type-icon" data-target="modal-close"><i class="Icon x"></i></button>
+        </h1>
+        <div class="Modal-Body type-bordered">
+          Modal Body
+          <button class="Button has-tooltip">
+            Tooltip Test
+            <span class="Tooltip right">tooltip</span>
+          </button>
+        </div>
+        <div class="Modal-Actions">
+          <button class="Button type-link" data-target="modal-close">Close</button>
+          <button class="Button">Save Changes</button>
+        </div>
+      </dialog>
+    </gm-modal>
+  </div>
+
+  <div style="padding: 1em">
+    <input type="text" class="Input" />
+  </div>
+
+  <div style="padding: 1em">
+    <div class="InputGroup">
+      <span class="InputGroup-Text">First and last name</span>
+      <input type="text" class="Input" />
+      <button class="Button">Button</button>
+      <input type="text" class="Input" />
+    </div>
+  </div>
+
+  <div style="padding: 1em">
+    <div class="InputGroup">
+      <span class="InputGroup-Text">$</span> <span class="InputGroup-Text">0.00</span> <input type="text" class="Input" />
+    </div>
+  </div>
+
+  <div style="padding: 1em">
+    <div class="InputGroup"><input type="text" class="Input" /> <span class="InputGroup-Text">.com</span></div>
+  </div>
+
+  <div style="padding: 1em">
+    <div>
+      <label>
+        <input class="Checkbox" type="checkbox" />
+        1
+      </label>
+      <label>
+        <input class="Checkbox" type="checkbox" checked />
+        2
+      </label>
+      <label>
+        <input class="Checkbox" type="checkbox" checked disabled />
+        2
+      </label>
+    </div>
+  </div>
+
+  <div style="padding: 1em">
+
+    <button class="Button">Button</button>
+    <button class="Button type-outline">Button</button>
+    <button class="Button type-outline -color-danger">Button</button>
+    <button class="Button type-link">Button</button>
+    <button class="Button type-link -color-danger">Button</button>
+    <button class="Button -color-info"> Button</button>
+    <button class="Button -color-danger"> Button</button>
+  </div>
+
+
+</Layout>

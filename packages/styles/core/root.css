@@ -21,10 +21,10 @@
   --g-color-selected-background: HighlightText;
 }
 
-.Variables {
+.Root {
   --foundation-size: 1em;
-  --foundation-color: var(--g-color-text);
-  --foundation-color-inverse: var(--g-color-background);
+  --root-color-surface: var(--g-color-text);
+  --root-color-text: var(--g-color-background);
 
   font-family: var(--g-font-family-text);
   font-size: var(--g-font-size-l);

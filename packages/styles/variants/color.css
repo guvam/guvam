@@ -1,44 +1,44 @@
 .-color-default {
-  --foundation-color: var(--g-color-neutral);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-neutral);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-success {
-  --foundation-color: var(--g-color-success);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-success);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-info {
-  --foundation-color: var(--g-color-info);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-info);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-warning {
-  --foundation-color: var(--g-color-warning);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-warning);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-danger {
-  --foundation-color: var(--g-color-danger);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-danger);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-primary {
-  --foundation-color: var(--g-color-primary);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-primary);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-secondary {
-  --foundation-color: var(--g-color-secondary);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-secondary);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-accent {
-  --foundation-color: var(--g-color-accent);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-accent);
+  --root-color-text: var(--g-color-inverse);
 }
 
 .-color-neutral {
-  --foundation-color: var(--g-color-neutral);
-  --foundation-color-inverse: var(--g-color-inverse);
+  --root-color-surface: var(--g-color-neutral);
+  --root-color-text: var(--g-color-inverse);
 }

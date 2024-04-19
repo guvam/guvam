@@ -4,8 +4,8 @@
   align-items: center;
   min-block-size: 3em;
   padding-inline: 1em;
-  color: var(--foundation-color-inverse);
-  background-color: var(--foundation-color);
+  color: var(--root-color-text);
+  background-color: var(--root-color-surface);
   border-radius: var(--g-border-radius-sharp);
 }
 

@@ -1,5 +1,6 @@
 .Button {
-  --button-color: var(--g-color-neutral);
+  --button-color-background: var(--root-color-surface);
+  --button-color-text: var(--root-color-text);
   --button-color-hover: color-mix(in hsl, var(--g-color-neutral), black 40%);
   --button-color-disabled: color-mix(in hsl, var(--g-color-neutral), transparent 40%);
 
@@ -8,42 +9,34 @@
   flex-shrink: 0;
   column-gap: 1em;
   align-items: center;
-  padding-inline: 1em;
-  font-size: 1em;
-  color: var(--g-color-inverse);
+  justify-content: space-between;
+  padding-inline: 0.5em;
+  color: var(--button-color-text);
   cursor: pointer;
   user-select: none;
-  background-color: var(--button-color);
+  background-color: var(--button-color-background);
   border: 1px solid transparent;
   border-radius: var(--g-border-radius);
-  box-shadow: var(--g-box-shadow);
   transition: transform var(--g-transition-slowly);
-  min-block-size: 2em;
+  min-block-size: var(--g-input-block-min);
 
   &:disabled {
-    color: #999;
+    color: color-mix(in srgb, currentcolor, black 10%);
     cursor: default;
-    background-color: var(--button-color-disabled);
+    background-color: var(--g-input-disabled);
   }
 
-  &:not(:disabled):hover {
-    background-color: var(--button-color-hover);
+  &:not(:disabled, .type-link, .type-text):hover {
+    background-color: color-mix(in srgb, var(--button-color-background), black 20%);
   }
 
-  &:not(:disabled):active {
+  &:not(:disabled, .type-link, .type-text):active {
     background-color: var(--button-color-hover);
-    scale: 0.98;
   }
 
   &:not(:disabled):focus-visible {
-    background-color: var(--button-color-hover);
-    outline: 2px solid var(--button-color-hover);
+    outline: 1px solid var(--g-color-active);
     outline-offset: 2px;
-  }
-
-  & svg {
-    inline-size: 1em;
-    block-size: 1em;
   }
 
   &.type-outline {
@@ -58,6 +51,14 @@
 
   &.type-link {
     text-decoration: underline;
+    background-color: transparent;
+  }
+
+  &.type-icon {
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    padding: 0;
     background-color: transparent;
   }
 

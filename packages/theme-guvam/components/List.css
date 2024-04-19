@@ -64,3 +64,21 @@
 .Item-Info {
   background-color: var(--g-color-info);
 }
+
+.Button-List {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--g-border-radius);
+
+  & > * {
+    border-radius: 0;
+  }
+
+  & > .Button {
+    padding: 0.5em;
+  }
+
+  .Button:focus {
+    z-index: 1;
+  }
+}

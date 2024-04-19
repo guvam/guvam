@@ -4,17 +4,13 @@
 }
 
 .Collapse-Action {
-  padding: 1em;
   overflow: hidden;
   cursor: pointer;
-  background-color: var(--g-color-neutral);
 }
 
 .Collapse-Content {
   display: none;
-  padding: 1em;
   overflow: hidden;
-  background-color: var(--g-color-accent);
 
   .Collapse[open] > & {
     display: block;

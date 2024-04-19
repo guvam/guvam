@@ -3,25 +3,26 @@
 
   display: flex;
   align-items: stretch;
-  inline-size: fit-content;
-
-  & > .Input {
-    block-size: auto;
-  }
 
   & > * {
+    padding: 0 0.5em;
     border: 1px solid var(--input-group-border-color);
     border-inline-start: none;
     border-radius: 0;
+    block-size: auto;
   }
 
-  & > *:first-child {
+  & > .Input {
+    flex-grow: 1;
+  }
+
+  & > :first-child {
     border-inline-start: 1px solid var(--input-group-border-color);
     border-start-start-radius: var(--g-border-radius);
     border-end-start-radius: var(--g-border-radius);
   }
 
-  & > *:last-child {
+  & > :last-child {
     border-inline-end: 1px solid var(--input-group-border-color);
     border-start-end-radius: var(--g-border-radius);
     border-end-end-radius: var(--g-border-radius);
@@ -32,6 +33,5 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
-  background-color: var(--g-color-primary);
+  background-color: var(--root-color-surface);
 }

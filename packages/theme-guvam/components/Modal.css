@@ -1,79 +1,41 @@
-.Modal {
-  position: fixed;
-  inset-block-start: 10%;
-  inset-inline: 0;
-  z-index: 1;
-
-  &[open] {
-    display: flex;
-  }
-
-  &.type-static {
-    position: static;
-    margin: 0;
-  }
-
-  &.type-centered {
-    inset-block-start: 50%;
-    transform: translateY(-50%);
-  }
-
-  &::backdrop {
-    background-color: black;
-    opacity: 0.4;
-  }
+:root:has(dialog[open]) {
+  overflow: hidden;
 }
 
-.Modal-Window {
+.Modal {
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
   flex-direction: column;
-  justify-content: space-between;
-  inline-size: 600px;
-  margin: auto;
+  inline-size: 500px;
   background-color: var(--g-color-background);
-  border: 2px solid var(--g-color-border);
+  border: 1px solid var(--g-color-border);
   border-radius: var(--g-border-radius);
+  box-shadow:
+    0 24px 38px 3px rgb(12 12 12 / 16%),
+    0 9px 86px 8px rgb(12 12 12 / 10%),
+    0 11px 15px -7px rgb(12 12 12 / 10%),
+    0 0 0 1px rgb(0 0 0 / 5%);
+  transform: translate(-50%, -50%);
+
+  &::backdrop {
+    background-color: rgb(0 0 0 / 25%);
+  }
 }
 
 .Modal-Heading {
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  padding: 8px;
   font-size: var(--g-font-size-xl);
 }
 
 .Modal-Body {
-  flex-grow: 1;
-  padding: 12px;
+  padding: 2em 8px;
 }
 
-.Modal-Footer {
+.Modal-Actions {
   display: flex;
-  gap: 1em;
+  gap: 0.5em;
   justify-content: flex-end;
-  padding: 12px;
-}
-
-.Modal-Close {
-  --text-color: var(--g-color-text);
-  --text-hover: color-mix(in hsl, var(--text-color), black 20%);
-
-  display: inline-flex;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  border-radius: var(--g-border-radius);
-
-  & .Icon {
-    inline-size: fit-content;
-    block-size: fit-content;
-    font-size: 36px;
-  }
-
-  &:hover {
-    color: var(--text-hover);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--text-hover);
-  }
+  padding: 8px;
 }

@@ -1,27 +1,12 @@
 .Dropdown {
-  position: relative;
-}
-
-.Dropdown-Menu {
   position: absolute;
-  inset: 0 auto auto 0;
-  z-index: 1;
-  display: none;
-  min-inline-size: 10rem;
-  padding: 0.5rem 0;
-  margin: 0;
-  background-color: var(--g-color-popover-background);
-  background-clip: padding-box;
+  inset-block-start: 0;
+  flex-direction: column;
+  background-color: var(--g-color-background);
   border: 1px solid var(--g-color-border);
   border-radius: var(--g-border-radius);
-  box-shadow: var(--g-box-shadow-card);
-  transform: translate(0, 2em);
-
-  .Dropdown[open] & {
-    display: block;
-  }
 }
 
 .Dropdown-Item {
-  padding: 1em;
+  padding: 0.5em;
 }

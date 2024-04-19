@@ -1,11 +1,12 @@
-.Variables {
-  --foundation-color: var(--g-color-primary);
-  --foundation-color-inverse: var(--g-color-inverse);
+.Root {
+  --root-color-surface: var(--g-color-primary);
+  --root-color-text: var(--g-color-text);
 
+  /*
   &.type-light {
     color-scheme: light;
 
-    /* font */
+    !* font *!
     --g-font-family-text: roboto, -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji";
     --g-font-family-code: "Nordhealth Mono", monospace, monospace;
@@ -34,18 +35,18 @@
     --g-color-selected-text: rgb(255 255 255);
     --g-color-selected-background: rgb(255 255 255);
 
-    /* link */
+    !* link *!
     --g-color-link: rgb(53 89 199);
     --g-color-link-active: rgb(53 89 199);
     --g-color-link-pressed: rgb(53 89 199);
 
-    /* heading */
+    !* heading *!
     --g-color-heading: rgb(53 89 199);
     --g-color-heading-inverse: rgb(53 89 199);
 
-    /* color */
+    !* color *!
 
-    /* weak, strong, border, status : color-mix */
+    !* weak, strong, border, status : color-mix *!
     --g-color-primary: rgb(103 208 188);
     --g-color-secondary: rgb(239 199 68);
     --g-color-accent: rgb(176 161 99);
@@ -59,7 +60,7 @@
     --g-color-info: rgb(52 81 178);
     --g-color-progress: rgb(1 109 131);
 
-    /* surface */
+    !* surface *!
     --g-color-background: rgb(255 255 255);
     --g-color-border: rgb(216 222 228);
     --g-space-xxl: 72px;
@@ -74,7 +75,7 @@
     --g-border-radius-pill: 999px;
     --g-border-radius-circle: 50%;
 
-    /* elevation */
+    !* elevation *!
     --g-box-shadow: 0 1px 3px rgb(12 12 12 / 9%);
     --g-box-shadow-header: 0 1px 5px rgb(12 12 12 / 5%);
     --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
@@ -83,7 +84,7 @@
     --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%),
       0 0 0 1px rgb(0 0 0 / 5%);
 
-    /* input */
+    !* input *!
     --g-input-block-min: 2em;
     --g-input-background: #d9d9d9;
     --g-input-text: #d9d9d9;
@@ -96,11 +97,12 @@
     --g-button-background: #d8e7e6;
     --g-button-border: #d8e7e6;
 
-    /* transition */
+    !* transition *!
     --g-transition-quickly: 100ms ease;
     --g-transition-slowly: 250ms ease;
     --g-transition-mobile: 400ms ease;
   }
+  */
 
   &.type-dark {
     color-scheme: dark;
@@ -143,22 +145,14 @@
     --g-color-heading: #dcdcdc;
     --g-color-heading-inverse: rgb(53 89 199);
 
-    /* color */
-    --g-color-active: #3574f0;
-    --g-color-selected: #2e436e;
-    --g-color-hover: #43454a;
-
-    /* ui */
-    --g-color-ui-editor: #1e1f22;
-    --g-color-ui-panel: #2b2d30;
-    --g-color-ui-hover: #26282e;
-
     /* weak, strong, border, status : color-mix */
     --g-color-primary: #3a4766;
     --g-color-secondary: #141285;
     --g-color-accent: #3d3c3c;
     --g-color-neutral: rgb(85 89 93);
     --g-color-muted: rgb(196 200 203);
+
+    /* state */
     --g-color-error: rgb(210 64 35);
     --g-color-danger: rgb(178 48 21);
     --g-color-success: rgb(17 118 39);
@@ -166,6 +160,11 @@
     --g-color-highlight: rgb(121 58 175);
     --g-color-info: rgb(52 81 178);
     --g-color-progress: rgb(1 109 131);
+
+    /* ui */
+    --g-color-ui-editor: #1e1f22;
+    --g-color-ui-panel: #2b2d30;
+    --g-color-ui-hover: #26282e;
 
     /* surface */
     --g-color-background: #1f1f1f;
@@ -183,27 +182,23 @@
     --g-border-radius-pill: 999px;
     --g-border-radius-circle: 50%;
 
-    /* elevation */
-    --g-box-shadow: 0 1px 3px rgb(12 12 12 / 9%);
-    --g-box-shadow-header: 0 1px 5px rgb(12 12 12 / 5%);
-    --g-box-shadow-card: 0 0 0 1px var(--g-color-border), 0 1px 5px rgb(12 12 12 / 5%), 0 0 40px rgb(12 12 12 / 1.5%);
-    --g-box-shadow-nav: 0 0 0 1px var(--g-color-border), 0 5px 17px rgb(12 12 12 / 14%);
-    --g-box-shadow-popout: 0 4px 12px rgb(12 12 12 / 15%), 0 0 0 1px rgb(0 0 0 / 5%);
-    --g-box-shadow-modal: 0 24px 38px 3px rgb(12 12 12 / 16%), 0 9px 86px 8px rgb(12 12 12 / 10%), 0 11px 15px -7px rgb(12 12 12 / 10%),
-      0 0 0 1px rgb(0 0 0 / 5%);
-
-    /* input */
-    --g-input-block-min: 2em;
-    --g-input-background: #d9d9d9;
+    /* form */
+    --g-input-block-min: 1.5em;
+    --g-input-background: #454545;
     --g-input-text: #d9d9d9;
-    --g-input-active: #d9d9d9;
     --g-input-disabled: #5d5d5d;
     --g-input-focus: #28483c;
     --g-input-hover: #d8e7e6;
+    --g-input-active: #d9d9d9;
     --g-input-ring: #204ea1;
     --g-button-text: #d8e7e6;
     --g-button-background: #d8e7e6;
     --g-button-border: #626262;
+
+    /* form color */
+    --g-color-active: #3574f0;
+    --g-color-selected: #2e436e;
+    --g-color-hover: #43454a;
 
     /* transition */
     --g-transition-quickly: 100ms ease;

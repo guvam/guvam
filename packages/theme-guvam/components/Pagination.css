@@ -9,9 +9,9 @@
   min-inline-size: 2em;
   block-size: 2em;
   padding-inline: 0.5em;
-  color: var(--foundation-color-inverse);
+  color: var(--root-color-text);
   cursor: pointer;
-  background-color: var(--foundation-color);
+  background-color: var(--root-color-surface);
 
   &:focus-visible {
     z-index: 1;

@@ -39,7 +39,11 @@ const showExample = onlyCode === undefined;
     <slot />
   </div>}
   <div class="Code-Block">
-    <gm-clipboard value={codeFormatted} />
+    <gm-clipboard class="Clipboard" value={codeFormatted} >
+      <i class="Icon clipboard" />
+      <i class="Icon check" />
+    </gm-clipboard>
     <div set:html={html} />
   </div>
 </div>
+

@@ -1,0 +1,9 @@
+.Theme--color-pink {
+  --primary: light-dark(oklch(50% 0.25 320deg), oklch(85% 0.25 320deg));
+  --secondary: light-dark(oklch(47% 0.122 145deg), oklch(85% 0.122 145deg));
+  --accent: light-dark(oklch(42% 0.112 46deg), oklch(85% 0.055 51deg));
+  --info: light-dark(oklch(48% 0.114 270deg), oklch(83% 0.113 270deg));
+  --success: light-dark(oklch(40% 0.118 145deg), oklch(83% 0.117 145deg));
+  --warning: light-dark(oklch(40% 0.15 100deg), oklch(83% 0.15 100deg));
+  --error: light-dark(oklch(45% 0.21 28.223deg), oklch(83% 0.21 28.223deg));
+}

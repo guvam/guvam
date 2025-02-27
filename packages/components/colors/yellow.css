@@ -1,0 +1,11 @@
+.Theme--color-yellow {
+  --primary: light-dark(oklch(48% 0.101 102deg), oklch(82% 0.172 102deg));
+  --secondary: light-dark(oklch(48% 0.045 100deg), oklch(82% 0.049 98deg));
+  --accent: light-dark(oklch(47% 0.054 160deg), oklch(82% 0.056 158deg));
+  --info: light-dark(oklch(48% 0.114 270deg), oklch(83% 0.113 270deg));
+  --success: light-dark(oklch(40% 0.118 145deg), oklch(83% 0.117 145deg));
+  --warning: light-dark(oklch(40% 0.15 100deg), oklch(83% 0.15 100deg));
+  --error: light-dark(oklch(45% 0.21 28.223deg), oklch(83% 0.21 28.223deg));
+}
+
+/* Theme--mode-dark Theme--color-yellow Theme--radius-50 Theme--size-16 Theme--density-100 Theme--dir-auto Theme--motion-auto */

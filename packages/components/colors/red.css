@@ -1,0 +1,9 @@
+.Theme--color-red {
+  --primary: light-dark(oklch(50% 0.196 28deg), oklch(83% 0.09 28deg));
+  --secondary: light-dark(oklch(48% 0.045 26deg), oklch(83% 0.049 27deg));
+  --accent: light-dark(oklch(48% 0.069 86deg), oklch(82% 0.078 83deg));
+  --info: light-dark(oklch(48% 0.114 270deg), oklch(83% 0.113 270deg));
+  --success: light-dark(oklch(40% 0.118 145deg), oklch(83% 0.117 145deg));
+  --warning: light-dark(oklch(40% 0.15 100deg), oklch(83% 0.15 100deg));
+  --error: light-dark(oklch(45% 0.21 28.223deg), oklch(83% 0.21 28.223deg));
+}

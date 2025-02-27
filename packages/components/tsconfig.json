@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2024", "DOM"],
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist/",
+    "declarationDir": "./dist/types",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "checkJs": true,
+    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "files": ["base/index.ts"],
+  "exclude": ["node_modules"]
+}

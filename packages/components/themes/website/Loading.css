@@ -1,0 +1,76 @@
+.Loading {
+  --Loading-color: var(--primary);
+
+  position: relative;
+  inline-size: 1em;
+  block-size: 1em;
+  font-size: 24px;
+  border-radius: 50%;
+  animation: Loading-rotate 2s linear infinite;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    content: " ";
+    border: 0.1em solid var(--Loading-color);
+    border-radius: 50%;
+    animation: Loading-borderClip 2s linear infinite;
+  }
+}
+
+@keyframes Loading-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes Loading-borderClip {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+
+  12.5% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+
+  37.5% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  62.5% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+
+  75.1% {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 0 100%, 0 0);
+  }
+
+  87.5% {
+    clip-path: polygon(50% 50%, 0% 100%, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
+  }
+
+  87.6% {
+    clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 0%);
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+}

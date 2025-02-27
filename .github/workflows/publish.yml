@@ -1,0 +1,32 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      # - main
+      - 'release/*'
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com/'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build package
+        working-directory: ./packages/components
+        run: npm run build
+
+      - name: Publish package
+        working-directory: ./packages/components
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

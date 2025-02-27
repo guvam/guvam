@@ -1,0 +1,30 @@
+{
+  "name": "@guvam/cli",
+  "main": "src/parse.ts",
+  "version": "0.1.0",
+  "description": "CLI",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://guvam.com",
+  "bin": {
+    "guvam": "bin/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch:ts": "tsc --watch",
+    "watch:build": "nodemon"
+  },
+  "dependencies": {
+    "css-tree": "3.1.0",
+    "postcss": "8.5.2",
+    "commander": "13.1.0",
+    "ts-node": "10.9.2",
+    "chalk": "5.4.1",
+    "inquirer": "12.4.1",
+    "nodemon": "3.1.9"
+  },
+  "devDependencies": {
+    "@types/css-tree": "2.3.10",
+    "@commander-js/extra-typings": "13.1.0"
+  }
+}

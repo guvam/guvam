@@ -1,8 +1,8 @@
 {
   "name": "@guvam/components",
-  "main": "base/index.js",
-  "types": "dist/types/index.d.ts",
-  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "0.1.8",
   "license": "MIT",
   "description": "UI components",
   "homepage": "https://guvam.com",
@@ -16,12 +16,13 @@
   ],
   "author": "guvam",
   "scripts": {
-    "build": "tsc",
+    "delete-dist": "rimraf dist",
+    "build": "npm run delete-dist && tsc",
     "publish": "npm publish --access public"
   },
   "files": [
     "dist/**/*",
-    "base/**/*.css",
+    "base/**/*",
     "colors/**/*",
     "themes/**/*"
   ],

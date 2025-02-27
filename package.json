@@ -1,6 +1,6 @@
 {
   "name": "@guvam/package",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "type": "module",
   "private": "false",
   "license": "MIT",
@@ -19,9 +19,11 @@
     "fix": "npm-run-all fix:*",
     "fix:eslint": "eslint --config eslint.config.js --fix **/*.{ts,tsx}",
     "fix:stylelint": "stylelint packages/**/*.css -c .stylelintrc.js --fix",
-    "fix:prettier": "prettier . --check --write"
+    "fix:prettier": "prettier . --check --write",
+    "update-version-patch": "bumpp -r --no-push --no-tag --no-commit patch"
   },
   "devDependencies": {
+    "rimraf": "6.0.1",
     "bumpp": "10.0.3",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",

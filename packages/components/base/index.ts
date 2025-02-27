@@ -1,15 +1,8 @@
-export { FloatingIndicator } from "./FloatingIndicator";
-export { Menu, MenuItem, MenuSeparator } from "./Menu";
-export { Modal } from "./Modal";
-export { Notification } from "./Notification";
-export { Popover } from "./Popover";
-export {
-  Stepper,
-  StepperIconDone,
-  StepperIconError,
-  StepperIconLoading,
-  StepperIconWarning,
-  StepperItem,
-} from "./Stepper";
-export { Tooltip } from "./Tooltip";
-export { classList } from "./utils/classList";
+export * from "./FloatingIndicator";
+export * from "./Menu";
+export * from "./Modal";
+export * from "./Notification";
+export * from "./Popover";
+export * from "./Stepper";
+export * from "./Tooltip";
+export * from "./utils/classList";

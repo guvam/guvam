@@ -9,7 +9,7 @@ export const Tooltip: FC<{
   show?: "click" | "hover";
 }> = ({ children: [button, tooltip], show = "hover", id }) => {
   const ref = useRef<HTMLElement>(null);
-  const idGen = useId().replaceAll(":", "").toLowerCase();
+  const idGen = useId().replace(":", "").replace(":", "").toLowerCase();
   const tooltipId = `tooltip-id-${id ?? idGen}`;
   const anchorId = `--${tooltipId}`;
   const buttonId = `button-${tooltipId}`;

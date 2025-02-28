@@ -2,7 +2,7 @@
   "name": "@guvam/components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "description": "UI components",
   "homepage": "https://guvam.com",
@@ -26,6 +26,9 @@
     "colors/**/*",
     "themes/**/*"
   ],
+  "repository" : {
+    "url": "https://github.com/guvam/guvam"
+  },
   "dependencies": {
     "react-bootstrap-icons": "1.11.5",
     "@oddbird/css-anchor-positioning": "0.4.0"

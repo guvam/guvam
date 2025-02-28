@@ -9,7 +9,9 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const parseCss = () => {
-  const file = fs.readFileSync(path.resolve(__dirname, "../../components/src/action/Button.css"));
+  const file = fs.readFileSync(
+    path.resolve(__dirname, "../../components/theme/website/Button.css")
+  );
 
   const root = postcss.parse(file.toString());
   console.log(root.nodes.length);
@@ -21,7 +23,9 @@ export const parseCss = () => {
 };
 
 export const parseCss1 = () => {
-  const file = fs.readFileSync(path.resolve(__dirname, "../../components/src/action/Button.css"));
+  const file = fs.readFileSync(
+    path.resolve(__dirname, "../../components/theme/website/Button.css")
+  );
 
   // parse CSS to AST
   const ast = csstree.parse(file.toString());

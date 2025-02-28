@@ -64,10 +64,15 @@
   margin-block: 0.5em;
   font-size: 1em;
   line-height: 1.5;
+  color: light-dark(
+    oklch(from var(--surfaceText) calc(l + 0.15) c h),
+    oklch(from var(--surfaceText) calc(l - 0.15) c h)
+  );
 }
 
 .Content--bold {
   font-weight: 600;
+  color: var(--surfaceText);
 }
 
 .Content--capitalize {
@@ -84,7 +89,7 @@
 }
 
 .Content-link {
-  --Content-linkColor: oklch(57% 0.229 260deg);
+  --Content-linkColor: oklch(50% 0.15 260deg);
 
   display: inline-flex;
   gap: 0.25em;
@@ -169,6 +174,10 @@
   & > li {
     display: list-item;
     line-height: 1.5;
+    color: light-dark(
+      oklch(from var(--surfaceText) calc(l + 0.15) c h),
+      oklch(from var(--surfaceText) calc(l - 0.15) c h)
+    );
   }
 }
 

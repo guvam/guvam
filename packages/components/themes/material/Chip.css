@@ -1,0 +1,17 @@
+.Chip {
+  --Chip-color: var(--primary);
+
+  display: inline-flex;
+  gap: 0.25em;
+  align-items: center;
+  padding: 0.35em 0.35em;
+  color: var(--primaryText);
+  background-color: var(--Chip-color);
+  border-radius: var(--borderRadius);
+
+  &.Chip--outlined {
+    color: var(--surfaceText);
+    background-color: oklch(from var(--Chip-color) l c h / 95%);
+    border: 1px solid var(--Chip-color);
+  }
+}

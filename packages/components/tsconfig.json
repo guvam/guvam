@@ -12,7 +12,7 @@
     "sourceMap": true,
     "outDir": "dist",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "files": ["base/index.ts"],
   "exclude": ["node_modules"]

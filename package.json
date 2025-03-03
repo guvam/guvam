@@ -1,6 +1,6 @@
 {
   "name": "@guvam/package",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "type": "module",
   "private": "false",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "fix:eslint": "eslint --config eslint.config.js --fix **/*.{ts,tsx}",
     "fix:stylelint": "stylelint packages/**/*.css -c .stylelintrc.js --fix",
     "fix:prettier": "prettier . --check --write",
-    "update-version-patch": "bumpp -r --no-push --no-tag --no-commit patch"
+    "update-veyrsion-patch": "bumpp -r --no-push --no-tag --no-commit patch"
   },
   "devDependencies": {
     "rimraf": "6.0.1",

@@ -1,26 +1,54 @@
-import type { CSSProperties, FC, ReactElement } from "react";
-import { cloneElement } from "react";
+"use client";
+
+import { autoUpdate } from "@floating-ui/dom";
+import type { FC, ReactElement } from "react";
+import { cloneElement, createRef } from "react";
 
 export const Popover: FC<{
   children: [ReactElement<HTMLButtonElement>, ReactElement<HTMLMenuElement>];
   id: string;
+  placement?: "left" | "right";
   modal?: boolean;
   open?: boolean;
-}> = (props) => [
-  cloneElement(props.children[0], {
-    key: `popover-button-id-${props.id}`,
-    id: `popover-button-id-${props.id}`,
-    style: { anchorName: `--popover-id-${props.id}` },
-    popoverTarget: `popover-id-${props.id}`,
-    "aria-haspopup": "menu",
-    "aria-expanded": props.open ?? false,
-  } as never),
-  cloneElement(props.children[1], {
-    key: `popover-id-${props.id}`,
-    id: `popover-id-${props.id}`,
-    style: { positionAnchor: `--popover-id-${props.id}` } as CSSProperties,
-    popover: "auto",
-    "aria-modal": props.modal ?? false,
-    "aria-labelledby": `popover-button-id-${props.id}`,
-  } as never),
-];
+}> = (props) => {
+  const ref = createRef<HTMLDivElement>();
+
+  const popoverId = `popover-${props.id}`;
+  const buttonId = `popover-button-${props.id}`;
+
+  return [
+    cloneElement(props.children[0], {
+      key: buttonId,
+      id: buttonId,
+      ref,
+      popoverTarget: popoverId,
+      "aria-haspopup": "menu1",
+      "aria-expanded": props.open ?? false,
+    } as never),
+    cloneElement(props.children[1], {
+      key: popoverId,
+      id: popoverId,
+      popover: "auto",
+      "aria-modal": props.modal ?? false,
+      "aria-labelledby": buttonId,
+      onBeforeToggle: (event: ToggleEvent) => {
+        const button = ref.current;
+        const target = event.target as HTMLMenuElement | null;
+
+        if (button && target && event.newState === "open") {
+          autoUpdate(button, target, () => {
+            const rect = button.getBoundingClientRect();
+            const screenY = button.offsetTop + rect.height;
+            const screenX =
+              props.placement === "right" ? button.offsetLeft + rect.width : button.offsetLeft;
+            console.log(button.scrollLeft, screenX, screenY);
+            Object.assign(target.style, {
+              left: `${screenX}px`,
+              top: `${screenY}px`,
+            });
+          });
+        }
+      },
+    } as never),
+  ];
+};

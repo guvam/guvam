@@ -1,24 +1,17 @@
 .Dropdown {
-  position: fixed;
+  position: absolute;
   box-shadow: var(--surfaceShadow);
 
-  &.Dropdown--center {
-    inset-block-start: calc(anchor(bottom));
-    inset-inline-start: revert;
-    justify-self: anchor-center;
-  }
-
   &.Dropdown--left {
-    inset-block-start: calc(anchor(bottom) + 0.25rem);
-    inset-inline-start: anchor(left);
+    transform: translate(0, 0.25rem);
   }
 
   &.Dropdown--right {
-    inset-block-start: calc(anchor(bottom) + 0.25rem);
-    inset-inline-end: anchor(right);
+    transform: translate(-100%, 0.25rem);
   }
 
   @media (width < 960px) {
+    position: fixed;
     inset: 0 !important;
     place-self: center center;
   }

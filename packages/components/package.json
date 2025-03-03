@@ -2,7 +2,7 @@
   "name": "@guvam/components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "license": "MIT",
   "description": "UI components",
   "homepage": "https://guvam.com",
@@ -16,6 +16,7 @@
   ],
   "author": "guvam",
   "scripts": {
+    "dev": "tsc --watch",
     "delete-dist": "rimraf dist",
     "build": "npm run delete-dist && tsc",
     "publish": "npm publish --access public"
@@ -26,11 +27,11 @@
     "colors/**/*",
     "themes/**/*"
   ],
-  "repository" : {
+  "repository": {
     "url": "https://github.com/guvam/guvam"
   },
   "dependencies": {
     "react-bootstrap-icons": "1.11.5",
-    "@oddbird/css-anchor-positioning": "0.4.0"
+    "@floating-ui/dom": "1.6.13"
   }
 }

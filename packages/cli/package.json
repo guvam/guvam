@@ -1,7 +1,7 @@
 {
   "name": "@guvam/cli",
   "main": "src/parse.ts",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "CLI",
   "license": "MIT",
   "type": "module",

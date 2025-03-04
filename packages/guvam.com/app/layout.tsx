@@ -5,7 +5,7 @@ import "@guvam/components/colors/pink.css";
 import "@guvam/components/colors/lime.css";
 import "@guvam/components/colors/red.css";
 import "@guvam/components/colors/yellow.css";
-import "@guvam/components/themes/application.css";
+import "@guvam/components/themes/website.css";
 import "../components/SideMenu.css";
 import "../components/Header.css";
 

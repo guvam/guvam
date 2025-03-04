@@ -2,53 +2,73 @@
 
 import { autoUpdate } from "@floating-ui/dom";
 import type { FC, ReactElement } from "react";
-import { cloneElement, createRef } from "react";
+import { cloneElement, createRef, useCallback, useEffect } from "react";
 
 export const Popover: FC<{
   children: [ReactElement<HTMLButtonElement>, ReactElement<HTMLMenuElement>];
   id: string;
-  placement?: "left" | "right";
   modal?: boolean;
   open?: boolean;
 }> = (props) => {
-  const ref = createRef<HTMLDivElement>();
+  const buttonRef = createRef<HTMLElement>();
+  const popoverRef = createRef<HTMLElement>();
 
   const popoverId = `popover-${props.id}`;
   const buttonId = `popover-button-${props.id}`;
+
+  const update = useCallback(() => {
+    const button = buttonRef.current;
+    const target = popoverRef.current;
+    if (button && target) {
+      return autoUpdate(button, target, () => {
+        const { width, height, left, top } = button.getBoundingClientRect();
+
+        target.style.setProperty("--Popover-offsetTop", `${button.offsetTop}px`);
+        target.style.setProperty("--Popover-offsetLeft", `${button.offsetLeft}px`);
+        target.style.setProperty("--Popover-top", `${top}px`);
+        target.style.setProperty("--Popover-left", `${left}px`);
+        target.style.setProperty("--Popover-width", `${width}px`);
+        target.style.setProperty("--Popover-height", `${height}px`);
+      });
+    }
+  }, [buttonRef, popoverRef]);
+
+  useEffect(() => {
+    let cleanup: (() => void) | undefined = () => {};
+
+    const target = popoverRef.current;
+    const toggle = (event: Event) => {
+      if ((event as ToggleEvent).newState === "open") {
+        cleanup = update();
+      } else {
+        cleanup?.();
+      }
+    };
+
+    target?.addEventListener("toggle", toggle);
+
+    return () => {
+      cleanup?.();
+      target?.removeEventListener("toggle", toggle);
+    };
+  }, [update, popoverRef]);
 
   return [
     cloneElement(props.children[0], {
       key: buttonId,
       id: buttonId,
-      ref,
+      ref: buttonRef,
       popoverTarget: popoverId,
-      "aria-haspopup": "menu1",
+      "aria-haspopup": "menu",
       "aria-expanded": props.open ?? false,
     } as never),
     cloneElement(props.children[1], {
       key: popoverId,
       id: popoverId,
+      ref: popoverRef,
       popover: "auto",
       "aria-modal": props.modal ?? false,
       "aria-labelledby": buttonId,
-      onBeforeToggle: (event: ToggleEvent) => {
-        const button = ref.current;
-        const target = event.target as HTMLMenuElement | null;
-
-        if (button && target && event.newState === "open") {
-          autoUpdate(button, target, () => {
-            const rect = button.getBoundingClientRect();
-            const screenY = button.offsetTop + rect.height;
-            const screenX =
-              props.placement === "right" ? button.offsetLeft + rect.width : button.offsetLeft;
-            console.log(button.scrollLeft, screenX, screenY);
-            Object.assign(target.style, {
-              left: `${screenX}px`,
-              top: `${screenY}px`,
-            });
-          });
-        }
-      },
     } as never),
   ];
 };

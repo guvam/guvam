@@ -2,7 +2,7 @@
   "name": "@guvam/components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "license": "MIT",
   "description": "UI components",
   "homepage": "https://guvam.com",

@@ -22,3 +22,4 @@ Contributions to Guvam.js are welcome and highly appreciated.
 
 - [Talk to community](https://github.com/guvam/guvam/discussions)
 - [Report an issues](https://github.com/guvam/guvam/issues)
+- [Chat](https://guvam.com/discord)

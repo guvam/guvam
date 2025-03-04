@@ -20,7 +20,6 @@ import { Header } from "@/components/Header";
 import type { ThemeSettings } from "@/components/Theme";
 import { getSettingsVariables, THEME_INITIAL_VALUES } from "@/components/Theme";
 
-
 export const metadata: Metadata = {
   title: "Guvam.js",
   description: "UI components",
@@ -61,20 +60,18 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <GoogleTagManager gtmId="GTM-T7RFBRHK" />
       </head>
       <body className="Layout">
-
-          <div className="Layout-background Header-stickyContainer">
-            <div className="Layout-section">
-              <Header themeSettings={themeSettings} />
-            </div>
-            <div className="Layout-line"></div>
-          </div>
-
-          {children}
-          <div className="Layout-line"></div>
+        <div className="Layout-background Header-stickyContainer">
           <div className="Layout-section">
-            <Footer />
+            <Header themeSettings={themeSettings} />
           </div>
+          <div className="Layout-line"></div>
+        </div>
 
+        {children}
+        <div className="Layout-line"></div>
+        <div className="Layout-section">
+          <Footer />
+        </div>
       </body>
     </html>
   );

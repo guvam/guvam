@@ -2,6 +2,13 @@
   list-style: none;
 }
 
+.Collapse-Action {
+  padding: 1rem;
+  cursor: pointer;
+  border: 1px solid var(--surfaceBorder);
+  border-radius: var(--borderRadius);
+}
+
 .Collapse-content,
 .Collapse::details-content {
   block-size: 0;

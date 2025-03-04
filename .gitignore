@@ -94,3 +94,4 @@ node_modules
 coverage
 qodana.yaml
 components.iml
+examples

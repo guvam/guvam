@@ -1,0 +1,75 @@
+.Button {
+  --Button-text: var(--primaryText);
+  --Button-background: var(--primary);
+  --Button-border: var(--uiBorder);
+
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  column-gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  block-size: 2.5em;
+  padding-inline: 1.25em;
+  color: var(--Button-text);
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--Button-background);
+  border: 1px solid var(--Button-border);
+  border-radius: var(--borderRadius);
+  transition: transform 250ms ease-in-out;
+
+  &:disabled {
+    color: oklch(from var(--Button-text) calc(l + 0.1) c h);
+    cursor: default;
+    background-color: var(--uiDisabled);
+  }
+
+  &:not(:disabled):hover {
+    --Button-background: oklch(from var(--primary) calc(l - 0.1) c h);
+  }
+
+  &:not(:disabled):active {
+    --Button-background: oklch(from var(--primary) calc(l - 0.2) c h);
+  }
+
+  &:not(:disabled):focus-visible {
+    --Button-border: var(--uiFocus);
+  }
+
+  &.Button--type-text {
+    --Button-background: transparent;
+    --Button-border: transparent;
+
+    color: var(--uiText);
+
+    &:not(:disabled):hover {
+      --Button-background: oklch(from var(--uiHover) l c h);
+    }
+
+    &:not(:disabled):active {
+      background-color: oklch(from var(--Button-background) l c h / 90%);
+    }
+  }
+
+  &.Button--type-muted {
+    --Button-background: transparent;
+
+    color: var(--uiText);
+  }
+
+  &.Button--icon {
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    padding: 0;
+  }
+
+  &.Button--active {
+    --Button-background: var(--uiActive);
+  }
+
+  &.Button--selected {
+    --Button-background: var(--uiSelected);
+  }
+}

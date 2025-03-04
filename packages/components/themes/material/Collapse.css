@@ -1,0 +1,28 @@
+.Collapse > summary {
+  list-style: none;
+}
+
+.Collapse-Action {
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+
+  &:hover {
+    background-color: var(--surfaceHover);
+  }
+
+  .Collapse-content,
+  .Collapse::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition:
+      block-size 250ms linear,
+      content-visibility 250ms linear allow-discrete;
+  }
+
+  .Collapse-content:has(:checked),
+  .Collapse-content.Collapse-content--open,
+  .Collapse[open]::details-content {
+    block-size: auto;
+  }
+}

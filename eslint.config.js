@@ -41,5 +41,12 @@ export default [
 ].map((config) => ({
   ...config,
   files: ["**/*.{ts,tsx,mjs}"],
-  ignores: ["**/node_modules/", ".idea/", ".github/", "**/dist/**", "examples/"],
+  ignores: [
+    "**/node_modules/",
+    ".idea/",
+    ".github/",
+    "**/dist/**",
+    "examples/",
+    "packages/guvam.com/.next/**",
+  ],
 }));

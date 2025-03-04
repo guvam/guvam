@@ -1,0 +1,30 @@
+.Tooltip {
+  --Tooltip-gap: 0.25rem;
+
+  position: fixed;
+  padding: 0.5rem 0.75rem;
+  pointer-events: none;
+  background-color: var(--ui);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--surfaceShadow);
+
+  &.Tooltip--position-top {
+    inset-block-end: calc(anchor(top) + var(--Tooltip-gap));
+    justify-self: anchor-center;
+  }
+
+  &.Tooltip--position-right {
+    inset-inline-start: calc(anchor(right) + var(--Tooltip-gap));
+    align-self: anchor-center;
+  }
+
+  &.Tooltip--position-bottom {
+    inset-block-start: calc(anchor(bottom) + var(--Tooltip-gap));
+    justify-self: anchor-center;
+  }
+
+  &.Tooltip--position-left {
+    inset-inline-end: calc(anchor(left) + var(--Tooltip-gap));
+    align-self: anchor-center;
+  }
+}

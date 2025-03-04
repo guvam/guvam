@@ -1,0 +1,25 @@
+.Breadcrumb {
+  display: flex;
+}
+
+.Breadcrumb-separator {
+  display: none;
+}
+
+.Breadcrumb-action {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--uiBorder);
+
+  &:hover {
+    color: var(--uiActive);
+  }
+
+  &.Breadcrumb-action--active {
+    color: var(--uiActive);
+    text-decoration: underline;
+  }
+}

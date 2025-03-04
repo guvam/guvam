@@ -1,0 +1,44 @@
+.Alert {
+  --Alert-colorText: var(--infoText);
+  --Alert-color: var(--infoBlock);
+
+  display: inline-flex;
+  gap: 1em;
+  padding: 1em;
+  padding-inline-start: 1em;
+  color: var(--Alert-colorText);
+  background-color: var(--Alert-color);
+  border-radius: var(--borderRadius);
+
+  &.Alert--icon {
+    align-items: center;
+  }
+
+  &.Alert--type-info {
+    --Alert-colorText: var(--info);
+    --Alert-colorBorder: var(--infoBorder);
+    --Alert-color: var(--infoBlock);
+  }
+
+  &.Alert--type-warning {
+    --Alert-colorText: var(--warning);
+    --Alert-colorBorder: var(--warningBorder);
+    --Alert-color: var(--warningBlock);
+  }
+
+  &.Alert--type-error {
+    --Alert-colorText: var(--error);
+    --Alert-colorBorder: var(--errorBorder);
+    --Alert-color: var(--errorBlock);
+  }
+
+  &.Alert--type-success {
+    --Alert-colorText: var(--success);
+    --Alert-colorBorder: var(--successBorder);
+    --Alert-color: var(--successBlock);
+  }
+}
+
+.Alert-icon {
+  font-size: 32px;
+}

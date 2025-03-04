@@ -1,0 +1,11 @@
+.Footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.5em;
+}
+
+.Footer-icons {
+  display: flex;
+  gap: 1.4em;
+}

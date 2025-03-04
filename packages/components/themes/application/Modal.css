@@ -1,0 +1,63 @@
+:root:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.Modal {
+  position: fixed;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  flex-direction: column;
+  inline-size: 500px;
+  padding: 0;
+  background-color: var(--surface);
+  border: 1px solid var(--surfaceBorder);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--surfaceShadow);
+  transform: translate(-50%, -50%);
+
+  &.Top {
+    inset-block-start: 25%;
+  }
+
+  &.Bottom {
+    inset-block-start: 75%;
+  }
+
+  &.Left {
+    inset-inline-start: 25%;
+  }
+
+  &.Right {
+    inset-inline-start: 75%;
+  }
+
+  &::backdrop {
+    background-color: var(--surfaceBackdrop);
+  }
+}
+
+.Modal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.Modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 16px;
+}
+
+.Modal-actions {
+  display: flex;
+  gap: 0.5em;
+  align-items: baseline;
+  justify-content: flex-end;
+  padding: 1em;
+}
+
+.Modal--content-center {
+  align-items: center;
+  justify-content: center;
+}

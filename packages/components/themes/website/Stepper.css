@@ -21,7 +21,7 @@
   }
 }
 
-.Stepper-item {
+.Stepper-Item {
   display: flex;
   flex-flow: row wrap;
   align-items: center;

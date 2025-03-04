@@ -7,3 +7,10 @@
   background-color: var(--primaryBlock);
   transition: inset 250ms linear;
 }
+
+.Indicator-Box {
+  inline-size: 50px;
+  aspect-ratio: 1;
+  background-color: var(--primaryBlock);
+  border: var(--borderRadius);
+}

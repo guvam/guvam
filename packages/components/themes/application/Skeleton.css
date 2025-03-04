@@ -1,7 +1,20 @@
+@keyframes pulseTrigger {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .Skeleton {
   margin-block: 0.75rem;
-  background-color: var(--surfaceBlock);
+  background-color: color-mix(in oklab, var(--uiBorder) 80%, white 20%);
   border-radius: var(--borderRadius);
+  transition: opacity 300ms ease-in-out;
+  animation: pulseTrigger 1.2s infinite ease-in-out;
 
   &.Skeleton--heading {
     inline-size: 80%;
@@ -34,7 +47,7 @@
     inline-size: 120px;
     block-size: 120px;
     margin: 0;
-    background-color: var(--surfaceBlock);
+    background-color: color-mix(in oklab, var(--uiBorder) 80%, white 20%);
     border-radius: var(--borderRadius);
 
     &::after {

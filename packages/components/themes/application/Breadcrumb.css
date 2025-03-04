@@ -1,18 +1,18 @@
 .Breadcrumb {
   display: flex;
-  gap: 0.25rem;
 }
 
 .Breadcrumb-separator {
-  align-content: center;
+  display: none;
 }
 
 .Breadcrumb-action {
   display: flex;
   align-items: center;
-  padding-inline: 0.25em;
+  padding: 0.5em;
   text-decoration: none;
   cursor: pointer;
+  border: 1px solid var(--uiBorder);
 
   &:hover {
     color: var(--uiActive);

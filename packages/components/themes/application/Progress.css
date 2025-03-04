@@ -1,36 +1,31 @@
 .Progress {
   position: relative;
   inline-size: 100%;
-  block-size: 1rem;
+  block-size: 1.5rem;
   overflow: clip;
-  border-radius: var(--borderRadius);
 
   &:indeterminate::before {
     position: absolute;
     inset: 0;
     box-sizing: border-box;
     inline-size: 100%;
-    block-size: 1rem;
+    block-size: 1.5rem;
     overflow: clip;
     content: "";
     background-color: var(--primary);
-    border-radius: var(--borderRadius);
     animation: Progress-indeterminate 3s linear infinite;
   }
 
   &::-webkit-progress-inner-element {
     border: 1px solid var(--uiBorder);
-    border-radius: var(--borderRadius);
   }
 
   &::-webkit-progress-bar {
     background-color: var(--ui);
-    border-radius: var(--borderRadius);
   }
 
   &::-webkit-progress-value {
     background-color: var(--primary);
-    border-radius: var(--borderRadius);
     transition: width 0.5s;
   }
 

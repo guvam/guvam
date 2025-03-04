@@ -2,7 +2,7 @@
   --Tooltip-gap: 0.25rem;
 
   position: fixed;
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   pointer-events: none;
   background-color: var(--ui);
   border-radius: var(--borderRadius);

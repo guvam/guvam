@@ -133,7 +133,8 @@
 
   & thead {
     font-weight: bold;
-    background-color: var(--surfacePanel);
+    color: var(--primaryText);
+    background-color: var(--primary);
   }
 
   & td,

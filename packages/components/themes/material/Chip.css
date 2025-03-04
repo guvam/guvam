@@ -4,11 +4,11 @@
   display: inline-flex;
   gap: 0.25em;
   align-items: center;
-  padding: 0.35em 0.35em;
+  padding: 0.35em;
+  font-weight: bold;
   color: var(--primaryText);
   background-color: var(--Chip-color);
   border-radius: var(--borderRadius);
-  font-weight: bold;
   box-shadow: 1px 2px;
 
   &.Chip--outlined {

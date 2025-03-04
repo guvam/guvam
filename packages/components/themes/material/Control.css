@@ -11,8 +11,8 @@
 
 .Control-error {
   display: grid;
-  color: var(--error);
   font-weight: bold;
+  color: var(--error);
 }
 
 .Control-info {

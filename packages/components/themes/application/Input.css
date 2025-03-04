@@ -1,0 +1,36 @@
+.Input {
+  display: flex;
+  column-gap: 1em;
+  align-items: center;
+  inline-size: 100%;
+  block-size: 2em;
+  padding-inline: 0.5em;
+  font-size: inherit;
+  color: var(--uiText);
+  background-color: var(--ui);
+  border: 1px solid var(--uiBorder);
+  border-radius: var(--borderRadius);
+
+  &::placeholder {
+    color: oklch(from var(--uiText) 75% c h);
+  }
+
+  &:disabled {
+    color: var(--uiDisabled);
+    border-color: oklch(from var(--uiBorder) calc(l - 0.05) c h);
+  }
+
+  &:not(:disabled):hover {
+    border-color: oklch(from var(--uiBorder) calc(l - 0.05) c h);
+  }
+
+  &:not(:disabled):focus-visible {
+    border-color: var(--uiFocus);
+  }
+
+  &.Input--type-textarea {
+    min-block-size: 8em;
+    padding: 0.5em;
+    resize: vertical;
+  }
+}

@@ -1,0 +1,36 @@
+.Collapse {
+  border: 1px solid var(--surfaceBorder);
+  border-radius: var(--borderRadius);
+}
+
+.Collapse-Action {
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+
+  &:hover {
+    background-color: var(--surfaceHover);
+  }
+
+  &:focus {
+    color: var(--primaryText);
+    background-color: oklch(from var(--primary) calc(l - 0.1) c h);
+  }
+}
+
+.Collapse-content,
+.Collapse::details-content {
+  block-size: 0;
+  padding: 0 0.5rem;
+  overflow: clip;
+  border-block-start: 1px solid var(--surfaceBorder);
+  transition:
+    block-size 250ms linear,
+    content-visibility 250ms linear allow-discrete;
+}
+
+.Collapse-content:has(:checked),
+.Collapse-content.Collapse-content--open,
+.Collapse[open]::details-content {
+  block-size: auto;
+}

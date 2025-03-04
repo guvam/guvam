@@ -1,0 +1,114 @@
+.Header {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1em;
+
+  &.Header--block {
+    padding-inline: 1rem;
+  }
+}
+
+.Header-link {
+  cursor: pointer;
+}
+
+.Header-nav {
+  display: flex;
+  flex-grow: 1;
+  gap: 0.5em;
+
+  @media (width <= 960px) {
+    flex-grow: 0;
+    justify-content: flex-end;
+  }
+
+  &.Header-nav--mobile {
+    display: none;
+
+    @media (width <= 960px) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      margin-block-end: 1em;
+    }
+  }
+}
+
+.Header-menu {
+  display: flex;
+  flex-grow: 1;
+  gap: 0.25rem;
+  justify-content: center;
+
+  @media (width <= 960px) {
+    display: none;
+  }
+}
+
+.Header-navLink {
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: var(--borderRadius);
+
+  &:hover {
+    background-color: var(--surfaceHover) !important;
+  }
+
+  &.Header-navLink--active {
+    color: var(--primary);
+    background-color: oklch(from var(--primary) 90% c h / 20%);
+  }
+}
+
+.Header-toggle {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-self: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.Header-hamburgerMenu {
+  display: none;
+
+  @media (width <= 960px) {
+    display: flex;
+  }
+}
+
+.Header-mobileMenu {
+  position: absolute;
+  inset-block-start: 0 !important;
+  inset-inline-start: 0 !important;
+  inline-size: 100%;
+  block-size: 100dvh;
+  overflow: auto;
+  background-color: var(--surface);
+
+  @media (width >= 960px) {
+    display: none;
+  }
+}
+
+:root:has(.Popover:popover-open) {
+  overflow: hidden;
+}
+
+.Header-mobileMenuList {
+  padding: 1em;
+  overflow-y: auto;
+  background-color: var(--surface);
+}
+
+.Header-stickyContainer {
+  @media (width <= 960px) {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 1;
+  }
+}

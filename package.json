@@ -51,6 +51,7 @@
   },
   "workspaces": [
     "packages/cli",
-    "packages/components"
+    "packages/components",
+    "packages/guvam.com"
   ]
 }

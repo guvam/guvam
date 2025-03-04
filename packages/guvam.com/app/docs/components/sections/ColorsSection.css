@@ -1,0 +1,69 @@
+@property --ColorSection-color {
+  initial-value: black;
+  syntax: "<color>";
+  inherits: true;
+}
+
+@property --ColorSection-colorText {
+  initial-value: black;
+  syntax: "<color>";
+  inherits: true;
+}
+
+@property --ColorSection-colorBlock {
+  initial-value: black;
+  syntax: "<color>";
+  inherits: true;
+}
+
+@property --ColorSection-colorBlockText {
+  initial-value: black;
+  syntax: "<color>";
+  inherits: true;
+}
+
+@property --ColorSection-colorBorder {
+  initial-value: black;
+  syntax: "<color>";
+  inherits: true;
+}
+
+.ColorsSection {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+  gap: 0.5rem;
+  inline-size: 100%;
+}
+
+.ColorsSection-item {
+  padding: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: var(--borderRadius);
+
+  &.ColorsSection-itemMain {
+    color: var(--ColorSection-colorText);
+    background-color: var(--ColorSection-color);
+    border-color: var(--ColorSection-color);
+  }
+
+  &.ColorsSection-itemText {
+    color: var(--ColorSection-color);
+  }
+
+  &.ColorsSection-itemBlock {
+    color: var(--ColorSection-colorBlockText);
+    background-color: var(--ColorSection-colorBlock);
+    border-color: var(--ColorSection-colorBlock);
+  }
+
+  &.ColorsSection-itemBlockText {
+    color: var(--ColorSection-colorBlockText);
+  }
+
+  &.ColorsSection-itemBorder {
+    color: var(--surfaceText);
+    border-color: var(--ColorSection-colorBorder);
+  }
+}

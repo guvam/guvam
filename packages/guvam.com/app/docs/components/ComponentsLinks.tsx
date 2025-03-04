@@ -116,6 +116,11 @@ export const ComponentsLinks = () => {
               Slider
             </ActiveLink>
           </li>
+          <li>
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#rating">
+              Rating
+            </ActiveLink>
+          </li>
         </ul>
 
         <h3 className="SideMenu-menuSubHeading">navigation</h3>

@@ -1,0 +1,42 @@
+.Rating {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.Rating-stars {
+  display: flex;
+  gap: 5px;
+}
+
+.Rating-star {
+  position: relative;
+  font-size: 24px;
+  color: oklch(84.5% 0 89.876deg);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.Rating-star.Gold {
+  color: gold;
+}
+
+.Rating-halfstar {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 24px;
+  block-size: 24px;
+  overflow: hidden;
+  pointer-events: auto;
+  clip-path: inset(0 50% 0 0);
+}
+
+.Rating-halfstar.Gold {
+  color: gold;
+}
+
+.Rating-slider {
+  display: none;
+}

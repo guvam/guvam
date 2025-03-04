@@ -1,7 +1,7 @@
 .Progress {
   position: relative;
   inline-size: 100%;
-  block-size: 0.75rem;
+  block-size: 0.5rem;
   overflow: clip;
   border-radius: var(--borderRadius);
 
@@ -10,7 +10,7 @@
     inset: 0;
     box-sizing: border-box;
     inline-size: 100%;
-    block-size: 0.75rem;
+    block-size: 0.5rem;
     overflow: clip;
     content: "";
     background-color: var(--primary);
@@ -45,8 +45,6 @@
   }
 }
 
-/*
-
 @keyframes Progress-indeterminate {
   0% {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -68,4 +66,3 @@
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
   }
 }
-*/

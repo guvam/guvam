@@ -1,6 +1,6 @@
 {
   "name": "@guvam/package",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "type": "module",
   "private": "false",
   "license": "MIT",
@@ -51,6 +51,7 @@
   },
   "workspaces": [
     "packages/cli",
-    "packages/components"
+    "packages/components",
+    "packages/guvam.com"
   ]
 }

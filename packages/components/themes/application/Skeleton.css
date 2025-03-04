@@ -1,0 +1,65 @@
+@keyframes Pulsetrigger {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.Skeleton {
+  margin-block: 0.75rem;
+  background-color: color-mix(in oklab, var(--uiBorder) 80%, white 20%);
+  border: 2px solid color-mix(in oklab, var(--primary) 80%, oklch(60% 0 89.876deg / 25%) 40%);
+  border-radius: var(--borderRadius);
+  transition: opacity 300ms ease-in-out;
+  animation: Pulsetrigger 1.2s infinite ease-in-out;
+
+  &.Skeleton--heading {
+    inline-size: 80%;
+    min-inline-size: 160px;
+    block-size: 1em;
+  }
+
+  &.Skeleton--subHeading {
+    inline-size: 70%;
+    min-inline-size: 140px;
+    block-size: 1em;
+  }
+
+  &.Skeleton--paragraph {
+    inline-size: 100%;
+    min-inline-size: 200px;
+    block-size: 1em;
+  }
+
+  &.Skeleton--comment {
+    inline-size: 60%;
+    min-inline-size: 120px;
+    block-size: 1em;
+  }
+
+  &.Skeleton--image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 120px;
+    block-size: 120px;
+    margin: 0;
+    background-color: color-mix(in oklab, var(--uiBorder) 80%, white 20%);
+    border-radius: var(--borderRadius);
+
+    &::after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      block-size: 2rem;
+      aspect-ratio: 1;
+      content: "?";
+      background-color: var(--surfaceBlock);
+      border-radius: 50%;
+    }
+  }
+}

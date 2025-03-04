@@ -1,0 +1,114 @@
+.Menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  inline-size: 250px;
+  min-inline-size: 20rem;
+  padding: 0.5rem;
+  background-color: var(--surface);
+  border: 1px solid var(--surfaceBorder);
+  border-radius: var(--borderRadius);
+
+  &.Menu--wider {
+    min-inline-size: 15rem;
+  }
+}
+
+.Menu-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.Menu-list {
+  --Width: 100px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--Width), 1fr));
+  gap: 0.25rem;
+
+  &.Menu-list--short {
+    --Width: 20px;
+  }
+}
+
+.Util-hidden {
+  position: fixed;
+  inset-block-start: -1000px;
+  inset-inline-start: -1000px;
+  inline-size: 0;
+  block-size: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.Menu-button {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--surfaceBorder);
+  border-radius: var(--borderRadius);
+
+  &:hover {
+    background-color: var(--uiHover);
+  }
+
+  &:focus-within {
+    outline: 1px solid var(--primary);
+  }
+
+  &:has(:checked) {
+    background-color: var(--uiSelected);
+  }
+}
+
+.Menu-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: var(--borderRadius);
+
+  &:disabled {
+    color: var(--uiDisabled);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):hover {
+    background-color: var(--uiHover);
+  }
+
+  &:not(:disabled):active {
+    background-color: oklch(from var(--uiHover) h s calc(l - 5));
+  }
+
+  &:not(:disabled):focus-visible {
+    outline: 1px solid var(--uiFocus);
+  }
+}
+
+.Menu-itemIcon {
+  display: block;
+  flex-shrink: 0;
+  inline-size: 16px;
+  block-size: 16px;
+}
+
+.Menu-itemContent {
+  flex-grow: 1;
+}
+
+.Menu-itemInfo {
+  flex-shrink: 0;
+  color: oklch(from var(--surfaceText) calc(l + 0.2) c h);
+}
+
+.Menu-separator {
+  border-block-start: 1px solid var(--surfaceBorder);
+}

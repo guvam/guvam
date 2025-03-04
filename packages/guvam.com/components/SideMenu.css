@@ -1,0 +1,101 @@
+.SideMenu {
+  display: flex;
+  inline-size: 100%;
+  min-block-size: 80vh;
+}
+
+.SideMenu-menu {
+  position: sticky;
+  inset-block-start: 0;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  inline-size: 220px;
+  block-size: calc(100dvh);
+  padding: 2em 0;
+  overflow: auto;
+  scrollbar-width: thin;
+
+  @media (width <= 960px) {
+    display: none;
+  }
+}
+
+.SideMenu-menuSection {
+  margin-block-end: 2em;
+}
+
+.SideMenu-content {
+  container: sidemenu-content / inline-size;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 2em;
+  padding: 2em 0 2em 2em;
+  overflow-x: auto;
+
+  @media (width <= 960px) {
+    padding: 2em 0;
+  }
+}
+
+.SideMenu-items {
+  display: flex;
+  flex-direction: column;
+  max-block-size: 0;
+  overflow: hidden;
+  transition: max-block-size 0.5s ease-in-out;
+}
+
+.SideMenu-menuHeading {
+  display: flex;
+  align-items: center;
+  padding-block-end: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+
+  .SideMenu-menuSection:has(:checked) &::before {
+    transform: rotate(90deg);
+  }
+}
+
+.SideMenu-menuSubHeading {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0;
+  margin-block-start: 2em;
+  margin-inline-start: 1rem;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  border-inline-start: 1px solid transparent;
+}
+
+.SideMenu-menuItem {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5em 1em;
+  color: var(--surfaceText);
+  cursor: pointer;
+  border-inline-start: 1px solid var(--surfaceBorder);
+
+  &:hover {
+    color: oklch(from var(--surfaceText) calc(l - 0.1) c h);
+    background-color: var(--surfaceHover) !important;
+    border-inline-start-color: oklch(from var(--surfaceBorder) calc(l - 0.2) c h);
+  }
+
+  &:focus {
+    border-inline-start-color: var(--surfaceBorder);
+  }
+
+  &.SideMenu-menuItem--active {
+    color: var(--primary);
+    background-color: oklch(from var(--primary) 90% c h / 20%);
+    border-inline-start-color: oklch(from var(--primary) calc(l - 0.05) c h);
+  }
+}

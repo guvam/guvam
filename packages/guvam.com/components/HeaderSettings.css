@@ -1,0 +1,6 @@
+.ColorSelect-color {
+  block-size: 0.75em;
+  aspect-ratio: 1;
+  background-color: var(--primary);
+  border-radius: 50%;
+}

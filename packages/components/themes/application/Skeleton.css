@@ -14,7 +14,7 @@
   background-color: color-mix(in oklab, var(--uiBorder) 80%, white 20%);
   border-radius: var(--borderRadius);
   transition: opacity 300ms ease-in-out;
-  animation: pulseTrigger 1.2s infinite ease-in-out;
+  animation: Pulsetrigger 1.2s infinite ease-in-out;
 
   &.Skeleton--heading {
     inline-size: 80%;

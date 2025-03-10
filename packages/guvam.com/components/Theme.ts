@@ -1,4 +1,5 @@
 export type ThemeSettings = {
+  theme: "base" | "services";
   colorScheme: "normal" | "light" | "dark";
   colorTheme: "blue" | "green" | "pink" | "lime" | "red" | "yellow";
   borderRadius: "0" | "0.25rem" | "0.5rem" | "0.75rem" | "1rem";
@@ -10,6 +11,7 @@ export type ThemeSettings = {
 };
 
 export const THEME_INITIAL_VALUES: ThemeSettings = {
+  theme: "base",
   colorScheme: "light",
   colorTheme: "blue",
   borderRadius: "0.5rem",
@@ -21,6 +23,7 @@ export const THEME_INITIAL_VALUES: ThemeSettings = {
 };
 
 export const getSettingsVariables = (props: ThemeSettings) => ({
+  "--theme": props.theme,
   "--colorScheme": props.colorScheme,
   "--colorTheme": props.colorTheme,
   "--borderRadius": props.borderRadius,

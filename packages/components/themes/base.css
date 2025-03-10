@@ -33,6 +33,7 @@
 @import url("base/Radio.css");
 @import url("base/Slider.css");
 @import url("base/Switch.css");
+@import url("base/Rating.css");
 
 /* navigation */
 @import url("base/Popover.css");

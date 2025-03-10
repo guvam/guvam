@@ -20,6 +20,7 @@ import { ModalSection } from "@/app/(website)/docs/components/sections/ModalSect
 import { PaginationSection } from "@/app/(website)/docs/components/sections/PaginationSection";
 import { ProgressSection } from "@/app/(website)/docs/components/sections/ProgressSection";
 import { RadioSection } from "@/app/(website)/docs/components/sections/RadioSection";
+import { RatingSection } from "@/app/(website)/docs/components/sections/RatingSection";
 import { SelectSection } from "@/app/(website)/docs/components/sections/SelectSection";
 import { SkeletonSection } from "@/app/(website)/docs/components/sections/SkeletonSection";
 import { SliderSection } from "@/app/(website)/docs/components/sections/SliderSection";
@@ -78,6 +79,7 @@ export default function Page() {
       <CheckboxSection />
       <RadioSection />
       <SliderSection />
+      <RatingSection />
 
       <hr className="Content-divider" />
       <h2 className="Content-heading2" id="navigation">

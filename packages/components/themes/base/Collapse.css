@@ -20,8 +20,12 @@
   block-size: 0;
   overflow: clip;
   transition:
-    block-size 250ms linear,
-    content-visibility 250ms linear allow-discrete;
+    block-size 250ms ease-in,
+    content-visibility 250ms ease-in allow-discrete;
+}
+
+.Collapse-contentBlock {
+  padding: 1rem;
 }
 
 .Collapse-content:has(:checked),

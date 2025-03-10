@@ -6,4 +6,10 @@
   color: var(--primaryText);
   background-color: var(--primary);
   border-radius: var(--borderRadius);
+
+  &.Badge--outline {
+    color: var(--surfaceText);
+    background-color: transparent;
+    border: 1px solid var(--primary);
+  }
 }

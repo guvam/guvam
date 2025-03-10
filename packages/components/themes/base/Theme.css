@@ -9,6 +9,7 @@
   --textDirection: unset;
   --motionReduction: auto; /* TODO */
 
+  overflow-x: clip;
   font-size: var(--textSize);
   color: var(--surfaceText);
   color-scheme: var(--colorScheme);
@@ -113,12 +114,13 @@
   /* surface */
   --surface: light-dark(oklch(97% 0 90deg), oklch(18% 0.006 286deg));
   --surfaceText: light-dark(oklch(32% 0 90deg), oklch(84% 0 90deg));
-  --surfaceBlock: light-dark(oklch(95% 0 90deg), oklch(20.2% 0.006 285.856deg));
+  --surfaceBlock: light-dark(oklch(95% 0 90deg), oklch(26.1% 0.002 286.271deg));
   --surfaceBlockText: light-dark(oklch(32% 0 90deg), oklch(84% 0 90deg));
   --surfaceBorder: light-dark(oklch(92% 0 90deg), oklch(28.9% 0 89.876deg));
 
   /* other */
-  --surfacePanel: light-dark(oklch(94% 0 90deg), oklch(18% 0 90deg));
+  --surfacePanel: light-dark(oklch(95% 0 90deg), oklch(24% 0 90deg));
+  --surfaceHighlight: light-dark(oklch(94% 0 90deg), oklch(26% 0 90deg));
   --surfaceShadow: oklch(0% 0 0deg / 12%) 0px 0px 2px, oklch(0% 0 0deg / 14%) 0px 4px 8px;
   --surfaceBackdrop: light-dark(oklch(0% 0 0deg / 5%), oklch(100% 0 0deg / 5%));
   --surfaceHover: light-dark(oklch(90% 0 90deg), oklch(25.2% 0 89.876deg));

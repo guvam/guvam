@@ -1,0 +1,65 @@
+.Pricing-Divider {
+  border-block-end: 1px solid var(--surfaceBorder);
+}
+
+.Pricing-Icon {
+  place-items: center;
+  font-size: 2rem;
+}
+
+.Features-fadingImage {
+  display: flex;
+  max-inline-size: 100%;
+  block-size: auto;
+  margin-block-end: 4em;
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.Team-Image {
+  inline-size: 100%;
+}
+
+.GridTwo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
+  gap: 1em;
+}
+
+.Gap2x {
+  gap: 2em;
+}
+
+.Hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-block-size: 50vh;
+  padding: 2em 0;
+}
+
+.Hero-image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+/*
+.Grid-columnThird {
+  grid-column: span 2;
+}
+
+.Grid-columnHalf {
+  grid-column: span 3;
+}
+
+.Grid-columnTwoThird {
+  grid-column: span 4;
+}
+
+.Grid-full {
+  grid-column: span 6;
+}
+*/

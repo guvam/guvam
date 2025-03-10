@@ -1,7 +1,4 @@
-.Theme--website {
+.Theme--type-services {
   .Button {
-    block-size: 4em;
-    padding-inline: 2em;
-    font-weight: 600;
   }
 }

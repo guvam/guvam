@@ -5,7 +5,7 @@ import type { FC, ReactElement } from "react";
 import { cloneElement, createRef, useCallback, useEffect } from "react";
 
 export const Popover: FC<{
-  children: [ReactElement<HTMLButtonElement>, ReactElement<HTMLMenuElement>];
+  children: [ReactElement<HTMLButtonElement>, ReactElement<HTMLDivElement>];
   id: string;
   modal?: boolean;
   open?: boolean;
@@ -22,7 +22,6 @@ export const Popover: FC<{
     if (button && target) {
       return autoUpdate(button, target, () => {
         const { width, height, left, top } = button.getBoundingClientRect();
-
         target.style.setProperty("--Popover-offsetTop", `${button.offsetTop}px`);
         target.style.setProperty("--Popover-offsetLeft", `${button.offsetLeft}px`);
         target.style.setProperty("--Popover-top", `${top}px`);

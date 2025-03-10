@@ -1,0 +1,22 @@
+.Theme--type-services {
+  .Collapse {
+  }
+
+  .Collapse-action {
+    font-size: 1.25rem;
+    border-width: 0;
+    transition: background-color 250ms ease-in;
+
+    &:hover {
+      background-color: var(--surfaceHighlight);
+    }
+  }
+
+  .Collapse::details-content {
+    font-size: 1.25rem;
+  }
+
+  .Collapse[open] {
+    background-color: var(--surfacePanel);
+  }
+}

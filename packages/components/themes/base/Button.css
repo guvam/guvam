@@ -72,18 +72,12 @@
     --Button-background: var(--uiSelected);
   }
 
-  &.Loading {
-    align-items: center;
-    justify-content: center;
-    padding-inline: 0.5em;
-    pointer-events: none;
-    cursor: default;
-
+  &.Button--loading {
     &::after {
       display: inline-block;
       flex-shrink: 0;
-      inline-size: 1em;
       block-size: 1em;
+      aspect-ratio: 1;
       content: "";
       border: 2px solid currentcolor;
       border-inline-end-color: transparent;

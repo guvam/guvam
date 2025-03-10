@@ -11,7 +11,7 @@ export const ButtonSection: FC = () => (
     <button className="Button Button--type-text" disabled>
       Button
     </button>
-    <button className="Button Loading">Button</button>
+    <button className="Button Button--loading">Button</button>
 
     <button className="Button Button--icon" aria-label="House action">
       <House />
@@ -25,6 +25,6 @@ export const ButtonSection: FC = () => (
     <button className="Button Button--icon Button--type-text" aria-label="House action" disabled>
       <House />
     </button>
-    <button className="Button Button--icon Loading" aria-label="House action"></button>
+    <button className="Button Button--icon Button--loading" aria-label="House action"></button>
   </Components>
 );

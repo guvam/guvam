@@ -1,0 +1,150 @@
+:root {
+  /* global variables */
+  --colorScheme: dark;
+  --colorTheme: blue;
+  --borderRadius: 0.5rem;
+  --textScale: 1.25;
+  --textSize: 16px;
+  --textDensity: 1; /* TODO */
+  --textDirection: unset;
+  --motionReduction: auto; /* TODO */
+
+  font-size: var(--textSize);
+  color: var(--surfaceText);
+  color-scheme: var(--colorScheme);
+  background-color: var(--surface);
+  direction: var(--textDirection);
+  anchor-name: --root-container;
+
+  /* breakpoints */
+  --breakpointMobile: 600px;
+  --breakpointTablet: 960px;
+  --breakpointDesktop: 1200px;
+
+  /* font */
+  --textMultiplier: clamp(0rem, calc((100dvw - var(--breakpointMobile)) / 600) * 16, 1rem);
+
+  /* primary */
+  --primary: light-dark(oklch(37% 0.144 260deg), oklch(83% 0.085 278deg));
+  --primaryText: light-dark(oklch(from var(--primary) 95% 0 h), oklch(from var(--primary) 5% 0 h));
+  --primaryBlock: light-dark(
+    oklch(from var(--primary) 95% 0.02 h),
+    oklch(from var(--primary) 25% 0.02 h)
+  );
+  --primaryBlockText: light-dark(
+    oklch(from var(--primary) 50% c h),
+    oklch(from var(--primary) 90% c h)
+  );
+  --primaryBorder: var(--primary);
+
+  /* secondary */
+  --secondary: light-dark(oklch(45% 0.024 290deg), oklch(82% 0.033 282deg));
+  --secondaryText: light-dark(
+    oklch(from var(--secondary) 95% 0 h),
+    oklch(from var(--secondary) 5% 0 h)
+  );
+  --secondaryBlock: light-dark(
+    oklch(from var(--secondary) 95% 0.02 h),
+    oklch(from var(--secondary) 25% 0.02 h)
+  );
+  --secondaryBlockText: light-dark(
+    oklch(from var(--secondary) 50% c h),
+    oklch(from var(--secondary) 90% c h)
+  );
+  --secondaryBorder: var(--secondary);
+
+  /* accent */
+  --accent: light-dark(oklch(32% 0.064 335deg), oklch(83% 0.063 340deg));
+  --accentText: light-dark(oklch(from var(--accent) 95% 0 h), oklch(from var(--accent) 5% 0 h));
+  --accentBlock: light-dark(
+    oklch(from var(--accent) 95% 0.02 h),
+    oklch(from var(--accent) 25% 0.02 h)
+  );
+  --accentBlockText: light-dark(
+    oklch(from var(--accent) 50% c h),
+    oklch(from var(--accent) 90% c h)
+  );
+  --accentBorder: var(--accent);
+
+  /* info */
+  --info: transparent;
+  --infoText: light-dark(oklch(from var(--info) 95% 0 h), oklch(from var(--info) 5% 0 h));
+  --infoBlock: light-dark(oklch(from var(--info) 95% 0.02 h), oklch(from var(--info) 25% 0.02 h));
+  --infoBlockText: light-dark(oklch(from var(--info) 50% c h), oklch(from var(--info) 90% c h));
+  --infoBorder: var(--info);
+
+  /* success */
+  --success: transparent;
+  --successText: light-dark(oklch(from var(--success) 95% 0 h), oklch(from var(--success) 5% 0 h));
+  --successBlock: light-dark(
+    oklch(from var(--success) 95% 0.02 h),
+    oklch(from var(--success) 25% 0.02 h)
+  );
+  --successBlockText: light-dark(
+    oklch(from var(--success) 50% c h),
+    oklch(from var(--success) 90% c h)
+  );
+  --successBorder: var(--success);
+
+  /* warning */
+  --warning: transparent;
+  --warningText: light-dark(oklch(from var(--warning) 95% 0 h), oklch(from var(--warning) 5% 0 h));
+  --warningBlock: light-dark(
+    oklch(from var(--warning) 95% 0.02 h),
+    oklch(from var(--warning) 25% 0.02 h)
+  );
+  --warningBlockText: light-dark(
+    oklch(from var(--warning) 50% c h),
+    oklch(from var(--warning) 90% c h)
+  );
+  --warningBorder: var(--warning);
+
+  /* error */
+
+  --error: transparent;
+  --errorText: light-dark(oklch(from var(--error) 95% 0 h), oklch(from var(--error) 5% 0 h));
+  --errorBlock: light-dark(
+    oklch(from var(--error) 95% 0.02 h),
+    oklch(from var(--error) 25% 0.02 h)
+  );
+  --errorBlockText: light-dark(oklch(from var(--error) 50% c h), oklch(from var(--error) 90% c h));
+  --errorBorder: var(--error);
+
+  /* surface */
+  --surface: light-dark(oklch(97% 0 90deg), oklch(18% 0.006 286deg));
+  --surfaceText: light-dark(oklch(32% 0 90deg), oklch(84% 0 90deg));
+  --surfaceBlock: light-dark(oklch(95% 0 90deg), oklch(20.2% 0.006 285.856deg));
+  --surfaceBlockText: light-dark(oklch(32% 0 90deg), oklch(84% 0 90deg));
+  --surfaceBorder: light-dark(oklch(92% 0 90deg), oklch(28.9% 0 89.876deg));
+
+  /* other */
+  --surfacePanel: light-dark(oklch(94% 0 90deg), oklch(18% 0 90deg));
+  --surfaceShadow: oklch(0% 0 0deg / 12%) 0px 0px 2px, oklch(0% 0 0deg / 14%) 0px 4px 8px;
+  --surfaceBackdrop: light-dark(oklch(0% 0 0deg / 5%), oklch(100% 0 0deg / 5%));
+  --surfaceHover: light-dark(oklch(90% 0 90deg), oklch(25.2% 0 89.876deg));
+
+  /*
+  --surface-ground	Base ground color.
+  --surface-section	Background color of a section on a ground surface.
+  --surface-card	Color of a surface used as a card.
+  --surface-overlay	Color of overlay surfaces.
+  --surface-border	Color of a divider.
+  --surface-hover	Color of an element in hover state.
+  */
+
+  /* ui */
+  --ui: light-dark(oklch(100% 0 90deg), oklch(11% 0 90deg));
+  --uiText: light-dark(oklch(11% 0 90deg), oklch(83% 0 90deg));
+  --uiBorder: light-dark(oklch(75% 0 90deg), oklch(32% 0 90deg));
+
+  /* other */
+  --uiHover: light-dark(oklch(92% 0 90deg), oklch(24% 0 90deg));
+  --uiFocus: light-dark(
+    oklch(from var(--uiActive) l c h / 10%),
+    oklch(from var(--uiActive) l c h / 10%)
+  );
+  --uiDisabled: light-dark(oklch(68% 0 90deg), oklch(32% 0 90deg));
+  --uiDisabledBorder: light-dark(oklch(80% 0 90deg), oklch(32% 0 90deg));
+  --uiActive: light-dark(oklch(47% 0.16 260deg), oklch(67% 0.138 260deg));
+  --uiSelected: light-dark(oklch(78% 0.093 260deg), oklch(36% 0.07 260deg));
+}

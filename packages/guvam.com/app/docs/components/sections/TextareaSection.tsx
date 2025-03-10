@@ -4,22 +4,17 @@ import { Components } from "@/app/docs/components/Components";
 
 export const TextareaSection: FC = () => (
   <Components id="textarea">
-    <textarea className="Input Input--type-textarea" aria-label="input"></textarea>
-    <textarea
-      className="Input Input--type-textarea"
-      aria-label="input"
-      placeholder="placeholder"
-    ></textarea>
-    <textarea
-      className="Input Input--type-textarea"
-      aria-label="input"
-      defaultValue="value"
-    ></textarea>
-    <textarea
-      className="Input Input--type-textarea"
-      aria-label="input"
-      defaultValue="value"
-      disabled
-    ></textarea>
+    <div className="Input">
+      <textarea aria-label="input"></textarea>
+    </div>
+    <div className="Input">
+      <textarea aria-label="input" placeholder="placeholder"></textarea>
+    </div>
+    <div className="Input">
+      <textarea aria-label="input" defaultValue="value"></textarea>
+    </div>
+    <div className="Input">
+      <textarea aria-label="input" defaultValue="value" disabled></textarea>
+    </div>
   </Components>
 );

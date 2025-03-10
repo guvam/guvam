@@ -1,0 +1,33 @@
+.Radio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 20px;
+  block-size: 20px;
+  cursor: pointer;
+  background-color: var(--ui);
+  border: 1px solid var(--uiBorder);
+  border-radius: 50%;
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.66;
+  }
+
+  &:not(:disabled):hover {
+    border-color: oklch(from var(--primary) calc(l + 0.15) c h);
+  }
+
+  &:not(:disabled):focus-visible {
+    outline: 5px solid var(--uiFocus);
+  }
+
+  &:checked::after {
+    display: inline-block;
+    inline-size: 10px;
+    block-size: 10px;
+    content: "";
+    background-color: var(--primary);
+    border-radius: 50%;
+  }
+}

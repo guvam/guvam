@@ -1,13 +1,7 @@
-import "@guvam/components/base/index.css";
-import "@guvam/components/colors/blue.css";
-import "@guvam/components/colors/green.css";
-import "@guvam/components/colors/pink.css";
-import "@guvam/components/colors/lime.css";
-import "@guvam/components/colors/red.css";
-import "@guvam/components/colors/yellow.css";
+import "@guvam/components/themes/base.css";
 import "@guvam/components/themes/website.css";
+import "@guvam/components/colors/index.css";
 import "../components/SideMenu.css";
-import "../components/Header.css";
 
 import { loadEnvConfig } from "@next/env";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
@@ -34,17 +28,18 @@ loadEnvConfig(process.cwd());
 
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const cookieStore = await cookies();
-  const themeCookieSettings =
+  const themeSettings =
     cookieStore
       .get("theme")
       ?.value.split(" ")
-      .reduce((previousValue, currentValue) => {
-        const [key, value] = currentValue.split(":") as [keyof ThemeSettings, never];
-        previousValue[key] = value;
-        return previousValue;
-      }, {} as Partial<ThemeSettings>) ?? {};
-
-  const themeSettings = { ...THEME_INITIAL_VALUES, ...themeCookieSettings };
+      .reduce(
+        (previousValue, currentValue) => {
+          const [key, value] = currentValue.split(":") as [keyof ThemeSettings, never];
+          previousValue[key] = value;
+          return previousValue;
+        },
+        { ...THEME_INITIAL_VALUES }
+      ) ?? THEME_INITIAL_VALUES;
 
   return (
     <html

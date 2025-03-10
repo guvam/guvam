@@ -7,7 +7,9 @@ export const ControlSection: FC = () => (
     <div className="List-stack">
       <label className="Control">
         <span className="Control-label">Label</span>
-        <input type="text" className="Input" />
+        <div className="Input">
+          <input type="text" />
+        </div>
         <span className="Control-info">But instead of addressing the real issue</span>
         <span className="Control-error">But instead of addressing the real issue</span>
       </label>

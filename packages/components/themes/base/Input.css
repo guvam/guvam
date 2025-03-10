@@ -1,0 +1,63 @@
+.Input {
+  --Input-text: var(--uiText);
+
+  position: relative;
+  display: flex;
+  column-gap: 1em;
+  align-items: center;
+  inline-size: 100%;
+  max-inline-size: 20rem;
+  min-block-size: 2.5rem;
+  color: var(--Input-text);
+  background-color: var(--ui);
+  border: 1px solid var(--uiBorder);
+  border-radius: var(--borderRadius);
+
+  & > * {
+    align-items: center;
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 0.5em;
+    font-size: inherit;
+
+    &::placeholder {
+      color: oklch(from var(--Input-text) l c h / 50%);
+    }
+  }
+
+  &:has(:disabled) {
+    opacity: 0.67;
+  }
+
+  &:has(:not(:disabled)):hover {
+    border-color: oklch(from var(--uiBorder) calc(l - 0.05) c h);
+  }
+
+  &:has(:not(:disabled)):focus-within {
+    outline: 5px solid var(--uiFocus);
+  }
+
+  & > textarea {
+    min-block-size: 8em;
+    resize: vertical;
+  }
+
+  & > select {
+    padding-inline-end: 2.5em;
+  }
+
+  &:has(select)::after {
+    position: absolute;
+    inset-inline-end: 0;
+    display: block;
+    block-size: 2.5rem;
+    aspect-ratio: 1;
+    pointer-events: none;
+    content: "";
+    background-color: var(--Input-text);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4.646 6.646a.5.5 0 01.708 0L8 9.293l2.646-2.647a.5.5 0 11.708.708l-3 3a.5.5 0 01-.708 0l-3-3a.5.5 0 010-.708z'/%3E%3C/svg%3E");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 1.5rem;
+  }
+}

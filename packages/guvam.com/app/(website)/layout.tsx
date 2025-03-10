@@ -1,7 +1,8 @@
-import "../../../components/themes/base.css";
-import "../../../components/themes/website.css";
-import "../../../components/colors/index.css";
+import "@guvam/components/themes/base.css";
+import "@guvam/components/themes/website.css";
+import "@guvam/components/colors/index.css";
 import "../../components/SideMenu.css";
+import "../../components/TitleCarousel.css";
 
 import { loadEnvConfig } from "@next/env";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";

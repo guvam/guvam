@@ -28,9 +28,29 @@ export const Header: FC<{ themeSettings: ThemeSettings }> = (props) => (
             className="Header-navLink"
             activeClassName="Header-navLink--active"
             isParent
-            href="/packages/guvam.com/app/(website)/docs"
+            href="/docs/"
           >
             Docs
+          </ActiveLink>
+        </li>
+        <li>
+          <ActiveLink
+            className="Header-navLink"
+            activeClassName="Header-navLink--active"
+            isParent
+            href="/blocks/"
+          >
+            Blocks
+          </ActiveLink>
+        </li>
+        <li>
+          <ActiveLink
+            className="Header-navLink"
+            activeClassName="Header-navLink--active"
+            isParent
+            href="/templates/"
+          >
+            Templates
           </ActiveLink>
         </li>
         <li>

@@ -14,58 +14,37 @@ export const ComponentsLinks = () => {
         <h3 className="SideMenu-menuSubHeading">Display</h3>
         <ul>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#content"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#content">
               Content
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#avatar"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#avatar">
               Avatar
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#badge"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#badge">
               Badge
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#card"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#card">
               Card
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#chip"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#chip">
               Chip
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#collapse"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#collapse">
               Collapse
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#tooltip"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#tooltip">
               Tooltip
             </ActiveLink>
           </li>
@@ -74,26 +53,17 @@ export const ComponentsLinks = () => {
         <h3 className="SideMenu-menuSubHeading">feedback</h3>
         <ul>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#alert"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#alert">
               Alert
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#modal"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#modal">
               Modal
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#progress"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#progress">
               Progress
             </ActiveLink>
           </li>
@@ -102,74 +72,47 @@ export const ComponentsLinks = () => {
         <h3 className="SideMenu-menuSubHeading">input</h3>
         <ul>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#button"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#button">
               Button
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#control"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#control">
               Control
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#input"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#input">
               Input
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#textarea"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#textarea">
               Textarea
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#select"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#select">
               Select
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#switch"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#switch">
               Switch
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#checkbox"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#checkbox">
               Checkbox
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#radio"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#radio">
               Radio
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#slider"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#slider">
               Slider
             </ActiveLink>
           </li>
@@ -178,42 +121,27 @@ export const ComponentsLinks = () => {
         <h3 className="SideMenu-menuSubHeading">navigation</h3>
         <ul>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#breadcrumbs"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#breadcrumbs">
               Breadcrumbs
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#drawer"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#drawer">
               Drawer
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#dropdown"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#dropdown">
               Dropdown
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#menu"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#menu">
               Menu
             </ActiveLink>
           </li>
           <li>
-            <ActiveLink
-              className="SideMenu-menuItem"
-              href="/packages/guvam.com/app/(website)/docs/components#pagination"
-            >
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#pagination">
               Pagination
             </ActiveLink>
           </li>

@@ -13,18 +13,12 @@ export const TutorialsLinks = () => {
       <ul className="Collapse-content">
         <input type="checkbox" hidden id="menu-tutorials" defaultChecked />
         <li>
-          <ActiveLink
-            className="SideMenu-menuItem"
-            href="/packages/guvam.com/app/(website)/docs/tutorials/getting-started"
-          >
+          <ActiveLink className="SideMenu-menuItem" href="/docs/tutorials/getting-started">
             Getting Started
           </ActiveLink>
         </li>
         <li>
-          <ActiveLink
-            className="SideMenu-menuItem"
-            href="/packages/guvam.com/app/(website)/docs/tutorials/roadmap"
-          >
+          <ActiveLink className="SideMenu-menuItem" href="/docs/tutorials/roadmap">
             Roadmap
           </ActiveLink>
         </li>

@@ -1,24 +1,11 @@
-.Card {
-  --Card-padding: 1rem;
+.Theme--type-services {
+  .Card {
+    background: var(--surfacePanel);
+    border-width: 0;
+    transition: background-color 250ms ease-in;
 
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-inline-size: 250px;
-  background: var(--surfacePanel);
-  border: 1px solid var(--uiBorder);
-  border-radius: var(--borderRadius);
-
-  &.Card--muted {
-    background: var(--surface);
+    &:hover {
+      background-color: var(--surfaceHighlight);
+    }
   }
-}
-
-.Card-header {
-  padding: var(--Card-padding) var(--Card-padding) 0 var(--Card-padding);
-  font-size: 1.5em;
-}
-
-.Card-content {
-  padding: var(--Card-padding) var(--Card-padding) var(--Card-padding);
 }

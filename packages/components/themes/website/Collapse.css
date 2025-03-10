@@ -1,25 +1,19 @@
-.Collapse > summary {
-  list-style: none;
-}
+.Theme--type-services {
+  .Collapse-action {
+    font-size: 1.25rem;
+    border-width: 0;
+    transition: background-color 250ms ease-in;
 
-.Collapse-Action {
-  padding: 1rem;
-  cursor: pointer;
-  border: 1px solid var(--surfaceBorder);
-  border-radius: var(--borderRadius);
-}
+    &:hover {
+      background-color: var(--surfaceHighlight);
+    }
+  }
 
-.Collapse-content,
-.Collapse::details-content {
-  block-size: 0;
-  overflow: clip;
-  transition:
-    block-size 250ms linear,
-    content-visibility 250ms linear allow-discrete;
-}
+  .Collapse::details-content {
+    font-size: 1.25rem;
+  }
 
-.Collapse-content:has(:checked),
-.Collapse-content.Collapse-content--open,
-.Collapse[open]::details-content {
-  block-size: auto;
+  .Collapse[open] {
+    background-color: var(--surfacePanel);
+  }
 }

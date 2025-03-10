@@ -1,0 +1,25 @@
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1em;
+
+  &.Grid--gapBig {
+    gap: 2em;
+  }
+
+  &.Grid--twoTable {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+.Grid-columnThird {
+  grid-column: span 2;
+}
+
+.Grid-columnHalf {
+  grid-column: span 3;
+}
+
+.Grid-columnTwoThird {
+  grid-column: span 4;
+}

@@ -1,0 +1,32 @@
+.SideBar {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 15px;
+  inline-size: 240px;
+  block-size: 100%;
+  padding: 20px;
+  color: var(--primaryText);
+  border: 1px solid var(--uiBorder);
+}
+
+.SideBar-Header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.SideBar-B {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.SideBar-C {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  block-size: 100%;
+}

@@ -1,0 +1,15 @@
+.Badge {
+  display: inline-flex;
+  align-items: center;
+  block-size: 1.6rem;
+  padding-inline: 0.8rem;
+  color: var(--primaryText);
+  background-color: var(--primary);
+  border-radius: var(--borderRadius);
+
+  &.Badge--outline {
+    color: var(--surfaceText);
+    background-color: transparent;
+    border: 1px solid var(--primary);
+  }
+}

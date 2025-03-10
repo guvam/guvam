@@ -6,8 +6,8 @@ import type { FC } from "react";
 import { createRef } from "react";
 import { Github, List, XLg } from "react-bootstrap-icons";
 
-import { ComponentsLinks } from "@/app/docs/components/ComponentsLinks";
-import { TutorialsLinks } from "@/app/docs/tutorials/TutorialsLinks";
+import { ComponentsLinks } from "@/app/(website)/docs/components/ComponentsLinks";
+import { TutorialsLinks } from "@/app/(website)/docs/tutorials/TutorialsLinks";
 import { ActiveLink } from "@/components/ActiveLink";
 import GuvamFull from "@/public/logo-full.svg";
 
@@ -73,7 +73,11 @@ export const HeaderMenu: FC = () => {
                   </ActiveLink>
                 </li>
                 <li>
-                  <ActiveLink className="SideMenu-menuItem" isParent href="/docs">
+                  <ActiveLink
+                    className="SideMenu-menuItem"
+                    isParent
+                    href="/packages/guvam.com/app/(website)/docs"
+                  >
                     Docs
                   </ActiveLink>
                 </li>

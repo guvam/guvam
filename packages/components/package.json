@@ -16,7 +16,7 @@
   ],
   "author": "guvam",
   "scripts": {
-    "dev": "tsc --watch",
+    "dev": "npm run delete-dist && tsc --watch",
     "delete-dist": "rimraf dist",
     "build": "npm run delete-dist && tsc",
     "publish": "npm publish --access public"
@@ -31,7 +31,7 @@
     "url": "https://github.com/guvam/guvam"
   },
   "dependencies": {
-    "react-bootstrap-icons": "1.11.5",
-    "@floating-ui/dom": "1.6.13"
+    "@floating-ui/dom": "1.6.13",
+    "react-bootstrap-icons": "1.11.5"
   }
 }

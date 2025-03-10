@@ -1,0 +1,92 @@
+@property --Carousel-slideCount {
+  inherits: true;
+  syntax: "<number>";
+  initial-value: 1;
+}
+
+@property --Carousel-viewCount {
+  inherits: true;
+  syntax: "<number>";
+  initial-value: 1;
+}
+
+@property --Carousel-currentIndex {
+  inherits: true;
+  syntax: "<number>";
+  initial-value: 0;
+}
+
+.Carousel {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 2;
+  overflow: clip;
+}
+
+.Carousel-track {
+  display: grid;
+  grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
+  inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
+  block-size: 100%;
+  transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-currentIndex)));
+  transition: transform 250ms ease-in-out;
+}
+
+.Carousel-trackItem {
+  block-size: 100%;
+  overflow: clip;
+}
+
+.Carousel-trackImage {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.Carousel-button {
+  position: absolute;
+  inset-block-start: 50%;
+  padding: 5px;
+  font-size: 24px;
+  color: var(--primaryText);
+  cursor: pointer;
+  background-color: var(--primary);
+  border-radius: 0.25rem;
+  transform: translateY(-50%);
+
+  &.Carousel-button--previous {
+    inset-inline-start: 1rem;
+  }
+
+  &.Carousel-button--next {
+    inset-inline-end: 1rem;
+  }
+}
+
+.Carousel-nav {
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-start: 50%;
+  display: flex;
+  gap: 8px;
+  transform: translateX(-50%);
+}
+
+.Carousel-navItem {
+  inline-size: 12px;
+  block-size: 12px;
+  cursor: pointer;
+  background-color: var(--primary);
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--surfaceHover);
+  }
+
+  &.Carousel-navItem--active {
+    background-color: var(--uiActive);
+  }
+}

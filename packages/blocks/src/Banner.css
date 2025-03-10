@@ -1,0 +1,26 @@
+.Banner {
+  --Banner-color: var(--surface);
+  --Banner-background: var(--primary);
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  color: var(--Banner-color);
+  background-color: var(--Banner-background);
+  border-radius: var(--borderRadius);
+
+  &.Banner-muted {
+    --Banner-color: var(--surfaceText);
+    --Banner-background: var(--surfacePanel);
+  }
+
+  &.Banner-gradient {
+    background: linear-gradient(
+      to right,
+      var(--Banner-background) 20%,
+      color-mix(in hsl, var(--Banner-background), black 40%)
+    );
+  }
+}

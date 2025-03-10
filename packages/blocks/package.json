@@ -1,0 +1,10 @@
+{
+  "name": "@guvam/blocks",
+  "main": "./index.ts",
+  "version": "0.1.0",
+  "description": "UI blocks",
+  "homepage": "https://guvam.com",
+  "dependencies": {
+    "react-bootstrap-icons": "1.11.5"
+  }
+}

@@ -26,10 +26,20 @@
 }
 
 .Content-titleDescription {
+  display: flex;
+  flex-direction: row;
   margin-block: 0.75rem;
   font-size: calc(1em + 0.5 * var(--textMultiplier));
   line-height: 1.1;
   text-wrap: balance;
+}
+
+.Title-descriptionWrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
 }
 
 .Content-heading1 {

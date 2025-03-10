@@ -1,11 +1,8 @@
 "use client";
 
+import { classList } from "@guvam/components";
 import type { FC, ReactElement } from "react";
-import { cloneElement } from "react";
-import { Children } from "react";
-import { useCallback, useState } from "react";
-
-import { classList } from "../../../../guvam.com/packages/guvam.com/lib/utils/ClassList";
+import { Children, cloneElement, useCallback, useState } from "react";
 
 interface CarouselProps {
   children: ReactElement<HTMLElement>[];

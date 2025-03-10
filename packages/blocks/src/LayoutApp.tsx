@@ -3,8 +3,6 @@ import "./LayoutApp.css";
 import Link from "next/link";
 import { List, MoonFill, SunFill } from "react-bootstrap-icons";
 
-import { ActiveLink } from "../../../../guvam.com/packages/guvam.com/components/ActiveLink";
-
 export const LayoutApp = () => (
   <div className="Block-Template">
     <header className="Header">
@@ -15,34 +13,24 @@ export const LayoutApp = () => (
       <nav className="Header-nav">
         <ul className="Header-menu" aria-label="main navigation">
           <li>
-            <ActiveLink className="Header-navLink" activeClassName="Header-NavLink--Active" href="">
+            <Link className="Header-navLink" href="">
               Things
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink className="Header-navLink" activeClassName="Header-NavLink--Active" href="">
+            <Link className="Header-navLink" href="">
               Stuff
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink
-              className="Header-navLink"
-              isParent
-              activeClassName="Header-NavLink--Active"
-              href=""
-            >
+            <Link className="Header-navLink" isParent href="">
               Content
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink
-              className="Header-navLink"
-              isParent
-              activeClassName="Header-NavLink--Active"
-              href=""
-            >
+            <Link className="Header-navLink" isParent href="">
               Content
-            </ActiveLink>
+            </Link>
           </li>
         </ul>
         <div className="Header-navDivider" role="separator"></div>
@@ -72,24 +60,19 @@ export const LayoutApp1 = () => (
       <nav className="Header-nav">
         <ul className="Header-menu" aria-label="main navigation">
           <li>
-            <ActiveLink className="Header-navLink" activeClassName="Header-NavLink--Active" href="">
+            <Link className="Header-navLink" href="">
               Things
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink className="Header-navLink" activeClassName="Header-NavLink--Active" href="">
+            <Link className="Header-navLink" href="">
               Stuff
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink
-              className="Header-navLink"
-              isParent
-              activeClassName="Header-NavLink--Active"
-              href=""
-            >
+            <Link className="Header-navLink" isParent href="">
               Content
-            </ActiveLink>
+            </Link>
           </li>
         </ul>
         <div className="Header-navDivider" role="separator"></div>
@@ -131,24 +114,19 @@ export const LayoutApp2 = () => (
       <nav className="Header-nav">
         <ul className="Header-menu" aria-label="main navigation">
           <li>
-            <ActiveLink className="Header-navLink" activeClassName="Header-NavLink--Active" href="">
+            <Link className="Header-navLink" href="">
               Things
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink className="Header-navLink" activeClassName="Header-NavLink--Active" href="">
+            <Link className="Header-navLink" href="">
               Stuff
-            </ActiveLink>
+            </Link>
           </li>
           <li>
-            <ActiveLink
-              className="Header-navLink"
-              isParent
-              activeClassName="Header-NavLink--Active"
-              href=""
-            >
+            <Link className="Header-navLink" isParent href="">
               Content
-            </ActiveLink>
+            </Link>
           </li>
         </ul>
         <div className="Header-navDivider" role="separator"></div>

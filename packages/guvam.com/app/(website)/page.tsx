@@ -12,9 +12,22 @@ export default function Page() {
           <div className="Layout-hero">
             <hgroup className="Content">
               <h1 className="Content-title">Web Project Components</h1>
-              <p className="Content-titleDescription">
-                Headless, Lightweight Components with Themes
-              </p>
+              <div className="Title-descriptionWrap">
+                <div className="Content-titleDescription">
+                  Convert your Template into any framework
+                  {/*<div className="Title-Carousel">
+                    <span className="Title-carouselItem">React</span>
+                    <span className="Title-carouselItem">Vue</span>
+                    <span className="Title-carouselItem">Liquid</span>
+                    <span className="Title-carouselItem">WordPress</span>
+                    <span className="Title-carouselItem">Smarty</span>
+                    <span className="Title-carouselItem">Blade</span>
+                    <span className="Title-carouselItem">Django</span>
+                    <span className="Title-carouselItem">PHP</span>
+                    <span className="Title-carouselItem">Ruby</span>
+                  </div>*/}
+                </div>
+              </div>
             </hgroup>
 
             <div className="List">

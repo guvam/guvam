@@ -5,7 +5,7 @@ import { cloneElement } from "react";
 import { Children } from "react";
 import { useCallback, useState } from "react";
 
-import { classList } from "../../../../../guvam.com/packages/guvam.com/lib/utils/ClassList";
+import { classList } from "../../../../guvam.com/packages/guvam.com/lib/utils/ClassList";
 
 interface CarouselProps {
   children: ReactElement<HTMLElement>[];

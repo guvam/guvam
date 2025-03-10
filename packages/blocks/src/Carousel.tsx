@@ -1,9 +1,6 @@
-import "./components/Carousel.css";
-
+import { Carousel } from "@guvam/components/elements/Carousel";
 import Image from "next/image";
 import type { FC } from "react";
-
-import { Carousel } from "./components/Carousel";
 
 export const CarouselImages: FC = () => (
   <Carousel count={3}>

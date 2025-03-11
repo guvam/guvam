@@ -6,8 +6,9 @@ import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import type { ReactNode } from "react";
 
-import { ServicesHeader } from "@/app/(examples)/templates/services/components/ServicesHeader";
 import { getSettingsVariables, getThemeSettings } from "@/components/Theme";
+
+import { AgencyHeader } from "./components/AgencyHeader";
 
 export const metadata: Metadata = {
   title: "Guvam.js",
@@ -21,7 +22,7 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const cookieStore = await cookies();
-  const themeSettings = await getThemeSettings(cookieStore);
+  const themeSettings = getThemeSettings(cookieStore);
 
   return (
     <html
@@ -36,7 +37,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       </head>
       <body className="Layout">
         <section className="Layout-section">
-          <ServicesHeader themeSettings={themeSettings} />
+          <AgencyHeader themeSettings={themeSettings} />
         </section>
         {children}
       </body>

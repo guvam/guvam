@@ -1,5 +1,3 @@
-"use client";
-
 import "./BlockExample.css";
 
 import Link from "next/link";

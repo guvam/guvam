@@ -168,11 +168,11 @@
 .Carousel--type-animated .Carousel-navItem--active {
   inline-size: 50px;
   background-color: var(--primary);
-  background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%);
+  background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%, transparent 0);
   background-repeat: no-repeat;
   background-size: 0 100%;
   border-radius: 6px;
-  animation: FillnavItem var(--Carousel-scrollTime) linear forwards;
+  animation: FillNavItem var(--Carousel-scrollTime) linear forwards;
 }
 
 .Carousel--type-animated .Carousel-navItem--active::before {
@@ -186,9 +186,9 @@
   border-radius: 6px;
 }
 
-@keyframes FillnavItem {
+@keyframes FillNavItem {
   from {
-    background-size: 0% 100%;
+    background-size: 0 100%;
   }
 
   to {

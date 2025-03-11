@@ -1,6 +1,6 @@
 "use client";
 
-import "./ServicesHeader.css";
+import "./PortfolioHeader.css";
 
 import Link from "next/link";
 import type { FC } from "react";
@@ -10,20 +10,20 @@ import { HeaderSettings } from "@/components/HeaderSettings";
 import type { ThemeSettings } from "@/components/Theme";
 import GuvamFull from "@/public/logo-full.svg";
 
-export const ServicesHeader: FC<{ themeSettings: ThemeSettings }> = (props) => (
+export const PortfolioHeader: FC<{ themeSettings: ThemeSettings }> = (props) => (
   <>
-    <div className="ServicesHeader-placeholder"></div>
-    <div className="ServicesHeader-position">
-      <header className="ServicesHeader">
-        <Link className="ServicesHeader-link" href="/" aria-label="go to Home">
+    <div className="PortfolioHeader-placeholder"></div>
+    <div className="PortfolioHeader-position">
+      <header className="PortfolioHeader">
+        <Link className="PortfolioHeader-link" href="/" aria-label="go to Home">
           <GuvamFull />
         </Link>
 
-        <nav className="ServicesHeader-nav">
-          <ul className="ServicesHeader-menu" aria-label="main navigation">
+        <nav className="PortfolioHeader-nav">
+          <ul className="PortfolioHeader-menu" aria-label="main navigation">
             <li>
               <ActiveLink
-                className="ServicesHeader-navLink"
+                className="PortfolioHeader-navLink"
                 activeClassName="ServicesHeader-navLink--active"
                 href="/"
               >
@@ -32,7 +32,7 @@ export const ServicesHeader: FC<{ themeSettings: ThemeSettings }> = (props) => (
             </li>
             <li>
               <ActiveLink
-                className="ServicesHeader-navLink"
+                className="PortfolioHeader-navLink"
                 activeClassName="ServicesHeader-navLink--active"
                 isParent
                 href="/docs"
@@ -42,7 +42,7 @@ export const ServicesHeader: FC<{ themeSettings: ThemeSettings }> = (props) => (
             </li>
             <li>
               <ActiveLink
-                className="ServicesHeader-navLink"
+                className="PortfolioHeader-navLink"
                 isParent
                 activeClassName="ServicesHeader-navLink--active"
                 href="/support"
@@ -52,7 +52,7 @@ export const ServicesHeader: FC<{ themeSettings: ThemeSettings }> = (props) => (
             </li>
           </ul>
 
-          <ul className="ServicesHeader-toggle">
+          <ul className="PortfolioHeader-toggle">
             <li>
               <HeaderSettings themeSettings={props.themeSettings} />
             </li>

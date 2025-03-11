@@ -1,4 +1,4 @@
-.ServicesHeader {
+.AgencyHeader {
   display: flex;
   gap: 1em;
   align-items: center;
@@ -8,27 +8,27 @@
   border-radius: 2rem;
   backdrop-filter: blur(30px);
 
-  &.ServicesHeader--block {
+  &.AgencyHeader--block {
     padding-inline: 1rem;
   }
 }
 
-.ServicesHeader-position {
+.AgencyHeader-position {
   position: fixed;
   inset-block-start: 0;
   inset-inline: 0;
   padding: 1rem;
 }
 
-.ServicesHeader-placeholder {
+.AgencyHeader-placeholder {
   block-size: 100px;
 }
 
-.ServicesHeader-link {
+.AgencyHeader-link {
   cursor: pointer;
 }
 
-.ServicesHeader-nav {
+.AgencyHeader-nav {
   display: flex;
   flex-grow: 1;
   gap: 0.5em;
@@ -38,7 +38,7 @@
     justify-content: flex-end;
   }
 
-  &.ServicesHeader-nav--mobile {
+  &.AgencyHeader-nav--mobile {
     display: none;
 
     @media (width <= 960px) {
@@ -50,7 +50,7 @@
   }
 }
 
-.ServicesHeader-menu {
+.AgencyHeader-menu {
   display: flex;
   flex-grow: 1;
   gap: 0.25rem;
@@ -61,7 +61,7 @@
   }
 }
 
-.ServicesHeader-navLink {
+.AgencyHeader-navLink {
   display: flex;
   align-items: center;
   padding: 0.5em;
@@ -72,13 +72,13 @@
     background-color: var(--surfaceHighlight);
   }
 
-  &.ServicesHeader-navLink--active {
+  &.AgencyHeader-navLink--active {
     color: var(--primary);
     background-color: oklch(from var(--primary) 90% c h / 20%);
   }
 }
 
-.ServicesHeader-toggle {
+.AgencyHeader-toggle {
   display: flex;
   flex-direction: row;
   gap: 4px;
@@ -87,7 +87,7 @@
   vertical-align: middle;
 }
 
-.ServicesHeader-hamburgerMenu {
+.AgencyHeader-hamburgerMenu {
   display: none;
 
   @media (width <= 960px) {
@@ -95,7 +95,7 @@
   }
 }
 
-.ServicesHeader-mobileMenu {
+.AgencyHeader-mobileMenu {
   position: absolute;
   inset-block-start: 0 !important;
   inset-inline-start: 0 !important;
@@ -113,13 +113,13 @@
   overflow: hidden;
 }
 
-.ServicesHeader-mobileMenuList {
+.AgencyHeader-mobileMenuList {
   padding: 1em;
   overflow-y: auto;
   background-color: var(--surface);
 }
 
-.ServicesHeader-stickyContainer {
+.AgencyHeader-stickyContainer {
   @media (width <= 960px) {
     position: sticky;
     inset-block-start: 0;

@@ -90,6 +90,7 @@ export const Carousel: FC<CarouselProps> = ({
               [element.props.className]: true,
               "Carousel-trackItem--active": currentIndex === i,
               "Carousel-trackItem--next": type === "animated" && currentIndex + 1 === i,
+              "Carousel-trackItem--previous": type === "animated" && currentIndex - 1 === i,
             }),
           })
         )}

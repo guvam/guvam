@@ -36,7 +36,7 @@
   inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
   block-size: 100%;
   transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-currentIndex)));
-  transition: transform 600ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
 }
 
 .Carousel-trackItem {
@@ -141,8 +141,8 @@
 }
 
 .Carousel--type-animated .Carousel-trackItem--previous {
-  opacity: 0;
-  transform: translateX(-20%);
+  opacity: 1;
+  transform: translateX(100%);
 }
 
 .Carousel--type-animated .Carousel-content {
@@ -170,7 +170,7 @@
   background-color: var(--primary);
   background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%);
   background-repeat: no-repeat;
-  background-size: 0% 100%;
+  background-size: 0 100%;
   border-radius: 6px;
   animation: FillnavItem var(--Carousel-scrollTime) linear forwards;
 }

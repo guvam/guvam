@@ -154,6 +154,32 @@ export const CarouselImages: FC = () => (
           <p className="Content-titleDescription">Discover amazing features and services.</p>
         </div>
       </div>
+      <div className="Carousel-trackItem">
+        <Image
+          src="/blocks/carousel/carousel_4.jpg"
+          alt=""
+          width={736}
+          height={414}
+          className="Carousel-trackImage"
+        />
+        <div className="Carousel-content">
+          <h1 className="Content-heading1">And Smooth as can be</h1>
+          <p className="Content-titleDescription">Discover amazing features and services.</p>
+        </div>
+      </div>
+      <div className="Carousel-trackItem">
+        <Image
+          src="/blocks/carousel/carousel_4.jpg"
+          alt=""
+          width={736}
+          height={414}
+          className="Carousel-trackImage"
+        />
+        <div className="Carousel-content">
+          <h1 className="Content-heading1">And Smooth as can be</h1>
+          <p className="Content-titleDescription">Discover amazing features and services.</p>
+        </div>
+      </div>
     </Carousel>
   </div>
 );

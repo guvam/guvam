@@ -34,6 +34,7 @@
 }
 
 .Carousel-trackItem {
+  position: relative;
   block-size: 100%;
   overflow: clip;
 }
@@ -43,6 +44,30 @@
   block-size: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+.Carousel-content {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1000ms ease-in-out 800ms,
+    transform 1000ms ease-in-out 800ms;
+}
+
+.Carousel-trackItem--active .Carousel-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .Carousel-button {
@@ -55,14 +80,14 @@
   background-color: var(--primary);
   border-radius: 0.25rem;
   transform: translateY(-50%);
+}
 
-  &.Carousel-button--previous {
-    inset-inline-start: 1rem;
-  }
+.Carousel-button--previous {
+  inset-inline-start: 1rem;
+}
 
-  &.Carousel-button--next {
-    inset-inline-end: 1rem;
-  }
+.Carousel-button--next {
+  inset-inline-end: 1rem;
 }
 
 .Carousel-nav {
@@ -81,12 +106,87 @@
   background-color: var(--primary);
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
+}
 
-  &:hover {
-    background-color: var(--surfaceHover);
+.Carousel-navItem:hover {
+  background-color: var(--surfaceHover);
+}
+
+.Carousel-navItem--active {
+  background-color: var(--uiActive);
+}
+
+/* Animated Carousel styles */
+.Carousel--type-animated .Carousel-track {
+  position: relative;
+}
+
+.Carousel--type-animated .Carousel-trackItem {
+  inline-size: 100%;
+  block-size: 100%;
+  opacity: 1;
+  transition:
+    opacity 1000ms ease-in-out,
+    transform 1000ms ease-in-out;
+}
+
+.Carousel--type-animated .Carousel-trackItem--active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Carousel--type-animated .Carousel-trackItem--previous {
+  opacity: 0;
+  transform: translateX(-20%);
+}
+
+.Carousel--type-animated .Carousel-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 1000ms ease-in-out 800ms,
+    transform 1000ms ease-in-out 800ms;
+}
+
+.Carousel--type-animated .Carousel-trackItem--active .Carousel-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Carousel--type-animated .Carousel-navItem {
+  position: relative;
+  inline-size: 12px;
+  block-size: 12px;
+  transition: width 0.3s ease-in-out;
+}
+
+.Carousel--type-animated .Carousel-navItem--active {
+  inline-size: 50px;
+  background-color: var(--primary);
+  background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  border-radius: 6px;
+  animation: FillnavItem 4s linear forwards;
+}
+
+.Carousel--type-animated .Carousel-navItem--active::before {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 0;
+  block-size: 100%;
+  content: "";
+  background-color: var(--uiActive);
+  border-radius: 6px;
+}
+
+@keyframes FillnavItem {
+  from {
+    background-size: 0% 100%;
   }
 
-  &.Carousel-navItem--active {
-    background-color: var(--uiActive);
+  to {
+    background-size: 100% 100%;
   }
 }

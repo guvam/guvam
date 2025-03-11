@@ -22,6 +22,11 @@
   initial-value: 400ms;
 }
 
+.Carousel-exampleContainer {
+  display: flex;
+  margin: 10px;
+}
+
 .Carousel {
   position: relative;
   display: block;

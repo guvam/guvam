@@ -4,7 +4,7 @@ import type { FC } from "react";
 
 export const CarouselImages: FC = () => (
   <div className="List-stack">
-    <Carousel count={3}>
+    <Carousel count={2}>
       <div className="Carousel-trackItem">
         <Image
           src="/blocks/carousel/carousel_2.jpg"
@@ -114,10 +114,90 @@ export const CarouselImages: FC = () => (
         />
       </div>
     </Carousel>
-    <Carousel count={1} type="animated" autoScroll autoScrollInterval={8000}>
+    <Carousel hideNav count={3} scrollAmount={3}>
+      <div className="Carousel-exampleContainer">
+        <div className="Card">
+          <Image
+            src="/blocks/carousel/carousel_1.jpg"
+            alt=""
+            width={736}
+            height={414}
+            className="Content-image"
+          />
+          <h3 className="Card-header">Heading 1</h3>
+          <p className="Card-content">Here is the Content</p>
+        </div>
+      </div>
+      <div className="Carousel-exampleContainer">
+        <div className="Card">
+          <Image
+            src="/blocks/carousel/carousel_2.jpg"
+            alt=""
+            width={736}
+            height={414}
+            className="Content-image"
+          />
+          <h3 className="Card-header">Heading 1</h3>
+          <p className="Card-content">Here is the Content</p>
+        </div>
+      </div>
+      <div className="Carousel-exampleContainer">
+        <div className="Card">
+          <Image
+            src="/blocks/carousel/carousel_3.jpg"
+            alt=""
+            width={736}
+            height={414}
+            className="Content-image"
+          />
+          <h3 className="Card-header">Heading 1</h3>
+          <p className="Card-content">Here is the Content</p>
+        </div>
+      </div>
+      <div className="Carousel-exampleContainer">
+        <div className="Card">
+          <Image
+            src="/blocks/carousel/carousel_4.jpg"
+            alt=""
+            width={736}
+            height={414}
+            className="Content-image"
+          />
+          <h3 className="Card-header">Heading 1</h3>
+          <p className="Card-content">Here is the Content</p>
+        </div>
+      </div>
+      <div className="Carousel-exampleContainer">
+        <div className="Card">
+          <Image
+            src="/blocks/carousel/carousel_5.jpg"
+            alt=""
+            width={736}
+            height={414}
+            className="Content-image"
+          />
+          <h3 className="Card-header">Heading 1</h3>
+          <p className="Card-content">Here is the Content</p>
+        </div>
+      </div>
+      <div className="Carousel-exampleContainer">
+        <div className="Card">
+          <Image
+            src="/blocks/carousel/carousel_6.jpg"
+            alt=""
+            width={736}
+            height={414}
+            className="Content-image"
+          />
+          <h3 className="Card-header">Heading 1</h3>
+          <p className="Card-content">Here is the Content</p>
+        </div>
+      </div>
+    </Carousel>
+    <Carousel hideSides count={1} type="animated" autoScroll autoScrollInterval={8000}>
       <div className="Carousel-trackItem">
         <Image
-          src="/blocks/carousel/carousel_2.jpg"
+          src="/blocks/carousel/carousel_3.jpg"
           alt=""
           width={736}
           height={414}

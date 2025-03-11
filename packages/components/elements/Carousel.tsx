@@ -12,6 +12,9 @@ interface CarouselProps {
   autoScroll?: boolean;
   autoScrollInterval?: number;
   type?: "default" | "animated";
+  hideSides?: boolean;
+  hideNav?: boolean;
+  scrollAmount?: number;
 }
 
 export const Carousel: FC<CarouselProps> = ({
@@ -22,10 +25,13 @@ export const Carousel: FC<CarouselProps> = ({
   autoScroll = false,
   autoScrollInterval = 4000,
   type = "default",
+  hideSides = false,
+  hideNav = false,
+  scrollAmount = 1,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(index);
   const maxIndex = children.length - count;
-  const autoScrollRef = useRef<NodeJS.Timeout | null>(null); // Store the interval
+  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
 
   const restartAutoScroll = useCallback(() => {
     if (autoScroll && autoScrollRef.current) {
@@ -50,6 +56,14 @@ export const Carousel: FC<CarouselProps> = ({
     },
     [maxIndex, loop, restartAutoScroll]
   );
+
+  const handleNext = useCallback(() => {
+    updateIndex(currentIndex + scrollAmount);
+  }, [currentIndex, scrollAmount, updateIndex]);
+
+  const handlePrevious = useCallback(() => {
+    updateIndex(currentIndex - scrollAmount);
+  }, [currentIndex, scrollAmount, updateIndex]);
 
   useEffect(() => {
     if (!autoScroll) {
@@ -95,37 +109,33 @@ export const Carousel: FC<CarouselProps> = ({
         )}
       </div>
 
-      {!autoScroll && (
+      {!hideSides && (
         <>
-          <button
-            className="Carousel-button Carousel-button--previous"
-            onClick={() => updateIndex(currentIndex - 1)}
-          >
+          <button className="Carousel-button Carousel-button--previous" onClick={handlePrevious}>
             &#10094;
           </button>
-          <button
-            className="Carousel-button Carousel-button--next"
-            onClick={() => updateIndex(currentIndex + 1)}
-          >
+          <button className="Carousel-button Carousel-button--next" onClick={handleNext}>
             &#10095;
           </button>
         </>
       )}
 
-      <nav className="Carousel-nav">
-        {Array(children.length - count + 1)
-          .fill(null)
-          .map((_, index) => (
-            <button
-              key={index}
-              className={classList({
-                "Carousel-navItem": true,
-                "Carousel-navItem--active": index === currentIndex,
-              })}
-              onClick={() => updateIndex(index)}
-            />
-          ))}
-      </nav>
+      {!hideNav && (
+        <nav className="Carousel-nav">
+          {Array(children.length - count + 1)
+            .fill(null)
+            .map((_, index) => (
+              <button
+                key={index}
+                className={classList({
+                  "Carousel-navItem": true,
+                  "Carousel-navItem--active": index === currentIndex,
+                })}
+                onClick={() => updateIndex(index)}
+              />
+            ))}
+        </nav>
+      )}
     </div>
   );
 };

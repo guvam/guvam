@@ -1,25 +1,61 @@
+.Rating {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
 .Rating-stars {
   display: flex;
-  gap: 4px;
+  gap: 5px;
+}
+
+.Rating-starContainer {
+  position: relative;
+  display: inline-block;
+  inline-size: 24px;
+  block-size: 24px;
+}
+
+.Rating-star {
+  position: absolute;
+  inset-block-start: 0;
+  block-size: 100%;
   cursor: pointer;
 }
 
-.Rating-stars .Star-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Rating-starHalf {
+  inset-inline-start: 0;
+  z-index: 2;
+  inline-size: 50%;
+}
+
+.Rating-starFull {
+  inset-inline-start: 0;
+  z-index: 1;
+  inline-size: 100%;
+}
+
+.Rating-fullstar,
+.Rating-halfstar {
   font-size: 24px;
-  transition: transform 0.2s ease-in-out;
+  transition: color 0.2s;
 }
 
-.Rating-stars .Star-wrapper:hover {
-  transform: scale(1.1);
+.Rating-fullstar.Gold,
+.Rating-halfstar.Gold {
+  color: gold;
 }
 
-.Rating-stars .Star-wrapper svg {
-  fill: gold;
+.Rating-halfstar {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-.Rating-stars .Star-wrapper:active {
-  transform: scale(0.9);
+.Rating-radio {
+  display: none;
 }

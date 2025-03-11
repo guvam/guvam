@@ -1,0 +1,25 @@
+.Rating-stars {
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.Rating-stars .Star-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.Rating-stars .Star-wrapper:hover {
+  transform: scale(1.1);
+}
+
+.Rating-stars .Star-wrapper svg {
+  fill: gold;
+}
+
+.Rating-stars .Star-wrapper:active {
+  transform: scale(0.9);
+}

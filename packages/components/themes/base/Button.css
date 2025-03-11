@@ -6,9 +6,8 @@
   position: relative;
   display: inline-flex;
   flex-shrink: 0;
-  column-gap: 0.75rem;
+  column-gap: 0.5rem;
   align-items: center;
-  justify-content: space-between;
   block-size: 2.5em;
   padding-inline: 1.25em;
   color: var(--Button-text);
@@ -71,5 +70,25 @@
 
   &.Button--selected {
     --Button-background: var(--uiSelected);
+  }
+
+  &.Button--loading {
+    &::after {
+      display: inline-block;
+      flex-shrink: 0;
+      block-size: 1em;
+      aspect-ratio: 1;
+      content: "";
+      border: 2px solid currentcolor;
+      border-inline-end-color: transparent;
+      border-radius: 50%;
+      animation: Spin 0.75s linear infinite;
+    }
+  }
+}
+
+@keyframes Spin {
+  to {
+    transform: rotate(360deg);
   }
 }

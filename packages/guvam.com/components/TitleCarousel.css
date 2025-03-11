@@ -1,0 +1,115 @@
+.Title-Carousel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline-start: 0.25em;
+  color: var(--primary);
+}
+
+.Title-carouselItem {
+  position: absolute;
+  inline-size: 100%;
+  text-align: start;
+  opacity: 0;
+  animation: Carousel 18s linear infinite;
+}
+
+.Title-carouselItem:nth-child(1) {
+  animation-delay: -2s;
+}
+
+.Title-carouselItem:nth-child(2) {
+  animation-delay: 0s;
+}
+
+.Title-carouselItem:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.Title-carouselItem:nth-child(4) {
+  animation-delay: 4s;
+}
+
+.Title-carouselItem:nth-child(5) {
+  animation-delay: 6s;
+}
+
+.Title-carouselItem:nth-child(6) {
+  animation-delay: 8s;
+}
+
+.Title-carouselItem:nth-child(7) {
+  animation-delay: 10s;
+}
+
+.Title-carouselItem:nth-child(8) {
+  animation-delay: 12s;
+}
+
+.Title-carouselItem:last-child {
+  animation-delay: 14s;
+}
+
+@keyframes Carousel {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+
+  3%,
+  11% {
+    visibility: visible;
+    opacity: 0.4;
+    transform: translateY(100%) scale(0.7);
+  }
+
+  14%,
+  22% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  25%,
+  33% {
+    visibility: visible;
+    opacity: 0.4;
+    transform: translateY(-100%) scale(0.7);
+  }
+
+  36%,
+  44% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+
+  47%,
+  55% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+
+  58%,
+  66% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+
+  69% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+}

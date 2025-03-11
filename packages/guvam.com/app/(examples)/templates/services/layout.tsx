@@ -1,5 +1,5 @@
 import "@guvam/components/themes/base.css";
-import "@guvam/components/themes/website.css";
+import "@guvam/components/themes/index.css";
 import "@guvam/components/colors/index.css";
 
 import type { Metadata, Viewport } from "next";
@@ -7,8 +7,7 @@ import { cookies } from "next/headers";
 import type { ReactNode } from "react";
 
 import { ServicesHeader } from "@/app/(examples)/templates/services/components/ServicesHeader";
-import type { ThemeSettings } from "@/components/Theme";
-import { getSettingsVariables, THEME_INITIAL_VALUES } from "@/components/Theme";
+import { getSettingsVariables, getThemeSettings } from "@/components/Theme";
 
 export const metadata: Metadata = {
   title: "Guvam.js",
@@ -22,17 +21,7 @@ export const viewport: Viewport = {
 
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const cookieStore = await cookies();
-  const themeCookieSettings =
-    cookieStore
-      .get("theme")
-      ?.value.split(" ")
-      .reduce((previousValue, currentValue) => {
-        const [key, value] = currentValue.split(":") as [keyof ThemeSettings, never];
-        previousValue[key] = value;
-        return previousValue;
-      }, {} as Partial<ThemeSettings>) ?? {};
-
-  const themeSettings = { ...THEME_INITIAL_VALUES, ...themeCookieSettings };
+  const themeSettings = await getThemeSettings(cookieStore);
 
   return (
     <html

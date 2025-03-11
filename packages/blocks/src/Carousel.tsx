@@ -114,7 +114,7 @@ export const CarouselImages: FC = () => (
         />
       </div>
     </Carousel>
-    <Carousel count={1} type="animated" autoScroll autoScrollInterval={4000}>
+    <Carousel count={1} type="animated" autoScroll autoScrollInterval={8000}>
       <div className="Carousel-trackItem">
         <Image
           src="/blocks/carousel/carousel_2.jpg"

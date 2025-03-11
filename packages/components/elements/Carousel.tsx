@@ -47,7 +47,7 @@ export const Carousel: FC<CarouselProps> = ({
         setCurrentIndex(i);
       }
 
-      restartAutoScroll(); // Reset auto-scroll timer when a button is clicked
+      restartAutoScroll();
     },
     [maxIndex, loop, restartAutoScroll]
   );
@@ -79,6 +79,7 @@ export const Carousel: FC<CarouselProps> = ({
           "--Carousel-viewCount": count,
           "--Carousel-slideCount": children.length,
           "--Carousel-currentIndex": currentIndex,
+          "--Carousel-scrollTime": autoScrollInterval + "ms",
         } as never
       }
     >

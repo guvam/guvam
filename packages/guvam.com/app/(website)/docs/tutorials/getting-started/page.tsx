@@ -15,32 +15,41 @@ export default function Page() {
           Installation
         </Link>
       </h2>
-      <p className="Content-text">install</p>
       <pre className="Content-code">npm i @guvam/components</pre>
-      <p className="Content-text">import</p>
 
+      <h2 className="Content-text">import styles</h2>
       <pre className="Content-code">{`@import url("@guvam/components/base/index.css");
-@import url("@guvam/components/colors/blue.css");
-@import url("@guvam/components/themes/website.css");`}</pre>
+@import url("@guvam/components/themes/website.css");
+@import url("@guvam/components/colors/blue.css");`}</pre>
+
+      <h2 className="Content-text">import components</h2>
+      <pre className="Content-code">{`import { Rating } from "@guvam/components";`}</pre>
+
       <h2 className="Content-heading2" id="css-naming">
         <Link className="Content-linkHash" href="#css-naming">
           CSS naming convention
         </Link>
       </h2>
-      <p className="Content-text"></p>
+      <p className="Content-text">
+        <span className="Content--bold">block</span>: Globally unique prefix for grouping similar
+        CSS functionality together. (Pascal case)
+      </p>
+      <p className="Content-text">
+        <span className="Content--bold">element</span>: separate item in block (Camel case)
+      </p>
+      <p className="Content-text">
+        <span className="Content--bold">modifier</span>: element variation (Camel case)
+      </p>
+      <p className="Content-text">
+        <span className="Content--bold">value</span>: modifier value (Camel case)
+      </p>
+
+      <h3 className="Content-heading3">Example</h3>
       <p className="Content-code">{`/* File naming */
 Block1/Block2/Block3.css
 
 /* CSS class naming */
 .Block1-Block2-element--modifier-value
-.Block1-Block2-element--modifier
-.Block1-Block2-element
-.Block1-Block2--modifier-value
-.Block1-Block2--modifier
-.Block1-Block2-Block3-Block4
-.Block1-Block2-Block3
-.Block1-Block2
-.Block1
 
 /* CSS variable naming */
 --Block1-Block2-element
@@ -60,9 +69,7 @@ Block1-Block2-element`}</p>
   --borderRadius: 0.5rem;
   --textScale: 1.25;
   --textSize: 16px;
-  --textDensity: 1; /* TODO */
   --textDirection: unset;
-  --motionReduction: auto; /* TODO */
 
   font-size: var(--textSize);
   color: var(--surfaceText);
@@ -129,8 +136,6 @@ Block1-Block2-element`}</p>
   --surfaceBlock:
   --surfaceBlockText:
   --surfaceBorder:
-
-  /* other */
   --surfacePanel:
   --surfaceShadow:
   --surfaceBackdrop:
@@ -146,18 +151,38 @@ Block1-Block2-element`}</p>
   --uiActive:
   --uiSelected:`}
       </pre>
-      <h2 className="Content-heading2" id="css-layers">
-        <Link className="Content-linkHash" href="#css-layers">
-          CSS layers
+
+      <h2 className="Content-heading2" id="color-modes">
+        <Link className="Content-linkHash" href="#color-modes">
+          Color modes
         </Link>
       </h2>
-      <pre className="Content-code">@layer base, theme, overwrite, inline;</pre>
-      <ul className="Content-list">
-        <li>base - reset and base css</li>
-        <li>theme - import different themes</li>
-        <li>overwrite - your css</li>
-        <li>inline - inline css which overwrite all other css</li>
-      </ul>
+      <h2 className="Content-text">import one of the color modes</h2>
+      <pre className="Content-code">{`@import url("@guvam/components/colors/blue.css");
+@import url("@guvam/components/colors/green.css");
+@import url("@guvam/components/colors/lime.css");
+@import url("@guvam/components/colors/pink.css");
+@import url("@guvam/components/colors/red.css");
+@import url("@guvam/components/colors/yellow.css");`}</pre>
+
+      <p className="Content-text">
+        Add matching class name to root element <span className="Chip">Theme--color-blue</span>
+      </p>
+
+      <h2 className="Content-heading2" id="theming">
+        <Link className="Content-linkHash" href="#theming">
+          Theming
+        </Link>
+      </h2>
+      <h2 className="Content-text">import one of the color modes</h2>
+      <pre className="Content-code">{`@import url("@guvam/components/themes/calm.css");
+@import url("@guvam/components/themes/focus.css");
+@import url("@guvam/components/themes/fashion.css");`}</pre>
+
+      <p className="Content-text">
+        Add matching class name to root element <span className="Chip">Theme--theme-calm</span>
+      </p>
+
       <BottomNavigation
         next={{
           url: "/docs/tutorials/roadmap",

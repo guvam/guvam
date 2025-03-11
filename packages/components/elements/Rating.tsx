@@ -1,16 +1,17 @@
 "use client";
 
+import type { FC } from "react";
 import { useState } from "react";
-import { Star, StarFill, StarHalf } from "react-bootstrap-icons"; // Import Bootstrap icons
+import { Star, StarFill, StarHalf } from "react-bootstrap-icons";
 
 interface RatingStarsProps {
-  maxStars?: number; // Total number of stars
-  allowHalfStars?: boolean; // Enable/disable half-stars
-  readOnly?: boolean; // If true, makes it non-interactive
-  defaultValue?: number; // Initial rating
+  maxStars?: number;
+  allowHalfStars?: boolean;
+  readOnly?: boolean;
+  defaultValue?: number;
 }
 
-const Rating = ({
+export const Rating: FC<RatingStarsProps> = ({
   maxStars = 5,
   allowHalfStars = true,
   readOnly = false,
@@ -65,5 +66,3 @@ const Rating = ({
     </div>
   );
 };
-
-export default Rating;

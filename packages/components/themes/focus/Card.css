@@ -1,0 +1,11 @@
+.Theme--theme-calm {
+  .Card {
+    background: var(--surfacePanel);
+    border-width: 0;
+    transition: background-color 250ms ease-in;
+
+    &:hover {
+      background-color: var(--surfaceHighlight);
+    }
+  }
+}

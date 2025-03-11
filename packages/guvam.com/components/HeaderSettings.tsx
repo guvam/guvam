@@ -52,8 +52,8 @@ export const HeaderSettings: FC<{ themeSettings: ThemeSettings }> = (props) => {
             rootElement.classList.forEach((item) => {
               if (item.startsWith("Theme--color-")) {
                 rootElement.classList.replace(item, `Theme--color-${themeSettings.colorTheme}`);
-              } else if (item.startsWith("Theme--type-")) {
-                rootElement.classList.replace(item, `Theme--type-${themeSettings.theme}`);
+              } else if (item.startsWith("Theme--theme-")) {
+                rootElement.classList.replace(item, `Theme--theme-${themeSettings.theme}`);
               }
             });
           }}
@@ -63,12 +63,16 @@ export const HeaderSettings: FC<{ themeSettings: ThemeSettings }> = (props) => {
               <h2>Theme</h2>
               <div className="Menu-list">
                 <label className="Menu-button">
-                  <input type="radio" name="theme" value="base" className="Util-hidden" />
-                  <span>base</span>
+                  <input type="radio" name="theme" value="calm" className="Util-hidden" />
+                  <span>calm</span>
                 </label>
                 <label className="Menu-button">
-                  <input type="radio" name="theme" value="services" className="Util-hidden" />
-                  <span>Services</span>
+                  <input type="radio" name="theme" value="focus" className="Util-hidden" />
+                  <span>focus</span>
+                </label>
+                <label className="Menu-button">
+                  <input type="radio" name="theme" value="fashion" className="Util-hidden" />
+                  <span>fashion</span>
                 </label>
               </div>
             </div>

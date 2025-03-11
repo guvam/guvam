@@ -1,5 +1,7 @@
+import type { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
+
 export type ThemeSettings = {
-  theme: "base" | "services";
+  theme: "calm" | "focus" | "fashion";
   colorScheme: "normal" | "light" | "dark";
   colorTheme: "blue" | "green" | "pink" | "lime" | "red" | "yellow";
   borderRadius: "0" | "0.25rem" | "0.5rem" | "0.75rem" | "1rem";
@@ -11,7 +13,7 @@ export type ThemeSettings = {
 };
 
 export const THEME_INITIAL_VALUES: ThemeSettings = {
-  theme: "base",
+  theme: "focus",
   colorScheme: "light",
   colorTheme: "blue",
   borderRadius: "0.5rem",
@@ -33,3 +35,16 @@ export const getSettingsVariables = (props: ThemeSettings) => ({
   "--textDirection": props.textDirection,
   "--motionReduction": props.motionReduction,
 });
+
+export const getThemeSettings = (cookieStore: ReadonlyRequestCookies) =>
+  cookieStore
+    .get("theme")
+    ?.value.split(" ")
+    .reduce(
+      (previousValue, currentValue) => {
+        const [key, value] = currentValue.split(":") as [keyof ThemeSettings, never];
+        previousValue[key] = value;
+        return previousValue;
+      },
+      { ...THEME_INITIAL_VALUES }
+    ) ?? THEME_INITIAL_VALUES;

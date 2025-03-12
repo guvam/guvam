@@ -11,10 +11,11 @@ interface CarouselProps {
   loop?: boolean;
   autoScroll?: boolean;
   autoScrollInterval?: number;
-  type?: "default" | "animated";
+  type?: "default" | "animated" | "gallery";
   hideSides?: boolean;
   hideNav?: boolean;
   scrollAmount?: number;
+  scrollTime?: number;
 }
 
 export const Carousel: FC<CarouselProps> = ({
@@ -28,6 +29,7 @@ export const Carousel: FC<CarouselProps> = ({
   hideSides = false,
   hideNav = false,
   scrollAmount = 1,
+  scrollTime = 600,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(index);
   const maxIndex = children.length - count;
@@ -84,8 +86,9 @@ export const Carousel: FC<CarouselProps> = ({
   return (
     <div
       className={classList({
-        Carousel: true,
+        Carousel: type === "default",
         "Carousel--type-animated": type === "animated",
+        "Carousel--type-gallery": type === "gallery",
       })}
       style={
         {
@@ -93,6 +96,7 @@ export const Carousel: FC<CarouselProps> = ({
           "--Carousel-slideCount": children.length,
           "--Carousel-currentIndex": currentIndex,
           "--Carousel-scrollTime": autoScrollInterval + "ms",
+          "--Carousel-scrollDuration": scrollTime + "ms",
         } as never
       }
     >
@@ -102,8 +106,10 @@ export const Carousel: FC<CarouselProps> = ({
             className: classList({
               [element.props.className]: true,
               "Carousel-trackItem--active": currentIndex === i,
-              "Carousel-trackItem--next": type === "animated" && currentIndex + 1 === i,
-              "Carousel-trackItem--previous": type === "animated" && currentIndex - 1 === i,
+              "Carousel-trackItem--next":
+                (type === "animated" || type === "gallery") && currentIndex + 1 === i,
+              "Carousel-trackItem--previous":
+                (type === "animated" || type === "gallery") && currentIndex - 1 === i,
             }),
           })
         )}

@@ -1,11 +1,30 @@
+@property --Grid-count {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 6;
+}
+
 .Grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(calc(1000px / var(--Grid-count)), 100%), 1fr)
+  );
   gap: 1em;
 
   &.Grid--gapBig {
     gap: 2em;
   }
+}
+
+@property --Grid-column {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+.Grid-column {
+  grid-column: span var(--Grid-column);
 }
 
 .Grid-columnThird {

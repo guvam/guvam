@@ -26,16 +26,25 @@ const content = [
 ];
 
 export const Questions = () => (
-  <article className="Collapse-container">
-    {content.map((item) => (
-      <details className="Collapse" name="faq-columns" key={item.id}>
-        <summary className="Collapse-action">{item.question}</summary>
-        <div className="Collapse-contentBlock Content">
-          <p className="Content-text">{item.answer}</p>
-        </div>
-      </details>
-    ))}
-  </article>
+  <section className="List-stack" style={{ gap: "2rem" }}>
+    <div className="List List--between">
+      <div className="Content-titleInfo">Frequently asked questions</div>
+      <a href="/blog" className="Content-link">
+        View all
+      </a>
+    </div>
+
+    <article className="Collapse-container">
+      {content.map((item, i) => (
+        <details className="Collapse" name="faq-columns" key={item.id} open={i === 0}>
+          <summary className="Collapse-action">{item.question}</summary>
+          <div className="Collapse-contentBlock Content">
+            <p className="Content-text">{item.answer}</p>
+          </div>
+        </details>
+      ))}
+    </article>
+  </section>
 );
 
 export const QuestionsOpen = () => (

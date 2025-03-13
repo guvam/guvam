@@ -1,0 +1,12 @@
+.Theme--theme-focus {
+  .Button {
+    &.Button--type-muted {
+      --Button-text: var(--primary);
+      --Button-border: var(--primary);
+
+      &:hover {
+        --Button-background: oklch(from var(--primary) l c h / 5%);
+      }
+    }
+  }
+}

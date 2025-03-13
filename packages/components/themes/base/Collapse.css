@@ -10,6 +10,7 @@
 
 .Collapse-action {
   padding: 1rem;
+  font-weight: 600;
   cursor: pointer;
   border: 1px solid var(--surfaceBorder);
   border-radius: var(--borderRadius);

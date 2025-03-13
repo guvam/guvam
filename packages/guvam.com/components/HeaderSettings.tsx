@@ -66,7 +66,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
         });
       }}
     >
-      <menu className="Grid Grid--gapBig">
+      <menu className="Grid Util--gap-3" style={{ "--Grid-count": 1 } as never}>
         <div className="Menu-block">
           <h2>Theme</h2>
           <div className="Menu-list">

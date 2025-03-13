@@ -17,9 +17,9 @@ export const SettingsAction: FC<{ themeSettings: ThemeSettings }> = (props) => (
     >
       <GearFill />
     </ModalTag>
-    <ModalTag tag="dialog" command="dialog:body" className="Modal" open>
-      <div className="Modal-heading">Settings</div>
-      <div className="Modal-close">
+    <ModalTag tag="dialog" command="dialog:body" className="Modal">
+      <div className="Modal-heading">
+        Settings
         <ModalTag
           tag="button"
           command="dialog:close"
@@ -29,6 +29,7 @@ export const SettingsAction: FC<{ themeSettings: ThemeSettings }> = (props) => (
           <X />
         </ModalTag>
       </div>
+      <div className="Modal-close"></div>
       <div className="Modal-body">
         <SettingsForm themeSettings={props.themeSettings} />
       </div>

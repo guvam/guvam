@@ -40,25 +40,30 @@ export const Blog = () => (
 );
 
 export const BlogCards = () => (
-  <ul className="Grid">
-    {[1, 2, 3, 4].map((i) => (
-      <li className="Card Grid-columnThird" key={i}>
-        <article className="Card-content">
-          <hgroup>
+  <section className="List-stack" style={{ gap: "2rem" }}>
+    <div className="List List--between">
+      <div className="Content-titleInfo">Recent posts</div>
+      <a href="/blog" className="Content-link">
+        View all
+      </a>
+    </div>
+    <ul className="Grid" style={{ "--Grid-count": 2 } as never}>
+      {[1, 2].map((i) => (
+        <li key={i} className="Card Card--muted">
+          <article className="Card-content Content">
             <h3 className="Content-heading4">Introducing Guvam Editor: Our First Test Release</h3>
             <time className="Content-text">16/10/2024</time>
-          </hgroup>
-          <p className="Content-text">
-            Hello everyone! We&#39;re happy to finally be able to push out the first testing release
-            of the Guvam Editor. Though the editor is still in its early stages, we hope you&#39;ll
-            try it out, explore its features, and share your ideas and feedback on our community
-            page.
-          </p>
-          <a className="Content-link" href="/blog/post-01">
-            Read more
-          </a>
-        </article>
-      </li>
-    ))}
-  </ul>
+
+            <p className="Content-text">
+              Hello everyone! We&#39;re happy to finally be able to push out the first testing
+              release of the Guvam Editor. Though the editor is still in its early stages page.
+            </p>
+            <a className="Content-link" href="/blog/post-01">
+              Read more
+            </a>
+          </article>
+        </li>
+      ))}
+    </ul>
+  </section>
 );

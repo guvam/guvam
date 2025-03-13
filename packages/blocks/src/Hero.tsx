@@ -23,12 +23,12 @@ export const HeroSimple = () => (
 
 export const HeroSplit = () => (
   <section className="Hero">
-    <div className="Grid">
-      <hgroup className="Content List-stack Grid-columnThird">
+    <div className="Grid" style={{ "--Grid-count": 3 } as never}>
+      <hgroup className="Content List-stack Grid-column" style={{ "--Grid-column": 2 } as never}>
         <div>
           <h1 className="Badge Badge--outline">Create</h1>
         </div>
-        <h1 className="Content-title">Create things even cooler</h1>
+        <h1 className="Content-title">Increase Your Customers Loyalty and Satisfaction</h1>
         <p className="Content-titleDescription">
           Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
           Elit sunt amet fugiat veniam occaecat.
@@ -42,8 +42,8 @@ export const HeroSplit = () => (
       </hgroup>
 
       <Image
-        className="Content-image"
-        src="/blocks/products/product-dark.png"
+        className="Hero-image Grid-column"
+        src="/blocks/products/product-screenshot.jpg"
         alt="Placeholder"
         width={1465}
         height={902}

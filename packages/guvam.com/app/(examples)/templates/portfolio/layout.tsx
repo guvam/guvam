@@ -1,8 +1,10 @@
 import "@guvam/components/themes/base.css";
 import "@guvam/components/themes/index.css";
 import "@guvam/components/colors/index.css";
+import "@guvam/blocks/src/index.css";
 
-import { PortfolioHeader } from "@guvam/blocks/src/PortfolioHeader";
+import { FooterSimple } from "@guvam/blocks/src/FooterSimple";
+import { HeaderSimple } from "@guvam/blocks/src/HeaderSimple";
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import type { ReactNode } from "react";
@@ -28,7 +30,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     <html
       lang="en"
       style={getSettingsVariables(themeSettings) as never}
-      className={`Theme--type-${themeSettings.theme} Theme--color-${themeSettings.colorTheme}`}
+      className={`Theme--theme-${themeSettings.theme} Theme--color-${themeSettings.colorTheme}`}
     >
       <head>
         <title>Agency template</title>
@@ -36,10 +38,20 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <meta name="color-scheme" content="dark light" />
       </head>
       <body className="Layout">
-        <section className="Layout-section">
-          <PortfolioHeader />
-        </section>
+        <div className="Layout-background">
+          <section className="Layout-section">
+            <HeaderSimple />
+          </section>
+        </div>
+
         {children}
+
+        <div className="Layout-background">
+          <section className="Layout-section">
+            <FooterSimple />
+          </section>
+        </div>
+
         <SettingsAction themeSettings={themeSettings} />
       </body>
     </html>

@@ -60,7 +60,7 @@
   }
 
   &:has(:checked) {
-    background-color: var(--uiSelected);
+    border-color: var(--uiText);
   }
 }
 

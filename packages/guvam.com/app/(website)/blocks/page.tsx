@@ -12,8 +12,8 @@ import {
 } from "@guvam/blocks/src/Contact";
 import { Features, Features2, Features3, Features4 } from "@guvam/blocks/src/Features";
 import { Hero3, HeroSimple, HeroSplit } from "@guvam/blocks/src/Hero";
-import { LogoCloud, LogoCloud2, LogoCloud3 } from "@guvam/blocks/src/LogoCloud";
 import { Newsletter, NewsletterHorizontal } from "@guvam/blocks/src/Newsletter";
+import { PartnersSimple, PartnersWithHeader } from "@guvam/blocks/src/Partners";
 import {
   PricingAddition,
   PricingSection,
@@ -51,8 +51,8 @@ export default function Page() {
             <a className="Button Button--type-text" href="#hero-simple">
               Hero
             </a>
-            <a className="Button Button--type-text" href="#logos">
-              Logos
+            <a className="Button Button--type-text" href="#partners">
+              Partners
             </a>
             <a className="Button Button--type-text" href="#newsletter">
               Newsletter
@@ -125,14 +125,11 @@ export default function Page() {
           <Hero3 />
         </BlockExample>
 
-        <BlockExample id="logos">
-          <LogoCloud />
+        <BlockExample id="partners">
+          <PartnersSimple />
         </BlockExample>
-        <BlockExample id="logos-2">
-          <LogoCloud2 />
-        </BlockExample>
-        <BlockExample id="logos-3">
-          <LogoCloud3 />
+        <BlockExample id="partners-header">
+          <PartnersWithHeader />
         </BlockExample>
 
         <BlockExample id="newsletter">

@@ -54,6 +54,10 @@
   &.Button--type-muted {
     --Button-background: transparent;
 
+    &:not(:disabled):hover {
+      --Button-background: oklch(from var(--uiHover) l c h);
+    }
+
     color: var(--uiText);
   }
 

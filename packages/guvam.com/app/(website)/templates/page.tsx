@@ -7,10 +7,10 @@ export default function Page() {
         <h1 className="Content-heading1">Templates</h1>
 
         <div className="Grid">
-          <a className="Button Button--type-text" href="/templates/portfolio/" target="_blank">
+          <a className="Button Button--type-muted" href="/templates/portfolio/" target="_blank">
             Portfolio
           </a>
-          <a className="Button Button--type-text" href="/templates/agency/" target="_blank">
+          <a className="Button Button--type-muted" href="/templates/agency/" target="_blank">
             Agency
           </a>
         </div>

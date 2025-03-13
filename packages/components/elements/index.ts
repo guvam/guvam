@@ -7,3 +7,5 @@ export * from "./Rating";
 export * from "./Stepper";
 export * from "./Tooltip";
 export * from "./utils/classList";
+export { useRefWithCallback } from "./utils/useRefWithCallback";
+export { ContextType } from "./utils/useRefWithCallback";

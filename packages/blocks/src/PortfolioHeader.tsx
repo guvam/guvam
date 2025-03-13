@@ -2,20 +2,21 @@
 
 import "./PortfolioHeader.css";
 
+import { ActiveLink } from "@guvam/guvam.com/components/ActiveLink";
+import GuvamFull from "@guvam/guvam.com/public/logo-full.svg";
 import Link from "next/link";
 import type { FC } from "react";
 
-import { ActiveLink } from "@/components/ActiveLink";
-import { HeaderSettings } from "@/components/HeaderSettings";
-import type { ThemeSettings } from "@/components/Theme";
-import GuvamFull from "@/public/logo-full.svg";
-
-export const PortfolioHeader: FC<{ themeSettings: ThemeSettings }> = (props) => (
+export const PortfolioHeader: FC = () => (
   <>
     <div className="PortfolioHeader-placeholder"></div>
     <div className="PortfolioHeader-position">
       <header className="PortfolioHeader">
-        <Link className="PortfolioHeader-link" href="/" aria-label="go to Home">
+        <Link
+          className="PortfolioHeader-link"
+          href="/packages/guvam.com/public"
+          aria-label="go to Home"
+        >
           <GuvamFull />
         </Link>
 
@@ -25,7 +26,7 @@ export const PortfolioHeader: FC<{ themeSettings: ThemeSettings }> = (props) => 
               <ActiveLink
                 className="PortfolioHeader-navLink"
                 activeClassName="ServicesHeader-navLink--active"
-                href="/"
+                href="/packages/guvam.com/public"
               >
                 Home
               </ActiveLink>
@@ -49,12 +50,6 @@ export const PortfolioHeader: FC<{ themeSettings: ThemeSettings }> = (props) => 
               >
                 Support
               </ActiveLink>
-            </li>
-          </ul>
-
-          <ul className="PortfolioHeader-toggle">
-            <li>
-              <HeaderSettings themeSettings={props.themeSettings} />
             </li>
           </ul>
         </nav>

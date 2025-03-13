@@ -52,7 +52,7 @@ export const LogoCloud3 = () => (
       <h2 className="Content-heading2">Partners</h2>
       <p className="Content--bold"> Lorem Ipsum is simply dummy text</p>
     </hgroup>
-    <ul className="Grid Grid--twoTable">
+    <ul className="Grid">
       {logos.map((x, i) => (
         <li className="Logo " key={i}>
           {x}

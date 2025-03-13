@@ -1,5 +1,5 @@
 :root:has(dialog[open]) {
-  overflow: hidden;
+  /* overflow: clip; */
 }
 
 .Modal {
@@ -7,7 +7,8 @@
   inset-block-start: 50%;
   inset-inline-start: 50%;
   flex-direction: column;
-  inline-size: 500px;
+  inline-size: calc(100% - 2rem);
+  max-inline-size: 500px;
   padding: 0;
   background-color: var(--surface);
   border: 1px solid var(--surfaceBorder);
@@ -34,6 +35,12 @@
   &::backdrop {
     background-color: var(--surfaceBackdrop);
   }
+}
+
+.Modal-close {
+  position: absolute;
+  inset-block-start: 0.25rem;
+  inset-inline-end: 0.25rem;
 }
 
 .Modal-heading {

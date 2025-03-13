@@ -6,10 +6,6 @@
   &.Grid--gapBig {
     gap: 2em;
   }
-
-  &.Grid--twoTable {
-    grid-template-columns: 200px 1fr;
-  }
 }
 
 .Grid-columnThird {

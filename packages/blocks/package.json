@@ -5,6 +5,7 @@
   "description": "UI blocks",
   "homepage": "https://guvam.com",
   "dependencies": {
-    "react-bootstrap-icons": "1.11.5"
+    "react-bootstrap-icons": "1.11.5",
+    "@ngneat/falso": "7.3.0"
   }
 }

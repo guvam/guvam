@@ -2,13 +2,13 @@ import "@guvam/components/themes/base.css";
 import "@guvam/components/themes/index.css";
 import "@guvam/components/colors/index.css";
 
+import { PortfolioHeader } from "@guvam/blocks/src/PortfolioHeader";
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import type { ReactNode } from "react";
 
+import { SettingsAction } from "@/components/SettingsAction";
 import { getSettingsVariables, getThemeSettings } from "@/components/Theme";
-
-import { PortfolioHeader } from "./components/PortfolioHeader";
 
 export const metadata: Metadata = {
   title: "Guvam.js",
@@ -37,9 +37,10 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       </head>
       <body className="Layout">
         <section className="Layout-section">
-          <PortfolioHeader themeSettings={themeSettings} />
+          <PortfolioHeader />
         </section>
         {children}
+        <SettingsAction themeSettings={themeSettings} />
       </body>
     </html>
   );

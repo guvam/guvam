@@ -23,16 +23,15 @@
     "update-version-patch": "bumpp -r --no-push --no-tag --no-commit patch"
   },
   "devDependencies": {
-    "rimraf": "6.0.1",
-    "bumpp": "10.0.3",
-    "@types/react": "19.0.8",
-    "@types/react-dom": "19.0.3",
     "@eslint/eslintrc": "3.2.0",
     "@eslint/js": "9.19.0",
     "@types/eslint__js": "8.42.3",
     "@types/node": "22.13.1",
+    "@types/react": "19.0.8",
+    "@types/react-dom": "19.0.3",
     "@typescript-eslint/eslint-plugin": "8.23.0",
     "@typescript-eslint/parser": "8.23.0",
+    "bumpp": "10.0.3",
     "eslint": "9.19.0",
     "eslint-plugin-n": "17.15.1",
     "eslint-plugin-promise": "7.2.1",
@@ -40,6 +39,7 @@
     "madge": "8.0.0",
     "npm-run-all": "4.1.5",
     "prettier": "3.4.2",
+    "rimraf": "6.0.1",
     "stylelint": "16.14.1",
     "stylelint-config-recess-order": "6.0.0",
     "stylelint-config-standard": "37.0.0",
@@ -52,5 +52,8 @@
   "workspaces": [
     "packages/cli",
     "packages/components"
-  ]
+  ],
+  "dependencies": {
+    "postcss-value-parser": "^4.2.0"
+  }
 }

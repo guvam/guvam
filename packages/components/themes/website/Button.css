@@ -73,3 +73,7 @@
     --Button-background: var(--uiSelected);
   }
 }
+
+.Test {
+  justify-content: space-between;
+}

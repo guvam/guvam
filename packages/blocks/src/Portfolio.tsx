@@ -26,14 +26,11 @@ export const Portfolio: FC = () => (
           <Image
             src={Images[x]}
             alt="services 1"
-            className="Card-HeaderImage"
+            className="Card-HeaderImage "
             width={500}
             height={300}
           />
-          <article
-            className="Grid-column Card-content Content"
-            style={{ "--Grid-column": 2 } as never}
-          >
+          <article className="Grid--span-2 Card-content Content">
             <time className="Content-text">Jan 16, 2025</time>
 
             <h3 className="Content-heading4">Boost your conversion Rate</h3>

@@ -10,8 +10,8 @@ import { HeaderNavigation } from "./HeaderNavigation";
 
 export const HeaderSimple: FC = () => (
   <header className="HeaderSimple">
-    <Link className="HeaderSimple-link" href="/" aria-label="go to Home">
-      <GuvamFull />
+    <Link href="/" aria-label="go to Home">
+      <GuvamFull className="HeaderSimple-logo" />
     </Link>
     <HeaderNavigation />
     <a href="mailto:hello@guvam.com" className="Button Button--type-muted">

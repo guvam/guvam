@@ -1,4 +1,4 @@
-.Theme--color-pink {
+:root.Theme--color-pink {
   --primary: light-dark(oklch(50% 0.25 320deg), oklch(85% 0.25 320deg));
   --secondary: light-dark(oklch(47% 0.122 145deg), oklch(85% 0.122 145deg));
   --accent: light-dark(oklch(42% 0.112 46deg), oklch(85% 0.055 51deg));

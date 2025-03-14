@@ -22,6 +22,8 @@
   backdrop-filter: blur(30px); */
 }
 
-.HeaderSimple-link {
+.HeaderSimple-logo {
+  inline-size: auto;
+  block-size: 2rem;
   cursor: pointer;
 }

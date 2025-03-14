@@ -25,7 +25,7 @@ export const ServicesGrid = () => (
           <Image
             src={Images[x]}
             alt="services 1"
-            className="Card-HeaderImage"
+            className="Card-HeaderImage Card-HeaderImage--fixedHeight"
             width={500}
             height={300}
           />

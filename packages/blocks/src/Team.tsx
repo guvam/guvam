@@ -8,7 +8,7 @@ export const Team = () => (
       <h1 className="Content-heading1">The Team</h1>
       <p className="Content-text">Lorem Ipsum is simply dummy text</p>
     </hgroup>
-    <ul className="Grid">
+    <ul className="Grid Grid--column-3">
       {content.map((x) => (
         <li className="Content" key={x}>
           <img className="Content-image Team-Avatar" src="/blocks/profile/Kat.jpg" />
@@ -26,7 +26,7 @@ export const TeamSmall = () => (
       <h1 className="Content-heading1">The Team</h1>
       <p className="Content-text">Lorem Ipsum is simply dummy text</p>
     </hgroup>
-    <ul className="Grid">
+    <ul className="Grid Grid--column-4">
       {content.map((x) => (
         <li key={x}>
           <img className="Content-image Team-Avatar" src="/blocks/profile/Kat.jpg" />
@@ -44,7 +44,7 @@ export const TeamCard = () => (
       <h1 className="Content-heading1">The Team</h1>
       <p className="Content-text">Lorem Ipsum is simply dummy text</p>
     </hgroup>
-    <ul className="Grid">
+    <ul className="Grid Grid--column-3">
       {content.map((x) => (
         <li className="Card" key={x}>
           <div className="Card-content">

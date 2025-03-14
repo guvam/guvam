@@ -25,19 +25,3 @@ export const PartnersSimple = () => (
     </ul>
   </section>
 );
-
-export const PartnersWithHeader = () => (
-  <section className="Partners-colored Partners-centered List-stack">
-    <hgroup>
-      <h2 className="Content-heading2">Partners</h2>
-      <p className="Content-text"> Lorem Ipsum is simply dummy text</p>
-    </hgroup>
-    <ul className="List">
-      {logos.map((x, i) => (
-        <li className="Partners Logo-bright" key={i}>
-          {x}
-        </li>
-      ))}
-    </ul>
-  </section>
-);

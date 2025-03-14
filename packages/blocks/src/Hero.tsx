@@ -24,7 +24,7 @@ export const HeroSimple = () => (
 export const HeroSplit = () => (
   <section className="Hero">
     <div className="Grid" style={{ "--Grid-count": 3 } as never}>
-      <hgroup className="Content List-stack Grid-column" style={{ "--Grid-column": 2 } as never}>
+      <hgroup className="Content List-stack Grid--span-2">
         <div>
           <h1 className="Badge Badge--outline">Create</h1>
         </div>
@@ -42,7 +42,7 @@ export const HeroSplit = () => (
       </hgroup>
 
       <Image
-        className="Hero-image Grid-column"
+        className="Hero-image"
         src="/blocks/products/product-screenshot.jpg"
         alt="Placeholder"
         width={1465}
@@ -70,7 +70,7 @@ export const Hero3 = () => (
       </hgroup>
       <Image
         className="Features-fadingImage"
-        src="/blocks/products/product-dark.png"
+        src="/blocks/products/product-screenshot.jpg"
         alt="Placeholder"
         width={1465}
         height={902}

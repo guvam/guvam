@@ -1,4 +1,4 @@
-.Theme--color-lime {
+:root.Theme--color-lime {
   --primary: light-dark(oklch(47% 0.132 132deg), oklch(81% 0.166 130deg));
   --secondary: light-dark(oklch(47% 0.041 127deg), oklch(82% 0.043 125deg));
   --accent: light-dark(oklch(47% 0.051 190deg), oklch(82% 0.05 190deg));

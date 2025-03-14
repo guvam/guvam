@@ -34,7 +34,10 @@
 .Card-HeaderImage {
   inline-size: 100%;
   block-size: auto;
-  aspect-ratio: 1.75;
   object-fit: cover;
   object-position: center;
+
+  &.Card-HeaderImage--fixedHeight {
+    aspect-ratio: 1.75;
+  }
 }

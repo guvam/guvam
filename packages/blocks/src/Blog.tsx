@@ -3,7 +3,7 @@ import Image from "next/image";
 export const Blog = () => (
   <ul className="Grid">
     {[1, 2, 3, 4].map((x) => (
-      <li key={x} className="Card Grid-columnThird">
+      <li key={x} className="Card Grid--span-2">
         <article className="Card-content">
           <hgroup>
             <time className="Content-text">Jan 16, 2025</time>

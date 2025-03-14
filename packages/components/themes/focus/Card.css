@@ -1,7 +1,7 @@
 .Theme--theme-focus {
   .Card {
     &:hover {
-      background-color: var(--surfaceHighlight);
+      /* background-color: var(--surfaceHighlight); */
     }
   }
 }

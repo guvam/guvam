@@ -1,4 +1,4 @@
-.Theme--color-blue {
+:root.Theme--color-blue {
   --primary: light-dark(oklch(37% 0.144 260deg), oklch(83% 0.085 278deg));
   --secondary: light-dark(oklch(45% 0.024 290deg), oklch(82% 0.033 282deg));
   --accent: light-dark(oklch(32% 0.064 335deg), oklch(83% 0.063 340deg));

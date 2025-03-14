@@ -6,7 +6,6 @@
   column-gap: 1em;
   align-items: center;
   inline-size: 100%;
-  max-inline-size: 20rem;
   min-block-size: 2.5rem;
   color: var(--Input-text);
   background-color: var(--ui);

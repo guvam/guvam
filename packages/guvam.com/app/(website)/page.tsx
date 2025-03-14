@@ -43,7 +43,7 @@ export default function Page() {
         <div className="Layout-sectionContent">
           <h2 className="Content-heading2">Why Guvam UI Library?</h2>
           <div className="Grid">
-            <div className="Card">
+            <div className="Card Grid--span-2">
               <div className="Card-content">
                 <div className="Content">
                   <h3 className="Content-heading3">Developer Experience</h3>
@@ -68,7 +68,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="Card">
+            <div className="Card Grid--span-2">
               <div className="Card-content">
                 <div className="Content">
                   <h3 className="Content-heading3">Designer Experience</h3>
@@ -92,7 +92,8 @@ export default function Page() {
                 </div>
               </div>
             </div>
-            <div className="Card">
+
+            <div className="Card Grid--span-2">
               <div className="Card-content">
                 <div className="Content">
                   <h3 className="Content-heading3">Documentation</h3>

@@ -10,10 +10,10 @@ import {
   ContactSplit,
   ContactSplitImage,
 } from "@guvam/blocks/src/Contact";
-import { Features, Features2, Features3, Features4 } from "@guvam/blocks/src/Features";
+import { FeaturesList } from "@guvam/blocks/src/Features";
 import { Hero3, HeroSimple, HeroSplit } from "@guvam/blocks/src/Hero";
 import { Newsletter, NewsletterHorizontal } from "@guvam/blocks/src/Newsletter";
-import { PartnersSimple, PartnersWithHeader } from "@guvam/blocks/src/Partners";
+import { PartnersSimple } from "@guvam/blocks/src/Partners";
 import {
   PricingAddition,
   PricingSection,
@@ -128,9 +128,6 @@ export default function Page() {
         <BlockExample id="partners">
           <PartnersSimple />
         </BlockExample>
-        <BlockExample id="partners-header">
-          <PartnersWithHeader />
-        </BlockExample>
 
         <BlockExample id="newsletter">
           <Newsletter />
@@ -152,17 +149,8 @@ export default function Page() {
           <PricingTable />
         </BlockExample>
 
-        <BlockExample id="features">
-          <Features />
-        </BlockExample>
         <BlockExample id="features-2">
-          <Features2 />
-        </BlockExample>
-        <BlockExample id="features-3">
-          <Features3 />
-        </BlockExample>
-        <BlockExample id="features-4">
-          <Features4 />
+          <FeaturesList />
         </BlockExample>
 
         <BlockExample id="team">

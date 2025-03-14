@@ -108,38 +108,80 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
           <div className="Menu-list">
             <label className="Menu-button">
               <input type="radio" name="colorTheme" value="blue" className="Util-hidden" />
-              <div className="ColorSelect-color Theme--color-blue"></div>
+              <div
+                className="ColorSelect-color"
+                style={
+                  {
+                    "--primary": "light-dark(oklch(37% 0.144 260deg), oklch(83% 0.085 278deg))",
+                  } as never
+                }
+              ></div>
               <span>Blue</span>
             </label>
             <label className="Menu-button">
               <input type="radio" name="colorTheme" value="green" className="Util-hidden" />
-              <div className="ColorSelect-color Theme--color-green"></div>
+              <div
+                className="ColorSelect-color Theme--color-green"
+                style={
+                  {
+                    "--primary": "light-dark(oklch(47% 0.122 145deg), oklch(80% 0.122 145deg))",
+                  } as never
+                }
+              ></div>
               <span>Green</span>
             </label>
             <label className="Menu-button">
               <input type="radio" name="colorTheme" value="pink" className="Util-hidden" />
-              <div className="ColorSelect-color Theme--color-pink"></div>
+              <div
+                className="ColorSelect-color Theme--color-pink"
+                style={
+                  {
+                    "--primary": "light-dark(oklch(50% 0.25 320deg), oklch(85% 0.25 320deg))",
+                  } as never
+                }
+              ></div>
               <span>Pink</span>
             </label>
             <label className="Menu-button">
               <input type="radio" name="colorTheme" value="lime" className="Util-hidden" />
-              <div className="ColorSelect-color Theme--color-lime"></div>
+              <div
+                className="ColorSelect-color Theme--color-lime"
+                style={
+                  {
+                    "--primary": "light-dark(oklch(47% 0.132 132deg), oklch(81% 0.166 130deg))",
+                  } as never
+                }
+              ></div>
               <span>Lime</span>
             </label>
             <label className="Menu-button">
               <input type="radio" name="colorTheme" value="red" className="Util-hidden" />
-              <div className="ColorSelect-color Theme--color-red"></div>
+              <div
+                className="ColorSelect-color Theme--color-red"
+                style={
+                  {
+                    "--primary": "light-dark(oklch(50% 0.196 28deg), oklch(83% 0.09 28deg))",
+                  } as never
+                }
+              ></div>
               <span>Red</span>
             </label>
             <label className="Menu-button">
               <input type="radio" name="colorTheme" value="yellow" className="Util-hidden" />
-              <div className="ColorSelect-color Theme--color-yellow"></div>
+              <div
+                className="ColorSelect-color Theme--color-yellow"
+                style={
+                  {
+                    "--primary": "light-dark(oklch(48% 0.101 102deg), oklch(82% 0.172 102deg))",
+                  } as never
+                }
+              ></div>
               <span>Yellow</span>
             </label>
           </div>
         </div>
 
-        <div className="Menu-block">
+        {/*<div className="Menu-block">
           <h2>Border radius</h2>
           <div className="Menu-list Menu-list--short">
             <label className="Menu-button">
@@ -163,7 +205,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
               <span>1</span>
             </label>
           </div>
-        </div>
+        </div>*/}
 
         <div className="Menu-block">
           <h2>Text scale</h2>

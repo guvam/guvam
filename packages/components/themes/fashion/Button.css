@@ -1,0 +1,15 @@
+.Theme--theme-fashion {
+  .Button {
+    block-size: 3rem;
+    border-radius: 0;
+
+    &.Button--type-muted {
+      --Button-text: var(--primary);
+      --Button-border: var(--primary);
+
+      &:hover {
+        --Button-background: oklch(from var(--primary) l c h / 5%);
+      }
+    }
+  }
+}

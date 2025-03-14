@@ -3,6 +3,14 @@
   flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
+
+  &.List--between {
+    justify-content: space-between;
+  }
+
+  &.List--evenly {
+    justify-content: space-evenly;
+  }
 }
 
 .List-stack {

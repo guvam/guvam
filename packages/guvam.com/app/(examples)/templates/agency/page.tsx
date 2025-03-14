@@ -1,5 +1,5 @@
 import { HeroSplit } from "@guvam/blocks/src/Hero";
-import { LogoCloud } from "@guvam/blocks/src/LogoCloud";
+import { PartnersSimple } from "@guvam/blocks/src/Partners";
 import { Questions } from "@guvam/blocks/src/Questions";
 
 export default function Page() {
@@ -12,7 +12,7 @@ export default function Page() {
       </section>
       <section className="Layout-section">
         <div className="Layout-sectionContent">
-          <LogoCloud />
+          <PartnersSimple />
         </div>
       </section>
       <section className="Layout-section">

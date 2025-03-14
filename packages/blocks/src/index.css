@@ -40,26 +40,10 @@
 }
 
 .Hero-image {
-  inline-size: 100%;
+  max-inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
   object-position: left;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 30px oklch(0% 0 0deg / 30%);
 }
-
-/*
-.Grid-columnThird {
-  grid-column: span 2;
-}
-
-.Grid-columnHalf {
-  grid-column: span 3;
-}
-
-.Grid-columnTwoThird {
-  grid-column: span 4;
-}
-
-.Grid-full {
-  grid-column: span 6;
-}
-*/

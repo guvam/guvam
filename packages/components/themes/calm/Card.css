@@ -1,11 +1,14 @@
 .Theme--theme-calm {
   .Card {
-    background: var(--surfacePanel);
-    border-width: 0;
-    transition: background-color 250ms ease-in;
+    padding: 0.25rem;
+    background-color: transparent;
+  }
 
-    &:hover {
-      background-color: var(--surfaceHighlight);
-    }
+  .Card-content {
+    padding-inline: 0;
+  }
+
+  .Card-HeaderImage {
+    border-radius: 2rem;
   }
 }

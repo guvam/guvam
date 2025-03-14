@@ -1,0 +1,15 @@
+.Theme--theme-calm {
+  .Button {
+    block-size: 3rem;
+    border-radius: 1.5rem;
+
+    &.Button--type-muted {
+      --Button-text: var(--primary);
+      --Button-border: var(--primary);
+
+      &:hover {
+        --Button-background: oklch(from var(--primary) l c h / 5%);
+      }
+    }
+  }
+}

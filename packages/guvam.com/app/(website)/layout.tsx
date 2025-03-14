@@ -12,6 +12,7 @@ import type { ReactNode } from "react";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { SettingsAction } from "@/components/SettingsAction";
 import { getSettingsVariables, getThemeSettings } from "@/components/Theme";
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ loadEnvConfig(process.cwd());
 
 export default async function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const cookieStore = await cookies();
-  const themeSettings = await getThemeSettings(cookieStore);
+  const themeSettings = getThemeSettings(cookieStore);
 
   return (
     <html
@@ -46,7 +47,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <body className="Layout">
         <div className="Layout-background Header-stickyContainer">
           <div className="Layout-section">
-            <Header themeSettings={themeSettings} />
+            <Header />
           </div>
           <div className="Layout-line"></div>
         </div>
@@ -56,6 +57,8 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <div className="Layout-section">
           <Footer />
         </div>
+
+        <SettingsAction themeSettings={themeSettings} />
       </body>
     </html>
   );

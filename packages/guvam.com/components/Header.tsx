@@ -6,11 +6,9 @@ import { Github } from "react-bootstrap-icons";
 
 import { ActiveLink } from "@/components/ActiveLink";
 import { HeaderMenu } from "@/components/HeaderMenu";
-import { HeaderSettings } from "@/components/HeaderSettings";
-import type { ThemeSettings } from "@/components/Theme";
 import GuvamFull from "@/public/logo-full.svg";
 
-export const Header: FC<{ themeSettings: ThemeSettings }> = (props) => (
+export const Header: FC = () => (
   <header className="Header">
     <Link className="Header-link" href="/" aria-label="go to Home">
       <GuvamFull />
@@ -73,9 +71,6 @@ export const Header: FC<{ themeSettings: ThemeSettings }> = (props) => (
           >
             <Github />
           </Link>
-        </li>
-        <li>
-          <HeaderSettings themeSettings={props.themeSettings} />
         </li>
         <li>
           <HeaderMenu />

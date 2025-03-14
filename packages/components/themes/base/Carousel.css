@@ -275,3 +275,12 @@
     scale var(--Carousel-scrollDuration) ease-out,
     opacity var(--Carousel-scrollDuration) ease-out;
 }
+
+.CarouselAlt-track {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  inline-size: 100%; /* Ensure the track is wide enough to accommodate all items */
+  transition: transform var(--Carousel-scrollDuration) ease-out;
+}

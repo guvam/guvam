@@ -1,3 +1,4 @@
+export * from "./CarouselAlt";
 export * from "./FloatingIndicator";
 export * from "./Menu";
 export * from "./Modal";

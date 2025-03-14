@@ -1,0 +1,12 @@
+.Partners {
+  padding: 1em;
+}
+
+.Partners-colored {
+  padding-block-end: 3em;
+  background-color: var(--surfaceBlock);
+}
+
+.Partners-grid {
+  justify-content: space-evenly;
+}

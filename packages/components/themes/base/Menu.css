@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  inline-size: 350px;
   min-inline-size: 20rem;
   padding: 0.2rem;
   background-color: var(--surface);
@@ -17,8 +16,8 @@
 .Menu-block {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.5rem;
+  gap: 0;
+  padding: 0;
 }
 
 .Menu-list {
@@ -61,7 +60,7 @@
   }
 
   &:has(:checked) {
-    background-color: var(--uiSelected);
+    border-color: var(--uiText);
   }
 }
 

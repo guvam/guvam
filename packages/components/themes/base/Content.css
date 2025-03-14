@@ -19,7 +19,7 @@
 
 .Content-title {
   margin-block: 0;
-  font-size: calc(2em + 2 * var(--textMultiplier));
+  font-size: calc(2em + var(--textMultiplier));
   font-weight: bold;
   line-height: 1;
   text-wrap: balance;
@@ -186,7 +186,7 @@
   margin-inline: 2px;
   line-height: 1;
   white-space: nowrap;
-  background-color: var(--primaryBlock);
+  background-color: var(--secondaryBlock);
   border-radius: var(--borderRadius);
 }
 

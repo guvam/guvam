@@ -52,9 +52,12 @@
   }
 
   &.Button--type-muted {
+    --Button-text: var(--uiText);
     --Button-background: transparent;
 
-    color: var(--uiText);
+    &:not(:disabled):hover {
+      --Button-background: oklch(from var(--uiHover) l c h);
+    }
   }
 
   &.Button--icon {

@@ -1,4 +1,4 @@
-.Theme--color-red {
+:root.Theme--color-red {
   --primary: light-dark(oklch(50% 0.196 28deg), oklch(83% 0.09 28deg));
   --secondary: light-dark(oklch(48% 0.045 26deg), oklch(83% 0.049 27deg));
   --accent: light-dark(oklch(48% 0.069 86deg), oklch(82% 0.078 83deg));

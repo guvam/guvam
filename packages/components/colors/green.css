@@ -1,4 +1,4 @@
-.Theme--color-green {
+:root.Theme--color-green {
   --primary: light-dark(oklch(47% 0.122 145deg), oklch(80% 0.122 145deg));
   --secondary: light-dark(oklch(39% 0.186 313deg), oklch(75% 0.15 90deg));
   --accent: light-dark(oklch(28% 0.055 47deg), oklch(64% 0.09 100deg));

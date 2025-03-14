@@ -1,25 +1,60 @@
-.Grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: 1em;
-
-  &.Grid--gapBig {
-    gap: 2em;
-  }
-
-  &.Grid--twoTable {
-    grid-template-columns: 200px 1fr;
-  }
+@property --Grid-count {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 6;
 }
 
-.Grid-columnThird {
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(calc(1000px / var(--Grid-count)), 100%), 1fr)
+  );
+  gap: 1em;
+}
+
+.Grid--column-1 {
+  --Grid-count: 1;
+}
+
+.Grid--column-2 {
+  --Grid-count: 2;
+}
+
+.Grid--column-3 {
+  --Grid-count: 3;
+}
+
+.Grid--column-4 {
+  --Grid-count: 4;
+}
+
+.Grid--column-6 {
+  --Grid-count: 6;
+}
+
+.Grid--column-12 {
+  --Grid-count: 1;
+}
+
+@property --Grid-column {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+.Grid-column {
+  grid-column: span var(--Grid-column);
+}
+
+.Grid--span-2 {
   grid-column: span 2;
 }
 
-.Grid-columnHalf {
+.Grid--span-3 {
   grid-column: span 3;
 }
 
-.Grid-columnTwoThird {
+.Grid--span-4 {
   grid-column: span 4;
 }

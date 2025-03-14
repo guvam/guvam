@@ -9,7 +9,7 @@ export const Support: FC = () => {
     <section className="Layout-section">
       <div className="Layout-sectionContent">
         <div className="Grid Content">
-          <div className="Card">
+          <div className="Card Grid--span-3">
             <div className="Card-content Content">
               <h2 className="Content-heading2">Community Support</h2>
               <p className="Content-text">Become part of our community!</p>
@@ -25,7 +25,7 @@ export const Support: FC = () => {
               </p>
             </div>
           </div>
-          <div className="Card">
+          <div className="Card Grid--span-3">
             <div className="Card-content Content">
               <h2 className="Content-heading2">Professional Support</h2>
               <p className="Content-text">

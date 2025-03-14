@@ -150,7 +150,7 @@ export const PricingSection = () => (
         Elit sunt amet fugiat veniam occaecat.
       </p>
     </hgroup>
-    <ul className="Grid">
+    <ul className="Grid Grid--column-3">
       {[1, 2, 3].map((x) => (
         <li className="Card" key={x}>
           <div className="Card-content Content">
@@ -188,10 +188,10 @@ export const PricingSectionBold = () => (
         Elit sunt amet fugiat veniam occaecat.
       </p>
     </hgroup>
-    <ul className="Grid">
+    <ul className="Grid Grid--column-3">
       {[1, 2, 3].map((x) => (
-        <li className="Card" key={x}>
-          <div className="Card-content Card--highlight Content">
+        <li className="Card Card--muted" key={x}>
+          <div className="Card-content Content">
             <h3 className="Content-heading3">Hobby</h3>
             <p className="Content-text">Everything you need to Start</p>
             <p className="Content-text">

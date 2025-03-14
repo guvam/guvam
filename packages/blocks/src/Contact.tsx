@@ -8,7 +8,7 @@ export const Contact = () => (
         Fill out your Contact request and contact the Team for your inquiry
       </p>
     </hgroup>
-    <fieldset className="Grid">
+    <fieldset className="Grid Grid--column-2">
       <label className="Control">
         <span className="Control-label">First name</span>
         <input type="text" autoComplete="given-name" className="Input" placeholder="Jane" />
@@ -58,7 +58,7 @@ export const ContactLocation = () => (
         ultricies ac pellentesque.
       </p>
     </hgroup>
-    <ul className="Grid">
+    <ul className="Grid Grid--column-3">
       <li className="Card">
         <div className="Card-content Content">
           <h3 className="Content-heading4">New York</h3>
@@ -94,7 +94,7 @@ export const ContactCards = () => (
         ultricies ac pellentesque.
       </p>
     </hgroup>
-    <ul className="Grid">
+    <ul className="Grid Grid--column-4">
       <li className="Card">
         <div className="Card-content Content">
           <h3 className="Content-heading3">Collab</h3>
@@ -142,7 +142,7 @@ export const ContactSplit = () => (
       </div>
     </hgroup>
     <form>
-      <fieldset className="Grid">
+      <fieldset className="Grid Grid--column-3">
         <label className="Control">
           <span className="Control-label">First name</span>
           <input type="text" autoComplete="given-name" className="Input" placeholder="Jane" />
@@ -182,7 +182,7 @@ export const ContactSplit = () => (
 );
 
 export const ContactSplitImage = () => (
-  <article className="List-stack">
+  <article className="Grid Grid--column-2">
     <form>
       <fieldset className="Grid">
         <label className="Control">
@@ -220,13 +220,13 @@ export const ContactSplitImage = () => (
         </div>
       </fieldset>
     </form>
-    <div className="Contact-Image-Form">
+    <div className="Hero-image">
       <Image
         className="Image"
         src="/blocks/profile/Kat.jpg"
         alt="Placeholder"
-        width={736}
-        height={839}
+        width={384}
+        height={438}
       />
     </div>
   </article>

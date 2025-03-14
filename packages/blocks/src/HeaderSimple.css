@@ -1,0 +1,29 @@
+.PortfolioHeader-position {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  padding: 1rem;
+}
+
+.PortfolioHeader-placeholder {
+  block-size: 100px;
+}
+
+/* Header */
+.HeaderSimple {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 1rem;
+
+  /* background-color: oklch(from var(--surfaceHighlight) l c h / 50%);
+  border-radius: 1rem;
+  backdrop-filter: blur(30px); */
+}
+
+.HeaderSimple-logo {
+  inline-size: auto;
+  block-size: 2rem;
+  cursor: pointer;
+}

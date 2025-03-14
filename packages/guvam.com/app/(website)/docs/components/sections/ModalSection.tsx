@@ -18,7 +18,7 @@ const TemplateModalSuccess: FC = () => (
     <ModalTag tag="button" command="dialog:open" className="Button Button--icon" type="submit">
       <GearFill />
     </ModalTag>
-    <ModalTag tag="dialog" command="dialog:body" className="Modal" open>
+    <ModalTag tag="dialog" command="dialog:body" className="Modal">
       <div className="Modal-heading">
         Settings
         <ModalTag

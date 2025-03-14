@@ -1,8 +1,9 @@
 "use client";
 
-import type { ComponentProps, Context, FC, JSX, ReactNode } from "react";
-import { createContext, createElement, useContext, useMemo } from "react";
+import type { ComponentProps, FC, JSX, ReactNode } from "react";
+import { createContext, useMemo } from "react";
 
+import { TagCreate } from "./TagCreate";
 import type { ContextType } from "./utils/useRefWithCallback";
 import { useRefWithCallback } from "./utils/useRefWithCallback";
 
@@ -52,27 +53,6 @@ export const Modal: FC<{
   return <ModalContext.Provider value={value}>{props.children}</ModalContext.Provider>;
 };
 
-export type TagCreateProps<K, T extends keyof JSX.IntrinsicElements> = {
-  tag: T;
-  command: K;
-  children: ReactNode;
-  context: Context<ContextType<K>>;
-} & ComponentProps<T>;
-
-export const TagCreate = <K, T extends keyof JSX.IntrinsicElements>({
-  tag,
-  context,
-  children,
-  command,
-  ...props
-}: TagCreateProps<K, T>) => {
-  const context1 = useContext(context);
-  // TODO: FIX typing
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  return createElement(tag, { ...props, ref: context1[command] }, children);
-};
-
 export type TagProps<T extends keyof JSX.IntrinsicElements> = {
   tag: T;
   command: ModalCommandType;
@@ -89,36 +69,3 @@ export const ModalTag = <T extends keyof JSX.IntrinsicElements>({
   // @ts-expect-error
   <TagCreate<ModalCommandType, T> context={ModalContext} tag={tag} command={command} {...props} />
 );
-
-/*
-export const DialogBlock: FC = () => {
-  return (
-    <Modal>
-      <ModalTag tag="button" command="dialog:open">
-        button
-      </ModalTag>
-      <ModalTag tag="dialog" command="dialog:body">
-        <h1>dialog</h1>
-        <ModalTag tag="button" command="dialog:close">
-          close
-        </ModalTag>
-      </ModalTag>
-    </Modal>
-  );
-};
-
-export const DialogBlock1: FC = () => {
-    <div id="dialog-id">
-      <button data-command-for="dialog-id" data-command="dialog:open" className="Button">
-        button
-      </button>
-      <dialog data-command-for="dialog-id" data-command="dialog:body">
-        <h1>dialog</h1>
-        <button data-commnad-for="dialog-id" data-command="dialog:close">
-          close
-        </button>
-      </dialog>
-    </div>
-  );
-};
-*/

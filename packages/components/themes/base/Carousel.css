@@ -1,3 +1,9 @@
+@property --Carousel-activeIndex {
+  inherits: true;
+  syntax: "<number>";
+  initial-value: 0;
+}
+
 @property --Carousel-slideCount {
   inherits: true;
   syntax: "<number>";
@@ -10,28 +16,22 @@
   initial-value: 1;
 }
 
-@property --Carousel-currentIndex {
+@property --Carousel-animateDuration {
+  inherits: true;
+  syntax: "<time>";
+  initial-value: 1000ms;
+}
+
+@property --Carousel-slideItemIndex {
   inherits: true;
   syntax: "<number>";
   initial-value: 0;
 }
 
-@property --Carousel-scrollTime {
+@property --scale {
   inherits: true;
-  syntax: "<time>";
-  initial-value: 400ms;
-}
-
-@property --Carousel-scrollDuration {
-  inherits: true;
-  syntax: "<time>";
-  initial-value: 600ms;
-}
-
-.Carousel-exampleContainer {
-  display: flex;
-  max-inline-size: 358px;
-  margin: 10px;
+  syntax: "<number>";
+  initial-value: 1;
 }
 
 .Carousel {
@@ -41,57 +41,234 @@
   overflow: clip;
 }
 
+.Carousel--type-gallery {
+  position: relative;
+  inline-size: 25%;
+  overflow: visible;
+  transition:
+    transform var(--Carousel-animateDuration) ease-out,
+    opacity var(--Carousel-animateDuration) ease-out,
+    scale var(--Carousel-animateDuration) ease-out;
+}
+
+.Carousel-slideContainer {
+  display: grid;
+  grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
+  inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
+  block-size: auto;
+  transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-activeIndex)));
+  transition: transform var(--Carousel-animateDuration) ease-out;
+
+  .Carousel--type-gallery & {
+    transform: none;
+    transition: none;
+  }
+}
+
+.Carousel-slideItem {
+  position: relative;
+  block-size: 100%;
+
+  .Carousel--type-gallery & {
+    --move: round(calc(var(--Carousel-slideCount) - 1) / 2, 1);
+    --scale: 0.8;
+
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+    opacity: 0.5;
+    transform: translateX(
+        calc(
+          100% *
+            (
+              mod(
+                  var(--Carousel-slideItemIndex) - var(--Carousel-activeIndex) + var(--move),
+                  var(--Carousel-slideCount)
+                ) -
+                var(--move)
+            )
+        )
+      )
+      scale(var(--scale), var(--scale));
+    transition:
+      transform var(--Carousel-animateDuration) ease-out,
+      scale var(--Carousel-animateDuration) ease-out,
+      opacity var(--Carousel-animateDuration) ease-out;
+  }
+
+  .Carousel--type-gallery &.Carousel-slideItem--active {
+    --scale: 1;
+
+    outline: 3px solid yellowgreen;
+    opacity: 1;
+  }
+
+  .Carousel--type-gallery &.Carousel-slideItem--next {
+    outline: 3px solid green;
+  }
+
+  .Carousel--type-gallery &.Carousel-slideItem--previous {
+    outline: 3px solid green;
+  }
+
+  .Carousel--type-gallery &.Carousel-slideItem--stop {
+    outline: 3px solid red;
+    transition: none;
+  }
+}
+
+.Carousel-slideImage {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.Carousel-button {
+  position: absolute !important;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+
+  &.Carousel-button--previous {
+    inset-inline-start: 1rem;
+  }
+
+  &.Carousel-button--next {
+    inset-inline-end: 1rem;
+  }
+}
+
+.Carousel-menu {
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-start: 50%;
+  display: flex;
+  transform: translateX(-50%);
+}
+
+.Carousel-menuItem {
+  --background: var(--primary);
+
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    --background: var(--surfaceHover);
+  }
+
+  &::after {
+    display: block;
+    block-size: 0.75rem;
+    aspect-ratio: 1;
+    content: "";
+    background-color: var(--background);
+    border-radius: 50%;
+    transition: background-color 200ms ease-in-out;
+  }
+
+  &.Carousel-menuItem--active {
+    --background: var(--uiActive);
+  }
+}
+
+/*
 .Carousel--type-animated {
   position: relative;
   display: block;
   inline-size: 100%;
   overflow: clip;
+
+  .Carousel-slideContainer {
+    position: relative;
+  }
+
+  .Carousel-slideItem {
+    inline-size: 100%;
+    block-size: 100%;
+    opacity: 1;
+    transition:
+      opacity var(--Carousel-animateDuration) ease-in-out,
+      transform var(--Carousel-animateDuration) ease-in-out;
+  }
+
+  .Carousel-trackItem--active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .Carousel-trackItem--previous {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+
+  .Carousel-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity var(--Carousel-animateDuration) ease-in-out var(--Carousel-animateDuration),
+      transform var(--Carousel-animateDuration) ease-in-out var(--Carousel-animateDuration);
+  }
+
+  .Carousel-trackItem--active .Carousel-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .Carousel-menuItem {
+    position: relative;
+    inline-size: 12px;
+    block-size: 12px;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .Carousel-navItem--active {
+    inline-size: 50px;
+    background-color: var(--primary);
+    background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    border-radius: 6px;
+    animation: FillNavItem var(--Carousel-animateDuration) linear forwards;
+
+    &::before {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 0;
+      block-size: 100%;
+      content: "";
+      background-color: var(--uiActive);
+      border-radius: 6px;
+    }
+  }
 }
 
-.Carousel-galleryWrapper {
+@keyframes FillNavItem {
+  from {
+    background-size: 0 100%;
+  }
+
+  to {
+    background-size: 100% 100%;
+  }
+}
+*/
+
+/* out */
+
+.Carousel-containerFade {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   inline-size: 100%;
-  mask-image: linear-gradient(
+
+  /* mask-image: linear-gradient(
     to right,
     oklch(0% 0 0deg / 0%) 0%,
-    oklch(0% 0 0deg) 10%,
-    oklch(0% 0 0deg) 90%,
+    oklch(0% 0 0deg) 3rem,
+    oklch(0% 0 0deg) calc(100% - 3rem),
     oklch(0% 0 0deg / 0%) 100%
-  );
-}
-
-.Carousel--type-gallery {
-  position: relative;
-  inline-size: 50%;
-  overflow: visible;
-  transition:
-    transform var(--Carousel-scrollDuration) ease-out,
-    opacity var(--Carousel-scrollDuration) ease-out,
-    scale var(--Carousel-scrollDuration) ease-out;
-}
-
-.Carousel-track {
-  display: grid;
-  grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
-  inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
-  block-size: auto;
-  transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-currentIndex)));
-  transition: transform var(--Carousel-scrollDuration) ease-out;
-}
-
-.Carousel-trackItem {
-  position: relative;
-  block-size: 100%;
-}
-
-.Carousel-trackImage {
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  object-position: center;
+  ); */
 }
 
 .Carousel-content {
@@ -109,178 +286,17 @@
   opacity: 0;
   transform: translateY(20px);
   transition:
-    opacity var(--Carousel-scrollDuration) ease-out var(--Carousel-scrollDuration),
-    transform var(--Carousel-scrollDuration) ease-out var(--Carousel-scrollDuration);
-}
+    opacity var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration),
+    transform var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration);
 
-.Carousel-trackItem--active .Carousel-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.Carousel-button {
-  position: absolute;
-  inset-block-start: 50%;
-  padding: 5px;
-  font-size: 24px;
-  color: var(--primaryText);
-  cursor: pointer;
-  background-color: var(--primary);
-  border-radius: 0.25rem;
-  transform: translateY(-50%);
-}
-
-.Carousel-button--previous {
-  inset-inline-start: 1rem;
-}
-
-.Carousel-button--next {
-  inset-inline-end: 1rem;
-}
-
-.Carousel-nav {
-  position: absolute;
-  inset-block-end: 1rem;
-  inset-inline-start: 50%;
-  display: flex;
-  gap: 8px;
-  transform: translateX(-50%);
-}
-
-.Carousel-navItem {
-  inline-size: 12px;
-  block-size: 12px;
-  cursor: pointer;
-  background-color: var(--primary);
-  border-radius: 6px;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.Carousel-navItem:hover {
-  background-color: var(--surfaceHover);
-}
-
-.Carousel-navItem--active {
-  background-color: var(--uiActive);
-}
-
-.Carousel--type-animated .Carousel-track {
-  position: relative;
-}
-
-.Carousel--type-animated .Carousel-trackItem {
-  inline-size: 100%;
-  block-size: 100%;
-  opacity: 1;
-  transition:
-    opacity var(--Carousel-scrollDuration) ease-in-out,
-    transform var(--Carousel-scrollDuration) ease-in-out;
-}
-
-.Carousel--type-animated .Carousel-trackItem--active {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.Carousel--type-animated .Carousel-trackItem--previous {
-  opacity: 1;
-  transform: translateX(100%);
-}
-
-.Carousel--type-animated .Carousel-content {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity var(--Carousel-scrollDuration) ease-in-out var(--Carousel-scrollDuration),
-    transform var(--Carousel-scrollDuration) ease-in-out var(--Carousel-scrollDuration);
-}
-
-.Carousel--type-animated .Carousel-trackItem--active .Carousel-content {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.Carousel--type-animated .Carousel-navItem {
-  position: relative;
-  inline-size: 12px;
-  block-size: 12px;
-  transition: width 0.3s ease-in-out;
-}
-
-.Carousel--type-animated .Carousel-navItem--active {
-  inline-size: 50px;
-  background-color: var(--primary);
-  background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%, transparent 0);
-  background-repeat: no-repeat;
-  background-size: 0 100%;
-  border-radius: 6px;
-  animation: FillNavItem var(--Carousel-scrollTime) linear forwards;
-}
-
-.Carousel--type-animated .Carousel-navItem--active::before {
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  inline-size: 0;
-  block-size: 100%;
-  content: "";
-  background-color: var(--uiActive);
-  border-radius: 6px;
-}
-
-@keyframes FillNavItem {
-  from {
-    background-size: 0 100%;
-  }
-
-  to {
-    background-size: 100% 100%;
+  .Carousel-trackItem--active & {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.Carousel--type-gallery .Carousel-track {
-  display: grid;
-  grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
-  inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
-  block-size: auto;
-  transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-currentIndex)));
-  transition:
-    transform var(--Carousel-scrollDuration) ease-out,
-    opacity var(--Carousel-scrollDuration) ease-out;
-}
-
-.Carousel--type-gallery .Carousel-trackItem {
-  opacity: 0.5;
-  scale: 0.8;
-}
-
-.Carousel--type-gallery .Carousel-trackItem--active {
-  opacity: 1;
-  scale: 1;
-  transition: scale var(--Carousel-scrollDuration) ease-out;
-}
-
-.Carousel--type-gallery .Carousel-trackItem--previous {
-  opacity: 0.75;
-  scale: 0.8;
-  transition:
-    scale var(--Carousel-scrollDuration) ease-out,
-    opacity var(--Carousel-scrollDuration) ease-out;
-}
-
-.Carousel--type-gallery .Carousel-trackItem--next {
-  opacity: 0.75;
-  scale: 0.8;
-  transition:
-    scale var(--Carousel-scrollDuration) ease-out,
-    opacity var(--Carousel-scrollDuration) ease-out;
-}
-
-.CarouselAlt-track {
+.Carousel-exampleContainer {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-  inline-size: 100%; /* Ensure the track is wide enough to accommodate all items */
-  transition: transform var(--Carousel-scrollDuration) ease-out;
+  max-inline-size: 358px;
+  margin: 10px;
 }

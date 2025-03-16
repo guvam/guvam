@@ -1,149 +1,258 @@
 "use client";
 
 import { classList } from "@guvam/components";
-import type { FC, ReactElement } from "react";
-import { Children, cloneElement, useCallback, useEffect, useRef, useState } from "react";
+import type { FC, JSX, ReactElement, ReactNode } from "react";
+import {
+  Children,
+  cloneElement,
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
+
+import type { ContextType, TagProps } from "./utils/TagCreate";
+import { TagCreate } from "./utils/TagCreate";
+
+type CarouselCommandType =
+  | "carousel:slidecontainer"
+  | "carousel:pause"
+  | "carousel:next"
+  | "carousel:previous"
+  | "carousel:menu";
+
+export const CarouselContext = createContext<ContextType<CarouselCommandType>>({});
+
+export const CarouselIndexStateContext = createContext<{
+  currentIndex: number;
+  setCurrentIndex: (index: number) => void;
+}>({
+  currentIndex: 0,
+  setCurrentIndex: () => null,
+});
+
+export const CarouselSlideCountStateContext = createContext<{
+  slideCount: number | null;
+  setSlideCount: (index: number) => void;
+}>({
+  slideCount: 0,
+  setSlideCount: () => null,
+});
 
 interface CarouselProps {
-  children: ReactElement<HTMLElement>[];
-  count?: number;
-  index?: number;
+  children: ReactNode;
+  className?: string;
+  activeIndex?: number;
+  viewCount?: number;
   loop?: boolean;
-  autoScroll?: boolean;
-  autoScrollInterval?: number;
-  type?: "default" | "animated" | "gallery";
-  hideSides?: boolean;
-  hideNav?: boolean;
-  scrollAmount?: number;
-  scrollTime?: number;
+  animate?: boolean;
+  animateTime?: number;
 }
+
+const clamp = (number: number, min: number, max: number) => Math.max(min, Math.min(number, max));
 
 export const Carousel: FC<CarouselProps> = ({
   children,
-  count = 1,
-  index = 0,
+  className = "Carousel",
+  viewCount = 1,
+  activeIndex = 0,
   loop = false,
-  autoScroll = false,
-  autoScrollInterval = 4000,
-  type = "default",
-  hideSides = false,
-  hideNav = false,
-  scrollAmount = 1,
-  scrollTime = 600,
+  animate = false,
+  animateTime = 4000,
 }) => {
-  const [currentIndex, setCurrentIndex] = useState(index);
-  const maxIndex = children.length - count;
-  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
-
-  const restartAutoScroll = useCallback(() => {
-    if (autoScroll && autoScrollRef.current) {
-      clearInterval(autoScrollRef.current);
-      autoScrollRef.current = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
-      }, autoScrollInterval);
-    }
-  }, [autoScroll, autoScrollInterval, maxIndex]);
+  const [currentIndex, setCurrentIndex] = useState<number>(activeIndex);
+  const [slideCount, setSlideCount] = useState<number | null>(null);
+  const animateRef = useRef<NodeJS.Timeout | null>(null);
 
   const updateIndex = useCallback(
     (i: number) => {
-      if (i < 0) {
-        setCurrentIndex(loop ? maxIndex : 0);
-      } else if (i > maxIndex) {
-        setCurrentIndex(loop ? 0 : maxIndex);
-      } else {
-        setCurrentIndex(i);
+      if (slideCount) {
+        setCurrentIndex(loop ? (slideCount + i) % slideCount : clamp(i, 0, slideCount - 1));
       }
-
-      restartAutoScroll();
     },
-    [maxIndex, loop, restartAutoScroll]
+    [loop, slideCount]
   );
 
-  const handleNext = useCallback(() => {
-    updateIndex(currentIndex + scrollAmount);
-  }, [currentIndex, scrollAmount, updateIndex]);
-
-  const handlePrevious = useCallback(() => {
-    updateIndex(currentIndex - scrollAmount);
-  }, [currentIndex, scrollAmount, updateIndex]);
-
   useEffect(() => {
-    if (!autoScroll) {
-      return;
+    if (animateRef.current) {
+      clearTimeout(animateRef.current);
     }
 
-    autoScrollRef.current = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex >= maxIndex ? 0 : prevIndex + 1));
-    }, autoScrollInterval);
+    if (animate) {
+      animateRef.current = setTimeout(() => {
+        updateIndex(currentIndex + 1);
+      }, animateTime);
+    }
 
     return () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
+      if (animateRef.current) {
+        clearTimeout(animateRef.current);
       }
     };
-  }, [autoScroll, autoScrollInterval, maxIndex]);
+  }, [animate, animateTime, currentIndex]);
+
+  const indexContext = useMemo(
+    () => ({
+      currentIndex,
+      setCurrentIndex: updateIndex,
+    }),
+    [currentIndex, updateIndex]
+  );
+
+  const slideContext = useMemo(
+    () => ({
+      slideCount,
+      setSlideCount,
+    }),
+    [slideCount, setSlideCount]
+  );
 
   return (
-    <div className="Carousel-galleryWrapper">
-      <div
-        className={classList({
-          Carousel: type === "default",
-          "Carousel--type-animated": type === "animated",
-          "Carousel--type-gallery": type === "gallery",
-        })}
-        style={
-          {
-            "--Carousel-viewCount": count,
-            "--Carousel-slideCount": children.length,
-            "--Carousel-currentIndex": currentIndex,
-            "--Carousel-scrollTime": autoScrollInterval + "ms",
-            "--Carousel-scrollDuration": scrollTime + "ms",
-          } as never
-        }
-      >
-        <div className="Carousel-track">
-          {Children.map(children, (element, i) =>
-            cloneElement(element, {
-              className: classList({
-                [element.props.className]: true,
-                "Carousel-trackItem--active": currentIndex === i,
-                "Carousel-trackItem--next":
-                  (type === "animated" || type === "gallery") && currentIndex + 1 === i,
-                "Carousel-trackItem--previous":
-                  (type === "animated" || type === "gallery") && currentIndex - 1 === i,
-              }),
-            })
-          )}
+    <CarouselIndexStateContext.Provider value={indexContext}>
+      <CarouselSlideCountStateContext.Provider value={slideContext}>
+        <div
+          className={className}
+          style={
+            {
+              "--Carousel-activeIndex": currentIndex,
+              "--Carousel-viewCount": viewCount,
+              "--Carousel-slideCount": slideCount,
+              "--Carousel-scrollTime": `${animateTime}ms`,
+            } as never
+          }
+        >
+          {children}
         </div>
+      </CarouselSlideCountStateContext.Provider>
+    </CarouselIndexStateContext.Provider>
+  );
+};
 
-        {!hideSides && (
-          <>
-            <button className="Carousel-button Carousel-button--previous" onClick={handlePrevious}>
-              &#10094;
-            </button>
-            <button className="Carousel-button Carousel-button--next" onClick={handleNext}>
-              &#10095;
-            </button>
-          </>
-        )}
+export const CarouselTag = <T extends keyof JSX.IntrinsicElements>({
+  tag,
+  command,
+  ...props
+}: TagProps<T, CarouselCommandType>) => (
+  // TODO: FIX typing
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  <TagCreate<CarouselCommandType, T>
+    context={CarouselContext}
+    tag={tag}
+    command={command}
+    {...props}
+  />
+);
 
-        {!hideNav && (
-          <nav className="Carousel-nav">
-            {Array(children.length - count + 1)
-              .fill(null)
-              .map((_, index) => (
-                <button
-                  key={index}
-                  className={classList({
-                    "Carousel-navItem": true,
-                    "Carousel-navItem--active": index === currentIndex,
-                  })}
-                  onClick={() => updateIndex(index)}
-                />
-              ))}
-          </nav>
-        )}
-      </div>
-    </div>
+export const CarouseButtonPrevious: FC = () => {
+  const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
+
+  return (
+    <CarouselTag
+      tag="button"
+      command="carousel:previous"
+      className="Button Button--icon Carousel-button Carousel-button--previous"
+      onClick={() => setCurrentIndex(currentIndex - 1)}
+    >
+      <ChevronLeft />
+    </CarouselTag>
+  );
+};
+
+export const CarouseButtonNext: FC = () => {
+  const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
+
+  return (
+    <CarouselTag
+      tag="button"
+      command="carousel:next"
+      className="Button Button--icon Carousel-button Carousel-button--next"
+      onClick={() => setCurrentIndex(currentIndex + 1)}
+    >
+      <ChevronRight />
+    </CarouselTag>
+  );
+};
+
+export const CarouseMenu: FC = () => {
+  const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
+  const { slideCount } = useContext(CarouselSlideCountStateContext);
+
+  return (
+    <CarouselTag tag="menu" command="carousel:menu" className="Carousel-menu">
+      {[...Array(slideCount)].map((_, i) => (
+        <li key={i}>
+          <button
+            className={classList({
+              "Carousel-menuItem": true,
+              "Carousel-menuItem--active": i === currentIndex,
+            })}
+            onClick={() => setCurrentIndex(i)}
+          />
+        </li>
+      ))}
+    </CarouselTag>
+  );
+};
+
+export const CarouseTrack: FC<{ children: ReactElement<HTMLElement>[] }> = ({ children }) => {
+  const { slideCount, setSlideCount } = useContext(CarouselSlideCountStateContext);
+  const { currentIndex } = useContext(CarouselIndexStateContext);
+  const [activeIndex, setActiveIndex] = useState<number>(currentIndex);
+  const [stopIndex, setStopIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    setSlideCount(children.length);
+  }, []);
+
+  useEffect(() => {
+    const count = children.length;
+    const directionRight =
+      currentIndex > activeIndex || (currentIndex === 0 && activeIndex === count - 1);
+
+    console.log(currentIndex, activeIndex, slideCount);
+
+    if (directionRight) {
+      const move = Math.floor(count / 2);
+      const stop = (count + currentIndex - 1 - move) % count;
+      setStopIndex(stop);
+      console.log(stop, directionRight);
+    } else {
+      const move = Math.ceil(count / 2);
+      const stop = (count + currentIndex + move) % count;
+      setStopIndex(stop);
+      console.log(stop, directionRight);
+    }
+
+    setTimeout(() => {
+      setStopIndex(null);
+    }, 50);
+
+    setActiveIndex(currentIndex);
+  }, [currentIndex]);
+
+  return (
+    <CarouselTag tag="ul" command="carousel:slidecontainer" className="Carousel-slideContainer">
+      {Children.map(children, (element, i) =>
+        cloneElement(element, {
+          className: classList({
+            [element.props.className]: true,
+            "Carousel-slideItem--previous":
+              (children.length + activeIndex - 1) % children.length === i,
+            "Carousel-slideItem--active": activeIndex === i,
+            "Carousel-slideItem--next": (children.length + activeIndex + 1) % children.length === i,
+            "Carousel-slideItem--stop": stopIndex === i,
+          }),
+          style: {
+            "--Carousel-slideItemIndex": i,
+            "--currentIndex": activeIndex,
+          } as never,
+        })
+      )}
+    </CarouselTag>
   );
 };

@@ -10,7 +10,8 @@
   border-radius: var(--borderRadius);
 
   &.Card--muted {
-    background: var(--surface);
+    background: transparent;
+    border: 1px solid var(--surfaceBorder);
   }
 
   &.Card--surface {

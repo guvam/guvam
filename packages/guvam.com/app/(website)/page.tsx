@@ -11,10 +11,13 @@ export default function Page() {
         <div className="Layout-section">
           <div className="Layout-hero">
             <hgroup className="Content">
-              <h1 className="Content-title">Web Project Components</h1>
+              <h1 className="Content-title">Light / Headless components for you web project</h1>
               <div className="Title-descriptionWrap">
                 <div className="Content-titleDescription">
-                  Convert your Template into any framework
+                  <ul className="Content-list">
+                    <li>make easy for designers and developers to work on same code base</li>
+                    <li>automatically generate UI code documentation / playground</li>
+                  </ul>
                   {/*<div className="Title-Carousel">
                     <span className="Title-carouselItem">React</span>
                     <span className="Title-carouselItem">Vue</span>
@@ -43,7 +46,7 @@ export default function Page() {
         <div className="Layout-sectionContent">
           <h2 className="Content-heading2">Why Guvam UI Library?</h2>
           <div className="Grid">
-            <div className="Card Grid--span-2">
+            <div className="Card Grid--span-2 Card--muted">
               <div className="Card-content">
                 <div className="Content">
                   <h3 className="Content-heading3">Developer Experience</h3>
@@ -68,7 +71,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="Card Grid--span-2">
+            <div className="Card Grid--span-2 Card--muted">
               <div className="Card-content">
                 <div className="Content">
                   <h3 className="Content-heading3">Designer Experience</h3>
@@ -93,7 +96,7 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="Card Grid--span-2">
+            <div className="Card Grid--span-2 Card--muted">
               <div className="Card-content">
                 <div className="Content">
                   <h3 className="Content-heading3">Documentation</h3>

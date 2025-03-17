@@ -49,8 +49,8 @@ export const HeaderMenu: FC = () => {
               <li>
                 <button
                   className="Button Button--icon Button--type-text"
-                  onClick={() => {
-                    ref.current?.togglePopover();
+                  onClick={(ev) => {
+                    ev.currentTarget.closest<HTMLElement>(".Popover")?.hidePopover();
                   }}
                 >
                   <XLg />
@@ -73,11 +73,7 @@ export const HeaderMenu: FC = () => {
                   </ActiveLink>
                 </li>
                 <li>
-                  <ActiveLink
-                    className="SideMenu-menuItem"
-                    isParent
-                    href="/packages/guvam.com/app/(website)/docs"
-                  >
+                  <ActiveLink className="SideMenu-menuItem" isParent href="/docs">
                     Docs
                   </ActiveLink>
                 </li>

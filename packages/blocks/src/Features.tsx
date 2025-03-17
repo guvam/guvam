@@ -1,5 +1,3 @@
-import { Linkedin } from "react-bootstrap-icons";
-
 export const FeaturesList = () => (
   <section className="List-stack Util--gap-4">
     <hgroup className="Content Content--center">
@@ -13,8 +11,7 @@ export const FeaturesList = () => (
     <ul className="Grid Grid--column-4">
       {[1, 2, 3, 4].map((x) => (
         <li key={x}>
-          <Linkedin />
-          <b className="Content--bold">Functionalities of Linkedin.</b>
+          <b className="Content-heading4">Functionalities of Linkedin.</b>
           <p className="Content-text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
             suscipit eaque, iste dolor cupiditate blanditiis ratione.

@@ -128,7 +128,7 @@ export const PricingTable = () => (
 );
 
 export const PricingAddition = () => (
-  <section className="Card">
+  <section className="Card Card--muted">
     <div className="Card-content">
       <div>
         <h3 className="Content-heading3">Additional Content</h3>
@@ -152,7 +152,7 @@ export const PricingSection = () => (
     </hgroup>
     <ul className="Grid Grid--column-3">
       {[1, 2, 3].map((x) => (
-        <li className="Card" key={x}>
+        <li className="Card Card--muted" key={x}>
           <div className="Card-content Content">
             <h3 className="Content-heading3">Hobby</h3>
             <p className="Content-text">Everything you need to Start</p>

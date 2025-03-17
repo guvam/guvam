@@ -1,6 +1,13 @@
 import { Linkedin, TwitterX } from "react-bootstrap-icons";
 
-const content = [1, 2, 3, 4, 5, 6];
+const content = [
+  "/blocks/avatars/avatar-1.jpg",
+  "/blocks/avatars/avatar-2.jpg",
+  "/blocks/avatars/avatar-3.jpg",
+  "/blocks/avatars/avatar-4.jpg",
+  "/blocks/avatars/avatar-5.jpg",
+  "/blocks/avatars/avatar-6.jpg",
+];
 
 export const Team = () => (
   <section>
@@ -9,9 +16,9 @@ export const Team = () => (
       <p className="Content-text">Lorem Ipsum is simply dummy text</p>
     </hgroup>
     <ul className="Grid Grid--column-3">
-      {content.map((x) => (
-        <li className="Content" key={x}>
-          <img className="Content-image Team-Avatar" src="/blocks/profile/Kat.jpg" />
+      {content.map((img, i) => (
+        <li className="Content" key={i}>
+          <img className="Content-image Team-Avatar" src={img} />
           <p className="Content-text Content--bold">Name Surname</p>
           <p className="Content-text">Development</p>
         </li>
@@ -27,9 +34,9 @@ export const TeamSmall = () => (
       <p className="Content-text">Lorem Ipsum is simply dummy text</p>
     </hgroup>
     <ul className="Grid Grid--column-4">
-      {content.map((x) => (
-        <li key={x}>
-          <img className="Content-image Team-Avatar" src="/blocks/profile/Kat.jpg" />
+      {content.map((img, i) => (
+        <li key={i}>
+          <img className="Content-image Team-Avatar" src={img} />
           <p className="Content--bold">Name Surname</p>
           <p className="Content-text">Occupation</p>
         </li>
@@ -45,10 +52,10 @@ export const TeamCard = () => (
       <p className="Content-text">Lorem Ipsum is simply dummy text</p>
     </hgroup>
     <ul className="Grid Grid--column-3">
-      {content.map((x) => (
-        <li className="Card" key={x}>
+      {content.map((img, i) => (
+        <li className="Card Card--muted" key={i}>
           <div className="Card-content">
-            <img className="Team-Image" src="/blocks/profile/Kat.jpg" />
+            <img className="Team-Image" src={img} />
             <p className="Content--bold">Name Surname</p>
             <p className="Content-text">Occupation</p>
             <p className="Content-text">

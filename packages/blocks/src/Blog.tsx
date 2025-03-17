@@ -3,29 +3,27 @@ import Image from "next/image";
 export const Blog = () => (
   <ul className="Grid">
     {[1, 2, 3, 4].map((x) => (
-      <li key={x} className="Card Grid--span-2">
+      <li key={x} className="Card Grid--span-2 Card--muted">
         <article className="Card-content">
           <hgroup>
             <time className="Content-text">Jan 16, 2025</time>
-            <span className="Content-badge">Marketing</span>
+            <span className="Badge Badge--outline">Marketing</span>
           </hgroup>
           <div className="Content Content-text">
-            <h3 className="Content-heading4">Boost your conversion Rate</h3>
+            <h3 className="Content-heading4">Neque porro quisquam est</h3>
             <p className="Content-text">
-              Use these Tailwind CSS blog section examples to promote interesting content from your
-              company blog or content universe throughout your website. These examples are designed
-              and built by the Tailwind CSS team, and include a variety of different styles and
-              layouts.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida consequat metus
+              non dictum. Etiam arcu odio, efficitur eget vehicula vitae, consequat et diam.
             </p>
           </div>
           <div className="List">
             <div className="Avatar">
               <Image
                 className="Avatar-image"
-                src="/blocks/profile/Kat.jpg"
+                src="/blocks/avatars/avatar-2.jpg"
                 alt="Profile Image of Jane Doe"
-                width={36}
-                height={36}
+                width={24}
+                height={24}
               />
             </div>
             <div>
@@ -51,12 +49,18 @@ export const BlogCards = () => (
       {[1, 2].map((i) => (
         <li key={i} className="Card Card--muted">
           <article className="Card-content Content">
-            <h3 className="Content-heading4">Introducing Guvam Editor: Our First Test Release</h3>
+            <h3 className="Content-heading4">
+              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur
+            </h3>
             <time className="Content-text">16/10/2024</time>
 
             <p className="Content-text">
-              Hello everyone! We&#39;re happy to finally be able to push out the first testing
-              release of the Guvam Editor. Though the editor is still in its early stages page.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida consequat metus
+              non dictum. Etiam arcu odio, efficitur eget vehicula vitae, consequat et diam.
+              Praesent dictum sem sed commodo mollis. Nulla feugiat, elit in dignissim iaculis,
+              neque sapien vehicula nisi, vitae suscipit eros dolor vitae neque. Nunc in neque at
+              quam vehicula dapibus sed vel lectus. Quisque fermentum enim ut placerat hendrerit.
+              Maecenas rhoncus ultricies augue.
             </p>
             <a className="Content-link" href="/blog/post-01">
               Read more

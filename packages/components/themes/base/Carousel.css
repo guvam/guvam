@@ -40,7 +40,7 @@
   inline-size: 100%;
 
   &.Carousel--type-gallery {
-    inline-size: 25%;
+    inline-size: 50%;
   }
 
   &.Carousel--type-clip {
@@ -84,7 +84,7 @@
   &.Carousel-slideGalleryItem {
     --scale: 0.8;
 
-    opacity: 0.5;
+    opacity: 0.2;
 
     &.Carousel-slideItem--active {
       --scale: 1;
@@ -107,9 +107,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
-  vertical-align: middle;
-  background-color: oklch(60% 0 89deg / 50%);
+  block-size: 3rem;
+  aspect-ratio: 1;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: var(--ui);
   border-radius: var(--borderRadius);
   transform: translateY(-50%);
 
@@ -118,16 +120,16 @@
   }
 
   &.Carousel-button--previous {
-    inset-inline-start: 1rem;
+    inset-inline-start: 2rem;
   }
 
   &.Carousel-button--next {
-    inset-inline-end: 1rem;
+    inset-inline-end: 2rem;
   }
 
   &.Carousel-button--animate {
-    inset-block-start: 5%;
-    inset-inline-end: 1rem;
+    inset-block-start: 1rem;
+    inset-inline-end: 2rem;
     transform: translateY(0);
   }
 }

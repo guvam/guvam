@@ -45,7 +45,7 @@ export const Portfolio: FC = () => (
             <div className="Avatar">
               <Image
                 className="Avatar-image"
-                src="/blocks/profile/Kat.jpg"
+                src="/blocks/avatars/avatar-2.jpg"
                 alt="Profile Image of Jane Doe"
                 width={36}
                 height={36}

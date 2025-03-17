@@ -124,6 +124,12 @@
   &.Carousel-button--next {
     inset-inline-end: 1rem;
   }
+
+  &.Carousel-button--animate {
+    inset-block-start: 5%;
+    inset-inline-end: 1rem;
+    transform: translateY(0);
+  }
 }
 
 .Carousel-menu {
@@ -302,7 +308,8 @@
   justify-content: center;
   inline-size: 100%;
   block-size: 400px;
+  padding: 2em;
   vertical-align: middle;
-  background-color: oklch(0% 0 0deg / 50%);
+  background-color: oklch(0% 0 0deg / 40%);
   border-radius: var(--borderRadius);
 }

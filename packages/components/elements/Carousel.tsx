@@ -13,7 +13,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
+import { ChevronLeft, ChevronRight, PauseFill, PlayFill } from "react-bootstrap-icons";
 
 import type { ContextType, TagProps } from "./utils/TagCreate";
 import { TagCreate } from "./utils/TagCreate";
@@ -43,13 +43,21 @@ export const CarouselSlideCountStateContext = createContext<{
   setSlideCount: () => null,
 });
 
+export const CarouselAnimateStateContext = createContext<{
+  animate: boolean;
+  setAnimate: (value: boolean) => void;
+}>({
+  animate: false,
+  setAnimate: () => null,
+});
+
 interface CarouselProps {
   children: ReactNode;
   className?: string;
   activeIndex?: number;
   viewCount?: number;
-  loop?: boolean;
   animate?: boolean;
+  loop?: boolean;
   animateTime?: number;
 }
 
@@ -61,11 +69,12 @@ export const Carousel: FC<CarouselProps> = ({
   viewCount = 1,
   activeIndex = 0,
   loop = false,
-  animate = false,
+  animate: initialAnimate = false,
   animateTime = 4000,
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(activeIndex);
   const [slideCount, setSlideCount] = useState<number | null>(null);
+  const [animate, setAnimate] = useState<boolean>(initialAnimate);
   const animateRef = useRef<NodeJS.Timeout | null>(null);
 
   const updateIndex = useCallback(
@@ -111,22 +120,32 @@ export const Carousel: FC<CarouselProps> = ({
     [slideCount, setSlideCount]
   );
 
+  const animateContext = useMemo(
+    () => ({
+      animate,
+      setAnimate,
+    }),
+    [animate]
+  );
+
   return (
     <CarouselIndexStateContext.Provider value={indexContext}>
       <CarouselSlideCountStateContext.Provider value={slideContext}>
-        <div
-          className={className}
-          style={
-            {
-              "--Carousel-activeIndex": currentIndex,
-              "--Carousel-viewCount": viewCount,
-              "--Carousel-slideCount": slideCount,
-              "--Carousel-scrollTime": `${animateTime}ms`,
-            } as never
-          }
-        >
-          {children}
-        </div>
+        <CarouselAnimateStateContext.Provider value={animateContext}>
+          <div
+            className={className}
+            style={
+              {
+                "--Carousel-activeIndex": currentIndex,
+                "--Carousel-viewCount": viewCount,
+                "--Carousel-slideCount": slideCount,
+                "--Carousel-scrollTime": `${animateTime}ms`,
+              } as never
+            }
+          >
+            {children}
+          </div>
+        </CarouselAnimateStateContext.Provider>
       </CarouselSlideCountStateContext.Provider>
     </CarouselIndexStateContext.Provider>
   );
@@ -147,6 +166,19 @@ export const CarouselTag = <T extends keyof JSX.IntrinsicElements>({
     {...props}
   />
 );
+
+export const CarouselAnimateToggleButton: FC = () => {
+  const { animate, setAnimate } = useContext(CarouselAnimateStateContext);
+
+  return (
+    <button
+      className="Carousel-button Carousel-button--animate"
+      onClick={() => setAnimate(!animate)}
+    >
+      {animate ? <PauseFill /> : <PlayFill />}
+    </button>
+  );
+};
 
 interface CarouseButtonProps {
   slideAmount?: number;

@@ -51,7 +51,7 @@ export const CarouselImages: FC = () => {
         <CarouseSlideContainer>
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem" key={i}>
-              <div className="Card">
+              <div className="Card Carousel-exampleCard">
                 <Image src={img} alt="" width={736} height={414} className="Content-image" />
                 <h3 className="Card-header">Heading 1</h3>
                 <p className="Card-content">Here is the Content</p>
@@ -99,7 +99,7 @@ export const CarouselImages: FC = () => {
       </Carousel>
 
       <div className="Carousel-example">
-        <div className="Carousel-exampleCard">
+        <div className="Carousel-exampleContent">
           <div className="Carousel-exampleImage">
             {selectedImageIndex !== null ? (
               <Image

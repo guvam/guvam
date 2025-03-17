@@ -303,6 +303,10 @@
 }
 
 .Carousel-exampleCard {
+  margin: 1em;
+}
+
+.Carousel-exampleContent {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -71,7 +71,7 @@ export const Carousel: FC<CarouselProps> = ({
   const updateIndex = useCallback(
     (i: number) => {
       if (slideCount) {
-        setCurrentIndex(loop ? (slideCount + i) % slideCount : clamp(i, 0, slideCount - 1));
+        setCurrentIndex(loop ? i : clamp(i, 0, slideCount - 1));
       }
     },
     [loop, slideCount]
@@ -93,7 +93,7 @@ export const Carousel: FC<CarouselProps> = ({
         clearTimeout(animateRef.current);
       }
     };
-  }, [animate, animateTime, currentIndex]);
+  }, [animate, animateTime, currentIndex, slideCount]);
 
   const indexContext = useMemo(
     () => ({
@@ -199,7 +199,9 @@ export const CarouseMenu: FC = () => {
   );
 };
 
-export const CarouseTrack: FC<{ children: ReactElement<HTMLElement>[] }> = ({ children }) => {
+export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }> = ({
+  children,
+}) => {
   const { slideCount, setSlideCount } = useContext(CarouselSlideCountStateContext);
   const { currentIndex } = useContext(CarouselIndexStateContext);
   const [activeIndex, setActiveIndex] = useState<number>(currentIndex);
@@ -214,23 +216,19 @@ export const CarouseTrack: FC<{ children: ReactElement<HTMLElement>[] }> = ({ ch
     const directionRight =
       currentIndex > activeIndex || (currentIndex === 0 && activeIndex === count - 1);
 
-    console.log(currentIndex, activeIndex, slideCount);
-
     if (directionRight) {
       const move = Math.floor(count / 2);
       const stop = (count + currentIndex - 1 - move) % count;
       setStopIndex(stop);
-      console.log(stop, directionRight);
     } else {
       const move = Math.ceil(count / 2);
       const stop = (count + currentIndex + move) % count;
       setStopIndex(stop);
-      console.log(stop, directionRight);
     }
 
     setTimeout(() => {
-      setStopIndex(null);
-    }, 50);
+      /*setStopIndex(null);*/
+    }, 500);
 
     setActiveIndex(currentIndex);
   }, [currentIndex]);
@@ -243,13 +241,13 @@ export const CarouseTrack: FC<{ children: ReactElement<HTMLElement>[] }> = ({ ch
             [element.props.className]: true,
             "Carousel-slideItem--previous":
               (children.length + activeIndex - 1) % children.length === i,
-            "Carousel-slideItem--active": activeIndex === i,
+            "Carousel-slideItem--active": (children.length + activeIndex) % children.length === i,
             "Carousel-slideItem--next": (children.length + activeIndex + 1) % children.length === i,
             "Carousel-slideItem--stop": stopIndex === i,
           }),
           style: {
             "--Carousel-slideItemIndex": i,
-            "--currentIndex": activeIndex,
+            "--stop": stopIndex,
           } as never,
         })
       )}

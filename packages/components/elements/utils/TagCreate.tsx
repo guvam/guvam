@@ -1,3 +1,5 @@
+"use client";
+
 import type { ComponentProps, Context, JSX, ReactNode, RefObject } from "react";
 import { createElement, useCallback, useContext, useRef } from "react";
 import type { Record } from "react-bootstrap-icons";

@@ -7,7 +7,7 @@
 @property --Carousel-slideCount {
   inherits: true;
   syntax: "<number>";
-  initial-value: 1;
+  initial-value: 100;
 }
 
 @property --Carousel-viewCount {
@@ -19,7 +19,7 @@
 @property --Carousel-animateDuration {
   inherits: true;
   syntax: "<time>";
-  initial-value: 1000ms;
+  initial-value: 500ms;
 }
 
 @property --Carousel-slideItemIndex {
@@ -38,81 +38,59 @@
   position: relative;
   display: block;
   inline-size: 100%;
-  overflow: clip;
-}
 
-.Carousel--type-gallery {
-  position: relative;
-  inline-size: 25%;
-  overflow: visible;
-  transition:
-    transform var(--Carousel-animateDuration) ease-out,
-    opacity var(--Carousel-animateDuration) ease-out,
-    scale var(--Carousel-animateDuration) ease-out;
+  &.Carousel--type-gallery {
+    inline-size: 25%;
+  }
+
+  &.Carousel--type-clip {
+    overflow: clip;
+  }
 }
 
 .Carousel-slideContainer {
   display: grid;
   grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
   inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
-  block-size: auto;
+  block-size: 100%;
   transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-activeIndex)));
   transition: transform var(--Carousel-animateDuration) ease-out;
-
-  .Carousel--type-gallery & {
-    transform: none;
-    transition: none;
-  }
 }
 
 .Carousel-slideItem {
+  --move: round(calc(var(--Carousel-slideCount) - 1) / 2, 1) - 1;
+
   position: relative;
   block-size: 100%;
+  transform: translateX(
+    calc(
+      100% * var(--Carousel-slideCount) *
+        round(
+          down,
+          (
+              var(--Carousel-activeIndex) + var(--Carousel-slideCount) -
+                var(--Carousel-slideItemIndex) - var(--move)
+            ) /
+            var(--Carousel-slideCount),
+          1
+        )
+    )
+  );
 
-  .Carousel--type-gallery & {
-    --move: round(calc(var(--Carousel-slideCount) - 1) / 2, 1);
+  &.Carousel-slideItem--stop {
+    transition: none;
+  }
+
+  &.Carousel-slideGalleryItem {
     --scale: 0.8;
 
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
     opacity: 0.5;
-    transform: translateX(
-        calc(
-          100% *
-            (
-              mod(
-                  var(--Carousel-slideItemIndex) - var(--Carousel-activeIndex) + var(--move),
-                  var(--Carousel-slideCount)
-                ) -
-                var(--move)
-            )
-        )
-      )
-      scale(var(--scale), var(--scale));
-    transition:
-      transform var(--Carousel-animateDuration) ease-out,
-      scale var(--Carousel-animateDuration) ease-out,
-      opacity var(--Carousel-animateDuration) ease-out;
-  }
 
-  .Carousel--type-gallery &.Carousel-slideItem--active {
-    --scale: 1;
+    &.Carousel-slideItem--active {
+      --scale: 1;
 
-    outline: 3px solid yellowgreen;
-    opacity: 1;
-  }
-
-  .Carousel--type-gallery &.Carousel-slideItem--next {
-    outline: 3px solid green;
-  }
-
-  .Carousel--type-gallery &.Carousel-slideItem--previous {
-    outline: 3px solid green;
-  }
-
-  .Carousel--type-gallery &.Carousel-slideItem--stop {
-    outline: 3px solid red;
-    transition: none;
+      opacity: 1;
+    }
   }
 }
 

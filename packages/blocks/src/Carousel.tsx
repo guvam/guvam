@@ -3,7 +3,7 @@ import {
   CarouseButtonPrevious,
   Carousel,
   CarouseMenu,
-  CarouseTrack,
+  CarouseSlideContainer,
 } from "@guvam/components/elements/Carousel";
 import Image from "next/image";
 import type { FC } from "react";
@@ -21,22 +21,22 @@ const IMAGES = [
 export const CarouselImages: FC = () => (
   <div className="List-stack">
     <div className="Carousel-containerFade">
-      <Carousel viewCount={1} className="Carousel" loop>
-        <CarouseTrack>
+      <Carousel viewCount={1} className="Carousel Carousel--type-gallery" loop>
+        <CarouseSlideContainer>
           {IMAGES.map((img, i) => (
-            <li className="Carousel-slideItem" key={i}>
+            <li className="Carousel-slideItem Carousel-slideGalleryItem" key={i}>
               <Image src={img} alt="" width={736} height={414} className="Carousel-slideImage" />
             </li>
           ))}
-        </CarouseTrack>
+        </CarouseSlideContainer>
         <CarouseButtonNext />
         <CarouseButtonPrevious />
         <CarouseMenu />
       </Carousel>
     </div>
 
-    {/*<Carousel viewCount={4} className="Carousel--type-animated" animate>
-      <CarouseTrack>
+    <Carousel viewCount={2} className="Carousel Carousel--type-clip" animate loop>
+      <CarouseSlideContainer>
         {IMAGES.map((img, i) => (
           <li className="Carousel-slideItem" key={i}>
             <div className="Card">
@@ -46,14 +46,14 @@ export const CarouselImages: FC = () => (
             </div>
           </li>
         ))}
-      </CarouseTrack>
+      </CarouseSlideContainer>
       <CarouseButtonNext />
       <CarouseButtonPrevious />
       <CarouseMenu />
     </Carousel>
 
-    <Carousel viewCount={1} animate className="Carousel--type-animated">
-      <CarouseTrack>
+    <Carousel viewCount={1} animate className="Carousel">
+      <CarouseSlideContainer>
         {IMAGES.map((img, i) => (
           <li className="Carousel-slideItem" key={i}>
             <Image src={img} alt="" width={736} height={414} className="Carousel-slideImage" />
@@ -63,14 +63,14 @@ export const CarouselImages: FC = () => (
             </div>
           </li>
         ))}
-      </CarouseTrack>
+      </CarouseSlideContainer>
       <CarouseButtonNext />
       <CarouseButtonPrevious />
       <CarouseMenu />
     </Carousel>
 
-    <Carousel className="Carousel--type-gallery">
-      <CarouseTrack>
+    <Carousel className="Carousel Carousel--type-clip" loop>
+      <CarouseSlideContainer>
         {IMAGES.map((img, i) => (
           <li className="Carousel-slideItem" key={i}>
             <div className="Card" key={i}>
@@ -80,10 +80,10 @@ export const CarouselImages: FC = () => (
             </div>
           </li>
         ))}
-      </CarouseTrack>
+      </CarouseSlideContainer>
       <CarouseButtonNext />
       <CarouseButtonPrevious />
       <CarouseMenu />
-    </Carousel>*/}
+    </Carousel>
   </div>
 );

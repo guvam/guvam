@@ -148,7 +148,11 @@ export const CarouselTag = <T extends keyof JSX.IntrinsicElements>({
   />
 );
 
-export const CarouseButtonPrevious: FC = () => {
+interface CarouseButtonProps {
+  slideAmount?: number;
+}
+
+export const CarouseButtonPrevious: FC<CarouseButtonProps> = ({ slideAmount = 1 }) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
 
   return (
@@ -156,14 +160,14 @@ export const CarouseButtonPrevious: FC = () => {
       tag="button"
       command="carousel:previous"
       className="Button Button--icon Carousel-button Carousel-button--previous"
-      onClick={() => setCurrentIndex(currentIndex - 1)}
+      onClick={() => setCurrentIndex(currentIndex - slideAmount)}
     >
       <ChevronLeft />
     </CarouselTag>
   );
 };
 
-export const CarouseButtonNext: FC = () => {
+export const CarouseButtonNext: FC<CarouseButtonProps> = ({ slideAmount = 1 }) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
 
   return (
@@ -171,7 +175,7 @@ export const CarouseButtonNext: FC = () => {
       tag="button"
       command="carousel:next"
       className="Button Button--icon Carousel-button Carousel-button--next"
-      onClick={() => setCurrentIndex(currentIndex + 1)}
+      onClick={() => setCurrentIndex(currentIndex + slideAmount)}
     >
       <ChevronRight />
     </CarouselTag>
@@ -182,6 +186,8 @@ export const CarouseMenu: FC = () => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
   const { slideCount } = useContext(CarouselSlideCountStateContext);
 
+  const activeIndex = slideCount ? currentIndex % slideCount : 0;
+
   return (
     <CarouselTag tag="menu" command="carousel:menu" className="Carousel-menu">
       {[...Array(slideCount)].map((_, i) => (
@@ -189,7 +195,7 @@ export const CarouseMenu: FC = () => {
           <button
             className={classList({
               "Carousel-menuItem": true,
-              "Carousel-menuItem--active": i === currentIndex,
+              "Carousel-menuItem--active": i === activeIndex,
             })}
             onClick={() => setCurrentIndex(i)}
           />

@@ -273,8 +273,25 @@
   }
 }
 
-.Carousel-exampleContainer {
+.Carousel-example {
   display: flex;
-  max-inline-size: 358px;
-  margin: 10px;
+  flex-direction: column;
+  gap: 5px;
+  align-self: center;
+  inline-size: 50%;
+  padding: 1.5em;
+  background-color: var(--primaryBlock);
+  border: 1px solid var(--primary);
+  border-radius: var(--borderRadius);
+}
+
+.Carousel-exampleCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 400px;
+  vertical-align: middle;
+  background-color: oklch(0% 0 0deg / 50%);
+  border-radius: var(--borderRadius);
 }

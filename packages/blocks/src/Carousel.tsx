@@ -85,5 +85,23 @@ export const CarouselImages: FC = () => (
       <CarouseButtonPrevious />
       <CarouseMenu />
     </Carousel>
+    <div className="Carousel-example">
+      <div className="Carousel-exampleCard">
+        <div className="Carousel-exampleImage">Example</div>
+      </div>
+      <div className="Carousel-exampleContainer">
+        <Carousel viewCount={3} className="Carousel Carousel--type-clip">
+          <CarouseSlideContainer>
+            {IMAGES.map((img, i) => (
+              <li className="Carousel-slideItem" key={i}>
+                <Image src={img} alt="" width={736} height={414} className="Carousel-slideImage" />
+              </li>
+            ))}
+          </CarouseSlideContainer>
+          <CarouseButtonNext />
+          <CarouseButtonPrevious />
+        </Carousel>
+      </div>
+    </div>
   </div>
 );

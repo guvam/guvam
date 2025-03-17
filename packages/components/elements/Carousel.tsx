@@ -202,7 +202,7 @@ export const CarouseMenu: FC = () => {
 export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }> = ({
   children,
 }) => {
-  const { slideCount, setSlideCount } = useContext(CarouselSlideCountStateContext);
+  const { setSlideCount } = useContext(CarouselSlideCountStateContext);
   const { currentIndex } = useContext(CarouselIndexStateContext);
   const [activeIndex, setActiveIndex] = useState<number>(currentIndex);
   const [stopIndex, setStopIndex] = useState<number | null>(null);

@@ -18,7 +18,7 @@
     "check:prettier": "prettier . --check",
     "fix": "npm-run-all fix:*",
     "fix:eslint": "eslint --config eslint.config.js --fix **/*.{ts,tsx}",
-    "fix:stylelint": "stylelint packages/**/*.css -c .stylelintrc.js --fixy",
+    "fix:stylelint": "stylelint packages/**/*.css -c .stylelintrc.js --fix",
     "fix:prettier": "prettier . --check --write",
     "update-veyrsion-patch": "bumpp -r --no-push --no-tag --no-commit patch"
   },

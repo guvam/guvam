@@ -159,7 +159,7 @@ export const CarouseButtonPrevious: FC<CarouseButtonProps> = ({ slideAmount = 1 
     <CarouselTag
       tag="button"
       command="carousel:previous"
-      className="Button Button--icon Carousel-button Carousel-button--previous"
+      className="Carousel-button Carousel-button--previous"
       onClick={() => setCurrentIndex(currentIndex - slideAmount)}
     >
       <ChevronLeft />
@@ -174,7 +174,7 @@ export const CarouseButtonNext: FC<CarouseButtonProps> = ({ slideAmount = 1 }) =
     <CarouselTag
       tag="button"
       command="carousel:next"
-      className="Button Button--icon Carousel-button Carousel-button--next"
+      className="Carousel-button Carousel-button--next"
       onClick={() => setCurrentIndex(currentIndex + slideAmount)}
     >
       <ChevronRight />

@@ -104,7 +104,18 @@
 .Carousel-button {
   position: absolute !important;
   inset-block-start: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  vertical-align: middle;
+  background-color: oklch(60% 0 89deg / 50%);
+  border-radius: var(--borderRadius);
   transform: translateY(-50%);
+
+  &:hover {
+    background-color: var(--uiHover);
+  }
 
   &.Carousel-button--previous {
     inset-inline-start: 1rem;

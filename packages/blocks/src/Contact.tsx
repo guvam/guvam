@@ -11,27 +11,39 @@ export const Contact = () => (
     <fieldset className="Grid Grid--column-2">
       <label className="Control">
         <span className="Control-label">First name</span>
-        <input type="text" autoComplete="given-name" className="Input" placeholder="Jane" />
+        <div className="Input">
+          <input type="text" autoComplete="given-name" placeholder="Jane" />
+        </div>
       </label>
       <label className="Control">
         <span className="Control-label">Last name</span>
-        <input type="text" autoComplete="family-name" className="Input" placeholder="Doe" />
+        <div className="Input">
+          <input type="text" autoComplete="family-name" placeholder="Doe" />
+        </div>
       </label>
       <label className="Control">
         <span className="Control-label">Company</span>
-        <input type="text" name="username" className="Input" />
+        <div className="Input">
+          <input type="text" name="username" />
+        </div>
       </label>
       <label className="Control">
         <span className="Control-label">Email</span>
-        <input type="text" name="username" className="Input" placeholder="Jane.Doe@gmail.com" />
+        <div className="Input">
+          <input type="text" name="username" placeholder="Jane.Doe@gmail.com" />
+        </div>
       </label>
       <label className="Control">
         <span className="Control-label">Phone Number</span>
-        <input type="text" name="username" className="Input" placeholder="+372 123 4242" />
+        <div className="Input">
+          <input type="text" name="username" placeholder="+372 123 4242" />
+        </div>
       </label>
       <label className="Control">
         <span className="Control-label">Inquiry Message</span>
-        <textarea name="about" className="Input Input--type-textarea"></textarea>
+        <div className="Input">
+          <textarea name="about"></textarea>
+        </div>
       </label>
       <label className="Control">
         <input type="checkbox" className="Switch" />
@@ -59,21 +71,21 @@ export const ContactLocation = () => (
       </p>
     </hgroup>
     <ul className="Grid Grid--column-3">
-      <li className="Card">
+      <li className="Card Card--muted">
         <div className="Card-content Content">
           <h3 className="Content-heading4">New York</h3>
           <p className="Content-text">1234, New York Street</p>
           <p className="Content-text">New York, NY12345</p>
         </div>
       </li>
-      <li className="Card">
+      <li className="Card Card--muted">
         <div className="Card-content Content">
           <h3 className="Content-heading4">Los Angeles</h3>
           <p className="Content-text">1234, Los Angeles Street </p>
           <p className="Content-text">Los Angeles, CA12345</p>
         </div>
       </li>
-      <li className="Card">
+      <li className="Card Card--muted">
         <div className="Card-content Content">
           <h3 className="Content-heading4">Toronto</h3>
           <p className="Content-text">1234, Toronto Street</p>
@@ -95,28 +107,28 @@ export const ContactCards = () => (
       </p>
     </hgroup>
     <ul className="Grid Grid--column-4">
-      <li className="Card">
+      <li className="Card Card--muted">
         <div className="Card-content Content">
           <h3 className="Content-heading3">Collab</h3>
           <p className="Content-text">+372 123 45 678</p>
           <a className="Content-link">Collab@email.com</a>
         </div>
       </li>
-      <li className="Card">
+      <li className="Card Card--muted">
         <div className="Card-content Content">
           <h3 className="Content-heading3">Collab</h3>
           <p className="Content-text">+372 123 45 678</p>
           <a className="Content-link">Collab@email.com</a>
         </div>
       </li>
-      <li className="Card">
+      <li className="Card Card--muted">
         <div className="Card-content Content">
           <h3 className="Content-heading3">Collab</h3>
           <p className="Content-text">+372 123 45 678</p>
           <a className="Content-link">Collab@email.com</a>
         </div>
       </li>
-      <li className="Card">
+      <li className="Card Card--muted">
         <div className="Card-content Content">
           <h3 className="Content-heading3">Collab</h3>
           <p className="Content-text">+372 123 45 678</p>
@@ -145,27 +157,41 @@ export const ContactSplit = () => (
       <fieldset className="Grid Grid--column-3">
         <label className="Control">
           <span className="Control-label">First name</span>
-          <input type="text" autoComplete="given-name" className="Input" placeholder="Jane" />
+          <div className="Card-content Content">
+            <div className="Input">
+              <input type="text" autoComplete="given-name" placeholder="Jane" />
+            </div>
+          </div>
         </label>
         <label className="Control">
           <span className="Control-label">Last name</span>
-          <input type="text" autoComplete="family-name" className="Input" placeholder="Doe" />
+          <div className="Input">
+            <input type="text" autoComplete="family-name" placeholder="Doe" />
+          </div>
         </label>
         <label className="Control">
           <span className="Control-label">Company</span>
-          <input type="text" name="username" className="Input" />
+          <div className="Input">
+            <input type="text" name="username" />
+          </div>
         </label>
         <label className="Control">
           <span className="Control-label">Email</span>
-          <input type="text" name="username" className="Input" placeholder="Jane.Doe@gmail.com" />
+          <div className="Input">
+            <input type="text" name="username" placeholder="Jane.Doe@gmail.com" />
+          </div>
         </label>
         <label className="Control">
           <span className="Control-label">Phone Number</span>
-          <input type="text" name="username" className="Input" placeholder="+372 123 4242" />
+          <div className="Input">
+            <input type="text" name="username" placeholder="+372 123 4242" />
+          </div>
         </label>
         <label className="Control">
           <span className="Control-label">Inquiry Message</span>
-          <textarea name="about" className="Input Input--type-textarea"></textarea>
+          <div className="Input">
+            <textarea name="about"></textarea>
+          </div>
         </label>
         <label className="Checkbox-label">
           <input type="checkbox" className="Switch" />
@@ -187,23 +213,23 @@ export const ContactSplitImage = () => (
       <fieldset className="Grid">
         <label className="Control">
           <span className="Control-label">First name</span>
-          <input type="text" autoComplete="given-name" className="Input" placeholder="Jane" />
+          <input type="text" autoComplete="given-name" placeholder="Jane" />
         </label>
         <label className="Control">
           <span className="Control-label">Last name</span>
-          <input type="text" autoComplete="family-name" className="Input" placeholder="Doe" />
+          <input type="text" autoComplete="family-name" placeholder="Doe" />
         </label>
         <label className="Control">
           <span className="Control-label">Company</span>
-          <input type="text" name="username" className="Input" />
+          <input type="text" name="username" />
         </label>
         <label className="Control">
           <span className="Control-label">Email</span>
-          <input type="text" name="username" className="Input" placeholder="Jane.Doe@gmail.com" />
+          <input type="text" name="username" placeholder="Jane.Doe@gmail.com" />
         </label>
         <label className="Control">
           <span className="Control-label">Phone Number</span>
-          <input type="text" name="username" className="Input" placeholder="+372 123 4242" />
+          <input type="text" name="username" placeholder="+372 123 4242" />
         </label>
         <label className="Control">
           <span className="Control-label">Inquiry Message</span>
@@ -220,14 +246,13 @@ export const ContactSplitImage = () => (
         </div>
       </fieldset>
     </form>
-    <div className="Hero-image">
-      <Image
-        className="Image"
-        src="/blocks/profile/Kat.jpg"
-        alt="Placeholder"
-        width={384}
-        height={438}
-      />
-    </div>
+
+    <Image
+      className="Hero-image"
+      src="/blocks/avatars/avatar-2.jpg"
+      alt="Placeholder"
+      width={384}
+      height={438}
+    />
   </article>
 );

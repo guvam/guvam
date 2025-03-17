@@ -1,11 +1,10 @@
 "use client";
 
-import type { ComponentProps, FC, JSX, ReactNode } from "react";
+import type { FC, JSX, ReactNode } from "react";
 import { createContext, useMemo } from "react";
 
-import { TagCreate } from "./TagCreate";
-import type { ContextType } from "./utils/useRefWithCallback";
-import { useRefWithCallback } from "./utils/useRefWithCallback";
+import type { ContextType, TagProps } from "./utils/TagCreate";
+import { TagCreate, useRefWithCallback } from "./utils/TagCreate";
 
 type ModalCommandType = "dialog:open" | "dialog:close" | "dialog:body";
 
@@ -53,17 +52,11 @@ export const Modal: FC<{
   return <ModalContext.Provider value={value}>{props.children}</ModalContext.Provider>;
 };
 
-export type TagProps<T extends keyof JSX.IntrinsicElements> = {
-  tag: T;
-  command: ModalCommandType;
-  children: ReactNode;
-} & ComponentProps<T>;
-
 export const ModalTag = <T extends keyof JSX.IntrinsicElements>({
   tag,
   command,
   ...props
-}: TagProps<T>) => (
+}: TagProps<T, ModalCommandType>) => (
   // TODO: FIX typing
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-expect-error

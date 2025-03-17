@@ -1,19 +1,21 @@
 import { TwitterX } from "react-bootstrap-icons";
 
 export const Newsletter = () => (
-  <ul className="List-stack">
-    <li className="Content">
+  <ul className="Grid">
+    <li className="Content Grid--span-2">
       <h1 className="Content-heading4">Subscribe to our newsletter</h1>
       <p className="Content-text">
         Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor
         incididunt dolore.
       </p>
       <div className="List">
-        <input className="Input" type="Text" placeholder="Enter your email" />
+        <div className="Input">
+          <input type="Text" placeholder="Enter your email" />
+        </div>
         <button className="Button">Subscribe</button>
       </div>
     </li>
-    <li>
+    <li className="Grid--span-2">
       <TwitterX />
       <h3 className="Content-heading4">Weekly articles</h3>
       <p className="Content-text">
@@ -21,7 +23,7 @@ export const Newsletter = () => (
         amet.
       </p>
     </li>
-    <li>
+    <li className="Grid--span-2">
       <TwitterX />
       <h3 className="Content-heading4">Weekly articles</h3>
       <p className="Content-text">
@@ -40,7 +42,9 @@ export const NewsletterHorizontal = () => (
       incididunt dolore.
     </p>
     <div className="List">
-      <input className="Input" type="Text" placeholder="Enter your email" />
+      <div className="Input">
+        <input type="Text" placeholder="Enter your email" />
+      </div>
       <button className="Button">Subscribe</button>
     </div>
     <p className="Content-text">

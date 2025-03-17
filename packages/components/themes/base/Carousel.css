@@ -1,7 +1,13 @@
+@property --Carousel-activeIndex {
+  inherits: true;
+  syntax: "<number>";
+  initial-value: 0;
+}
+
 @property --Carousel-slideCount {
   inherits: true;
   syntax: "<number>";
-  initial-value: 1;
+  initial-value: 100;
 }
 
 @property --Carousel-viewCount {
@@ -10,35 +16,85 @@
   initial-value: 1;
 }
 
-@property --Carousel-currentIndex {
+@property --Carousel-animateDuration {
+  inherits: true;
+  syntax: "<time>";
+  initial-value: 500ms;
+}
+
+@property --Carousel-slideItemIndex {
   inherits: true;
   syntax: "<number>";
   initial-value: 0;
+}
+
+@property --scale {
+  inherits: true;
+  syntax: "<number>";
+  initial-value: 1;
 }
 
 .Carousel {
   position: relative;
   display: block;
   inline-size: 100%;
-  aspect-ratio: 2;
-  overflow: clip;
+
+  &.Carousel--type-gallery {
+    inline-size: 50%;
+  }
+
+  &.Carousel--type-clip {
+    overflow: clip;
+  }
 }
 
-.Carousel-track {
+.Carousel-slideContainer {
   display: grid;
   grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
   inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
   block-size: 100%;
-  transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-currentIndex)));
-  transition: transform 250ms ease-in-out;
+  transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-activeIndex)));
+  transition: transform var(--Carousel-animateDuration) ease-out;
 }
 
-.Carousel-trackItem {
+.Carousel-slideItem {
+  --move: round(calc(var(--Carousel-slideCount) - 1) / 2, 1) - 1;
+
+  position: relative;
   block-size: 100%;
-  overflow: clip;
+  transform: translateX(
+    calc(
+      100% * var(--Carousel-slideCount) *
+        round(
+          down,
+          (
+              var(--Carousel-activeIndex) + var(--Carousel-slideCount) -
+                var(--Carousel-slideItemIndex) - var(--move)
+            ) /
+            var(--Carousel-slideCount),
+          1
+        )
+    )
+  );
+
+  &.Carousel-slideItem--stop {
+    transition: none;
+  }
+
+  &.Carousel-slideGalleryItem {
+    --scale: 0.8;
+
+    opacity: 0.2;
+
+    &.Carousel-slideItem--active {
+      --scale: 1;
+
+      opacity: 1;
+    }
+  }
 }
 
-.Carousel-trackImage {
+.Carousel-slideImage {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
@@ -46,47 +102,220 @@
 }
 
 .Carousel-button {
-  position: absolute;
+  position: absolute !important;
   inset-block-start: 50%;
-  padding: 5px;
-  font-size: 24px;
-  color: var(--primaryText);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 3rem;
+  aspect-ratio: 1;
+  font-size: 1.5rem;
   cursor: pointer;
-  background-color: var(--primary);
-  border-radius: 0.25rem;
+  background-color: var(--ui);
+  border-radius: var(--borderRadius);
   transform: translateY(-50%);
 
+  &:hover {
+    background-color: var(--uiHover);
+  }
+
   &.Carousel-button--previous {
-    inset-inline-start: 1rem;
+    inset-inline-start: 2rem;
   }
 
   &.Carousel-button--next {
-    inset-inline-end: 1rem;
+    inset-inline-end: 2rem;
+  }
+
+  &.Carousel-button--animate {
+    inset-block-start: 1rem;
+    inset-inline-end: 2rem;
+    transform: translateY(0);
   }
 }
 
-.Carousel-nav {
+.Carousel-menu {
   position: absolute;
   inset-block-end: 1rem;
   inset-inline-start: 50%;
   display: flex;
-  gap: 8px;
   transform: translateX(-50%);
 }
 
-.Carousel-navItem {
-  inline-size: 12px;
-  block-size: 12px;
+.Carousel-menuItem {
+  --background: var(--primary);
+
+  padding: 0.5rem;
   cursor: pointer;
-  background-color: var(--primary);
-  border-radius: 50%;
-  transition: background-color 0.3s ease-in-out;
 
   &:hover {
-    background-color: var(--surfaceHover);
+    --background: var(--surfaceHover);
   }
 
-  &.Carousel-navItem--active {
-    background-color: var(--uiActive);
+  &::after {
+    display: block;
+    block-size: 0.75rem;
+    aspect-ratio: 1;
+    content: "";
+    background-color: var(--background);
+    border-radius: 50%;
+    transition: background-color 200ms ease-in-out;
   }
+
+  &.Carousel-menuItem--active {
+    --background: var(--uiActive);
+  }
+}
+
+/*
+.Carousel--type-animated {
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  overflow: clip;
+
+  .Carousel-slideContainer {
+    position: relative;
+  }
+
+  .Carousel-slideItem {
+    inline-size: 100%;
+    block-size: 100%;
+    opacity: 1;
+    transition:
+      opacity var(--Carousel-animateDuration) ease-in-out,
+      transform var(--Carousel-animateDuration) ease-in-out;
+  }
+
+  .Carousel-trackItem--active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .Carousel-trackItem--previous {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+
+  .Carousel-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity var(--Carousel-animateDuration) ease-in-out var(--Carousel-animateDuration),
+      transform var(--Carousel-animateDuration) ease-in-out var(--Carousel-animateDuration);
+  }
+
+  .Carousel-trackItem--active .Carousel-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .Carousel-menuItem {
+    position: relative;
+    inline-size: 12px;
+    block-size: 12px;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .Carousel-navItem--active {
+    inline-size: 50px;
+    background-color: var(--primary);
+    background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    border-radius: 6px;
+    animation: FillNavItem var(--Carousel-animateDuration) linear forwards;
+
+    &::before {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 0;
+      block-size: 100%;
+      content: "";
+      background-color: var(--uiActive);
+      border-radius: 6px;
+    }
+  }
+}
+
+@keyframes FillNavItem {
+  from {
+    background-size: 0 100%;
+  }
+
+  to {
+    background-size: 100% 100%;
+  }
+}
+*/
+
+/* out */
+
+.Carousel-containerFade {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+
+  /* mask-image: linear-gradient(
+    to right,
+    oklch(0% 0 0deg / 0%) 0%,
+    oklch(0% 0 0deg) 3rem,
+    oklch(0% 0 0deg) calc(100% - 3rem),
+    oklch(0% 0 0deg / 0%) 100%
+  ); */
+}
+
+.Carousel-content {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration),
+    transform var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration);
+
+  .Carousel-trackItem--active & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Carousel-example {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-self: center;
+  inline-size: 50%;
+  padding: 1.5em;
+  background-color: var(--primaryBlock);
+  border: 1px solid var(--primary);
+  border-radius: var(--borderRadius);
+}
+
+.Carousel-exampleCard {
+  margin: 1em;
+}
+
+.Carousel-exampleContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 400px;
+  padding: 2em;
+  vertical-align: middle;
+  background-color: oklch(0% 0 0deg / 40%);
+  border-radius: var(--borderRadius);
 }

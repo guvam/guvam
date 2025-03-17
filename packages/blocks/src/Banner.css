@@ -1,5 +1,5 @@
 .Banner {
-  --Banner-color: var(--surface);
+  --Banner-color: var(--primaryText);
   --Banner-background: var(--primary);
 
   display: flex;

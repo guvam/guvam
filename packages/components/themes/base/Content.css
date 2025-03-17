@@ -75,10 +75,6 @@
   margin-block: 0.5em;
   font-size: 1em;
   line-height: 1.5;
-  color: light-dark(
-    oklch(from var(--surfaceText) calc(l + 0.15) c h),
-    oklch(from var(--surfaceText) calc(l - 0.15) c h)
-  );
 }
 
 .Content--bold {

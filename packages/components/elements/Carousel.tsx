@@ -180,18 +180,22 @@ export const CarouselAnimateToggleButton: FC = () => {
   );
 };
 
-interface CarouseButtonProps {
+interface CarousePreviousProps {
+  className?: string;
   slideAmount?: number;
 }
 
-export const CarouseButtonPrevious: FC<CarouseButtonProps> = ({ slideAmount = 1 }) => {
+export const CarouseButtonPrevious: FC<CarousePreviousProps> = ({
+  slideAmount = 1,
+  className = "Carousel-button Carousel-button--previous",
+}) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
 
   return (
     <CarouselTag
       tag="button"
       command="carousel:previous"
-      className="Carousel-button Carousel-button--previous"
+      className={className}
       onClick={() => setCurrentIndex(currentIndex - slideAmount)}
     >
       <ChevronLeft />
@@ -199,14 +203,22 @@ export const CarouseButtonPrevious: FC<CarouseButtonProps> = ({ slideAmount = 1 
   );
 };
 
-export const CarouseButtonNext: FC<CarouseButtonProps> = ({ slideAmount = 1 }) => {
+interface CarouseNextProps {
+  className?: string;
+  slideAmount?: number;
+}
+
+export const CarouseButtonNext: FC<CarouseNextProps> = ({
+  slideAmount = 1,
+  className = "Carousel-button Carousel-button--next",
+}) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
 
   return (
     <CarouselTag
       tag="button"
       command="carousel:next"
-      className="Carousel-button Carousel-button--next"
+      className={className}
       onClick={() => setCurrentIndex(currentIndex + slideAmount)}
     >
       <ChevronRight />
@@ -214,14 +226,18 @@ export const CarouseButtonNext: FC<CarouseButtonProps> = ({ slideAmount = 1 }) =
   );
 };
 
-export const CarouseMenu: FC = () => {
+interface CarouseMenuProps {
+  classname?: string;
+}
+
+export const CarouseMenu: FC<CarouseMenuProps> = ({ classname = "Carousel-menu" }) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
   const { slideCount } = useContext(CarouselSlideCountStateContext);
 
   const activeIndex = slideCount ? currentIndex % slideCount : 0;
 
   return (
-    <CarouselTag tag="menu" command="carousel:menu" className="Carousel-menu">
+    <CarouselTag tag="menu" command="carousel:menu" className={classname}>
       {[...Array(slideCount)].map((_, i) => (
         <li key={i}>
           <button
@@ -237,9 +253,14 @@ export const CarouseMenu: FC = () => {
   );
 };
 
-export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }> = ({
-  children,
-}) => {
+interface CarouselSlideContainerProps {
+  className?: string;
+  clip?: boolean;
+}
+
+export const CarouselSlideContainer: FC<
+  CarouselSlideContainerProps & { children: ReactElement<HTMLElement>[] }
+> = ({ children, className = "", clip = true }) => {
   const { setSlideCount } = useContext(CarouselSlideCountStateContext);
   const { currentIndex } = useContext(CarouselIndexStateContext);
 
@@ -247,23 +268,28 @@ export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }
     setSlideCount(children.length);
   }, [children]);
 
+  const combinedClassName = `Carousel-slideContent ${className}`;
+  const containerClassName = `Carousel-slideContainer ${clip ? "Carousel-slideContainer--clip" : ""}`;
+
   return (
-    <CarouselTag tag="ul" command="carousel:slidecontainer" className="Carousel-slideContainer">
-      {Children.map(children, (element, i) =>
-        cloneElement(element, {
-          className: classList({
-            [element.props.className]: true,
-            "Carousel-slideItem--previous":
-              (children.length + currentIndex - 1) % children.length === i,
-            "Carousel-slideItem--active": (children.length + currentIndex) % children.length === i,
-            "Carousel-slideItem--next":
-              (children.length + currentIndex + 1) % children.length === i,
-          }),
-          style: {
-            "--Carousel-slideItemIndex": i,
-          } as never,
-        })
-      )}
+    <CarouselTag tag="div" command="carousel:slidecontainer" className={containerClassName}>
+      <ul className={combinedClassName}>
+        {Children.map(children, (element, i) =>
+          cloneElement(element, {
+            className: classList({
+              [element.props.className]: true,
+              "Carousel-slideItem--previous":
+                (children.length + currentIndex - 1) % children.length === i,
+              "Carousel-slideItem--active": (children.length + currentIndex) % children.length === i,
+              "Carousel-slideItem--next":
+                (children.length + currentIndex + 1) % children.length === i
+            }),
+            style: {
+              "--Carousel-slideItemIndex": i,
+            } as never,
+          })
+        )}
+      </ul>
     </CarouselTag>
   );
 };

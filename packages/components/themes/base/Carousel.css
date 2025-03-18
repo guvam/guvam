@@ -57,7 +57,6 @@
   grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
   inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
   block-size: 100%;
-  overflow: clip;
   transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-activeIndex)));
   transition: transform var(--Carousel-animateDuration) ease-out;
 

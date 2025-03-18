@@ -1,13 +1,19 @@
+"use client";
+
+import "./Carousel.css";
+
 import {
   CarouseButtonNext,
   CarouseButtonPrevious,
   Carousel,
   CarouselAnimateToggleButton,
+  CarouselIndexStateContext,
+  CarouselSlideContainer,
   CarouseMenu,
-  CarouseSlideContainer,
 } from "@guvam/components/elements/Carousel";
 import Image from "next/image";
 import type { FC } from "react";
+import { useContext, useState } from "react";
 
 const IMAGES = [
   "/blocks/services/services-1.jpg",
@@ -19,23 +25,21 @@ const IMAGES = [
 ];
 
 export const CarouselImages: FC = () => {
-  /*
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
 
   const { currentIndex } = useContext(CarouselIndexStateContext);
-*/
 
   return (
     <div className="List-stack">
       <div className="Carousel-containerFade">
         <Carousel viewCount={1} className="Carousel Carousel--type-gallery" loop>
-          <CarouseSlideContainer>
+          <CarouselSlideContainer clip={false}>
             {IMAGES.map((img, i) => (
               <li className="Carousel-slideItem Carousel-slideGalleryItem" key={i}>
                 <Image src={img} alt="" width={875} height={500} className="Carousel-slideImage" />
               </li>
             ))}
-          </CarouseSlideContainer>
+          </CarouselSlideContainer>
           <CarouseButtonNext />
           <CarouseButtonPrevious />
           <CarouselAnimateToggleButton />
@@ -44,7 +48,7 @@ export const CarouselImages: FC = () => {
       </div>
 
       <Carousel viewCount={2} className="Carousel Carousel--type-clip" animate loop>
-        <CarouseSlideContainer>
+        <CarouselSlideContainer>
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem" key={i}>
               <div className="Card Carousel-exampleCard">
@@ -54,14 +58,14 @@ export const CarouselImages: FC = () => {
               </div>
             </li>
           ))}
-        </CarouseSlideContainer>
+        </CarouselSlideContainer>
         <CarouseButtonNext />
         <CarouseButtonPrevious />
         <CarouseMenu />
       </Carousel>
 
       <Carousel viewCount={1} animate className="Carousel">
-        <CarouseSlideContainer>
+        <CarouselSlideContainer clip={false}>
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem Carousel-slideGalleryItem" key={i}>
               <Image src={img} alt="" width={875} height={500} className="Carousel-slideImage" />
@@ -71,14 +75,14 @@ export const CarouselImages: FC = () => {
               </div>
             </li>
           ))}
-        </CarouseSlideContainer>
+        </CarouselSlideContainer>
         <CarouseButtonNext />
         <CarouseButtonPrevious />
         <CarouseMenu />
       </Carousel>
 
       <Carousel className="Carousel Carousel--type-clip" loop>
-        <CarouseSlideContainer>
+        <CarouselSlideContainer>
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem" key={i}>
               <div className="Card" key={i}>
@@ -88,13 +92,13 @@ export const CarouselImages: FC = () => {
               </div>
             </li>
           ))}
-        </CarouseSlideContainer>
+        </CarouselSlideContainer>
         <CarouseButtonNext />
         <CarouseButtonPrevious />
         <CarouseMenu />
       </Carousel>
 
-      {/* <div className="Carousel-example">
+      <div className="Carousel-example">
         <div className="Carousel-exampleContent">
           <div className="Carousel-exampleImage">
             {selectedImageIndex !== null ? (
@@ -118,7 +122,7 @@ export const CarouselImages: FC = () => {
         </div>
         <div className="Carousel-exampleContainer">
           <Carousel viewCount={3} className="Carousel Carousel--type-clip">
-            <CarouseSlideContainer>
+            <CarouselSlideContainer>
               {IMAGES.map((img, i) => (
                 <li
                   className="Carousel-slideItem"
@@ -135,20 +139,22 @@ export const CarouselImages: FC = () => {
                   />
                 </li>
               ))}
-            </CarouseSlideContainer>
+            </CarouselSlideContainer>
             <CarouseButtonNext />
             <CarouseButtonPrevious />
           </Carousel>
         </div>
       </div>
 
-      <Carousel viewCount={2} className="Carousel Carousel--type-clip" loop>
-        <CarouseSlideContainer>
+      <Carousel viewCount={1} className="Carousel Carousel--type-clip">
+        <CarouselSlideContainer className="Carousel-slideContent--fade">
           <div className="Unique-display">
             <div className="Unique-content">
-              <h3 className="Unique-header"></h3>
-              <p className="Unique-contact">Number: 123 456 789</p>
-              <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              <h3 className="Unique-header">The Most Unique Designs</h3>
+              <div>
+                <p className="Unique-contact">Number: 123 456 789</p>
+                <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              </div>
               <p className="Unique-paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -158,19 +164,27 @@ export const CarouselImages: FC = () => {
                 deserunt mollit anim id est laborum.
               </p>
               <div className="List">
-                <button className="Unique-button">Check out The List</button>
-                <button className="Unique-button">Learn More</button>
+                <button className="Button Button--type-muted">Check out The List</button>
+                <button className="Button">Learn More</button>
               </div>
             </div>
             <div>
-              <Image width={1} height={1} alt="abba" src="" />
+              <Image
+                src="/blocks/services/services-1.jpg"
+                alt=""
+                width={875}
+                height={500}
+                className="Carousel-slideImage"
+              />
             </div>
           </div>
           <div className="Unique-display">
             <div className="Unique-content">
-              <h3 className="Unique-header"></h3>
-              <p className="Unique-contact">Number: 123 456 789</p>
-              <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              <h3 className="Unique-header">Explore Your Full Creative Potential</h3>
+              <div>
+                <p className="Unique-contact">Number: 123 456 789</p>
+                <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              </div>
               <p className="Unique-paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -180,19 +194,27 @@ export const CarouselImages: FC = () => {
                 deserunt mollit anim id est laborum.
               </p>
               <div className="List">
-                <button className="Unique-button">Check out The List</button>
-                <button className="Unique-button">Learn More</button>
+                <button className="Button Button--type-muted">Check out The List</button>
+                <button className="Button">Learn More</button>
               </div>
             </div>
             <div>
-              <Image width={1} height={1} alt="abba" src="" />
+              <Image
+                src="/blocks/services/services-2.jpg"
+                alt=""
+                width={875}
+                height={500}
+                className="Carousel-slideImage"
+              />
             </div>
           </div>
           <div className="Unique-display">
             <div className="Unique-content">
-              <h3 className="Unique-header"></h3>
-              <p className="Unique-contact">Number: 123 456 789</p>
-              <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              <h3 className="Unique-header"> Stand Out In The Internet</h3>
+              <div>
+                <p className="Unique-contact">Number: 123 456 789</p>
+                <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              </div>
               <p className="Unique-paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -202,19 +224,27 @@ export const CarouselImages: FC = () => {
                 deserunt mollit anim id est laborum.
               </p>
               <div className="List">
-                <button className="Unique-button">Check out The List</button>
-                <button className="Unique-button">Learn More</button>
+                <button className="Button Button--type-muted">Check out The List</button>
+                <button className="Button">Learn More</button>
               </div>
             </div>
             <div>
-              <Image width={1} height={1} alt="abba" src="" />
+              <Image
+                src="/blocks/services/services-3.jpg"
+                alt=""
+                width={875}
+                height={500}
+                className="Carousel-slideImage"
+              />
             </div>
           </div>
           <div className="Unique-display">
             <div className="Unique-content">
-              <h3 className="Unique-header"></h3>
-              <p className="Unique-contact">Number: 123 456 789</p>
-              <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              <h3 className="Unique-header">Customize To Your Hearts Desire</h3>
+              <div>
+                <p className="Unique-contact">Number: 123 456 789</p>
+                <p className="Unique-contact">Email: Jane.Doe@gmail.com</p>
+              </div>
               <p className="Unique-paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -224,19 +254,25 @@ export const CarouselImages: FC = () => {
                 deserunt mollit anim id est laborum.
               </p>
               <div className="List">
-                <button className="Unique-button">Check out The List</button>
-                <button className="Unique-button">Learn More</button>
+                <button className="Button Button--type-muted">Check out The List</button>
+                <button className="Button">Learn More</button>
               </div>
             </div>
-            <div>
-              <Image width={1} height={1} alt="abba" src="" />
+            <div className="Unique-image">
+              <Image
+                src="/blocks/services/services-4.jpg"
+                alt=""
+                width={875}
+                height={500}
+                className="Carousel-slideImage"
+              />
             </div>
           </div>
-        </CarouseSlideContainer>
-        <CarouseButtonNext />
-        <CarouseButtonPrevious />
-        <CarouseMenu className="List-stack" />
-      </Carousel>*/}
+        </CarouselSlideContainer>
+        <CarouseButtonNext className="Carousel-button Carousel-centeredbtn--next" />
+        <CarouseButtonPrevious className="Carousel-button Carousel-centeredbtn--previous" />
+        <CarouseMenu classname="Carousel-menu--vertical" />
+      </Carousel>
     </div>
   );
 };

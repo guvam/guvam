@@ -47,7 +47,7 @@ export const CarouselImages: FC = () => {
         </Carousel>
       </div>
 
-      <Carousel viewCount={2} className="Carousel Carousel--type-clip" animate loop>
+      <Carousel viewCount={2} className="Carousel" animate loop>
         <CarouselSlideContainer>
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem" key={i}>

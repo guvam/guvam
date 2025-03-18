@@ -25,6 +25,7 @@ import { SelectSection } from "@/app/(website)/docs/components/sections/SelectSe
 import { SkeletonSection } from "@/app/(website)/docs/components/sections/SkeletonSection";
 import { SliderSection } from "@/app/(website)/docs/components/sections/SliderSection";
 import { SwitchSection } from "@/app/(website)/docs/components/sections/SwitchSection";
+import { TabsSection } from "@/app/(website)/docs/components/sections/TabsSection";
 import { TextareaSection } from "@/app/(website)/docs/components/sections/TextareaSection";
 import { TooltipSection } from "@/app/(website)/docs/components/sections/TooltipSection";
 import { BottomNavigation } from "@/components/BottomNavigation";
@@ -92,6 +93,7 @@ export default function Page() {
       <DrawerSection />
       <MenuSection />
       <PaginationSection />
+      <TabsSection />
 
       <BottomNavigation
         previous={{

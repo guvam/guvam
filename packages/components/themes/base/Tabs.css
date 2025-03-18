@@ -1,22 +1,4 @@
-.Tabs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.Tabs-list {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.Tabs-panels {
-  display: grid;
-}
-
-.Tabs-panel {
-  display: none;
-
-  &.Tabs-panel--active {
-    display: block;
-  }
+.active {
+  background-color: oklch(60% 0 89.876deg / 20%);
+  border-block-end: 1px solid var(--primaryBorder);
 }

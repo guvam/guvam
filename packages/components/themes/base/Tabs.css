@@ -1,4 +1,4 @@
-.active {
+.Active {
   background-color: oklch(60% 0 89.876deg / 20%);
   border-block-end: 1px solid var(--primaryBorder);
 }

@@ -79,7 +79,7 @@ export const Tabs = ({ children, className = "" }: TabsProps) => {
             },
             className: classList({
               [child.props.className]: true,
-              active: index === activeTab,
+              Active: index === activeTab,
             }),
           }
         )

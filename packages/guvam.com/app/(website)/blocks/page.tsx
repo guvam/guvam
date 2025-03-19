@@ -30,7 +30,7 @@ export default function Page() {
     <>
       <div className="Layout-section">
         <div className="Layout-sectionContent">
-          <h1 className="Content-heading1">Blocks</h1>
+          <h1>Blocks</h1>
 
           <div className="Grid">
             <a className="Button Button--type-text" href="#banner">

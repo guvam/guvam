@@ -9,9 +9,9 @@ const VARS2 = ["--info", "--success", "--warning", "--error"];
 
 export const ColorsSection: FC = () => (
   <Components id="colors">
-    <h3 className="Content-heading3">Brand</h3>
+    <h3>Brand</h3>
     <ColorBlock colors={VARS1} />
-    <h3 className="Content-heading3">State</h3>
+    <h3>State</h3>
     <ColorBlock colors={VARS2} />
   </Components>
 );

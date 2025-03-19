@@ -11,16 +11,18 @@ const content = [
 
 export const Team = () => (
   <section>
-    <hgroup className="Content Content--center">
-      <h1 className="Content-heading1">The Team</h1>
-      <p className="Content-text">Lorem Ipsum is simply dummy text</p>
+    <hgroup className="Content Util--center">
+      <h1>The Team</h1>
+      <p>Lorem Ipsum is simply dummy text</p>
     </hgroup>
     <ul className="Grid Grid--column-3">
       {content.map((img, i) => (
         <li className="Content" key={i}>
-          <img className="Content-image Team-Avatar" src={img} />
-          <p className="Content-text Content--bold">Name Surname</p>
-          <p className="Content-text">Development</p>
+          <img className="Util-image Team-Avatar" src={img} />
+          <p>
+            <b>Name Surname</b>
+          </p>
+          <p>Development</p>
         </li>
       ))}
     </ul>
@@ -29,16 +31,18 @@ export const Team = () => (
 
 export const TeamSmall = () => (
   <section>
-    <hgroup className="Content Content--center">
-      <h1 className="Content-heading1">The Team</h1>
-      <p className="Content-text">Lorem Ipsum is simply dummy text</p>
+    <hgroup className="Content Util--center">
+      <h1>The Team</h1>
+      <p>Lorem Ipsum is simply dummy text</p>
     </hgroup>
     <ul className="Grid Grid--column-4">
       {content.map((img, i) => (
-        <li key={i}>
-          <img className="Content-image Team-Avatar" src={img} />
-          <p className="Content--bold">Name Surname</p>
-          <p className="Content-text">Occupation</p>
+        <li key={i} className="Content">
+          <img className="Util-image Team-Avatar" src={img} />
+          <p>
+            <b>Name Surname</b>
+          </p>
+          <p>Occupation</p>
         </li>
       ))}
     </ul>
@@ -47,18 +51,20 @@ export const TeamSmall = () => (
 
 export const TeamCard = () => (
   <section>
-    <hgroup className="Content Content--center">
-      <h1 className="Content-heading1">The Team</h1>
-      <p className="Content-text">Lorem Ipsum is simply dummy text</p>
+    <hgroup className="Content Util--center">
+      <h1>The Team</h1>
+      <p>Lorem Ipsum is simply dummy text</p>
     </hgroup>
     <ul className="Grid Grid--column-3">
       {content.map((img, i) => (
         <li className="Card Card--muted" key={i}>
-          <div className="Card-content">
+          <div className="Card-content Content">
             <img className="Team-Image" src={img} />
-            <p className="Content--bold">Name Surname</p>
-            <p className="Content-text">Occupation</p>
-            <p className="Content-text">
+            <p>
+              <b>Name Surname</b>
+            </p>
+            <p>Occupation</p>
+            <p>
               <TwitterX />
               <Linkedin />
             </p>

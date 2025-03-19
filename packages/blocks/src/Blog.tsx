@@ -6,12 +6,12 @@ export const Blog = () => (
       <li key={x} className="Card Grid--span-2 Card--muted">
         <article className="Card-content">
           <hgroup>
-            <time className="Content-text">Jan 16, 2025</time>
+            <time>Jan 16, 2025</time>
             <span className="Badge Badge--outline">Marketing</span>
           </hgroup>
-          <div className="Content Content-text">
-            <h3 className="Content-heading4">Neque porro quisquam est</h3>
-            <p className="Content-text">
+          <div className="Content">
+            <h4>Neque porro quisquam est</h4>
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida consequat metus
               non dictum. Etiam arcu odio, efficitur eget vehicula vitae, consequat et diam.
             </p>
@@ -40,8 +40,8 @@ export const Blog = () => (
 export const BlogCards = () => (
   <section className="List-stack" style={{ gap: "2rem" }}>
     <div className="List List--between">
-      <div className="Content-titleInfo">Recent posts</div>
-      <a href="/blog" className="Content-link">
+      <div className="Title-info">Recent posts</div>
+      <a className="Button Button--type-text" href="/blog">
         View all
       </a>
     </div>
@@ -49,12 +49,10 @@ export const BlogCards = () => (
       {[1, 2].map((i) => (
         <li key={i} className="Card Card--muted">
           <article className="Card-content Content">
-            <h3 className="Content-heading4">
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur
-            </h3>
-            <time className="Content-text">16/10/2024</time>
+            <h4>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur</h4>
+            <time>16/10/2024</time>
 
-            <p className="Content-text">
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida consequat metus
               non dictum. Etiam arcu odio, efficitur eget vehicula vitae, consequat et diam.
               Praesent dictum sem sed commodo mollis. Nulla feugiat, elit in dignissim iaculis,
@@ -62,9 +60,7 @@ export const BlogCards = () => (
               quam vehicula dapibus sed vel lectus. Quisque fermentum enim ut placerat hendrerit.
               Maecenas rhoncus ultricies augue.
             </p>
-            <a className="Content-link" href="/blog/post-01">
-              Read more
-            </a>
+            <a href="/blog/post-01">Read more</a>
           </article>
         </li>
       ))}

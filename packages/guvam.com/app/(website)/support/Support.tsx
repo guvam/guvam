@@ -11,14 +11,14 @@ export const Support: FC = () => {
         <div className="Grid Content">
           <div className="Card Grid--span-3 Card--muted">
             <div className="Card-content Content">
-              <h2 className="Content-heading2">Community Support</h2>
-              <p className="Content-text">Become part of our community!</p>
-              <p className="Content-text">
+              <h2>Community Support</h2>
+              <p>Become part of our community!</p>
+              <p>
                 <Link className="Support-link" href="https://github.com/guvam/guvam/discussions">
                   Talk to the community
                 </Link>
               </p>
-              <p className="Content-text">
+              <p>
                 <Link className="Support-link" href="https://github.com/guvam/guvam/issues">
                   Report any issues
                 </Link>
@@ -27,12 +27,12 @@ export const Support: FC = () => {
           </div>
           <div className="Card Grid--span-3 Card--muted">
             <div className="Card-content Content">
-              <h2 className="Content-heading2">Professional Support</h2>
-              <p className="Content-text">
+              <h2>Professional Support</h2>
+              <p>
                 Have any questions or need assistance? Send an email, and we&apos;ll get back to you
                 as soon as possible.
               </p>
-              <p className="Content-text">
+              <p>
                 <Link className="Support-link" href="mailto:hello@guvam.com">
                   <EnvelopeFill /> Talk to us
                 </Link>

@@ -32,15 +32,15 @@ import { BottomNavigation } from "@/components/BottomNavigation";
 export default function Page() {
   return (
     <div className="Content">
-      <h1 className="Content-heading1" id="components">
-        <Link className="Content-linkHash" href="#components">
+      <h1 id="components">
+        <Link className="Util-linkHash" href="#components">
           Components List
         </Link>
       </h1>
 
-      <hr className="Content-divider" />
-      <h2 className="Content-heading2" id="display">
-        <Link className="Content-linkHash" href="#display">
+      <hr />
+      <h2 id="display">
+        <Link className="Util-linkHash" href="#display">
           Display
         </Link>
       </h2>
@@ -53,9 +53,9 @@ export default function Page() {
       <CollapseSection />
       <TooltipSection />
 
-      <hr className="Content-divider" />
-      <h2 className="Content-heading2" id="feedback">
-        <Link className="Content-linkHash" href="#feedback">
+      <hr />
+      <h2 id="feedback">
+        <Link className="Util-linkHash" href="#feedback">
           Feedback
         </Link>
       </h2>
@@ -64,9 +64,9 @@ export default function Page() {
       <ProgressSection />
       <SkeletonSection />
 
-      <hr className="Content-divider" />
-      <h2 className="Content-heading2" id="input">
-        <Link className="Content-linkHash" href="#input">
+      <hr />
+      <h2 id="input">
+        <Link className="Util-linkHash" href="#input">
           Input
         </Link>
       </h2>
@@ -81,9 +81,9 @@ export default function Page() {
       <SliderSection />
       <RatingSection />
 
-      <hr className="Content-divider" />
-      <h2 className="Content-heading2" id="navigation">
-        <Link className="Content-linkHash" href="#navigation">
+      <hr />
+      <h2 id="navigation">
+        <Link className="Util-linkHash" href="#navigation">
           Navigation
         </Link>
       </h2>

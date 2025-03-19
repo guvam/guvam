@@ -8,7 +8,7 @@ export const CollapseSection: FC = () => (
       {[1, 2, 3, 4].map((x) => (
         <details className="Collapse" name="accordion" key={x}>
           <summary className="Collapse-action">Example {x}</summary>
-          <p className="Content-text">
+          <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
             has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown
             printer took a galley of type and scrambled it to make a type specimen book. It has

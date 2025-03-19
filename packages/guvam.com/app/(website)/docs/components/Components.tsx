@@ -7,8 +7,8 @@ import type { FC, ReactNode } from "react";
 
 export const Components: FC<{ children: ReactNode; id: string }> = (props) => (
   <>
-    <h3 className="Content-heading3 Content--capitalize" id={props.id}>
-      <Link className="Content-linkHash" href={`#${props.id}`}>
+    <h3 className="Util--capitalize" id={props.id}>
+      <Link className="Util-linkHash" href={`#${props.id}`}>
         {props.id}
       </Link>
     </h3>

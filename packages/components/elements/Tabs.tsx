@@ -45,16 +45,44 @@ export const Tabs = ({ children, className = "" }: TabsProps) => {
   const { activeTab, setActiveTab } = useTabs();
 
   return (
-    <div className={className}>
+    <div role="tablist" className={className}>
       {Children.map(children, (child, index) =>
-        cloneElement(child, {
-          key: index,
-          onClick: () => setActiveTab(index),
-          className: classList({
-            [child.props.className]: true,
-            active: index === activeTab,
-          }),
-        })
+        cloneElement(
+          child as ReactElement<{
+            onClick?: () => void;
+            className?: string;
+            role?: string;
+            id?: string;
+            tabIndex?: number;
+            "aria-selected"?: boolean;
+            "aria-controls"?: string;
+            onKeyDown?: (event: React.KeyboardEvent) => void;
+          }>,
+          {
+            key: index,
+            role: "tab",
+            id: `tab-${index}`,
+            "aria-selected": index === activeTab,
+            "aria-controls": `panel-${index}`,
+            tabIndex: index === activeTab ? 0 : -1,
+            onClick: () => setActiveTab(index),
+            onKeyDown: (event: React.KeyboardEvent) => {
+              let newIndex = activeTab;
+
+              if (event.key === "ArrowRight") {
+                newIndex = (activeTab + 1) % children.length;
+              } else if (event.key === "ArrowLeft") {
+                newIndex = (activeTab - 1 + children.length) % children.length;
+              }
+
+              setActiveTab(newIndex);
+            },
+            className: classList({
+              [child.props.className]: true,
+              active: index === activeTab,
+            }),
+          }
+        )
       )}
     </div>
   );

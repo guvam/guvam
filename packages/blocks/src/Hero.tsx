@@ -5,7 +5,7 @@ export const HeroSimple = () => (
   <section className="Hero Gap2x">
     <hgroup className="Content">
       <h1 className="Title">
-        Create Things to <span className="Content--highlight">Make</span> your things cooler
+        Create Things to <mark>Make</mark> your things cooler
       </h1>
       <p className="Title-description">
         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.

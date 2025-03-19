@@ -29,7 +29,7 @@ export const Questions = () => (
   <section className="List-stack" style={{ gap: "2rem" }}>
     <div className="List List--between">
       <div className="Title-info">Frequently asked questions</div>
-      <a href="/blog" className="Content-link">
+      <a href="/blog" className="Button Button--type-text">
         View all
       </a>
     </div>
@@ -39,7 +39,7 @@ export const Questions = () => (
         <details className="Collapse" name="faq-columns" key={item.id} open={i === 0}>
           <summary className="Collapse-action">{item.question}</summary>
           <div className="Collapse-contentBlock Content">
-            <p className="Content-text">{item.answer}</p>
+            <p>{item.answer}</p>
           </div>
         </details>
       ))}
@@ -52,8 +52,8 @@ export const QuestionsOpen = () => (
     <ul className="List-stack">
       {content.map((item) => (
         <li className="Content" key={item.id}>
-          <h3 className="Content-heading4">{item.question}</h3>
-          <p className="Content-text">{item.answer}</p>
+          <h4>{item.question}</h4>
+          <p>{item.answer}</p>
         </li>
       ))}
     </ul>

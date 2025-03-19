@@ -12,9 +12,9 @@ const Images = [
 
 export const Portfolio: FC = () => (
   <section className="List-stack Util--gap-5" style={{ alignItems: "center" }}>
-    <hgroup className="Content Content--center" style={{ maxWidth: "600px" }}>
-      <h2 className="Content-heading2">Featured works</h2>
-      <p className="Content-text">
+    <hgroup className="Content Util--center" style={{ maxWidth: "600px" }}>
+      <h2>Featured works</h2>
+      <p>
         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
         Elit sunt amet fugiat veniam .
       </p>
@@ -31,31 +31,16 @@ export const Portfolio: FC = () => (
             height={300}
           />
           <article className="Grid--span-2 Card-content Content">
-            <time className="Content-text">Jan 16, 2025</time>
+            <time>Jan 16, 2025</time>
 
-            <h3 className="Content-heading4">Boost your conversion Rate</h3>
-            <p className="Content-text">
+            <h4>Boost your conversion Rate</h4>
+            <p>
               Use these Tailwind CSS blog section examples to promote interesting content from your
               company blog or content universe throughout your website. These examples are designed
               and built by the Tailwind CSS team, and include a variety of different styles and
               layouts.
             </p>
 
-            {/*<div className="List">
-            <div className="Avatar">
-              <Image
-                className="Avatar-image"
-                src="/blocks/avatars/avatar-2.jpg"
-                alt="Profile Image of Jane Doe"
-                width={36}
-                height={36}
-              />
-            </div>
-            <div>
-              <p>Jane Doe</p>
-              <p>Co-Founder / CTO</p>
-            </div>
-          </div>*/}
             <button className="Button Button--type-muted">Case study</button>
           </article>
         </li>

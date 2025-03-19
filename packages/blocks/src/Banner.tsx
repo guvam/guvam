@@ -4,7 +4,7 @@ import { XLg } from "react-bootstrap-icons";
 
 export const Banner = () => (
   <div className="Banner">
-    <span className="Content-text">Lorem Ipsum is simply dummy text</span>
+    <div>Lorem Ipsum is simply dummy text</div>
     <button className="Button Button--icon">
       <XLg />
     </button>

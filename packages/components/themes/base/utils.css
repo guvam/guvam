@@ -21,3 +21,34 @@
 .Util--gap-6 {
   gap: 8rem !important;
 }
+
+.Util--capitalize {
+  text-transform: capitalize;
+}
+
+.Util--center {
+  text-align: center;
+}
+
+.Util-linkHash {
+  position: relative;
+  cursor: pointer;
+
+  &:where(:hover, :active)::after {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: calc(100% + 0.5rem);
+    display: flex;
+    content: "#";
+  }
+
+  &:focus-visible {
+    outline: 1px solid var(--uiFocus);
+    border-radius: var(--borderRadius);
+  }
+}
+
+.Util-image {
+  inline-size: 100%;
+  block-size: auto;
+}

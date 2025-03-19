@@ -11,9 +11,9 @@ const Images = [
 
 export const ServicesGrid = () => (
   <section className="List-stack" style={{ alignItems: "center", gap: "3rem" }}>
-    <hgroup className="Content Content--center" style={{ maxWidth: "600px" }}>
-      <h2 className="Content-heading2">Services</h2>
-      <p className="Content-text">
+    <hgroup className="Content Util--center" style={{ maxWidth: "600px" }}>
+      <h2>Services</h2>
+      <p>
         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
         Elit sunt amet fugiat veniam .
       </p>
@@ -35,10 +35,10 @@ export const ServicesGrid = () => (
               <b className="Badge Badge--outline">UI/UX</b>
               <b className="Badge Badge--outline">design</b>
             </p>
-            <time className="Content-text">Jan 16, 2025</time>
+            <time>Jan 16, 2025</time>
 
-            <h3 className="Content-heading4">Boost your conversion Rate</h3>
-            <p className="Content-text">
+            <h4>Boost your conversion Rate</h4>
+            <p>
               Use these Tailwind CSS blog section examples to promote interesting content from your
               company blog or content universe throughout your website. These examples are designed
               and built by the Tailwind CSS team, and include a variety of different styles and

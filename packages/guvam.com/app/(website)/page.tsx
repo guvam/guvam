@@ -14,7 +14,7 @@ export default function Page() {
               <h1 className="Title">Light / Headless components for you web project</h1>
 
               <div className="Title-description">
-                <ul className="Content-list">
+                <ul>
                   <li>make easy for designers and developers to work on same code base</li>
                   <li>automatically generate UI code documentation / playground</li>
                 </ul>
@@ -43,53 +43,28 @@ export default function Page() {
 
       <section className="Layout-section">
         <div className="Layout-sectionContent">
-          <h2 className="Content-heading2">Why Guvam UI Library?</h2>
+          <h2>Why Guvam UI Library?</h2>
           <div className="Grid">
             <div className="Card Grid--span-2 Card--muted">
               <div className="Card-content">
                 <div className="Content">
-                  <h3 className="Content-heading3">Developer Experience</h3>
-                  <p className="Content-text">
-                    <b className="Content--bold">Separation of concerns</b>: Interactivity, content
-                    and styles are completely separated, allowing for easy code reusability.
+                  <h3>Developer Experience</h3>
+                  <p>
+                    <b>Separation of concerns</b>: Interactivity, content and styles are completely
+                    separated, allowing for easy code reusability.
                   </p>
-                  <p className="Content-text">
-                    <b className="Content--bold">Statically analyzable</b>: Automatically improves
-                    webpage load times and user interface speed.
+                  <p>
+                    <b>Statically analyzable</b>: Automatically improves webpage load times and user
+                    interface speed.
                   </p>
-                  <p className="Content-text">
-                    <b className="Content--bold">Code generation</b>: generate templates into many
-                    supported formats, including React, Vue, Liquid, WordPress, Smarty, Blade,
-                    Django, PHP, and Ruby on Rails. Generate CSS into CSS Modules (Styled
-                    Components, Emotion, StyleX) Tailwind and SCSS
+                  <p>
+                    <b>Code generation</b>: generate templates into many supported formats,
+                    including React, Vue, Liquid, WordPress, Smarty, Blade, Django, PHP, and Ruby on
+                    Rails. Generate CSS into CSS Modules (Styled Components, Emotion, StyleX)
+                    Tailwind and SCSS
                   </p>
-                  <p className="Content-text">
-                    <b className="Content--bold">Accessibility</b>: W3C-compliant components
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="Card Grid--span-2 Card--muted">
-              <div className="Card-content">
-                <div className="Content">
-                  <h3 className="Content-heading3">Designer Experience</h3>
-                  <p className="Content-text">
-                    <b className="Content--bold">Headless</b>: Completely unstyled components,
-                    through which you gain complete control over your app&apos;s styles and
-                    accessibility.
-                  </p>
-                  <p className="Content-text">
-                    <b className="Content--bold">Color themes</b>: Use generated color schemes or
-                    create your own custom theme.
-                  </p>
-                  <p className="Content-text">
-                    <b className="Content--bold">Multiple ready-made themes</b>: Pre-made themes for
-                    various use cases, including mobile applications, websites, dashboards, desktop
-                    applications.
-                  </p>
-                  <p className="Content-text">
-                    <b className="Content--bold">Plain CSS</b>: Contribute directly to CSS styles
+                  <p>
+                    <b>Accessibility</b>: W3C-compliant components
                   </p>
                 </div>
               </div>
@@ -98,15 +73,37 @@ export default function Page() {
             <div className="Card Grid--span-2 Card--muted">
               <div className="Card-content">
                 <div className="Content">
-                  <h3 className="Content-heading3">Documentation</h3>
-                  <p className="Content-text">
-                    <b className="Content--bold">Automatic documentation generation</b>: Generate
-                    documentation directly from your code. Show all components, attributes and
-                    styles.
+                  <h3>Designer Experience</h3>
+                  <p>
+                    <b>Headless</b>: Completely unstyled components, through which you gain complete
+                    control over your app&apos;s styles and accessibility.
                   </p>
-                  <p className="Content-text">
-                    <b className="Content--bold">Playbook</b>: Generate a playbook of code examples
-                    which allows you to showcase and experiment with different implementations.
+                  <p>
+                    <b>Color themes</b>: Use generated color schemes or create your own custom
+                    theme.
+                  </p>
+                  <p>
+                    <b>Multiple ready-made themes</b>: Pre-made themes for various use cases,
+                    including mobile applications, websites, dashboards, desktop applications.
+                  </p>
+                  <p>
+                    <b>Plain CSS</b>: Contribute directly to CSS styles
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="Card Grid--span-2 Card--muted">
+              <div className="Card-content">
+                <div className="Content">
+                  <h3>Documentation</h3>
+                  <p>
+                    <b>Automatic documentation generation</b>: Generate documentation directly from
+                    your code. Show all components, attributes and styles.
+                  </p>
+                  <p>
+                    <b>Playbook</b>: Generate a playbook of code examples which allows you to
+                    showcase and experiment with different implementations.
                   </p>
                 </div>
               </div>

@@ -48,7 +48,7 @@ export const CarouselImages: FC = () => {
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem" key={i}>
               <div className="Card Carousel-exampleCard">
-                <Image src={img} alt="" width={875} height={500} className="Content-image" />
+                <Image src={img} alt="" width={875} height={500} className="Util-image" />
                 <h3 className="Card-header">Heading 1</h3>
                 <p className="Card-content">Here is the Content</p>
               </div>
@@ -66,7 +66,7 @@ export const CarouselImages: FC = () => {
             <li className="Carousel-slideItem Carousel-slideGalleryItem" key={i}>
               <Image src={img} alt="" width={875} height={500} className="Carousel-slideImage" />
               <div className="Carousel-content">
-                <h2 className="Content-heading1">Welcome to Our Website</h2>
+                <h1>Welcome to Our Website</h1>
                 <p className="Title-description">Discover amazing features and services.</p>
               </div>
             </li>
@@ -82,7 +82,7 @@ export const CarouselImages: FC = () => {
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem" key={i}>
               <div className="Card" key={i}>
-                <Image src={img} alt="" width={875} height={500} className="Content-image" />
+                <Image src={img} alt="" width={875} height={500} className="Util-image" />
                 <h2 className="Card-header">{`Heading (${i + 1} / ${IMAGES.length})`}</h2>
                 <p className="Card-content">Here is the Content</p>
               </div>

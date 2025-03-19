@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <div className="Layout-section">
       <div className="Layout-sectionContent">
-        <h1 className="Content-heading1">Templates</h1>
+        <h1>Templates</h1>
 
         <div className="Grid">
           <a className="Button Button--type-muted" href="/templates/portfolio/" target="_blank">

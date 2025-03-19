@@ -12,7 +12,7 @@ export const NotificationSection: FC = () => (
 
 const NotificationItem: FC<{ children: ReactNode }> = (props) => (
   <div className="Notification">
-    <div className="Notification-content Content Content-text">{props.children}</div>
+    <div className="Notification-content">{props.children}</div>
     <button className="Button Button--icon Button--type-text">
       <XLg size={12} />
     </button>

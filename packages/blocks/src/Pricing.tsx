@@ -1,36 +1,36 @@
 import { Check, X } from "react-bootstrap-icons";
 
 export const PricingTable = () => (
-  <table className="Content-table">
+  <table>
     <thead>
       <tr className="Pricing-Divider">
         <th>
-          <h2 className="Content-heading2">Pricing</h2>
+          <h2>Pricing</h2>
         </th>
         <th className="Content">
-          <p className="Content-text">Basic</p>
-          <p className="Content-text">
-            <span className="Content--bold">$12</span>
+          <p>Basic</p>
+          <p>
+            <b>$12</b>
             <span> / </span>
-            <span className="Content--highlight">month</span>
+            <mark>month</mark>
           </p>
           <button className="Button">Free Trial</button>
         </th>
         <th className="Content">
-          <p className="Content-text">Pro</p>
-          <p className="Content-text">
-            <span className="Content--bold">$24</span>
+          <p>Pro</p>
+          <p>
+            <b>$24</b>
             <span> / </span>
-            <span className="Content--highlight">month</span>
+            <mark>month</mark>
           </p>
           <button className="Button">Buy Now</button>
         </th>
         <th className="Content">
-          <p className="Content-text">Company</p>
-          <p className="Content-text">
-            <span className="Content--bold">$36</span>
+          <p>Company</p>
+          <p>
+            <b>$36</b>
             <span> / </span>
-            <span className="Content--highlight">month</span>
+            <mark>month</mark>
           </p>
           <button className="Button Button--type-text">Contact Us</button>
         </th>
@@ -112,14 +112,14 @@ export const PricingTable = () => (
       <tr className="Pricing-Divider">
         <td>Files</td>
         <td>
-          <span className="Content--highlight">up to </span>
+          <mark>up to </mark>
           <span> 5 </span>
-          <span className="Content--highlight"> files </span>
+          <mark> files </mark>
         </td>
         <td>
-          <span className="Content--highlight">up to</span>
+          <mark>up to</mark>
           <span> 15 </span>
-          <span className="Content--highlight">files</span>
+          <mark>files</mark>
         </td>
         <td>Unlimited</td>
       </tr>
@@ -131,10 +131,8 @@ export const PricingAddition = () => (
   <section className="Card Card--muted">
     <div className="Card-content">
       <div>
-        <h3 className="Content-heading3">Additional Content</h3>
-        <p className="Content-text">
-          Everything included The perfect plan if you are just getting started with our product
-        </p>
+        <h3>Additional Content</h3>
+        <p>Everything included The perfect plan if you are just getting started with our product</p>
       </div>
       <button className="Button">Additional Options</button>
     </div>
@@ -144,8 +142,8 @@ export const PricingAddition = () => (
 export const PricingSection = () => (
   <section>
     <hgroup className="Content">
-      <h1 className="Content-heading1">Create Things</h1>
-      <p className="Content-text">
+      <h1>Create Things</h1>
+      <p>
         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
         Elit sunt amet fugiat veniam occaecat.
       </p>
@@ -154,16 +152,14 @@ export const PricingSection = () => (
       {[1, 2, 3].map((x) => (
         <li className="Card Card--muted" key={x}>
           <div className="Card-content Content">
-            <h3 className="Content-heading3">Hobby</h3>
-            <p className="Content-text">Everything you need to Start</p>
-            <p className="Content-text">
-              <span className="Content-heading1 Content--bold">$29</span>
+            <h3>Hobby</h3>
+            <p>Everything you need to Start</p>
+            <p>
+              <h1>$29</h1>
               <span className="Text-Muted">month</span>
             </p>
-            <p className="Content-text">
-              The perfect plan if you are just getting started with our product
-            </p>
-            <ul className="Content-list">
+            <p>The perfect plan if you are just getting started with our product</p>
+            <ul>
               <li>25 products</li>
               <li>Up to 10,000 active users at a time</li>
               <li>Advanced Analytics</li>
@@ -182,8 +178,8 @@ export const PricingSection = () => (
 export const PricingSectionBold = () => (
   <section>
     <hgroup className="Content">
-      <h1 className="Content-heading1">Create Things</h1>
-      <p className="Content-text">
+      <h1>Create Things</h1>
+      <p>
         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
         Elit sunt amet fugiat veniam occaecat.
       </p>
@@ -192,18 +188,16 @@ export const PricingSectionBold = () => (
       {[1, 2, 3].map((x) => (
         <li className="Card Card--muted" key={x}>
           <div className="Card-content Content">
-            <h3 className="Content-heading3">Hobby</h3>
-            <p className="Content-text">Everything you need to Start</p>
-            <p className="Content-text">
-              <span className="Content-heading1 Content--bold">$29</span>
+            <h3>Hobby</h3>
+            <p>Everything you need to Start</p>
+            <p>
+              <h1>$29</h1>
               <span className="Text-Muted">month</span>
             </p>
           </div>
           <div className="Card-content Content">
-            <p className="Content-text">
-              The perfect plan if you are just getting started with our product
-            </p>
-            <ul className="Content-list">
+            <p>The perfect plan if you are just getting started with our product</p>
+            <ul>
               <li>25 products</li>
               <li>Up to 10,000 active users at a time</li>
               <li>Advanced Analytics</li>

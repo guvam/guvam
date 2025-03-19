@@ -32,8 +32,8 @@ export const AlertSection: FC = () => (
       </div>
       <div className="Alert Alert--type-info">
         <div className="Content">
-          <h2 className="Content-heading4">Ensure that these requirements are met</h2>
-          <ul className="Content-list">
+          <h4>Ensure that these requirements are met</h4>
+          <ul>
             <li>At least 10 characters (and up to 100 characters)</li>
             <li>At least one lowercase character</li>
             <li>Inclusion of at least one special character, e.g., ! @ # ?</li>
@@ -42,8 +42,8 @@ export const AlertSection: FC = () => (
       </div>
       <div className="Alert Alert--type-error">
         <div className="Content">
-          <h2 className="Content-heading4">Ensure that these requirements are met</h2>
-          <ul className="Content-list">
+          <h4>Ensure that these requirements are met</h4>
+          <ul>
             <li>At least 10 characters (and up to 100 characters)</li>
             <li>At least one lowercase character</li>
             <li>Inclusion of at least one special character, e.g., ! @ # ?</li>

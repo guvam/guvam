@@ -3,7 +3,7 @@ import Image from "next/image";
 export const Contact = () => (
   <form className="List-stack">
     <hgroup className="Content">
-      <h1 className="Content-heading1">Contact the Team</h1>
+      <h1>Contact the Team</h1>
       <p className="Content-text">
         Fill out your Contact request and contact the Team for your inquiry
       </p>
@@ -63,8 +63,8 @@ export const Contact = () => (
 export const ContactLocation = () => (
   <div className="List-stack">
     <hgroup>
-      <h1 className="Content-heading1">Get in Touch</h1>
-      <p className="Content-text">
+      <h2>Get in Touch</h2>
+      <p>
         Quam nunc nunc eu sed. Sed rhoncus quis ultricies ac pellentesque. Quam nunc nunc eu sed.
         Sed rhoncus quis ultricies ac pellentesque. Quam nunc nunc eu sed. Sed rhoncus quis
         ultricies ac pellentesque.
@@ -73,23 +73,23 @@ export const ContactLocation = () => (
     <ul className="Grid Grid--column-3">
       <li className="Card Card--muted">
         <div className="Card-content Content">
-          <h3 className="Content-heading4">New York</h3>
-          <p className="Content-text">1234, New York Street</p>
-          <p className="Content-text">New York, NY12345</p>
+          <h4>New York</h4>
+          <p>1234, New York Street</p>
+          <p>New York, NY12345</p>
         </div>
       </li>
       <li className="Card Card--muted">
         <div className="Card-content Content">
-          <h3 className="Content-heading4">Los Angeles</h3>
-          <p className="Content-text">1234, Los Angeles Street </p>
-          <p className="Content-text">Los Angeles, CA12345</p>
+          <h4>Los Angeles</h4>
+          <p>1234, Los Angeles Street </p>
+          <p>Los Angeles, CA12345</p>
         </div>
       </li>
       <li className="Card Card--muted">
         <div className="Card-content Content">
-          <h3 className="Content-heading4">Toronto</h3>
-          <p className="Content-text">1234, Toronto Street</p>
-          <p className="Content-text">Toronto, TO12345</p>
+          <h4>Toronto</h4>
+          <p>1234, Toronto Street</p>
+          <p>Toronto, TO12345</p>
         </div>
       </li>
     </ul>
@@ -99,8 +99,8 @@ export const ContactLocation = () => (
 export const ContactCards = () => (
   <article className="List-stack">
     <hgroup className="Content">
-      <h1 className="Content-heading1">Get in Touch</h1>
-      <p className="Content-text">
+      <h1>Get in Touch</h1>
+      <p>
         Quam nunc nunc eu sed. Sed rhoncus quis ultricies ac pellentesque. Quam nunc nunc eu sed.
         Sed rhoncus quis ultricies ac pellentesque. Quam nunc nunc eu sed. Sed rhoncus quis
         ultricies ac pellentesque.
@@ -109,30 +109,30 @@ export const ContactCards = () => (
     <ul className="Grid Grid--column-4">
       <li className="Card Card--muted">
         <div className="Card-content Content">
-          <h3 className="Content-heading3">Collab</h3>
-          <p className="Content-text">+372 123 45 678</p>
-          <a className="Content-link">Collab@email.com</a>
+          <h3>Collab</h3>
+          <p>+372 123 45 678</p>
+          <a href="mailto:test@email.com">test@email.com</a>
         </div>
       </li>
       <li className="Card Card--muted">
         <div className="Card-content Content">
-          <h3 className="Content-heading3">Collab</h3>
-          <p className="Content-text">+372 123 45 678</p>
-          <a className="Content-link">Collab@email.com</a>
+          <h3>Collab</h3>
+          <p>+372 123 45 678</p>
+          <a href="mailto:test@email.com">test@email.com</a>
         </div>
       </li>
       <li className="Card Card--muted">
         <div className="Card-content Content">
-          <h3 className="Content-heading3">Collab</h3>
-          <p className="Content-text">+372 123 45 678</p>
-          <a className="Content-link">Collab@email.com</a>
+          <h3>Collab</h3>
+          <p>+372 123 45 678</p>
+          <a href="mailto:test@email.com">test@email.com</a>
         </div>
       </li>
       <li className="Card Card--muted">
         <div className="Card-content Content">
-          <h3 className="Content-heading3">Collab</h3>
-          <p className="Content-text">+372 123 45 678</p>
-          <a className="Content-link">Collab@email.com</a>
+          <h3>Collab</h3>
+          <p>+372 123 45 678</p>
+          <a href="mailto:test@email.com">test@email.com</a>
         </div>
       </li>
     </ul>
@@ -142,15 +142,15 @@ export const ContactCards = () => (
 export const ContactSplit = () => (
   <div className="List-stack">
     <hgroup className="Content">
-      <h1 className="Content-heading1">Get in Touch</h1>
-      <p className="Content-text">
+      <h1>Get in Touch</h1>
+      <p>
         Quam nunc nunc eu sed. Sed rhoncus quis ultricies ac pellentesque. Quam nunc nunc eu sed.
         Sed rhoncus quis ultricies ac pellentesque.
       </p>
       <div className="Content">
-        <p className="Content-text">111, Diamond City, Commonwealth</p>
-        <p className="Content-text">+372 12 345 678</p>
-        <p className="Content-text">Jane.Doe@gmail.com</p>
+        <p>111, Diamond City, Commonwealth</p>
+        <p>+372 12 345 678</p>
+        <p>Jane.Doe@gmail.com</p>
       </div>
     </hgroup>
     <form>

@@ -15,7 +15,6 @@
   color-scheme: var(--colorScheme);
   background-color: var(--surface);
   direction: var(--textDirection);
-  anchor-name: --root-container;
 
   /* breakpoints */
   --breakpointMobile: 600px;
@@ -24,6 +23,12 @@
 
   /* font */
   --textMultiplier: clamp(0rem, calc((100dvw - var(--breakpointMobile)) / 600) * 16, 1rem);
+  --textSizeTitle: calc(2em + var(--textMultiplier));
+  --textSizeTitleText: calc(1em + 0.5 * var(--textMultiplier));
+  --textSizeH1: calc(1rem * pow(var(--textScale), 4));
+  --textSizeH2: calc(1rem * pow(var(--textScale), 3));
+  --textSizeH3: calc(1rem * pow(var(--textScale), 2));
+  --textSizeH4: calc(1rem * pow(var(--textScale), 1));
 
   /* primary */
   --primary: light-dark(oklch(37% 0.144 260deg), oklch(83% 0.085 278deg));

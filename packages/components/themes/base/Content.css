@@ -8,40 +8,6 @@
   }
 }
 
-.Content-titleInfo {
-  margin-block: 0.75rem;
-  font-size: 1.2em;
-  font-weight: bold;
-  line-height: 1;
-  color: var(--primary);
-  text-wrap: balance;
-}
-
-.Content-title {
-  margin-block: 0;
-  font-size: calc(2em + var(--textMultiplier));
-  font-weight: bold;
-  line-height: 1;
-  text-wrap: balance;
-}
-
-.Content-titleDescription {
-  display: flex;
-  flex-direction: row;
-  margin-block: 0.75rem;
-  font-size: calc(1em + 0.5 * var(--textMultiplier));
-  line-height: 1.1;
-  text-wrap: balance;
-}
-
-.Title-descriptionWrap {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  inline-size: 100%;
-}
-
 .Content-heading1 {
   margin-block: 1em 0.5em;
   font-size: calc(1rem * pow(var(--textScale), 4));

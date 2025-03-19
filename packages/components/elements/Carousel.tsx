@@ -264,10 +264,6 @@ export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }
       setStopIndex(stop);
     }
 
-    setTimeout(() => {
-      /*setStopIndex(null);*/
-    }, 500);
-
     setActiveIndex(currentIndex);
   }, [currentIndex]);
 
@@ -285,7 +281,6 @@ export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }
           }),
           style: {
             "--Carousel-slideItemIndex": i,
-            "--stop": stopIndex,
           } as never,
         })
       )}

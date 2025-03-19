@@ -11,14 +11,14 @@ export default function Page() {
         <div className="Layout-section">
           <div className="Layout-hero">
             <hgroup className="Content">
-              <h1 className="Content-title">Light / Headless components for you web project</h1>
-              <div className="Title-descriptionWrap">
-                <div className="Content-titleDescription">
-                  <ul className="Content-list">
-                    <li>make easy for designers and developers to work on same code base</li>
-                    <li>automatically generate UI code documentation / playground</li>
-                  </ul>
-                  {/*<div className="Title-Carousel">
+              <h1 className="Title">Light / Headless components for you web project</h1>
+
+              <div className="Title-description">
+                <ul className="Content-list">
+                  <li>make easy for designers and developers to work on same code base</li>
+                  <li>automatically generate UI code documentation / playground</li>
+                </ul>
+                {/*<div className="Title-Carousel">
                     <span className="Title-carouselItem">React</span>
                     <span className="Title-carouselItem">Vue</span>
                     <span className="Title-carouselItem">Liquid</span>
@@ -29,7 +29,6 @@ export default function Page() {
                     <span className="Title-carouselItem">PHP</span>
                     <span className="Title-carouselItem">Ruby</span>
                   </div>*/}
-                </div>
               </div>
             </hgroup>
 

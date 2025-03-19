@@ -1,0 +1,22 @@
+.Title {
+  font-size: var(--textSizeTitle);
+  font-weight: bold;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.Title-info {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--primary);
+  text-wrap: balance;
+}
+
+.Title-description {
+  display: flex;
+  flex-direction: row;
+  font-size: var(--textSizeTitleText);
+  line-height: 1.1;
+  text-wrap: balance;
+}

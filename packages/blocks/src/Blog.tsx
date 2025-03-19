@@ -40,7 +40,7 @@ export const Blog = () => (
 export const BlogCards = () => (
   <section className="List-stack" style={{ gap: "2rem" }}>
     <div className="List List--between">
-      <div className="Content-titleInfo">Recent posts</div>
+      <div className="Title-info">Recent posts</div>
       <a href="/blog" className="Content-link">
         View all
       </a>

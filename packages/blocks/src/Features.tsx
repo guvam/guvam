@@ -1,7 +1,7 @@
 export const FeaturesList = () => (
   <section className="List-stack Util--gap-4">
     <hgroup className="Content Content--center">
-      <p className="Content-titleInfo">Deploy faster</p>
+      <p className="Title-info">Deploy faster</p>
       <h2 className="Content-heading1">Everything you need to deploy your app</h2>
       <p className="Content-text">
         Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a

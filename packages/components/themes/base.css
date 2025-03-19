@@ -5,6 +5,7 @@
 
 /* display */
 @import url("base/Content.css");
+@import url("base/Title.css");
 @import url("base/Avatar.css");
 @import url("base/Badge.css");
 @import url("base/Card.css");

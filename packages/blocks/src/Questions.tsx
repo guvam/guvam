@@ -28,7 +28,7 @@ const content = [
 export const Questions = () => (
   <section className="List-stack" style={{ gap: "2rem" }}>
     <div className="List List--between">
-      <div className="Content-titleInfo">Frequently asked questions</div>
+      <div className="Title-info">Frequently asked questions</div>
       <a href="/blog" className="Content-link">
         View all
       </a>

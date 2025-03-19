@@ -67,7 +67,7 @@ export const CarouselImages: FC = () => {
               <Image src={img} alt="" width={875} height={500} className="Carousel-slideImage" />
               <div className="Carousel-content">
                 <h2 className="Content-heading1">Welcome to Our Website</h2>
-                <p className="Content-titleDescription">Discover amazing features and services.</p>
+                <p className="Title-description">Discover amazing features and services.</p>
               </div>
             </li>
           ))}

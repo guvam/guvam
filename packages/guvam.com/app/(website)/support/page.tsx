@@ -7,8 +7,8 @@ export default function Page() {
         <div className="Layout-section">
           <hgroup className="Layout-hero">
             <div className="Content">
-              <h1 className="Content-title">Support</h1>
-              <p className="Content-titleDescription">Get Professional Support from the Experts</p>
+              <h1 className="Title">Support</h1>
+              <p className="Title-description">Get Professional Support from the Experts</p>
             </div>
           </hgroup>
         </div>

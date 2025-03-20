@@ -1,14 +1,16 @@
 import "@guvam/components/themes/base.css";
 import "@guvam/components/themes/index.css";
 import "@guvam/components/colors/index.css";
+import "@guvam/blocks/src/index.css";
 
+import { FooterSimple } from "@guvam/blocks/src/FooterSimple";
+import { HeaderSimple } from "@guvam/blocks/src/HeaderSimple";
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import type { ReactNode } from "react";
 
+import { SettingsAction } from "@/components/SettingsAction";
 import { getSettingsVariables, getThemeSettings } from "@/components/Theme";
-
-import { AgencyHeader } from "./components/AgencyHeader";
 
 export const metadata: Metadata = {
   title: "Guvam.js",
@@ -28,7 +30,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     <html
       lang="en"
       style={getSettingsVariables(themeSettings) as never}
-      className={`Theme--type-${themeSettings.theme} Theme--color-${themeSettings.colorTheme}`}
+      className={`Theme--type-$agency Theme--color-${themeSettings.colorTheme}`}
     >
       <head>
         <title>Agency template</title>
@@ -36,10 +38,21 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <meta name="color-scheme" content="dark light" />
       </head>
       <body className="Layout">
-        <section className="Layout-section">
-          <AgencyHeader themeSettings={themeSettings} />
-        </section>
+        <div className="Layout-sectionFull Layout-sectionFull--filled">
+          <section className="Layout-section">
+            <HeaderSimple />
+          </section>
+        </div>
+
         {children}
+
+        <div className="Layout-sectionFull Layout-sectionFull--filled">
+          <section className="Layout-section">
+            <FooterSimple />
+          </section>
+        </div>
+
+        <SettingsAction themeSettings={themeSettings} />
       </body>
     </html>
   );

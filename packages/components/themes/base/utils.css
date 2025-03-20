@@ -58,4 +58,8 @@
   block-size: 100%;
   object-fit: cover;
   object-position: center;
+
+  &.Util-imageCover--large {
+    min-block-size: 450px;
+  }
 }

@@ -3,7 +3,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 
 export const HeroSimple = () => (
   <section className="Hero Gap2x">
-    <hgroup className="Content">
+    <hgroup className="Content Util--center">
       <h1 className="Title">
         Create Things to <mark>Make</mark> your things cooler
       </h1>
@@ -11,13 +11,13 @@ export const HeroSimple = () => (
         Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
         Elit sunt amet fugiat veniam .
       </p>
+      <div>
+        <button className="Button">Get Started</button>
+        <button className="Button Button--type-text">
+          Learn More <ArrowRight />
+        </button>
+      </div>
     </hgroup>
-    <div className="List">
-      <button className="Button">Get Started</button>
-      <button className="Button Button--type-text">
-        Learn More <ArrowRight />
-      </button>
-    </div>
   </section>
 );
 

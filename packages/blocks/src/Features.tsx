@@ -21,3 +21,38 @@ export const FeaturesList = () => (
     </ul>
   </section>
 );
+
+export const FeaturesListAlt = () => (
+  <section className="List-stack Util--gap-4">
+    <ul className="Grid Grid--column-4">
+      <li>
+        <h3 className="Header">Functionalities of Linkedin.</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
+          suscipit eaque, iste dolor cupiditate blanditiis ratione.
+        </p>
+      </li>
+      <li>
+        <h3 className="Header">Functionalities of Linkedin.</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
+          suscipit eaque, iste dolor cupiditate blanditiis ratione.
+        </p>
+      </li>
+      <li>
+        <h3 className="Header">Functionalities of Linkedin.</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
+          suscipit eaque, iste dolor cupiditate blanditiis ratione.
+        </p>
+      </li>
+      <li>
+        <h3 className="Header">Functionalities of Linkedin.</h3>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis
+          suscipit eaque, iste dolor cupiditate blanditiis ratione.
+        </p>
+      </li>
+    </ul>
+  </section>
+);

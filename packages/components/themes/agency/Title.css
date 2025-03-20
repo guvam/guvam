@@ -1,0 +1,7 @@
+.Title {
+  padding: 1em;
+  font-size: var(--textSizeTitle);
+  font-weight: bold;
+  line-height: 1;
+  text-wrap: balance;
+}

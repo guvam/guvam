@@ -1,6 +1,6 @@
 .List {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   gap: 1rem;
   align-items: center;
 
@@ -10,6 +10,14 @@
 
   &.List--evenly {
     justify-content: space-evenly;
+  }
+
+  &.List--centered {
+    justify-content: center;
+  }
+
+  &.List--row {
+    flex-flow: row;
   }
 }
 

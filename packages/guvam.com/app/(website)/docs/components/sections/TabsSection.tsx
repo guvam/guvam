@@ -3,15 +3,15 @@ import "./TabsSection.css";
 import { Tabs, TabsContent, TabsWrapper } from "@guvam/components";
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const TabsSection: FC = () => (
-  <Components id="tabs">
+  <ComponentBlock id="tabs">
     <TabsWrapper className="Tabs-example">
       <Tabs className="Tabs-exampleList">
-        <button className="Tabs-Button">The Lantern Keeper’s Pact</button>
-        <button className="Tabs-Button">The Echoing War</button>
-        <button className="Tabs-Button">The River of Time</button>
+        <button className="Tabs-tab">The Lantern Keeper’s Pact</button>
+        <button className="Tabs-tab">The Echoing War</button>
+        <button className="Tabs-tab">The River of Time</button>
       </Tabs>
 
       <TabsContent>
@@ -38,5 +38,5 @@ export const TabsSection: FC = () => (
         </p>
       </TabsContent>
     </TabsWrapper>
-  </Components>
+  </ComponentBlock>
 );

@@ -14,7 +14,7 @@
   border-block-end: 1px solid var(--primaryBorder);
 }
 
-.Tabs-Button {
+.Tabs-tab {
   align-items: center;
   justify-content: center;
   block-size: 100%;

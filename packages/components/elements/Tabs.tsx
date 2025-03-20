@@ -1,7 +1,7 @@
 "use client";
 
-import type { ReactElement, ReactNode } from "react";
-import { Children, cloneElement, createContext, useContext, useState } from "react";
+import type { FC, HTMLAttributes, ReactElement, ReactNode } from "react";
+import { Children, cloneElement, createContext, useContext, useMemo, useState } from "react";
 
 import { classList } from "./utils/classList";
 
@@ -10,101 +10,91 @@ type TabsContextType = {
   setActiveTab: (index: number) => void;
 };
 
-const TabsContext = createContext<TabsContextType | undefined>(undefined);
-
-export const useTabs = () => {
-  const context = useContext(TabsContext);
-  if (!context) {
-    throw new Error("");
-  }
-
-  return context;
-};
+const TabsContext = createContext<TabsContextType>({
+  activeTab: 0,
+  setActiveTab: () => null,
+});
 
 type TabsWrapperProps = {
   children: ReactNode;
-  className?: string;
-};
+} & HTMLAttributes<HTMLElement>;
 
-export const TabsWrapper = ({ children, className = "" }: TabsWrapperProps) => {
+export const TabsWrapper = ({ children, ...props }: TabsWrapperProps) => {
   const [activeTab, setActiveTab] = useState(0);
 
+  const indexContext = useMemo(
+    () => ({
+      activeTab,
+      setActiveTab,
+    }),
+    [activeTab, setActiveTab]
+  );
+
   return (
-    <TabsContext.Provider value={{ activeTab, setActiveTab }}>
-      <div className={className}>{children}</div>
+    <TabsContext.Provider value={indexContext}>
+      <div {...props}>{children}</div>
     </TabsContext.Provider>
   );
 };
 
 type TabsProps = {
   children: ReactElement<HTMLDivElement>[];
-  className?: string;
-};
+} & HTMLAttributes<HTMLElement>;
 
-export const Tabs = ({ children, className = "" }: TabsProps) => {
-  const { activeTab, setActiveTab } = useTabs();
+export const Tabs: FC<TabsProps> = ({ children, ...props }) => {
+  const { activeTab, setActiveTab } = useContext(TabsContext);
 
   return (
-    <div role="tablist" className={className}>
-      {Children.map(children, (child, index) =>
-        cloneElement(
-          child as ReactElement<{
-            onClick?: () => void;
-            className?: string;
-            role?: string;
-            id?: string;
-            tabIndex?: number;
-            "aria-selected"?: boolean;
-            "aria-controls"?: string;
-            onKeyDown?: (event: React.KeyboardEvent) => void;
-          }>,
-          {
-            key: index,
-            role: "tab",
-            id: `tab-${index}`,
-            "aria-selected": index === activeTab,
-            "aria-controls": `panel-${index}`,
-            tabIndex: index === activeTab ? 0 : -1,
-            onClick: () => setActiveTab(index),
-            onKeyDown: (event: React.KeyboardEvent) => {
-              let newIndex = activeTab;
+    <div role="tablist" {...props}>
+      {Children.map(children as ReactElement<HTMLElement>[], (child, index) =>
+        cloneElement(child, {
+          key: index,
+          role: "tab",
+          id: `tab-${index}`,
+          "aria-selected": index === activeTab,
+          "aria-controls": `panel-${index}`,
+          tabIndex: index === activeTab ? 0 : -1,
+          onClick: () => setActiveTab(index),
+          onKeyDown: (event: React.KeyboardEvent) => {
+            let newIndex = activeTab;
 
-              if (event.key === "ArrowRight") {
-                newIndex = (activeTab + 1) % children.length;
-              } else if (event.key === "ArrowLeft") {
-                newIndex = (activeTab - 1 + children.length) % children.length;
-              }
+            if (event.key === "ArrowRight") {
+              newIndex = (activeTab + 1) % children.length;
+            } else if (event.key === "ArrowLeft") {
+              newIndex = (activeTab - 1 + children.length) % children.length;
+            }
 
-              setActiveTab(newIndex);
-            },
-            className: classList({
-              [child.props.className]: true,
-              Active: index === activeTab,
-            }),
-          }
-        )
+            setActiveTab(newIndex);
+          },
+          className: classList({
+            [child.props.className]: true,
+            "Tabs-tab": true,
+            "Tabs-tab--active": index === activeTab,
+          }),
+        } as never)
       )}
     </div>
   );
 };
 
 type TabsContentProps = {
-  children: ReactNode;
-  className?: string;
-};
+  children: ReactElement<HTMLElement>[];
+} & HTMLAttributes<HTMLElement>;
 
-export const TabsContent = ({ children, className = "" }: TabsContentProps) => {
-  const { activeTab } = useTabs();
+export const TabsContent: FC<TabsContentProps> = ({ children, ...props }) => {
+  const { activeTab } = useContext(TabsContext);
 
   return (
-    <div className={className}>
-      {Children.map(children, (child, index) =>
-        child && typeof child === "object" && "props" in child
-          ? cloneElement(child as ReactElement<{ style?: React.CSSProperties }>, {
-              key: index,
-              style: { display: index === activeTab ? "block" : "none" },
-            })
-          : child
+    <div {...props}>
+      {Children.map(children as ReactElement<HTMLElement>[], (child, index) =>
+        cloneElement(child, {
+          key: index,
+          className: classList({
+            [child.props.className]: true,
+            "Tabs-content": true,
+            "Tabs-content--active": index === activeTab,
+          }),
+        })
       )}
     </div>
   );

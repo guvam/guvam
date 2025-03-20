@@ -1,0 +1,32 @@
+.Tabs-example {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.Tabs-exampleList {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: start;
+  justify-content: start;
+  block-size: 40px;
+  border-block-end: 1px solid var(--primaryBorder);
+}
+
+.Tabs-tab {
+  align-items: center;
+  justify-content: center;
+  block-size: 100%;
+  padding-inline: 1em;
+  font-size: 18px;
+  text-align: center;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+  transition-duration: 200ms;
+
+  &:hover {
+    cursor: pointer;
+    background-color: oklch(60% 0 89.876deg / 30%);
+    border-block-end: 1px solid var(--primaryBorder);
+  }
+}

@@ -149,6 +149,11 @@ export const ComponentsLinks = () => {
               Pagination
             </ActiveLink>
           </li>
+          <li>
+            <ActiveLink className="SideMenu-menuItem" href="/docs/components#tabs">
+              Tabs
+            </ActiveLink>
+          </li>
         </ul>
       </div>
     </div>

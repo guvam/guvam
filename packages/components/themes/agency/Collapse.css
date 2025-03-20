@@ -1,0 +1,42 @@
+.Collapse-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Collapse > summary {
+  list-style: none;
+}
+
+.Collapse-action {
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-block-end: 2px solid var(--surfaceBorder);
+  border-radius: 0;
+}
+
+details[open] > summary.Collapse-action {
+  border-block-end: 2px solid transparent;
+}
+
+.Collapse-content,
+.Collapse::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size 250ms ease-in,
+    content-visibility 250ms ease-in allow-discrete;
+}
+
+.Collapse-contentBlock {
+  padding: 1rem;
+  border-block-end: 2px solid var(--surfaceBorder);
+}
+
+.Collapse-content:has(:checked),
+.Collapse-content.Collapse-content--open,
+.Collapse[open]::details-content {
+  block-size: auto;
+}

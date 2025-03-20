@@ -69,13 +69,13 @@ export default function Page() {
             <section className="Hero Gap2x">
               <hgroup className="Content Util--center">
                 <h2 className="Title">
-                  Create Things to <mark>Make</mark> your things cooler
+                  Create Things to <mark>Make your things cooler</mark>
                 </h2>
                 <p className="Title-description">
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
                   commodo. Elit sunt amet fugiat veniam .
                 </p>
-                <div>
+                <div className="List List--centered">
                   <button className="Button">Get Started</button>
                   <button className="Button Button--type-text">
                     Learn More <ArrowRight />
@@ -116,97 +116,97 @@ export default function Page() {
             <div className="List-stack">
               <hgroup className="Content Util--center">
                 <h2 className="Title">
-                  Create Things to <mark>Make</mark> your things cooler
+                  Create Things to <mark>Make your things cooler</mark>
                 </h2>
-              </hgroup>
-              <TabsWrapper className="List-stack">
-                <Tabs className="List List--centered">
-                  <button className="Button Button--type-text">Monitor your Progress</button>
-                  <button className="Button Button--type-text">Work Efficiently</button>
-                  <button className="Button Button--type-text">Have A Wide Selection</button>
-                </Tabs>
+                <TabsWrapper className="List-stack">
+                  <Tabs className="List List--centered">
+                    <button className="Button Button--type-text">Monitor your Progress</button>
+                    <button className="Button Button--type-text">Work Efficiently</button>
+                    <button className="Button Button--type-text">Have A Wide Selection</button>
+                  </Tabs>
 
-                <TabsContent>
-                  <div className="Components-container">
-                    <section>
-                      <div className="GridTwo">
-                        <hgroup className="Content">
-                          <h3 className="Title">Monitor your Progress</h3>
-                          <p className="Title-description">
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-                            cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
-                          </p>
-                          <div className="List">
-                            <button className="Button">Get Started</button>
-                            <button className="Button Button--type-text">
-                              Learn More <ArrowRight />
-                            </button>
-                          </div>
-                        </hgroup>
-                        <Image
-                          className="Features-fadingImage"
-                          src="/blocks/services/services-1.jpg"
-                          alt="Placeholder"
-                          width={1465}
-                          height={902}
-                        />
-                      </div>
-                    </section>
-                  </div>
-                  <div className="Components-container">
-                    <section>
-                      <div className="GridTwo">
-                        <hgroup className="Content">
-                          <h3 className="Title">Work Efficiently With Our Help</h3>
-                          <p className="Title-description">
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-                            cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
-                          </p>
-                          <div className="List">
-                            <button className="Button">Get Started</button>
-                            <button className="Button Button--type-text">
-                              Learn More <ArrowRight />
-                            </button>
-                          </div>
-                        </hgroup>
-                        <Image
-                          className="Features-fadingImage"
-                          src="/blocks/services/services-3.jpg"
-                          alt="Placeholder"
-                          width={1465}
-                          height={902}
-                        />
-                      </div>
-                    </section>
-                  </div>
-                  <div className="Components-container">
-                    <section>
-                      <div className="GridTwo">
-                        <hgroup className="Content">
-                          <h3 className="Title">Have A Wide Selection of Options</h3>
-                          <p className="Title-description">
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-                            cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
-                          </p>
-                          <div className="List">
-                            <button className="Button">Get Started</button>
-                            <button className="Button Button--type-text">
-                              Learn More <ArrowRight />
-                            </button>
-                          </div>
-                        </hgroup>
-                        <Image
-                          className="Features-fadingImage"
-                          src="/blocks/services/services-4.jpg"
-                          alt="Placeholder"
-                          width={1465}
-                          height={902}
-                        />
-                      </div>
-                    </section>
-                  </div>
-                </TabsContent>
-              </TabsWrapper>
+                  <TabsContent>
+                    <div className="Components-container">
+                      <section>
+                        <div className="GridTwo">
+                          <hgroup className="Content">
+                            <h3 className="Title">Monitor your Progress</h3>
+                            <p className="Title-description">
+                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+                              cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
+                            </p>
+                            <div className="List">
+                              <button className="Button">Get Started</button>
+                              <button className="Button Button--type-text">
+                                Learn More <ArrowRight />
+                              </button>
+                            </div>
+                          </hgroup>
+                          <Image
+                            className="Features-fadingImage"
+                            src="/blocks/services/services-1.jpg"
+                            alt="Placeholder"
+                            width={1465}
+                            height={902}
+                          />
+                        </div>
+                      </section>
+                    </div>
+                    <div className="Components-container">
+                      <section>
+                        <div className="GridTwo">
+                          <hgroup className="Content">
+                            <h3 className="Title">Work Efficiently With Our Help</h3>
+                            <p className="Title-description">
+                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+                              cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
+                            </p>
+                            <div className="List">
+                              <button className="Button">Get Started</button>
+                              <button className="Button Button--type-text">
+                                Learn More <ArrowRight />
+                              </button>
+                            </div>
+                          </hgroup>
+                          <Image
+                            className="Features-fadingImage"
+                            src="/blocks/services/services-3.jpg"
+                            alt="Placeholder"
+                            width={1465}
+                            height={902}
+                          />
+                        </div>
+                      </section>
+                    </div>
+                    <div className="Components-container">
+                      <section>
+                        <div className="GridTwo">
+                          <hgroup className="Content">
+                            <h3 className="Title">Have A Wide Selection of Options</h3>
+                            <p className="Title-description">
+                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+                              cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
+                            </p>
+                            <div className="List">
+                              <button className="Button">Get Started</button>
+                              <button className="Button Button--type-text">
+                                Learn More <ArrowRight />
+                              </button>
+                            </div>
+                          </hgroup>
+                          <Image
+                            className="Features-fadingImage"
+                            src="/blocks/services/services-4.jpg"
+                            alt="Placeholder"
+                            width={1465}
+                            height={902}
+                          />
+                        </div>
+                      </section>
+                    </div>
+                  </TabsContent>
+                </TabsWrapper>
+              </hgroup>
             </div>
           </div>
         </section>
@@ -471,7 +471,7 @@ export default function Page() {
                 height={902}
               />
               <hgroup className="Content">
-                <h1 className="Title">Create Things to Make your Things even Cooler</h1>
+                <h2 className="Title">Create Things to Make your Things even Cooler</h2>
                 <p className="Title-description">
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
                   commodo. Elit sunt amet fugiat veniam occaecat.

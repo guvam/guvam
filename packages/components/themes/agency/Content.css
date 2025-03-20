@@ -2,7 +2,7 @@ mark {
   padding: 0.1em;
   margin-inline: 2px;
   line-height: 1;
-  color: var(--primaryText); /* TODO */
+  color: var(--primary);
   white-space: nowrap;
-  background-color: var(--primary);
+  background-color: transparent;
 }

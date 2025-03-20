@@ -4,7 +4,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 export default function Page() {
   return (
     <section className="Layout-section">
-      <div className="Layout-hero ">
+      <div className="Hero">
         <div className="Content">
           <h2>Something&#39;s Missing</h2>
           <p>404</p>

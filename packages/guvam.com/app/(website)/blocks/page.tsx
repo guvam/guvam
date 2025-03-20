@@ -23,7 +23,7 @@ import {
 import { Questions, QuestionsOpen } from "@guvam/blocks/src/Questions";
 import { Team, TeamCard, TeamSmall } from "@guvam/blocks/src/Team";
 
-import { BlockExample } from "./BlockExample";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export default function Page() {
   return (
@@ -71,97 +71,97 @@ export default function Page() {
       </div>
 
       <div className="Layout-section">
-        <BlockExample id="banner">
+        <ComponentBlock id="banner">
           <Banner />
-        </BlockExample>
-        <BlockExample id="team-muted">
+        </ComponentBlock>
+        <ComponentBlock id="team-muted">
           <BannerMuted />
-        </BlockExample>
-        <BlockExample id="team-gradient">
+        </ComponentBlock>
+        <ComponentBlock id="team-gradient">
           <BannerGradient />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="blog">
+        <ComponentBlock id="blog">
           <Blog />
-        </BlockExample>
-        <BlockExample id="blog-cards">
+        </ComponentBlock>
+        <ComponentBlock id="blog-cards">
           <BlogCards />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="carousel-images">
+        <ComponentBlock id="carousel-images">
           <CarouselImages />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="contact">
+        <ComponentBlock id="contact">
           <Contact />
-        </BlockExample>
-        <BlockExample id="contact-location">
+        </ComponentBlock>
+        <ComponentBlock id="contact-location">
           <ContactLocation />
-        </BlockExample>
-        <BlockExample id="contact-other">
+        </ComponentBlock>
+        <ComponentBlock id="contact-other">
           <ContactCards />
-        </BlockExample>
-        <BlockExample id="contact-split">
+        </ComponentBlock>
+        <ComponentBlock id="contact-split">
           <ContactSplit />
-        </BlockExample>
-        <BlockExample id="contact-splitimage">
+        </ComponentBlock>
+        <ComponentBlock id="contact-splitimage">
           <ContactSplitImage />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="questions">
+        <ComponentBlock id="questions">
           <Questions />
-        </BlockExample>
-        <BlockExample id="questions-open">
+        </ComponentBlock>
+        <ComponentBlock id="questions-open">
           <QuestionsOpen />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="hero-simple">
+        <ComponentBlock id="hero-simple">
           <HeroSimple />
-        </BlockExample>
-        <BlockExample id="hero-split">
+        </ComponentBlock>
+        <ComponentBlock id="hero-split">
           <HeroSplit />
-        </BlockExample>
-        <BlockExample id="hero-split-image">
+        </ComponentBlock>
+        <ComponentBlock id="hero-split-image">
           <Hero3 />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="partners">
+        <ComponentBlock id="partners">
           <PartnersSimple />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="newsletter">
+        <ComponentBlock id="newsletter">
           <Newsletter />
-        </BlockExample>
-        <BlockExample id="newsletter-horizontal">
+        </ComponentBlock>
+        <ComponentBlock id="newsletter-horizontal">
           <NewsletterHorizontal />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="pricing-section">
+        <ComponentBlock id="pricing-section">
           <PricingSection />
-        </BlockExample>
-        <BlockExample id="pricing-section-bold">
+        </ComponentBlock>
+        <ComponentBlock id="pricing-section-bold">
           <PricingSectionBold />
-        </BlockExample>
-        <BlockExample id="pricing-addition">
+        </ComponentBlock>
+        <ComponentBlock id="pricing-addition">
           <PricingAddition />
-        </BlockExample>
-        <BlockExample id="pricing-table">
+        </ComponentBlock>
+        <ComponentBlock id="pricing-table">
           <PricingTable />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="features-2">
+        <ComponentBlock id="features-2">
           <FeaturesList />
-        </BlockExample>
+        </ComponentBlock>
 
-        <BlockExample id="team">
+        <ComponentBlock id="team">
           <Team />
-        </BlockExample>
-        <BlockExample id="team-small">
+        </ComponentBlock>
+        <ComponentBlock id="team-small">
           <TeamSmall />
-        </BlockExample>
-        <BlockExample id="team-card">
+        </ComponentBlock>
+        <ComponentBlock id="team-card">
           <TeamCard />
-        </BlockExample>
+        </ComponentBlock>
       </div>
     </>
   );

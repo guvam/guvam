@@ -68,7 +68,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
     >
       <menu className="Grid Util--gap-3" style={{ "--Grid-count": 1 } as never}>
         <div className="Menu-block">
-          <h2>Theme</h2>
+          <div>Theme</div>
           <div className="Menu-list">
             <label className="Menu-button">
               <input type="radio" name="theme" value="calm" className="Util-hidden" />
@@ -86,7 +86,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
         </div>
 
         <div className="Menu-block">
-          <h2>Color scheme</h2>
+          <div>Color scheme</div>
           <div className="Menu-list">
             <label className="Menu-button">
               <input type="radio" name="colorScheme" value="normal" className="Util-hidden" />
@@ -104,7 +104,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
         </div>
 
         <div className="Menu-block">
-          <h2>Color Theme</h2>
+          <div>Color Theme</div>
           <div className="Menu-list">
             <label className="Menu-button">
               <input type="radio" name="colorTheme" value="blue" className="Util-hidden" />
@@ -208,7 +208,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
         </div>*/}
 
         <div className="Menu-block">
-          <h2>Text scale</h2>
+          <div>Text scale</div>
           <div className="Menu-list Menu-list--short">
             <label className="Menu-button">
               <input type="radio" name="textScale" value="1.125" className="Util-hidden" />
@@ -234,7 +234,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
         </div>
 
         <div className="Menu-block">
-          <h2>Text size</h2>
+          <div>Text size</div>
           <div className="Menu-list Menu-list--short">
             <label className="Menu-button">
               <input type="radio" name="textSize" value="12px" className="Util-hidden" />
@@ -260,7 +260,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
         </div>
 
         {/*<div className="Menu-block">
-            <h2>Text density</h2>
+            <div>Text density</div>
             <div className="Menu-list">
               <label className="Menu-button">
                 <input type="radio" name="textDensity" value="0.8" className="Util-hidden" />
@@ -278,7 +278,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
           </div>*/}
 
         <div className="Menu-block">
-          <h2>Text direction</h2>
+          <div>Text direction</div>
           <div className="Menu-list">
             <label className="Menu-button">
               <input type="radio" name="textDirection" value="unset" className="Util-hidden" />
@@ -296,7 +296,7 @@ export const SettingsForm: FC<{ themeSettings: ThemeSettings }> = (props) => {
         </div>
 
         {/*<div className="Menu-block">
-            <h2>Motion reduction</h2>
+            <div>Motion reduction</div>
             <div className="Menu-list">
               <label className="Menu-button">
                 <input type="radio" name="motionReduction" value="auto" className="Util-hidden" />

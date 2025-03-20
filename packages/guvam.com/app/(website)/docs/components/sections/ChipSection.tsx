@@ -1,9 +1,9 @@
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const ChipSection: FC = () => (
-  <Components id="chip">
+  <ComponentBlock id="chip">
     <div className="Chip">chip</div>
-  </Components>
+  </ComponentBlock>
 );

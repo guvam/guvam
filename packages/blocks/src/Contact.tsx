@@ -11,39 +11,27 @@ export const Contact = () => (
     <fieldset className="Grid Grid--column-2">
       <label className="Control">
         <span className="Control-label">First name</span>
-        <div className="Input">
-          <input type="text" autoComplete="given-name" placeholder="Jane" />
-        </div>
+        <input className="Input" type="text" autoComplete="given-name" placeholder="Jane" />
       </label>
       <label className="Control">
         <span className="Control-label">Last name</span>
-        <div className="Input">
-          <input type="text" autoComplete="family-name" placeholder="Doe" />
-        </div>
+        <input className="Input" type="text" autoComplete="family-name" placeholder="Doe" />
       </label>
       <label className="Control">
         <span className="Control-label">Company</span>
-        <div className="Input">
-          <input type="text" name="username" />
-        </div>
+        <input className="Input" type="text" name="username" />
       </label>
       <label className="Control">
         <span className="Control-label">Email</span>
-        <div className="Input">
-          <input type="text" name="username" placeholder="Jane.Doe@gmail.com" />
-        </div>
+        <input className="Input" type="text" name="username" placeholder="Jane.Doe@gmail.com" />
       </label>
       <label className="Control">
         <span className="Control-label">Phone Number</span>
-        <div className="Input">
-          <input type="text" name="username" placeholder="+372 123 4242" />
-        </div>
+        <input className="Input" type="text" name="username" placeholder="+372 123 4242" />
       </label>
       <label className="Control">
         <span className="Control-label">Inquiry Message</span>
-        <div className="Input">
-          <textarea name="about"></textarea>
-        </div>
+        <textarea className="Input" name="about"></textarea>
       </label>
       <label className="Control">
         <input type="checkbox" className="Switch" />
@@ -158,40 +146,28 @@ export const ContactSplit = () => (
         <label className="Control">
           <span className="Control-label">First name</span>
           <div className="Card-content Content">
-            <div className="Input">
-              <input type="text" autoComplete="given-name" placeholder="Jane" />
-            </div>
+            <input className="Input" type="text" autoComplete="given-name" placeholder="Jane" />
           </div>
         </label>
         <label className="Control">
           <span className="Control-label">Last name</span>
-          <div className="Input">
-            <input type="text" autoComplete="family-name" placeholder="Doe" />
-          </div>
+          <input className="Input" type="text" autoComplete="family-name" placeholder="Doe" />
         </label>
         <label className="Control">
           <span className="Control-label">Company</span>
-          <div className="Input">
-            <input type="text" name="username" />
-          </div>
+          <input className="Input" type="text" name="username" />
         </label>
         <label className="Control">
           <span className="Control-label">Email</span>
-          <div className="Input">
-            <input type="text" name="username" placeholder="Jane.Doe@gmail.com" />
-          </div>
+          <input className="Input" type="text" name="username" placeholder="Jane.Doe@gmail.com" />
         </label>
         <label className="Control">
           <span className="Control-label">Phone Number</span>
-          <div className="Input">
-            <input type="text" name="username" placeholder="+372 123 4242" />
-          </div>
+          <input className="Input" type="text" name="username" placeholder="+372 123 4242" />
         </label>
         <label className="Control">
           <span className="Control-label">Inquiry Message</span>
-          <div className="Input">
-            <textarea name="about"></textarea>
-          </div>
+          <textarea className="Input" name="about"></textarea>
         </label>
         <label className="Checkbox-label">
           <input type="checkbox" className="Switch" />
@@ -233,7 +209,7 @@ export const ContactSplitImage = () => (
         </label>
         <label className="Control">
           <span className="Control-label">Inquiry Message</span>
-          <textarea name="about" className="Input Input--type-textarea"></textarea>
+          <textarea name="about" className="Input"></textarea>
         </label>
         <label className="Checkbox-label">
           <input type="checkbox" className="Switch" />

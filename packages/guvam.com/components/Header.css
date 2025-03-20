@@ -53,14 +53,14 @@
   padding: 0.5em;
   cursor: pointer;
   border-radius: var(--borderRadius);
+  transition: color 0.3s ease-in-out;
 
   &:hover {
-    background-color: var(--surfaceHover) !important;
+    color: var(--primary);
   }
 
   &.Header-navLink--active {
     color: var(--primary);
-    background-color: oklch(from var(--primary) 90% c h / 20%);
   }
 }
 

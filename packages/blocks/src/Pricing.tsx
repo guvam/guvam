@@ -155,7 +155,7 @@ export const PricingSection = () => (
             <h3>Hobby</h3>
             <p>Everything you need to Start</p>
             <p>
-              <h1>$29</h1>
+              <span>$29</span>
               <span className="Text-Muted">month</span>
             </p>
             <p>The perfect plan if you are just getting started with our product</p>
@@ -191,7 +191,7 @@ export const PricingSectionBold = () => (
             <h3>Hobby</h3>
             <p>Everything you need to Start</p>
             <p>
-              <h1>$29</h1>
+              <span>$29</span>
               <span className="Text-Muted">month</span>
             </p>
           </div>

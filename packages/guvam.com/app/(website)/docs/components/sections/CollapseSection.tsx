@@ -1,9 +1,9 @@
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const CollapseSection: FC = () => (
-  <Components id="collapse">
+  <ComponentBlock id="collapse">
     <div className="List-stack">
       {[1, 2, 3, 4].map((x) => (
         <details className="Collapse" name="accordion" key={x}>
@@ -18,5 +18,5 @@ export const CollapseSection: FC = () => (
         </details>
       ))}
     </div>
-  </Components>
+  </ComponentBlock>
 );

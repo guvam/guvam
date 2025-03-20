@@ -10,7 +10,7 @@ const content = [
 ];
 
 export const Team = () => (
-  <section>
+  <section className="List-stack">
     <hgroup className="Content Util--center">
       <h1>The Team</h1>
       <p>Lorem Ipsum is simply dummy text</p>
@@ -30,7 +30,7 @@ export const Team = () => (
 );
 
 export const TeamSmall = () => (
-  <section>
+  <section className="List-stack">
     <hgroup className="Content Util--center">
       <h1>The Team</h1>
       <p>Lorem Ipsum is simply dummy text</p>
@@ -50,7 +50,7 @@ export const TeamSmall = () => (
 );
 
 export const TeamCard = () => (
-  <section>
+  <section className="List-stack">
     <hgroup className="Content Util--center">
       <h1>The Team</h1>
       <p>Lorem Ipsum is simply dummy text</p>

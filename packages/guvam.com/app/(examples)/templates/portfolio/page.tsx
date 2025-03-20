@@ -8,7 +8,7 @@ import { ServicesGrid } from "@guvam/blocks/src/Services";
 export default function Page() {
   return (
     <>
-      <div className="Layout-background">
+      <div className="Layout-sectionFull Layout-sectionFull--filled">
         <section className="Layout-section">
           <div className="Layout-sectionContent">
             <HeroSplit />
@@ -28,7 +28,7 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="Layout-background">
+      <div className="Layout-sectionFull Layout-sectionFull--filled">
         <section className="Layout-section">
           <div className="Layout-sectionContent">
             <BlogCards />

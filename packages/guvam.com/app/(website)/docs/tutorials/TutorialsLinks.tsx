@@ -5,11 +5,9 @@ import { ActiveLink } from "@/components/ActiveLink";
 export const TutorialsLinks = () => {
   return (
     <div className="SideMenu-menuSection">
-      <h2>
-        <label htmlFor="menu-tutorials" className="SideMenu-menuHeading">
-          Tutorials
-        </label>
-      </h2>
+      <label htmlFor="menu-tutorials" className="SideMenu-menuHeading">
+        Tutorials
+      </label>
       <ul className="Collapse-content">
         <input type="checkbox" hidden id="menu-tutorials" defaultChecked />
         <li>

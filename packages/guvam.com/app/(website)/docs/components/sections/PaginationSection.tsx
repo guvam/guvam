@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import { ChevronLeft, ChevronRight, ThreeDots } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const PaginationSection: FC = () => (
-  <Components id="pagination">
+  <ComponentBlock id="pagination">
     <nav>
       <ul className="Pagination">
         <li>
@@ -35,5 +35,5 @@ export const PaginationSection: FC = () => (
         </li>
       </ul>
     </nav>
-  </Components>
+  </ComponentBlock>
 );

@@ -242,30 +242,10 @@ export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }
 }) => {
   const { setSlideCount } = useContext(CarouselSlideCountStateContext);
   const { currentIndex } = useContext(CarouselIndexStateContext);
-  const [activeIndex, setActiveIndex] = useState<number>(currentIndex);
-  const [stopIndex, setStopIndex] = useState<number | null>(null);
 
   useEffect(() => {
     setSlideCount(children.length);
-  }, []);
-
-  useEffect(() => {
-    const count = children.length;
-    const directionRight =
-      currentIndex > activeIndex || (currentIndex === 0 && activeIndex === count - 1);
-
-    if (directionRight) {
-      const move = Math.floor(count / 2);
-      const stop = (count + currentIndex - 1 - move) % count;
-      setStopIndex(stop);
-    } else {
-      const move = Math.ceil(count / 2);
-      const stop = (count + currentIndex + move) % count;
-      setStopIndex(stop);
-    }
-
-    setActiveIndex(currentIndex);
-  }, [currentIndex]);
+  }, [children]);
 
   return (
     <CarouselTag tag="ul" command="carousel:slidecontainer" className="Carousel-slideContainer">
@@ -274,10 +254,10 @@ export const CarouseSlideContainer: FC<{ children: ReactElement<HTMLElement>[] }
           className: classList({
             [element.props.className]: true,
             "Carousel-slideItem--previous":
-              (children.length + activeIndex - 1) % children.length === i,
-            "Carousel-slideItem--active": (children.length + activeIndex) % children.length === i,
-            "Carousel-slideItem--next": (children.length + activeIndex + 1) % children.length === i,
-            "Carousel-slideItem--stop": stopIndex === i,
+              (children.length + currentIndex - 1) % children.length === i,
+            "Carousel-slideItem--active": (children.length + currentIndex) % children.length === i,
+            "Carousel-slideItem--next":
+              (children.length + currentIndex + 1) % children.length === i,
           }),
           style: {
             "--Carousel-slideItemIndex": i,

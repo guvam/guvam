@@ -11,7 +11,7 @@ export const LayoutForm = () => (
       </label>
       <label className="Form-columnFull">
         <span className="Control-label">About</span>
-        <textarea name="about" className="Input Input--type-textarea"></textarea>
+        <textarea name="about" className="Input"></textarea>
       </label>
       <label className="Form-columnFull">
         <span className="Control-label">Profile Picture</span>

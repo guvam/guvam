@@ -4,10 +4,10 @@ import { Menu, MenuItem, MenuSeparator, Popover } from "@guvam/components";
 import type { FC } from "react";
 import { MoonFill, PersonFill, SunFill } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const DropdownSection: FC = () => (
-  <Components id="dropdown">
+  <ComponentBlock id="dropdown">
     <Popover id="modal" modal data-selector="dropdown">
       <button className="Button">Open dropdown</button>
       <div className="Dropdown Dropdown-modal Dropdown--left">
@@ -26,5 +26,5 @@ export const DropdownSection: FC = () => (
         </Menu>
       </div>
     </Popover>
-  </Components>
+  </ComponentBlock>
 );

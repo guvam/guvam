@@ -2,12 +2,12 @@ import { Notification } from "@guvam/components";
 import type { FC, ReactNode } from "react";
 import { XLg } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const NotificationSection: FC = () => (
-  <Components id="notification">
+  <ComponentBlock id="notification">
     <TemplateNotification />
-  </Components>
+  </ComponentBlock>
 );
 
 const NotificationItem: FC<{ children: ReactNode }> = (props) => (

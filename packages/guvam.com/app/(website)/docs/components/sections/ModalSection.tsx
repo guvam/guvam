@@ -4,13 +4,13 @@ import { Modal, ModalTag } from "@guvam/components";
 import type { FC } from "react";
 import { GearFill, X } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const ModalSection: FC = () => (
-  <Components id="modal">
+  <ComponentBlock id="modal">
     <TemplateModalSuccess />
     <TemplateModalForm />
-  </Components>
+  </ComponentBlock>
 );
 
 const TemplateModalSuccess: FC = () => (

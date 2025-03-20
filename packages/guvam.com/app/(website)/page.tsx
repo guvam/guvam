@@ -7,9 +7,9 @@ import { Support } from "@/app/(website)/support/Support";
 export default function Page() {
   return (
     <>
-      <section className="Layout-sectionHero">
+      <section className="Layout-sectionFull Layout-sectionFull--hero">
         <div className="Layout-section">
-          <div className="Layout-hero">
+          <div className="Hero">
             <hgroup className="Content">
               <h1 className="Title">Light / Headless components for you web project</h1>
 

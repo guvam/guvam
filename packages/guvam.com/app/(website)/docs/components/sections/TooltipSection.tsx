@@ -1,13 +1,13 @@
 import { Tooltip } from "@guvam/components";
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const TooltipSection: FC = () => (
-  <Components id="tooltip">
+  <ComponentBlock id="tooltip">
     <Tooltip>
       <button className="Button">Button</button>
       <span className="Tooltip Tooltip--position-top">Label</span>
     </Tooltip>
-  </Components>
+  </ComponentBlock>
 );

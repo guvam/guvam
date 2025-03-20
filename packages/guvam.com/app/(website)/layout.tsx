@@ -45,15 +45,15 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <GoogleTagManager gtmId="GTM-T7RFBRHK" />
       </head>
       <body className="Layout">
-        <div className="Layout-background Header-stickyContainer">
+        <div className="Layout-sectionFull Layout-sectionFull--filled Header-stickyContainer">
           <div className="Layout-section">
             <Header />
           </div>
-          <div className="Layout-line"></div>
+          <div className="Layout-sectionFull Layout-sectionFull--separator"></div>
         </div>
 
         {children}
-        <div className="Layout-line"></div>
+        <div className="Layout-sectionFull Layout-sectionFull--separator"></div>
         <div className="Layout-section">
           <Footer />
         </div>

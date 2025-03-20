@@ -1,7 +1,7 @@
 export const RoadmapContent = () => (
   <>
     <h2>Roadmap</h2>
-    <ul>
+    <ul className="Content-list">
       <li>
         <b>Components</b>: Create the most commonly used components and styling{" "}
         <mark>(Release v0.2.0)</mark>

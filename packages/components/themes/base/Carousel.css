@@ -28,7 +28,7 @@
   initial-value: 0;
 }
 
-@property --scale {
+@property --Carousel-scale {
   inherits: true;
   syntax: "<number>";
   initial-value: 1;
@@ -77,28 +77,17 @@
     )
   );
 
-  &.Carousel-slideItem--stop {
-    transition: none;
-  }
-
   &.Carousel-slideGalleryItem {
-    --scale: 0.8;
+    --Carousel-scale: 0.8;
 
     opacity: 0.2;
 
     &.Carousel-slideItem--active {
-      --scale: 1;
+      --Carousel-scale: 1;
 
       opacity: 1;
     }
   }
-}
-
-.Carousel-slideImage {
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 .Carousel-button {
@@ -167,105 +156,11 @@
   }
 }
 
-/*
-.Carousel--type-animated {
-  position: relative;
-  display: block;
-  inline-size: 100%;
-  overflow: clip;
-
-  .Carousel-slideContainer {
-    position: relative;
-  }
-
-  .Carousel-slideItem {
-    inline-size: 100%;
-    block-size: 100%;
-    opacity: 1;
-    transition:
-      opacity var(--Carousel-animateDuration) ease-in-out,
-      transform var(--Carousel-animateDuration) ease-in-out;
-  }
-
-  .Carousel-trackItem--active {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .Carousel-trackItem--previous {
-    opacity: 1;
-    transform: translateX(100%);
-  }
-
-  .Carousel-content {
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity var(--Carousel-animateDuration) ease-in-out var(--Carousel-animateDuration),
-      transform var(--Carousel-animateDuration) ease-in-out var(--Carousel-animateDuration);
-  }
-
-  .Carousel-trackItem--active .Carousel-content {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .Carousel-menuItem {
-    position: relative;
-    inline-size: 12px;
-    block-size: 12px;
-    transition: width 0.3s ease-in-out;
-  }
-
-  .Carousel-navItem--active {
-    inline-size: 50px;
-    background-color: var(--primary);
-    background-image: linear-gradient(to right, oklch(39.4% 0 89.876deg / 50%) 100%, transparent 0);
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    border-radius: 6px;
-    animation: FillNavItem var(--Carousel-animateDuration) linear forwards;
-
-    &::before {
-      position: absolute;
-      inset-block-start: 0;
-      inset-inline-start: 0;
-      inline-size: 0;
-      block-size: 100%;
-      content: "";
-      background-color: var(--uiActive);
-      border-radius: 6px;
-    }
-  }
-}
-
-@keyframes FillNavItem {
-  from {
-    background-size: 0 100%;
-  }
-
-  to {
-    background-size: 100% 100%;
-  }
-}
-*/
-
-/* out */
-
+/* OUT */
 .Carousel-containerFade {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  inline-size: 100%;
-
-  /* mask-image: linear-gradient(
-    to right,
-    oklch(0% 0 0deg / 0%) 0%,
-    oklch(0% 0 0deg) 3rem,
-    oklch(0% 0 0deg) calc(100% - 3rem),
-    oklch(0% 0 0deg / 0%) 100%
-  ); */
 }
 
 .Carousel-content {

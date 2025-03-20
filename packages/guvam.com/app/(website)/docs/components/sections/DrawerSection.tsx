@@ -2,10 +2,10 @@ import { Menu, MenuItem, MenuSeparator, Popover } from "@guvam/components";
 import type { FC } from "react";
 import { MoonFill, PersonFill, SunFill } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const DrawerSection: FC = () => (
-  <Components id="drawer">
+  <ComponentBlock id="drawer">
     <Popover id="left" modal={true}>
       <button className="Button">Open Left Drawer</button>
       <menu className="Drawer Drawer--position-left">
@@ -33,7 +33,7 @@ export const DrawerSection: FC = () => (
         <TemplateMenu />
       </menu>
     </Popover>
-  </Components>
+  </ComponentBlock>
 );
 
 const TemplateMenu = () => (

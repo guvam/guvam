@@ -1,9 +1,9 @@
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const ProgressSection: FC = () => (
-  <Components id="progress">
+  <ComponentBlock id="progress">
     <progress className="Progress" max="100" defaultValue="50" />
-  </Components>
+  </ComponentBlock>
 );

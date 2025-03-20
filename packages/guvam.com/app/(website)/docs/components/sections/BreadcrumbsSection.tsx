@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import { ChevronRight, ThreeDots } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const BreadcrumbsSection: FC = () => (
-  <Components id="breadcrumbs">
+  <ComponentBlock id="breadcrumbs">
     <nav>
       <ul className="Breadcrumb">
         <li>
@@ -32,5 +32,5 @@ export const BreadcrumbsSection: FC = () => (
         </li>
       </ul>
     </nav>
-  </Components>
+  </ComponentBlock>
 );

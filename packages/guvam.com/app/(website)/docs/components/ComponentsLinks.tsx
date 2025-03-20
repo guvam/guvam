@@ -3,11 +3,10 @@ import { ActiveLink } from "@/components/ActiveLink";
 export const ComponentsLinks = () => {
   return (
     <div className="SideMenu-menuSection">
-      <h2>
-        <label htmlFor="menu-components" className="SideMenu-menuHeading">
-          Components
-        </label>
-      </h2>
+      <label htmlFor="menu-components" className="SideMenu-menuHeading">
+        Components
+      </label>
+
       <div className="Collapse-content">
         <input type="checkbox" hidden id="menu-components" defaultChecked />
 

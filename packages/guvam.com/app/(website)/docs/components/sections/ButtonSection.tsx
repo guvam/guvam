@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import { House } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const ButtonSection: FC = () => (
-  <Components id="button">
+  <ComponentBlock id="button">
     <button className="Button">Button</button>
     <button className="Button Button--type-muted">Button</button>
     <button className="Button Button--type-text">Button</button>
@@ -26,5 +26,5 @@ export const ButtonSection: FC = () => (
       <House />
     </button>
     <button className="Button Button--icon Button--loading" aria-label="House action"></button>
-  </Components>
+  </ComponentBlock>
 );

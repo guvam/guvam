@@ -38,7 +38,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <meta name="color-scheme" content="dark light" />
       </head>
       <body className="Layout">
-        <div className="Layout-background">
+        <div className="Layout-sectionFull Layout-sectionFull--filled">
           <section className="Layout-section">
             <HeaderSimple />
           </section>
@@ -46,7 +46,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
         {children}
 
-        <div className="Layout-background">
+        <div className="Layout-sectionFull Layout-sectionFull--filled">
           <section className="Layout-section">
             <FooterSimple />
           </section>

@@ -9,9 +9,7 @@ export const Newsletter = () => (
         incididunt dolore.
       </p>
       <div className="List">
-        <div className="Input">
-          <input type="Text" placeholder="Enter your email" />
-        </div>
+        <input className="Input" type="Text" placeholder="Enter your email" />
         <button className="Button">Subscribe</button>
       </div>
     </li>
@@ -42,9 +40,7 @@ export const NewsletterHorizontal = () => (
       incididunt dolore.
     </p>
     <div className="List">
-      <div className="Input">
-        <input type="Text" placeholder="Enter your email" />
-      </div>
+      <input className="Input" type="Text" placeholder="Enter your email" />
       <button className="Button">Subscribe</button>
     </div>
     <p>

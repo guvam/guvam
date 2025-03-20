@@ -2,10 +2,10 @@ import { Menu, MenuItem, MenuSeparator } from "@guvam/components";
 import type { FC } from "react";
 import { MoonFill, PersonFill, SunFill } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const MenuSection: FC = () => (
-  <Components id="menu">
+  <ComponentBlock id="menu">
     <Menu className="Menu">
       <MenuItem icon={<MoonFill />}>Profile</MenuItem>
       <MenuItem icon={<SunFill />} info="⌘+T">
@@ -19,5 +19,5 @@ export const MenuSection: FC = () => (
       </MenuItem>
       <MenuItem>Info</MenuItem>
     </Menu>
-  </Components>
+  </ComponentBlock>
 );

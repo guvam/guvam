@@ -1,20 +1,12 @@
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const InputSection: FC = () => (
-  <Components id="input">
-    <div className="Input">
-      <input type="text" aria-label="input" />
-    </div>
-    <div className="Input">
-      <input type="text" aria-label="input" placeholder="placeholder" />
-    </div>
-    <div className="Input">
-      <input type="text" aria-label="input" defaultValue="value" />
-    </div>
-    <div className="Input">
-      <input type="text" aria-label="input" defaultValue="value" disabled />
-    </div>
-  </Components>
+  <ComponentBlock id="input">
+    <input className="Input" type="text" aria-label="input" />
+    <input className="Input" type="text" aria-label="input" placeholder="placeholder" />
+    <input className="Input" type="text" aria-label="input" defaultValue="value" />
+    <input className="Input" type="text" aria-label="input" defaultValue="value" disabled />
+  </ComponentBlock>
 );

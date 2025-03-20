@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const ContentSection: FC = () => (
-  <Components id="content">
+  <ComponentBlock id="content">
     <div className="Content">
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
@@ -49,5 +49,5 @@ export const ContentSection: FC = () => (
         </tbody>
       </table>
     </div>
-  </Components>
+  </ComponentBlock>
 );

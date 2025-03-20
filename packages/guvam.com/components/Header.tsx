@@ -26,7 +26,7 @@ export const Header: FC = () => (
             className="Header-navLink"
             activeClassName="Header-navLink--active"
             isParent
-            href="/docs/"
+            href="/docs"
           >
             Docs
           </ActiveLink>
@@ -36,7 +36,7 @@ export const Header: FC = () => (
             className="Header-navLink"
             activeClassName="Header-navLink--active"
             isParent
-            href="/blocks/"
+            href="/blocks"
           >
             Blocks
           </ActiveLink>
@@ -46,7 +46,7 @@ export const Header: FC = () => (
             className="Header-navLink"
             activeClassName="Header-navLink--active"
             isParent
-            href="/templates/"
+            href="/templates"
           >
             Templates
           </ActiveLink>

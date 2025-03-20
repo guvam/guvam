@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import { ExclamationCircleFill, SignStopFill } from "react-bootstrap-icons";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const AlertSection: FC = () => (
-  <Components id="alert">
+  <ComponentBlock id="alert">
     <div className="List-stack">
       <div className="Alert Alert--type-info">
         Info alert! Change a few things up and try submitting again.
@@ -51,5 +51,5 @@ export const AlertSection: FC = () => (
         </div>
       </div>
     </div>
-  </Components>
+  </ComponentBlock>
 );

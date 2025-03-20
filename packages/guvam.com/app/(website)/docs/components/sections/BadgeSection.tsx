@@ -1,9 +1,9 @@
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const BadgeSection: FC = () => (
-  <Components id="badge">
+  <ComponentBlock id="badge">
     <span className="Badge">Badge</span>
-  </Components>
+  </ComponentBlock>
 );

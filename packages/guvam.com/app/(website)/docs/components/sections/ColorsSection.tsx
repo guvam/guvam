@@ -2,18 +2,18 @@ import "./ColorsSection.css";
 
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 const VARS1 = ["--primary", "--secondary", "--accent"];
 const VARS2 = ["--info", "--success", "--warning", "--error"];
 
 export const ColorsSection: FC = () => (
-  <Components id="colors">
+  <ComponentBlock id="colors">
     <h3>Brand</h3>
     <ColorBlock colors={VARS1} />
     <h3>State</h3>
     <ColorBlock colors={VARS2} />
-  </Components>
+  </ComponentBlock>
 );
 
 const ColorBlock: FC<{ colors: string[] }> = (props) => (

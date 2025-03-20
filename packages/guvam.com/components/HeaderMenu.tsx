@@ -60,7 +60,7 @@ export const HeaderMenu: FC = () => {
           </nav>
         </header>
 
-        <div className="Layout-line" />
+        <div className="Layout-sectionFull Layout-sectionFull--separator" />
 
         <menu className="Header-mobileMenuList">
           <div className="SideMenu-menuSection">

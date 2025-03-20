@@ -1,9 +1,9 @@
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const SkeletonSection: FC = () => (
-  <Components id="skeleton">
+  <ComponentBlock id="skeleton">
     <div className="List">
       <div className="Skeleton Skeleton--image"></div>
       <div className="Content">
@@ -13,5 +13,5 @@ export const SkeletonSection: FC = () => (
         <div className="Skeleton Skeleton--comment"></div>
       </div>
     </div>
-  </Components>
+  </ComponentBlock>
 );

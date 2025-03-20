@@ -1,10 +1,10 @@
 import Image from "next/image";
 import type { FC } from "react";
 
-import { Components } from "@/app/(website)/docs/components/Components";
+import { ComponentBlock } from "@/components/ComponentBlock";
 
 export const AvatarSection: FC = () => (
-  <Components id="avatar">
+  <ComponentBlock id="avatar">
     <div className="Avatar">
       <Image
         className="Avatar-image"
@@ -15,5 +15,5 @@ export const AvatarSection: FC = () => (
       />
       <span className="Avatar-fallback">CN</span>
     </div>
-  </Components>
+  </ComponentBlock>
 );

@@ -1,0 +1,22 @@
+.ColorList {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+.ColorList-container {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: span 12;
+  align-items: center;
+}
+
+.ColorList-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  color: var(--primaryText);
+  border: 1px solid var(--surfaceBlock);
+  border-radius: var(--borderRadius);
+}

@@ -1,11 +1,11 @@
 .Button {
   padding: 1.5em;
+  color: var(--primaryText);
   border-radius: 1.5em;
   box-shadow: 0 5px 15px oklch(0% 0 0deg / 30%);
 
   &.Button--type-muted {
-    --Button-text: var(--uiText);
-    --Button-background: transparent;
+    color: var(--surfaceText);
 
     &:not(:disabled):hover {
       --Button-background: oklch(from var(--uiHover) l c h);
@@ -13,11 +13,11 @@
   }
 
   &.Button--type-text {
-    color: var(--primaryText);
+    color: white;
     background-color: black;
 
     &:not(:disabled):hover {
-      --Button-background: oklch(from var(--uiHover) l c h);
+      background-color: oklch(23% 0 89deg / 90%);
     }
   }
 }

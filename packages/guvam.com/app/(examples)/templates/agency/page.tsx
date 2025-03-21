@@ -1,10 +1,7 @@
-import { ContactSplit } from "@guvam/blocks/src/Contact";
+import { ContactLocation } from "@guvam/blocks/src/Contact";
 import { PartnersSimple } from "@guvam/blocks/src/Partners";
-import { PricingTable } from "@guvam/blocks/src/Pricing";
 import { Tabs, TabsContent, TabsWrapper } from "@guvam/components";
 import {
-  CarouseButtonNext,
-  CarouseButtonPrevious,
   Carousel,
   CarouselAnimateToggleButton,
   CarouseMenu,
@@ -20,6 +17,17 @@ const IMAGES = [
   "/blocks/services/services-4.jpg",
   "/blocks/services/services-5.jpg",
   "/blocks/services/services-6.jpg",
+  "/blocks/services/services-3.jpg",
+  "/blocks/services/services-5.jpg",
+];
+
+const ImageAlt = [
+  "/blocks/services/services-1.jpg",
+  "/blocks/services/services-2.jpg",
+  "/blocks/services/services-3.jpg",
+  "/blocks/services/services-4.jpg",
+  "/blocks/services/services-5.jpg",
+  "/blocks/services/services-6.jpg",
 ];
 
 const avatars = [
@@ -29,8 +37,6 @@ const avatars = [
   "/blocks/avatars/avatar-4.jpg",
   "/blocks/avatars/avatar-5.jpg",
   "/blocks/avatars/avatar-6.jpg",
-  "/blocks/avatars/avatar-7.jpg",
-  "/blocks/avatars/avatar-8.jpg",
 ];
 
 const content = [
@@ -68,12 +74,9 @@ export default function Page() {
           <div className="Layout-sectionContent">
             <section className="Hero Gap2x">
               <hgroup className="Content Util--center">
-                <h2 className="Title">
-                  Create Things to <mark>Make your things cooler</mark>
-                </h2>
+                <h2 className="Title">The complete community platform</h2>
                 <p className="Title-description">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                  commodo. Elit sunt amet fugiat veniam .
+                  Build a home for your community, events and courses - all under your own brand.
                 </p>
                 <div className="List List--centered">
                   <button className="Button">Get Started</button>
@@ -82,6 +85,30 @@ export default function Page() {
                   </button>
                 </div>
               </hgroup>
+              <ul className="List List--row List--evenly">
+                <li>
+                  <h2>Start</h2>
+                  <p>Start building a community as you grow your audience.</p>
+                </li>
+                <li>
+                  <h2 className="">Engage</h2>
+                  <p>
+                    Build a home for your community with memberships, discussions, events and
+                    courses.
+                  </p>
+                </li>{" "}
+                <li>
+                  <h2>Monatize</h2>
+                  <p>
+                    Use our best-in-class payments stack to turn your community into a meaningful
+                    business
+                  </p>
+                </li>{" "}
+                <li>
+                  <h2>Scale</h2>
+                  <p>Scale your business to the next level with automations, AI and branded apps</p>
+                </li>
+              </ul>
               <div className="Carousel-containerFade">
                 <Carousel viewCount={1} className="Carousel Carousel--type-clip" animate loop>
                   <CarouseSlideContainer>
@@ -110,122 +137,135 @@ export default function Page() {
           <PartnersSimple />
         </div>
       </section>
-      <div className="Layout-sectionFull Layout-sectionFull--filled">
-        <section className="Layout-section">
-          <div className="Layout-sectionContent">
-            <div className="List-stack">
-              <hgroup className="Content Util--center">
-                <h2 className="Title">
-                  Create Things to <mark>Make your things cooler</mark>
-                </h2>
-                <TabsWrapper className="List-stack">
-                  <Tabs className="List List--centered">
-                    <button className="Button Button--type-text">Monitor your Progress</button>
-                    <button className="Button Button--type-text">Work Efficiently</button>
-                    <button className="Button Button--type-text">Have A Wide Selection</button>
-                  </Tabs>
+      <section className="Layout-section">
+        <div className="Layout-sectionContent">
+          <div className="List-stack">
+            <div className="Content Util--center">
+              <h1>
+                Create a thriving community <mark>you can be proud of</mark>
+              </h1>
+              <TabsWrapper className="List-stack">
+                <Tabs className="List List--evenly">
+                  <button className="Button Button--type-text">Start</button>
+                  <button className="Button Button--type-text">Engage</button>
+                  <button className="Button Button--type-text">Monetize</button>
+                  <button className="Button Button--type-text">Scale</button>
+                </Tabs>
 
-                  <TabsContent>
-                    <div className="Components-container">
-                      <section>
-                        <div className="GridTwo">
-                          <hgroup className="Content">
-                            <h3 className="Title">Monitor your Progress</h3>
-                            <p className="Title-description">
-                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-                              cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
-                            </p>
-                            <div className="List">
-                              <button className="Button">Get Started</button>
-                              <button className="Button Button--type-text">
-                                Learn More <ArrowRight />
-                              </button>
-                            </div>
-                          </hgroup>
-                          <Image
-                            className="Features-fadingImage"
-                            src="/blocks/services/services-1.jpg"
-                            alt="Placeholder"
-                            width={1465}
-                            height={902}
-                          />
-                        </div>
-                      </section>
-                    </div>
-                    <div className="Components-container">
-                      <section>
-                        <div className="GridTwo">
-                          <hgroup className="Content">
-                            <h3 className="Title">Work Efficiently With Our Help</h3>
-                            <p className="Title-description">
-                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-                              cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
-                            </p>
-                            <div className="List">
-                              <button className="Button">Get Started</button>
-                              <button className="Button Button--type-text">
-                                Learn More <ArrowRight />
-                              </button>
-                            </div>
-                          </hgroup>
-                          <Image
-                            className="Features-fadingImage"
-                            src="/blocks/services/services-3.jpg"
-                            alt="Placeholder"
-                            width={1465}
-                            height={902}
-                          />
-                        </div>
-                      </section>
-                    </div>
-                    <div className="Components-container">
-                      <section>
-                        <div className="GridTwo">
-                          <hgroup className="Content">
-                            <h3 className="Title">Have A Wide Selection of Options</h3>
-                            <p className="Title-description">
-                              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-                              cupidatat commodo. Elit sunt amet fugiat veniam occaecat.
-                            </p>
-                            <div className="List">
-                              <button className="Button">Get Started</button>
-                              <button className="Button Button--type-text">
-                                Learn More <ArrowRight />
-                              </button>
-                            </div>
-                          </hgroup>
-                          <Image
-                            className="Features-fadingImage"
-                            src="/blocks/services/services-4.jpg"
-                            alt="Placeholder"
-                            width={1465}
-                            height={902}
-                          />
-                        </div>
-                      </section>
-                    </div>
-                  </TabsContent>
-                </TabsWrapper>
-              </hgroup>
+                <TabsContent>
+                  <div className="Components-container">
+                    <section>
+                      <div className="GridTwo">
+                        <hgroup className="Content">
+                          <h3>Your community, courses, and content – all in one place.</h3>
+                          <p>
+                            Gone are the days of needing to make a whole bunch of different tools
+                            work together. With Circle, you can combine the exciting, interactive
+                            nature of a community with your content — all in one seamless
+                            experience.
+                          </p>
+                        </hgroup>
+                        <Image
+                          className="Features-fadingImage"
+                          src="/blocks/services/services-1.jpg"
+                          alt="Placeholder"
+                          width={1465}
+                          height={902}
+                        />
+                      </div>
+                    </section>
+                  </div>
+                  <div className="Components-container">
+                    <section>
+                      <div className="GridTwo">
+                        <hgroup className="Content">
+                          <h3>
+                            Courses, live streams, group chats, events, rich profile, and more.
+                          </h3>
+                          <p>
+                            Your members are the star of the show — they just need the tools to
+                            connect with each other and shine. You want an active, buzzing
+                            community. And so do your members. With Circle you get powerful
+                            engagement features so that you can empower your members to build that
+                            vision with you.
+                          </p>
+                        </hgroup>
+                        <Image
+                          className="Features-fadingImage"
+                          src="/blocks/services/services-3.jpg"
+                          alt="Placeholder"
+                          width={1465}
+                          height={902}
+                        />
+                      </div>
+                    </section>
+                  </div>
+                  <div className="Components-container">
+                    <section>
+                      <div className="GridTwo">
+                        <hgroup className="Content">
+                          <h3>
+                            Whether you’re offering a course, a membership, one-time access to
+                            content, or monthly recurring subscriptions — Circle has you covered.
+                          </h3>
+                          <p>
+                            Many of the top creators and brands run their entire business on Circle.
+                            You can easily start accepting payments in minutes. Whether you’re
+                            offering a membership, one-time access to content, providing free trials
+                            or monthly recurring subscriptions — Circle has you covered.
+                          </p>
+                        </hgroup>
+                        <Image
+                          className="Features-fadingImage"
+                          src="/blocks/services/services-4.jpg"
+                          alt="Placeholder"
+                          width={1465}
+                          height={902}
+                        />
+                      </div>
+                    </section>
+                  </div>
+                  <div className="Components-container">
+                    <section>
+                      <div className="GridTwo">
+                        <hgroup className="Content">
+                          <h3>Manage and scale your community operations</h3>
+                          <p>
+                            Get back the precious time you currently spend on repetitive, manual
+                            tasks so that you can focus on more meaningful work. Circle comes with
+                            powerful workflows, integrations, and AI-powered content and analytics
+                            tools to help you create an extraordinary member experience.
+                          </p>
+                        </hgroup>
+                        <Image
+                          className="Features-fadingImage"
+                          src="/blocks/services/services-6.jpg"
+                          alt="Placeholder"
+                          width={1465}
+                          height={902}
+                        />
+                      </div>
+                    </section>
+                  </div>
+                </TabsContent>
+              </TabsWrapper>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
       <section className="Layout-section">
         <div className="Layout-sectionContent">
           <section className="List-stack">
             <hgroup className="Content Util--center">
-              <h1>The Team</h1>
-              <p>Lorem Ipsum is simply dummy text</p>
+              <h1>Thousands of communities & use-cases just like yours</h1>
             </hgroup>
-            <ul className="Grid Grid--column-4">
+            <ul className="Grid Grid--column-3">
               {avatars.map((img, i) => (
                 <li key={i} className="Content">
                   <img className="Util-image Team-Avatar" src={img} />
                   <p>
                     <b>Name Surname</b>
                   </p>
-                  <p>Occupation</p>
                 </li>
               ))}
             </ul>
@@ -233,7 +273,171 @@ export default function Page() {
         </div>
       </section>
       <section className="Layout-section">
+        <div className="Layout-sectionContent">
+          <div className="List-stack">
+            <hgroup className="Content Util--center">
+              <h2 className="Title">All the features you need to get started in minutes</h2>
+              <p>
+                You have a vision for your community experience. Circle provides you with the
+                building blocks to bring your vision to life — fast and without the headaches.
+              </p>
+            </hgroup>
+            <ul className="List List--evenly">
+              <div className="">
+                <h2>Start</h2>
+                <ul>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Organized discussions</p>
+                  </li>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Rich posts</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Content co-pilot</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Immersive courses</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Private spaces</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Automatic video transcripts</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Member directory</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Customized branding</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="">
+                <h2>Engage</h2>
+                <ul>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Group chat rooms</p>
+                  </li>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Private messaging</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Event spaces</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Live streams</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Weekly digests</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Automated check-ins</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Gamified rewards</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Bulk DMs</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="">
+                <h2>Monetize</h2>
+                <ul>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Paid memberships</p>
+                  </li>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>One-time payments</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Recurring subscriptions</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Gate access</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Free trials and upsells</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Payment installments</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Coupons and discounts</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Subscription renewal reminders</p>
+                  </li>
+                </ul>
+              </div>
+              <div className="">
+                <h2>Scale</h2>
+                <ul>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Thousands of integrations</p>
+                  </li>
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Automated workflows</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Custom profile fields</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>AI activity scores</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Bulk actions</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Single sign-on</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Roles & permissions</p>
+                  </li>{" "}
+                  <li className="List">
+                    <CheckCircleFill className="Checkbox-SVG" />
+                    <p>Auto-remove churned members</p>
+                  </li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="Layout-section">
         <div className="Hero">
+          <h1>Easy integrations with your existing tools</h1>
           <div className="GridTwo">
             <section className="List-stack" style={{ gap: "2rem" }}>
               <div className="List List--between">
@@ -268,11 +472,53 @@ export default function Page() {
         <section className="Layout-section">
           <div className="Hero">
             <hgroup className="Content Util--center">
-              <h2 className="Title">Welcome To The Agency</h2>
+              <h2 className="Title">Built for community-powered courses</h2>
               <p className="Title-description">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                commodo. Elit sunt amet fugiat veniam .
+                Goodbye one-dimensional lectures, hello immersive experiences. Bring your course to
+                life with:
               </p>
+              <ul className="List List--evenly">
+                <div className="">
+                  <ul>
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>Cohort-based groups</p>
+                    </li>
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>Drip lessons</p>
+                    </li>{" "}
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>Exclusive masterclasses</p>
+                    </li>{" "}
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>1:1 connections and DMs</p>
+                    </li>{" "}
+                  </ul>
+                </div>
+                <div className="">
+                  <ul>
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>Automated check-ins and rewards</p>
+                    </li>
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>Weekly office hours</p>
+                    </li>{" "}
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>Personalized and group coaching</p>
+                    </li>{" "}
+                    <li className="List">
+                      <CheckCircleFill className="Checkbox-SVG" />
+                      <p>Live Q&As</p>
+                    </li>{" "}
+                  </ul>
+                </div>
+              </ul>
             </hgroup>
             <Image
               src="/blocks/products/product-screenshot.jpg"
@@ -284,6 +530,39 @@ export default function Page() {
           </div>
         </section>
       </div>
+      <section className="Layout-section">
+        <div className="Hero">
+          <h1>Organized, easy to navigate — and fun for your members</h1>
+          <div className="GridTwo">
+            <Image
+              className="Util-imageCover Util-imageCover--large"
+              src="/blocks/services/services-5.jpg"
+              alt="Placeholder"
+              width={1465}
+              height={902}
+            />
+            <section className="List-stack" style={{ gap: "2rem" }}>
+              <div className="List List--between">
+                <div className="Title-info">Frequently asked questions</div>
+                <a href="" className="Button Button--type-text">
+                  View all
+                </a>
+              </div>
+
+              <article className="Collapse-container">
+                {content.map((item, i) => (
+                  <details className="Collapse" name="faq-columns" key={item.id} open={i === 0}>
+                    <summary className="Collapse-action">{item.question}</summary>
+                    <div className="Collapse-contentBlock Content">
+                      <p>{item.answer}</p>
+                    </div>
+                  </details>
+                ))}
+              </article>
+            </section>
+          </div>
+        </div>
+      </section>
       <section className="Layout-section">
         <div className="Layout-sectionContent">
           <section className="List-stack" style={{ alignItems: "center", gap: "3rem" }}>
@@ -299,7 +578,7 @@ export default function Page() {
               {[0, 1, 2, 3, 4, 5].map((x) => (
                 <li key={x} className="Card">
                   <Image
-                    src={IMAGES[x]}
+                    src={ImageAlt[x]}
                     alt="services 1"
                     className="Card-HeaderImage Card-HeaderImage--fixedHeight"
                     width={500}
@@ -326,137 +605,6 @@ export default function Page() {
               ))}
             </ul>
           </section>
-        </div>
-      </section>
-      <section className="Layout-section">
-        <div className="Layout-sectionContent">
-          <div className="List-stack">
-            <hgroup className="Content Util--center">
-              <h2>Services</h2>
-              <p>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                commodo. Elit sunt amet fugiat veniam .
-              </p>
-            </hgroup>
-            <ul className="List List--evenly">
-              <div className="">
-                <h2>Exuberant</h2>
-                <ul className="List-stack">
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Organizing</p>
-                  </li>
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Supporting</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Developing</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Monitoring</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Scaling</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Marketing</p>
-                  </li>
-                </ul>
-              </div>
-              <div className="">
-                <h2>Exuberant</h2>
-                <ul className="List-stack">
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Organizing</p>
-                  </li>
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Supporting</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Developing</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Monitoring</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Scaling</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Marketing</p>
-                  </li>
-                </ul>
-              </div>
-              <div className="">
-                <h2>Exuberant</h2>
-                <ul className="List-stack">
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Organizing</p>
-                  </li>
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Supporting</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Developing</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Monitoring</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Scaling</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Marketing</p>
-                  </li>
-                </ul>
-              </div>
-              <div className="">
-                <h2>Exuberant</h2>
-                <ul className="List-stack">
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Organizing</p>
-                  </li>
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Supporting</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Developing</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Monitoring</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Scaling</p>
-                  </li>{" "}
-                  <li className="List">
-                    <CheckCircleFill />
-                    <p className="Title-description">Marketing</p>
-                  </li>
-                </ul>
-              </div>
-            </ul>
-          </div>
         </div>
       </section>
       <section className="Layout-section">
@@ -492,18 +640,11 @@ export default function Page() {
           <div className="Layout-sectionContent">
             <div className="Content Util--center">
               <h1>⧲⧲</h1>
-              <p>
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-                veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
-                numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
-                voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum
-                iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
-                vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+              <p className="Title-description">
+                In the last edition we launched Circle, a next-generation online discussion forum.
+                It has had a profound impact on the community-building aspect of the course. It is
+                far more modern, user-friendly, interactive, and muti-faceted than any other
+                platform out there, and we are making it the home of our student community.
               </p>
             </div>
           </div>
@@ -511,25 +652,30 @@ export default function Page() {
       </div>
       <section className="Layout-section">
         <div className="Layout-sectionContent">
-          <Carousel viewCount={2} className="Carousel" animate loop>
+          <Carousel viewCount={3} className="Carousel" animate loop animateTime={2000}>
             <CarouseSlideContainer>
               {IMAGES.map((img, i) => (
                 <li className="Carousel-slideItem" key={i}>
                   <div className="Card Carousel-exampleCard">
                     <Image src={img} alt="" width={875} height={500} className="Util-image" />
                     <h3 className="Card-header">Heading 1</h3>
-                    <p className="Card-content">Here is the Content</p>
+                    <p className="Card-content">
+                      Here is the Content Here is the Content Here is the Content Here is the
+                      Content Here is the Content Here is the Content Here is the ContentHere is the
+                      Content Here is the Content Here is the ContentHere is the Content Here is the
+                      Content Here is the ContentHere is the Content Here is the Content Here is the
+                      Content
+                    </p>
                   </div>
                 </li>
               ))}
             </CarouseSlideContainer>
-            <CarouseMenu />
           </Carousel>
         </div>
       </section>
       <section className="Layout-section">
         <div className="Layout-sectionContent">
-          <ContactSplit />
+          <ContactLocation />
         </div>
       </section>
     </>

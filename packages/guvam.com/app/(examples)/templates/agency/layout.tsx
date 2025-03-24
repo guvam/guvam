@@ -35,6 +35,12 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <head>
         <title>Agency template</title>
         <link rel="icon" type="image/svg+xml" href="/logo-icon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+          rel="stylesheet"
+        />
         <meta name="color-scheme" content="dark light" />
       </head>
       <body className="Layout">

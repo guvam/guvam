@@ -1,0 +1,11 @@
+.Carousel-containerCustom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.Hgroup-custom {
+  text-align: start;
+}

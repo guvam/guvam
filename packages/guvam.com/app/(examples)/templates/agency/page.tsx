@@ -109,7 +109,7 @@ export default function Page() {
                   <p>Scale your business to the next level with automations, AI and branded apps</p>
                 </li>
               </ul>
-              <div className="Carousel-containerFade">
+              <div className="Carousel-containerCustom">
                 <Carousel viewCount={1} className="Carousel Carousel--type-clip" animate loop>
                   <CarouseSlideContainer>
                     {IMAGES.map((img, i) => (
@@ -145,7 +145,7 @@ export default function Page() {
                 Create a thriving community <mark>you can be proud of</mark>
               </h1>
               <TabsWrapper className="List-stack">
-                <Tabs className="List List--evenly">
+                <Tabs className="List List--centered">
                   <button className="Button Button--type-text">Start</button>
                   <button className="Button Button--type-text">Engage</button>
                   <button className="Button Button--type-text">Monetize</button>
@@ -156,7 +156,7 @@ export default function Page() {
                   <div className="Components-container">
                     <section>
                       <div className="GridTwo">
-                        <hgroup className="Content">
+                        <hgroup className="Hgroup-custom">
                           <h3>Your community, courses, and content – all in one place.</h3>
                           <p>
                             Gone are the days of needing to make a whole bunch of different tools
@@ -178,7 +178,7 @@ export default function Page() {
                   <div className="Components-container">
                     <section>
                       <div className="GridTwo">
-                        <hgroup className="Content">
+                        <hgroup className="Hgroup-custom">
                           <h3>
                             Courses, live streams, group chats, events, rich profile, and more.
                           </h3>
@@ -203,7 +203,7 @@ export default function Page() {
                   <div className="Components-container">
                     <section>
                       <div className="GridTwo">
-                        <hgroup className="Content">
+                        <hgroup className="Hgroup-custom">
                           <h3>
                             Whether you’re offering a course, a membership, one-time access to
                             content, or monthly recurring subscriptions — Circle has you covered.
@@ -228,7 +228,7 @@ export default function Page() {
                   <div className="Components-container">
                     <section>
                       <div className="GridTwo">
-                        <hgroup className="Content">
+                        <hgroup className="Hgroup-custom">
                           <h3>Manage and scale your community operations</h3>
                           <p>
                             Get back the precious time you currently spend on repetitive, manual
@@ -277,7 +277,7 @@ export default function Page() {
           <div className="List-stack">
             <hgroup className="Content Util--center">
               <h2 className="Title">All the features you need to get started in minutes</h2>
-              <p>
+              <p className="Title-description">
                 You have a vision for your community experience. Circle provides you with the
                 building blocks to bring your vision to life — fast and without the headaches.
               </p>
@@ -449,7 +449,7 @@ export default function Page() {
 
               <article className="Collapse-container">
                 {content.map((item, i) => (
-                  <details className="Collapse" name="faq-columns" key={item.id} open={i === 0}>
+                  <details className="Collapse" name="faq-columns2" key={item.id} open={i === 0}>
                     <summary className="Collapse-action">{item.question}</summary>
                     <div className="Collapse-contentBlock Content">
                       <p>{item.answer}</p>
@@ -551,7 +551,7 @@ export default function Page() {
 
               <article className="Collapse-container">
                 {content.map((item, i) => (
-                  <details className="Collapse" name="faq-columns" key={item.id} open={i === 0}>
+                  <details className="Collapse" name="faq-columns1" key={item.id} open={i === 0}>
                     <summary className="Collapse-action">{item.question}</summary>
                     <div className="Collapse-contentBlock Content">
                       <p>{item.answer}</p>

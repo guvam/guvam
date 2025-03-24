@@ -1,0 +1,11 @@
+.Util-imageCover {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+
+  &.Util-imageCover--large {
+    min-block-size: 600px;
+  }
+}

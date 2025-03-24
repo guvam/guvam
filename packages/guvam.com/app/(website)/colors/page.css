@@ -1,22 +1,25 @@
 .ColorList {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(11, 1fr);
   gap: 1rem;
 }
 
 .ColorList-container {
   display: grid;
   grid-template-columns: subgrid;
-  grid-column: span 12;
+  grid-column: span 11;
   align-items: center;
 }
 
 .ColorList-item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 0.25;
   color: var(--primaryText);
-  border: 1px solid color-mix(in oklch, white 50%, transparent 100%);
+  border: 1px solid color-mix(in oklch, oklch(60% 0 90deg) 75%, transparent 100%);
   border-radius: var(--borderRadius);
+}
+
+.ColorList-itemText {
 }

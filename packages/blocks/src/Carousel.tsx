@@ -64,7 +64,7 @@ export const CarouselImages: FC = () => {
         <CarouseMenu />
       </Carousel>
 
-    <Carousel viewCount={1} animate className="Carousel">
+      <Carousel viewCount={1} animate className="Carousel">
         <CarouselSlideContainer clip={false}>
           {IMAGES.map((img, i) => (
             <li className="Carousel-slideItem Carousel-slideGalleryItem" key={i}>

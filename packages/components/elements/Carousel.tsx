@@ -280,9 +280,10 @@ export const CarouselSlideContainer: FC<
               [element.props.className]: true,
               "Carousel-slideItem--previous":
                 (children.length + currentIndex - 1) % children.length === i,
-              "Carousel-slideItem--active": (children.length + currentIndex) % children.length === i,
+              "Carousel-slideItem--active":
+                (children.length + currentIndex) % children.length === i,
               "Carousel-slideItem--next":
-                (children.length + currentIndex + 1) % children.length === i
+                (children.length + currentIndex + 1) % children.length === i,
             }),
             style: {
               "--Carousel-slideItemIndex": i,

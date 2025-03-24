@@ -1,0 +1,108 @@
+.Carousel-menu--vertical {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: -2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Carousel-content {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration),
+    transform var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration);
+
+  .Carousel-trackItem--active & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Carousel-example {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-self: center;
+  inline-size: 50%;
+  padding: 1.5em;
+  background-color: var(--primaryBlock);
+  border: 1px solid var(--primary);
+  border-radius: var(--borderRadius);
+}
+
+.Carousel-exampleCard {
+  margin: 1em;
+}
+
+.Carousel-exampleContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 400px;
+  padding: 2em;
+  vertical-align: middle;
+  background-color: oklch(0% 0 0deg / 40%);
+  border-radius: var(--borderRadius);
+}
+
+.Unique-display {
+  display: flex;
+  flex-direction: row;
+  inline-size: 100%;
+  block-size: 600px;
+  background-color: var(--primaryBlock);
+}
+
+.Unique-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: end;
+  align-self: center;
+  inline-size: 88%;
+  padding: 2em;
+}
+
+.Unique-header {
+  font-size: 46px;
+  font-weight: bold;
+  color: var(--surfaceText);
+  text-align: end;
+}
+
+.Unique-contact {
+  font-size: 19px;
+  line-height: 1.2;
+  color: var(--surfaceText);
+}
+
+.Unique-paragraph {
+  line-height: 1.1;
+  color: gray;
+  text-align: end;
+}
+
+.Carousel-centeredbtn--previous {
+  inset-block-start: 101%;
+  inset-inline-start: 45%;
+  transform: translateY(0);
+}
+
+.Carousel-centeredbtn--next {
+  inset-block-start: 101%;
+  inset-inline-end: 45%;
+  transform: translateY(0);
+}

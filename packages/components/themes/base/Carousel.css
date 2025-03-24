@@ -42,19 +42,27 @@
   &.Carousel--type-gallery {
     inline-size: 50%;
   }
-
-  &.Carousel--type-clip {
-    overflow: clip;
-  }
 }
 
 .Carousel-slideContainer {
+  display: block;
+}
+
+.Carousel-slideContainer--clip {
+  overflow: clip;
+}
+
+.Carousel-slideContent {
   display: grid;
   grid-template-columns: repeat(var(--Carousel-slideCount), 1fr);
   inline-size: calc(var(--Carousel-slideCount) * 100% / var(--Carousel-viewCount));
   block-size: 100%;
   transform: translateX(calc(-100% / var(--Carousel-slideCount) * var(--Carousel-activeIndex)));
   transition: transform var(--Carousel-animateDuration) ease-out;
+
+  &.Carousel-slideContent--fade {
+    transition: transform 0s ease-in-out;
+  }
 }
 
 .Carousel-slideItem {
@@ -96,11 +104,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  block-size: 3rem;
+  block-size: 2.5rem;
   aspect-ratio: 1;
   font-size: 1.5rem;
   cursor: pointer;
-  background-color: var(--ui);
+  background-color: var(--primary);
+  border: 2px solid oklch(42% 0 89deg / 50%);
   border-radius: var(--borderRadius);
   transform: translateY(-50%);
 
@@ -161,56 +170,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.Carousel-content {
-  position: absolute;
-  inset-block-start: 0;
-  inset-inline-start: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  inline-size: 100%;
-  block-size: 100%;
-  padding: 1rem;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration),
-    transform var(--Carousel-animateDuration) ease-out var(--Carousel-animateDuration);
-
-  .Carousel-trackItem--active & {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.Carousel-example {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  align-self: center;
-  inline-size: 50%;
-  padding: 1.5em;
-  background-color: var(--primaryBlock);
-  border: 1px solid var(--primary);
-  border-radius: var(--borderRadius);
-}
-
-.Carousel-exampleCard {
-  margin: 1em;
-}
-
-.Carousel-exampleContent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  inline-size: 100%;
-  block-size: 400px;
-  padding: 2em;
-  vertical-align: middle;
-  background-color: oklch(0% 0 0deg / 40%);
-  border-radius: var(--borderRadius);
 }

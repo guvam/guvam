@@ -4,8 +4,8 @@ import { Tabs, TabsContent, TabsWrapper } from "@guvam/components";
 import {
   Carousel,
   CarouselAnimateToggleButton,
+  CarouselSlideContainer,
   CarouseMenu,
-  CarouseSlideContainer,
 } from "@guvam/components/elements/Carousel";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, CheckCircleFill } from "react-bootstrap-icons";
@@ -110,8 +110,8 @@ export default function Page() {
                 </li>
               </ul>
               <div className="Carousel-containerCustom">
-                <Carousel viewCount={1} className="Carousel Carousel--type-clip" animate loop>
-                  <CarouseSlideContainer>
+                <Carousel viewCount={1} className="Carousel" loop>
+                  <CarouselSlideContainer clip={true}>
                     {IMAGES.map((img, i) => (
                       <li className="Carousel-slideItem" key={i}>
                         <Image
@@ -123,9 +123,9 @@ export default function Page() {
                         />
                       </li>
                     ))}
-                  </CarouseSlideContainer>
+                  </CarouselSlideContainer>
                   <CarouselAnimateToggleButton />
-                  <CarouseMenu />
+                  <CarouseMenu classname="Carousel-menuCustom" />
                 </Carousel>
               </div>
             </section>
@@ -145,7 +145,7 @@ export default function Page() {
                 Create a thriving community <mark>you can be proud of</mark>
               </h1>
               <TabsWrapper className="List-stack">
-                <Tabs className="List List--centered">
+                <Tabs className="Tabs-list">
                   <button className="Button Button--type-text">Start</button>
                   <button className="Button Button--type-text">Engage</button>
                   <button className="Button Button--type-text">Monetize</button>
@@ -260,14 +260,96 @@ export default function Page() {
               <h1>Thousands of communities & use-cases just like yours</h1>
             </hgroup>
             <ul className="Grid Grid--column-3">
-              {avatars.map((img, i) => (
-                <li key={i} className="Content">
-                  <img className="Util-image Team-Avatar" src={img} />
-                  <p>
+              <li className="Content-teamCustom">
+                <img className="Util-image Team-Avatar" src="/blocks/avatars/avatar-1.jpg" />
+                <p className="Team-userName">
+                  <b>Name Surname</b>
+                </p>
+                <div className="Team-hoverContent">
+                  <p className="Team-userName">
                     <b>Name Surname</b>
                   </p>
-                </li>
-              ))}
+                  <p>
+                    Thousands of communities & use-cases just like yours, Thousands of communities &
+                    use-cases just like yours, Thousands of communities & use-cases just like yours
+                  </p>
+                </div>
+              </li>
+              <li className="Content-teamCustom">
+                <img className="Util-image Team-Avatar" src="/blocks/avatars/avatar-2.jpg" />
+                <p className="Team-userName">
+                  <b>Name Surname</b>
+                </p>
+                <div className="Team-hoverContent">
+                  <p className="Team-userName">
+                    <b>Name Surname</b>
+                  </p>
+                  <p>
+                    Thousands of communities & use-cases just like yours, Thousands of communities &
+                    use-cases just like yours, Thousands of communities & use-cases just like yours
+                  </p>
+                </div>
+              </li>
+              <li className="Content-teamCustom">
+                <img className="Util-image Team-Avatar" src="/blocks/avatars/avatar-3.jpg" />
+                <p className="Team-userName">
+                  <b>Name Surname</b>
+                </p>
+                <div className="Team-hoverContent">
+                  <p className="Team-userName">
+                    <b>Name Surname</b>
+                  </p>
+                  <p>
+                    Thousands of communities & use-cases just like yours, Thousands of communities &
+                    use-cases just like yours, Thousands of communities & use-cases just like yours
+                  </p>
+                </div>
+              </li>
+              <li className="Content-teamCustom">
+                <img className="Util-image Team-Avatar" src="/blocks/avatars/avatar-4.jpg" />
+                <p className="Team-userName">
+                  <b>Name Surname</b>
+                </p>
+                <div className="Team-hoverContent">
+                  <p className="Team-userName">
+                    <b>Name Surname</b>
+                  </p>
+                  <p>
+                    Thousands of communities & use-cases just like yours, Thousands of communities &
+                    use-cases just like yours, Thousands of communities & use-cases just like yours
+                  </p>
+                </div>
+              </li>
+              <li className="Content-teamCustom">
+                <img className="Util-image Team-Avatar" src="/blocks/avatars/avatar-5.jpg" />
+                <p className="Team-userName">
+                  <b>Name Surname</b>
+                </p>
+                <div className="Team-hoverContent">
+                  <p className="Team-userName">
+                    <b>Name Surname</b>
+                  </p>
+                  <p>
+                    Thousands of communities & use-cases just like yours, Thousands of communities &
+                    use-cases just like yours, Thousands of communities & use-cases just like yours
+                  </p>
+                </div>
+              </li>
+              <li className="Content-teamCustom">
+                <img className="Util-image Team-Avatar" src="/blocks/avatars/avatar-6.jpg" />
+                <p className="Team-userName">
+                  <b>Name Surname</b>
+                </p>
+                <div className="Team-hoverContent">
+                  <p className="Team-userName">
+                    <b>Name Surname</b>
+                  </p>
+                  <p>
+                    Thousands of communities & use-cases just like yours, Thousands of communities &
+                    use-cases just like yours, Thousands of communities & use-cases just like yours
+                  </p>
+                </div>
+              </li>
             </ul>
           </section>
         </div>
@@ -653,7 +735,7 @@ export default function Page() {
       <section className="Layout-section">
         <div className="Layout-sectionContent">
           <Carousel viewCount={3} className="Carousel" animate loop animateTime={2000}>
-            <CarouseSlideContainer>
+            <CarouselSlideContainer clip={false}>
               {IMAGES.map((img, i) => (
                 <li className="Carousel-slideItem" key={i}>
                   <div className="Card Carousel-exampleCard">
@@ -669,7 +751,7 @@ export default function Page() {
                   </div>
                 </li>
               ))}
-            </CarouseSlideContainer>
+            </CarouselSlideContainer>
           </Carousel>
         </div>
       </section>

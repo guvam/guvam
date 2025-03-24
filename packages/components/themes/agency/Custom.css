@@ -2,10 +2,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   border-radius: 12px;
 }
 
 .Hgroup-custom {
   text-align: start;
+}
+
+.Carousel-menuCustom {
+  position: absolute;
+  inset-block-start: -2.5rem;
+  inset-inline-start: 50%;
+  display: flex;
+  transform: translateX(-50%);
+}
+
+.Carousel-exampleCard {
+  margin: 2em;
+}
+
+.Content-teamCustom {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.Team-userName {
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-start: 1rem;
+  font-size: 32px;
+  color: var(--primaryText);
+}
+
+.Team-hoverContent {
+  display: none;
+  transition-duration: 200ms;
+}
+
+.Content-teamCustom:hover .Team-hoverContent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 1em;
+  color: var(--primaryText);
+  background-color: var(--primary);
+  transition-duration: 200ms;
+}
+
+.Content-teamCustom:hover .Team-userName {
+  position: relative;
+  inset: 0;
+  color: var(--primaryText);
 }

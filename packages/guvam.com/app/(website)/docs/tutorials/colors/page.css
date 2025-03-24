@@ -1,7 +1,7 @@
 .ColorList {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .ColorList-container {
@@ -15,8 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1;
+  aspect-ratio: 0.25;
   color: var(--primaryText);
-  border: 1px solid var(--surfaceBlock);
+  border: 1px solid color-mix(in oklch, white 50%, transparent 100%);
   border-radius: var(--borderRadius);
 }

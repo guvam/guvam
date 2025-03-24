@@ -1,6 +1,7 @@
 /* base */
 @import url("base/reset.css");
 @import url("base/utils.css");
+@import url("base/Colors.css");
 @import url("base/Theme.css");
 
 /* display */

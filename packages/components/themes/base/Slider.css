@@ -7,6 +7,7 @@
   --Slider-hover: oklch(from var(--uiHover) calc(l - 0.2) c h);
 
   block-size: 8px;
+  margin-block: 0.5rem;
   cursor: pointer;
   background-color: var(--Slider-background);
   border-radius: var(--borderRadius);

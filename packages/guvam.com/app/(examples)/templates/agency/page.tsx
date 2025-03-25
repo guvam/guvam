@@ -1,22 +1,15 @@
 "use client";
 
-import { ContactLocation } from "@guvam/blocks/src/Contact";
 import HookLogo from "@guvam/blocks/src/logos/hook.svg";
 import PublicisLogo from "@guvam/blocks/src/logos/publicis.svg";
 import PulseLogo from "@guvam/blocks/src/logos/pulse.svg";
 import SwayLogo from "@guvam/blocks/src/logos/sway.svg";
 import ZealLogo from "@guvam/blocks/src/logos/zeal.svg";
-import { PartnersSimple } from "@guvam/blocks/src/Partners";
 import { Tabs, TabsContent, TabsWrapper } from "@guvam/components";
-import {
-  Carousel,
-  CarouselAnimateToggleButton,
-  CarouselSlideContainer,
-  CarouseMenu,
-} from "@guvam/components/elements/Carousel";
+import { Carousel, CarouselSlideContainer, CarouseMenu } from "@guvam/components/elements/Carousel";
 import Image from "next/image";
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, CheckCircleFill } from "react-bootstrap-icons";
+import { ArrowLeft, CheckCircleFill } from "react-bootstrap-icons";
 
 const IMAGES = [
   "/blocks/services/services-1.jpg",
@@ -27,24 +20,6 @@ const IMAGES = [
   "/blocks/services/services-6.jpg",
   "/blocks/services/services-3.jpg",
   "/blocks/services/services-5.jpg",
-];
-
-const ImageAlt = [
-  "/blocks/services/services-1.jpg",
-  "/blocks/services/services-2.jpg",
-  "/blocks/services/services-3.jpg",
-  "/blocks/services/services-4.jpg",
-  "/blocks/services/services-5.jpg",
-  "/blocks/services/services-6.jpg",
-];
-
-const avatars = [
-  "/blocks/avatars/avatar-1.jpg",
-  "/blocks/avatars/avatar-2.jpg",
-  "/blocks/avatars/avatar-3.jpg",
-  "/blocks/avatars/avatar-4.jpg",
-  "/blocks/avatars/avatar-5.jpg",
-  "/blocks/avatars/avatar-6.jpg",
 ];
 
 const content = [

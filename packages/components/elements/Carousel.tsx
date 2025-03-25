@@ -2,6 +2,7 @@
 
 import { classList } from "@guvam/components";
 import type { FC, JSX, ReactElement, ReactNode } from "react";
+import { isValidElement } from "react";
 import {
   Children,
   cloneElement,
@@ -230,7 +231,9 @@ interface CarouseMenuProps {
   classname?: string;
 }
 
-export const CarouseMenu: FC<CarouseMenuProps> = ({ classname = "Carousel-menu" }) => {
+export const CarouseMenu: FC<
+  CarouseMenuProps & { children?: ReactNode; childClassname?: string }
+> = ({ classname = "Carousel-menu", childClassname = "Carousel-menuItem", children }) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
   const { slideCount } = useContext(CarouselSlideCountStateContext);
 
@@ -238,17 +241,41 @@ export const CarouseMenu: FC<CarouseMenuProps> = ({ classname = "Carousel-menu" 
 
   return (
     <CarouselTag tag="menu" command="carousel:menu" className={classname}>
-      {[...Array(slideCount)].map((_, i) => (
-        <li key={i}>
-          <button
-            className={classList({
-              "Carousel-menuItem": true,
-              "Carousel-menuItem--active": i === activeIndex,
-            })}
-            onClick={() => setCurrentIndex(i)}
-          />
-        </li>
-      ))}
+      {children
+        ? Array.isArray(children)
+          ? children.map((child, i) =>
+              isValidElement(child)
+                ? cloneElement(child, {
+                    key: i,
+                    onClick: () => setCurrentIndex(i),
+                    className: classList({
+                      [child.props.className || childClassname]: true,
+                      [`${child.props.className || childClassname}--active`]: i === activeIndex,
+                    }),
+                  })
+                : null
+            )
+          : isValidElement(children)
+            ? cloneElement(children, {
+                key: 0,
+                onClick: () => setCurrentIndex(0),
+                className: classList({
+                  [children.props.className || childClassname]: true,
+                  [`${children.props.className || childClassname}--active`]: 0 === activeIndex,
+                }),
+              })
+            : null
+        : [...Array(slideCount)].map((_, i) => (
+            <li key={i}>
+              <button
+                className={classList({
+                  [childClassname]: true,
+                  [`${childClassname}--active`]: i === activeIndex,
+                })}
+                onClick={() => setCurrentIndex(i)}
+              />
+            </li>
+          ))}
     </CarouselTag>
   );
 };

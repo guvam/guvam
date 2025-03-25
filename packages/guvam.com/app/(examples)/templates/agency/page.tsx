@@ -112,7 +112,15 @@ export default function Page() {
                       </li>
                     ))}
                   </CarouselSlideContainer>
-                  <CarouseMenu classname="Carousel-menuCustom" />
+                  <CarouseMenu classname="Carousel-menuCustom">
+                    <button className="Carousel-buttonCustom">Home</button>
+                    <button className="Carousel-buttonCustom">Discussions</button>
+                    <button className="Carousel-buttonCustom">Events</button>
+                    <button className="Carousel-buttonCustom">Live</button>
+                    <button className="Carousel-buttonCustom">Courses</button>
+                    <button className="Carousel-buttonCustom">Chat</button>
+                    <button className="Carousel-buttonCustom">Members</button>
+                  </CarouseMenu>
                 </Carousel>
               </div>
             </section>

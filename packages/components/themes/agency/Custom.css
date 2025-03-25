@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-block-start: 1em;
   border-radius: 12px;
 }
 
@@ -19,15 +20,36 @@
 
 .Carousel-menuCustom {
   position: absolute;
-  inset-block-start: -2.5rem;
+  inset-block-start: -4rem;
   inset-inline-start: 50%;
   display: flex;
+  gap: 1em;
   transform: translateX(-50%);
 }
 
 .Carousel-exampleCard {
   block-size: fit-content;
   margin: 2em;
+}
+
+.Carousel-wrapperCustom {
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+.Carousel-buttonCustom {
+  padding: 0.5em;
+  font-size: 20px;
+  color: var(--surfaceText);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.Carousel-buttonCustom--active {
+    font-weight: bold;
+  }
 }
 
 .Content-teamCustom {
@@ -122,10 +144,4 @@
   inline-size: 100%;
   block-size: 100%;
   vertical-align: middle;
-}
-
-.Carousel-wrapperCustom {
-  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
-  mask-repeat: no-repeat;
-  mask-size: 100% 100%;
 }

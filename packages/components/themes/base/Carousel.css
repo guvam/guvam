@@ -63,6 +63,10 @@
   &.Carousel-slideContent--fade {
     transition: transform 0s ease-in-out;
   }
+
+  &.Carousel-slideContent--linear {
+    transition: transform 1500ms linear;
+  }
 }
 
 .Carousel-slideItem {

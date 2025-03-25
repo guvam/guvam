@@ -1,5 +1,6 @@
 .Tabs-tab--active {
-  border-block-end: 1px solid transparent;
+  color: var(--primaryText) !important;
+  background-color: var(--surfaceText);
 }
 
 .Tabs-content {
@@ -8,11 +9,6 @@
   &.Tabs-content--active {
     display: block;
   }
-}
-
-.Active {
-  background-color: oklch(60% 0 89.876deg / 20%);
-  border-block-end: 1px solid var(--primaryBorder);
 }
 
 .Tabs-list {

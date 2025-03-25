@@ -1,4 +1,11 @@
+"use client";
+
 import { ContactLocation } from "@guvam/blocks/src/Contact";
+import HookLogo from "@guvam/blocks/src/logos/hook.svg";
+import PublicisLogo from "@guvam/blocks/src/logos/publicis.svg";
+import PulseLogo from "@guvam/blocks/src/logos/pulse.svg";
+import SwayLogo from "@guvam/blocks/src/logos/sway.svg";
+import ZealLogo from "@guvam/blocks/src/logos/zeal.svg";
 import { PartnersSimple } from "@guvam/blocks/src/Partners";
 import { Tabs, TabsContent, TabsWrapper } from "@guvam/components";
 import {
@@ -8,6 +15,7 @@ import {
   CarouseMenu,
 } from "@guvam/components/elements/Carousel";
 import Image from "next/image";
+import { useState } from "react";
 import { ArrowLeft, ArrowRight, CheckCircleFill } from "react-bootstrap-icons";
 
 const IMAGES = [
@@ -42,24 +50,28 @@ const avatars = [
 const content = [
   {
     id: "bh",
+    images: "/blocks/services/services-1.jpg",
     question: "Interested in Hunting Demons?",
     answer:
       "Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor          incididunt dolore. Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit  quis. Duis tempor incididunt dolore.",
   },
   {
     id: "ah",
+    images: "/blocks/services/services-2.jpg",
     question: "What's the best thing about Switzerland?",
     answer:
       "Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor          incididunt dolore. Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit  quis. Duis tempor incididunt dolore.",
   },
   {
     id: "ch",
+    images: "/blocks/services/services-3.jpg",
     question: "What do you call someone with no body and no nose?",
     answer:
       "Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor          incididunt dolore. Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit  quis. Duis tempor incididunt dolore.",
   },
   {
     id: "dh",
+    images: "/blocks/services/services-4.jpg",
     question: "Why do you never see elephants hiding in trees?",
     answer:
       "Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor          incididunt dolore. Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit  quis. Duis tempor incididunt dolore.",
@@ -67,6 +79,9 @@ const content = [
 ];
 
 export default function Page() {
+  const [openId, setOpenId] = useState(content[0].id);
+  const [openId2, setOpenId2] = useState(content[0].id);
+
   return (
     <>
       <div className="Layout-sectionFull Layout-sectionHalf--filled">
@@ -83,26 +98,26 @@ export default function Page() {
                   <button className="Button Custom-inputButton">Get Started</button>
                 </form>
               </hgroup>
-              <ul className="List List--row List--evenly">
-                <li>
+              <ul className="List List--evenly">
+                <li className="List-item">
                   <h2>Start</h2>
                   <p>Start building a community as you grow your audience.</p>
                 </li>
-                <li>
+                <li className="List-item">
                   <h2 className="">Engage</h2>
                   <p>
                     Build a home for your community with memberships, discussions, events and
                     courses.
                   </p>
                 </li>
-                <li>
+                <li className="List-item">
                   <h2>Monatize</h2>
                   <p>
                     Use our best-in-class payments stack to turn your community into a meaningful
                     business
                   </p>
                 </li>
-                <li>
+                <li className="List-item">
                   <h2>Scale</h2>
                   <p>Scale your business to the next level with automations, AI and branded apps</p>
                 </li>
@@ -122,8 +137,65 @@ export default function Page() {
                       </li>
                     ))}
                   </CarouselSlideContainer>
-                  <CarouselAnimateToggleButton />
                   <CarouseMenu classname="Carousel-menuCustom" />
+                </Carousel>
+              </div>
+            </section>
+            <section>
+              <div className="Carousel-wrapperCustom">
+                <Carousel viewCount={5} className="Carousel" animate loop animateTime={1500}>
+                  <CarouselSlideContainer className="Carousel-slideContent--linear" clip={true}>
+                    <div className="Carousel-slideItem">
+                      <li className="Partners">
+                        <HookLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <PublicisLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <PulseLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <SwayLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <ZealLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <HookLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <PublicisLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <PulseLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <SwayLogo />
+                      </li>
+                    </div>
+                    <div className="Carousel-slideItem Slide-custom">
+                      <li className="Partners">
+                        <ZealLogo />
+                      </li>
+                    </div>
+                  </CarouselSlideContainer>
                 </Carousel>
               </div>
             </section>
@@ -132,16 +204,11 @@ export default function Page() {
       </div>
       <section className="Layout-section">
         <div className="Layout-sectionContent">
-          <PartnersSimple />
-        </div>
-      </section>
-      <section className="Layout-section">
-        <div className="Layout-sectionContent">
           <div className="List-stack">
             <div className="Content Util--center">
-              <h1>
+              <h2 className="Title">
                 Create a thriving community <mark>you can be proud of</mark>
-              </h1>
+              </h2>
               <TabsWrapper className="List-stack">
                 <Tabs className="Tabs-list">
                   <button className="Button Button--type-text">Start</button>
@@ -164,7 +231,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Features-fadingImage"
+                          className="Util-image"
                           src="/blocks/services/services-1.jpg"
                           alt="Placeholder"
                           width={1465}
@@ -189,7 +256,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Features-fadingImage"
+                          className="Util-image"
                           src="/blocks/services/services-3.jpg"
                           alt="Placeholder"
                           width={1465}
@@ -214,7 +281,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Features-fadingImage"
+                          className="Util-image"
                           src="/blocks/services/services-4.jpg"
                           alt="Placeholder"
                           width={1465}
@@ -236,7 +303,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Features-fadingImage"
+                          className="Util-image"
                           src="/blocks/services/services-6.jpg"
                           alt="Placeholder"
                           width={1465}
@@ -255,7 +322,7 @@ export default function Page() {
         <div className="Layout-sectionContent">
           <section className="List-stack">
             <hgroup className="Content Util--center">
-              <h1>Thousands of communities & use-cases just like yours</h1>
+              <h2 className="Title">Thousands of communities & use-cases just like yours</h2>
             </hgroup>
             <ul className="Grid Grid--column-3">
               <li className="Content-teamCustom">
@@ -516,20 +583,20 @@ export default function Page() {
         </div>
       </section>
       <section className="Layout-section">
-        <div className="Hero">
-          <h1>Easy integrations with your existing tools</h1>
+        <div className="Layout-sectionContent">
+          <p className="Title-info">Scale</p>
+          <h2 className="Title Align-start">Easy integrations with your existing tools</h2>
           <div className="GridTwo">
             <section className="List-stack" style={{ gap: "2rem" }}>
-              <div className="List List--between">
-                <div className="Title-info">Frequently asked questions</div>
-                <a href="" className="Button Button--type-text">
-                  View all
-                </a>
-              </div>
-
               <article className="Collapse-container">
                 {content.map((item, i) => (
-                  <details className="Collapse" name="faq-columns2" key={item.id} open={i === 0}>
+                  <details
+                    className="Collapse"
+                    name="faq-columns2"
+                    key={item.id}
+                    open={i === 0}
+                    onClick={() => setOpenId2(item.id)}
+                  >
                     <summary className="Collapse-action">{item.question}</summary>
                     <div className="Collapse-contentBlock Content">
                       <p>{item.answer}</p>
@@ -540,7 +607,7 @@ export default function Page() {
             </section>
             <Image
               className="Util-imageCover Util-imageCover--large"
-              src="/blocks/products/product-screenshot.jpg"
+              src={content.find((item) => item.id === openId2)?.images ?? ""}
               alt="Placeholder"
               width={1465}
               height={902}
@@ -611,27 +678,31 @@ export default function Page() {
         </section>
       </div>
       <section className="Layout-section">
-        <div className="Hero">
-          <h1>Organized, easy to navigate — and fun for your members</h1>
+        <div className="Layout-sectionContent">
+          <div className="Title-area">
+            <p className="Title-info">Scale</p>
+            <h2 className="Title Align-start">
+              Organized, easy to navigate — and fun for your members
+            </h2>
+          </div>
           <div className="GridTwo">
             <Image
               className="Util-imageCover Util-imageCover--large"
-              src="/blocks/services/services-5.jpg"
+              src={content.find((item) => item.id === openId)?.images ?? ""}
               alt="Placeholder"
               width={1465}
               height={902}
             />
             <section className="List-stack" style={{ gap: "2rem" }}>
-              <div className="List List--between">
-                <div className="Title-info">Frequently asked questions</div>
-                <a href="" className="Button Button--type-text">
-                  View all
-                </a>
-              </div>
-
               <article className="Collapse-container">
                 {content.map((item, i) => (
-                  <details className="Collapse" name="faq-columns1" key={item.id} open={i === 0}>
+                  <details
+                    className="Collapse"
+                    name="faq-columns1"
+                    key={item.id}
+                    open={i === 0}
+                    onClick={() => setOpenId(item.id)}
+                  >
                     <summary className="Collapse-action">{item.question}</summary>
                     <div className="Collapse-contentBlock Content">
                       <p>{item.answer}</p>
@@ -643,56 +714,35 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="Layout-section">
-        <div className="Layout-sectionContent">
-          <section className="List-stack" style={{ alignItems: "center", gap: "3rem" }}>
-            <hgroup className="Content Util--center" style={{ maxWidth: "600px" }}>
-              <h2>Services</h2>
-              <p>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                commodo. Elit sunt amet fugiat veniam .
-              </p>
-            </hgroup>
-
-            <ul className="Grid" style={{ "--Grid-count": 3 } as never}>
-              {[0, 1, 2, 3, 4, 5].map((x) => (
-                <li key={x} className="Card">
-                  <Image
-                    src={ImageAlt[x]}
-                    alt="services 1"
-                    className="Card-HeaderImage Card-HeaderImage--fixedHeight"
-                    width={500}
-                    height={300}
-                  />
-                  <article className="Card-content Content">
-                    <p className="List Util--gap-2">
-                      <b className="Badge Badge--outline">development</b>
-                      <b className="Badge Badge--outline">UI/UX</b>
-                      <b className="Badge Badge--outline">design</b>
-                    </p>
-                    <time>Jan 16, 2025</time>
-
-                    <h4>Boost your conversion Rate</h4>
-                    <p>
-                      Use these Tailwind CSS blog section examples to promote interesting content
-                      from your company blog or content universe throughout your website. These
-                      examples are designed and built by the Tailwind CSS team, and include a
-                      variety of different styles and layouts.
-                    </p>
-                    <button className="Button Button--type-muted">Case study</button>
-                  </article>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-      </section>
+      <div className="Layout-sectionFull Layout-sectionFull--filled">
+        <section className="Layout-section">
+          <div className="Layout-sectionContent">
+            <section className="List-stack">
+              <hgroup className="Hgroup-custom">
+                <h2 className="Title Align-start">Gather with your people</h2>
+                <p className="Title-description">
+                  Easily create immersive live video experiences right inside of your Circle
+                  community. Whether it’s a 5-person group coaching call, a 50-person online class,
+                  or a 500-person broadcast with live Q&A — we’ve got you covered.
+                </p>
+                <Image
+                  className="Util-image"
+                  src="/blocks/products/product-screenshot.jpg"
+                  alt="Placeholder"
+                  width={1920}
+                  height={1080}
+                />
+              </hgroup>
+            </section>
+          </div>
+        </section>
+      </div>
       <section className="Layout-section">
         <div className="Layout-sectionContent">
           <section>
             <div className="GridTwo">
               <Image
-                className="Features-fadingImage"
+                className="Util-image"
                 src="/blocks/products/product-screenshot.jpg"
                 alt="Placeholder"
                 width={1465}
@@ -731,32 +781,134 @@ export default function Page() {
         </section>
       </div>
       <section className="Layout-section">
-        <div className="Layout-sectionContent">
-          <Carousel viewCount={3} className="Carousel" animate loop animateTime={2000}>
-            <CarouselSlideContainer clip={false}>
-              {IMAGES.map((img, i) => (
-                <li className="Carousel-slideItem" key={i}>
-                  <div className="Card Carousel-exampleCard">
-                    <Image src={img} alt="" width={875} height={500} className="Util-image" />
-                    <h3 className="Card-header">Heading 1</h3>
-                    <p className="Card-content">
-                      Here is the Content Here is the Content Here is the Content Here is the
-                      Content Here is the Content Here is the Content Here is the ContentHere is the
-                      Content Here is the Content Here is the ContentHere is the Content Here is the
-                      Content Here is the ContentHere is the Content Here is the Content Here is the
-                      Content
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </CarouselSlideContainer>
-          </Carousel>
-        </div>
-      </section>
-      <section className="Layout-section">
-        <div className="Layout-sectionContent">
-          <ContactLocation />
-        </div>
+        <Carousel viewCount={3} className="Carousel" animate loop animateTime={2000}>
+          <CarouselSlideContainer clip={true}>
+            <li className="Carousel-slideItem">
+              <div className="Card Carousel-exampleCard">
+                <Image
+                  src="/blocks/services/services-1.jpg"
+                  alt=""
+                  width={875}
+                  height={500}
+                  className="Util-image"
+                />
+                <h3 className="Card-header">Heading 1</h3>
+                <p className="Card-content">
+                  Our members are so impressed. It’s intuitive. It’s clean. It’s distraction free.
+                  I’m so glad we made this decision
+                </p>
+              </div>
+            </li>
+            <li className="Carousel-slideItem">
+              <div className="Card Carousel-exampleCard">
+                <Image
+                  src="/blocks/services/services-2.jpg"
+                  alt=""
+                  width={875}
+                  height={500}
+                  className="Util-image"
+                />
+                <h3 className="Card-header">Heading 2</h3>
+                <p className="Card-content">
+                  Circle embodies what many other platforms miss - community! I have been blown away
+                  by the generosity of my fellow course creators who have shared their setups and
+                  tips, and I instantly felt like I was a part of the group. That, and the fact that
+                  we have such great access to the support team makes Circle hands down the best
+                  community platform on the market.
+                </p>
+              </div>
+            </li>
+            <li className="Carousel-slideItem">
+              <div className="Card Carousel-exampleCard">
+                <Image
+                  src="/blocks/services/services-3.jpg"
+                  alt=""
+                  width={875}
+                  height={500}
+                  className="Util-image"
+                />
+                <h3 className="Card-header">Heading 3</h3>
+                <p className="Card-content">
+                  We’ve gotten invaluable and truly life-changing input from the community.
+                  Especially as a community builder myself, I’m so grateful for the phenomenal
+                  community Circle has put together to support us and make our user experience an
+                  extraordinary one!
+                </p>
+              </div>
+            </li>
+            <li className="Carousel-slideItem">
+              <div className="Card Carousel-exampleCard">
+                <Image
+                  src="/blocks/services/services-4.jpg"
+                  alt=""
+                  width={875}
+                  height={500}
+                  className="Util-image"
+                />
+                <h3 className="Card-header">Heading 4</h3>
+                <p className="Card-content">
+                  Circle came at an absolutely crucial time for the Makerpad community and has been
+                  essential in allowing us to grow. The team are so responsive and the way they
+                  build is so intuitive that the platform gets better for every week.
+                </p>
+              </div>
+            </li>
+            <li className="Carousel-slideItem">
+              <div className="Card Carousel-exampleCard">
+                <Image
+                  src="/blocks/services/services-5.jpg"
+                  alt=""
+                  width={875}
+                  height={500}
+                  className="Util-image"
+                />
+                <h3 className="Card-header">Heading 5</h3>
+                <p className="Card-content">
+                  I considered using something else but Circle was the winner imo. It’s the perfect
+                  balance of functionality, design & price. Plus the founders are super helpful &
+                  responsive.
+                </p>
+              </div>
+            </li>
+            <li className="Carousel-slideItem">
+              <div className="Card Carousel-exampleCard">
+                <Image
+                  src="/blocks/services/services-6.jpg"
+                  alt=""
+                  width={875}
+                  height={500}
+                  className="Util-image"
+                />
+                <h3 className="Card-header">Heading 6</h3>
+                <p className="Card-content">
+                  The key here is that Circle brings a technical way to centralize and service a
+                  community. It's offering growth by way of shrinking! A consolidation of tech &
+                  location in exchange for the potential of better connection and servability.
+                </p>
+              </div>
+            </li>
+            <li className="Carousel-slideItem">
+              <div className="Card Carousel-exampleCard">
+                <Image
+                  src="/blocks/services/services-4.jpg"
+                  alt=""
+                  width={875}
+                  height={500}
+                  className="Util-image"
+                />
+                <h3 className="Card-header">Heading 7</h3>
+                <p className="Card-content">
+                  For Circle in particular, there are a lot of things I love, but here are the
+                  things that sealed the deal for me when I was comparing community platforms (and I
+                  compared a lot): Clean design and flexible structure. Circle was one of the
+                  platforms I felt best enabled the structure I was going for. I personally think
+                  the folks building Circle are thinking about community in a more holistic way than
+                  some of the other tools on the market - they're thinking beyond a 'forum.'
+                </p>
+              </div>
+            </li>
+          </CarouselSlideContainer>
+        </Carousel>
       </section>
     </>
   );

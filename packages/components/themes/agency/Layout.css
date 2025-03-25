@@ -17,3 +17,7 @@
 .Layout-section {
   border-inline: 1px solid transparent;
 }
+
+.Layout {
+  min-inline-size: 550px;
+}

@@ -18,6 +18,7 @@
 }
 
 .Carousel-exampleCard {
+  block-size: fit-content;
   margin: 2em;
 }
 
@@ -42,6 +43,7 @@
   flex-direction: column;
   inline-size: 100%;
   block-size: 100%;
+  padding: 1em;
   color: var(--primaryText);
   background-color: var(--primary);
   opacity: 0;
@@ -50,7 +52,6 @@
 
 .Content-teamCustom:hover .Team-hoverContent {
   position: absolute;
-  padding: 1em;
   opacity: 1;
   transition-duration: 200ms;
 }
@@ -59,15 +60,15 @@
   position: relative;
   inset: 0;
   color: var(--primaryText);
-  transition-duration: 200ms;
 }
 
 .Custom-input {
   display: flex;
   justify-content: start;
-  min-inline-size: 400px;
-  padding-block: 1.1em;
-  padding-inline: 1.5em 9em;
+  inline-size: 100%;
+  padding-block: 1.3em;
+  padding-inline: 1.5em 10em;
+  font-size: var(--Input-text);
   text-align: start;
   background-color: white;
   border-radius: 50px;
@@ -75,7 +76,7 @@
 
 .Custom-inputButton {
   position: absolute;
-  inset-inline-end: 14.3em;
+  inset-inline-end: 2px;
   box-shadow: none;
 }
 
@@ -85,5 +86,38 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  min-inline-size: 450px;
   margin-block-start: 2em;
+}
+
+.List-item {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  max-inline-size: 250px;
+  min-block-size: 220px;
+  vertical-align: top;
+}
+
+.Partners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.Slide-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  vertical-align: middle;
+}
+
+.Carousel-wrapperCustom {
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
 }

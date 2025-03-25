@@ -2,10 +2,26 @@
   align-items: center;
   justify-content: center;
   padding: 1.5em;
+  font-size: 18px;
   color: var(--primaryText);
   text-align: center;
   border-radius: 1.5em;
   box-shadow: 0 5px 15px oklch(0% 0 0deg / 30%);
+
+  &.Button--type-text {
+    --Button-background: transparent;
+    --Button-border: transparent;
+
+    box-shadow: none;
+
+    &:not(:disabled):hover {
+      --Button-background: oklch(from var(--uiHover) l c h);
+    }
+
+    &:not(:disabled):active {
+      background-color: oklch(from var(--Button-background) l c h / 90%);
+    }
+  }
 
   &.Button--type-muted {
     color: var(--surfaceText);

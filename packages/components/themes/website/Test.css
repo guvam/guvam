@@ -1,0 +1,187 @@
+/* Delete file before merge */
+
+body {
+  display: grid;
+  place-content: center;
+  block-size: 100vh;
+  font-family: Merriweather, serif;
+  background-color: #3a0d4d;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div > * + * {
+  margin-block-start: 4rem;
+}
+
+a {
+  position: relative;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  color: white;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid white;
+}
+
+.border::after,
+.border::before,
+.border span::after,
+.border span::before {
+  position: absolute;
+  content: "";
+  background-color: white;
+  transition: 0.5s ease;
+}
+
+.border::after,
+.border::before {
+  inset-block-start: -2px;
+  inline-size: 2px;
+  block-size: 100%;
+}
+
+.border::after {
+  inset-inline-start: -2px;
+}
+
+.border::before {
+  inset-inline-end: -2px;
+}
+
+.border span::after,
+.border span::before {
+  inset-inline-start: -2px;
+  inline-size: 100%;
+  block-size: 2px;
+}
+
+.border span::after {
+  inset-block-start: -2px;
+}
+
+.border span::before {
+  inset-block-end: -2px;
+}
+
+.border:hover::after {
+  transform: translateX(-12px);
+}
+
+.border:hover::before {
+  transform: translateX(12px);
+}
+
+.border:hover span::after {
+  transform: translateY(-12px);
+}
+
+.border:hover span::before {
+  transform: translateY(12px);
+}
+
+.swap span {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  box-sizing: border-box;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 1rem 2rem;
+  color: black;
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+.swap::before {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 0;
+  block-size: 100%;
+  content: "";
+  background-color: white;
+  transition: 0.5s ease;
+}
+
+.swap:hover::before {
+  inline-size: 100%;
+}
+
+.swap:hover span {
+  opacity: 1;
+}
+
+.future::after,
+.future::before {
+  position: absolute;
+  inline-size: calc(100% + 15px);
+  block-size: 60px;
+  content: "";
+  border: 2px solid white;
+  transition: 0.5s ease;
+}
+
+.future::after {
+  inset-block-start: -15px;
+  inset-inline-start: -15px;
+  border-block-end: none;
+  border-inline-end: none;
+}
+
+.future::before {
+  inset-block-end: -15px;
+  inset-inline-end: -15px;
+  border-block-start: none;
+  border-inline-start: none;
+}
+
+.future:hover::after,
+.future:hover::before {
+  inline-size: calc(100% - 30px);
+  block-size: 80px;
+}
+
+.Test {
+  justify-content: space-between;
+  filter: grayscale(100%);
+}
+
+p.one {
+  border-style: solid;
+  border-width: 5px;
+}
+
+p.two {
+  border-style: solid;
+  border-width: medium;
+}
+
+p.three {
+  border-style: dotted;
+  border-width: 2px;
+}
+
+p.four {
+  border-style: dotted;
+  border-width: thick;
+}
+
+p.five {
+  border-style: double;
+  border-width: 15px;
+}
+
+p.six {
+  border-style: double;
+  border-width: thick;
+}
+
+p.seven {
+  border-style: solid;
+  border-width: 2px 10px 4px 20px;
+}

@@ -2,19 +2,6 @@ import type { Declaration, Root, Rule } from "postcss";
 import postcss from "postcss";
 import { plugin } from "postcss";
 
-/*
-
-  Handle vars with (<--variable-name>)
-
-  Handle functions with [<calc(2+2)>]
-
-  Handle negative values
-
-  Handle deriving relevant part of value, eg - grid-template-columns: repeat(<**number**>, minmax(0, 1fr));
-
-  convert em/rem to px
-*/
-
 export const toTailwindPlugin = plugin("css-to-tailwind", () => {
   return (root: Root) => {
     const rules: Rule[] = [];
@@ -23,6 +10,10 @@ export const toTailwindPlugin = plugin("css-to-tailwind", () => {
       const variables: { name: string; val: string }[] = [];
 
       rule.walkDecls((decl: Declaration) => {
+        if (decl.parent !== rule) {
+          return;
+        }
+
         if (decl.variable) {
           variables.push({ name: decl.prop, val: decl.value });
           return;
@@ -32,36 +23,33 @@ export const toTailwindPlugin = plugin("css-to-tailwind", () => {
 
         if (tailwindProperty) {
           let tailwindVal = decl.value;
-          if (tailwindProperty.valueAliases) {
-            const alias = tailwindProperty.valueAliases[tailwindVal];
-            if (alias) {
-              tailwindVal = alias;
-            }
-          }
+          const alias = tailwindProperty.valueAliases
+            ? tailwindProperty.valueAliases[tailwindVal]
+            : undefined;
 
-          const noValues = VALUES_ARRAY.every((val) => {
-            if (tailwindVal.includes(val)) {
-              tailwindVal = `[${tailwindVal}]`;
-              return false;
-            }
-
-            return true;
-          });
-
-          if (noValues && tailwindVal.includes("(")) {
+          if (alias !== undefined) {
+            tailwindVal = alias;
+          } else if (tailwindProperty.useRawValue) {
             tailwindVal = `[${tailwindVal}]`;
+          } else {
+            const noValues = VALUES_ARRAY.every((val) => {
+              if (tailwindVal.includes(val)) {
+                tailwindVal = `[${tailwindVal}]`;
+                return false;
+              }
+
+              return true;
+            });
+
+            if (noValues && tailwindVal.includes("(")) {
+              tailwindVal = `[${tailwindVal}]`;
+            }
           }
 
-          // if (noValues && !tailwindVal.includes("[")) {
-          //   if (tailwindVal.includes("var")) {
-          //     tailwindVal = tailwindVal.replace("var(", "(");
-          //   } else if (tailwindVal.includes("(")) {
-          //     tailwindVal = `[${tailwindVal}]`;
-          //   }
-          // }
-
-          if (tailwindProperty.valueOnly) {
+          if (tailwindProperty.propertyAlias == "") {
             tailwindClasses.push(tailwindVal);
+          } else if (tailwindVal === "") {
+            tailwindClasses.push(`${tailwindProperty.propertyAlias ?? decl.prop}`);
           } else {
             tailwindClasses.push(`${tailwindProperty.propertyAlias ?? decl.prop}-${tailwindVal}`);
           }
@@ -114,202 +102,311 @@ export const toTailwindPlugin = plugin("css-to-tailwind", () => {
 });
 
 type TailwindItem = {
-  valueOnly: boolean;
   propertyAlias: string | null;
+  useRawValue: boolean;
   valueAliases: Record<string, string> | null;
 };
 
-const VALUES_ARRAY = ["em", "rem", "pt", "calc("];
+const VALUES_ARRAY = ["em", "rem", "pt", "calc(", " ", "px"];
 
 const TAILWIND_MAP: Record<string, TailwindItem> = {
   "aspect-ratio": {
-    valueOnly: false,
     propertyAlias: "aspect",
+    useRawValue: false,
     valueAliases: {
       "1 / 1": "square",
       "16 / 9": "video",
     },
   },
   columns: {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "break-after": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "break-before": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "break-inside": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "box-decoration-break": {
-    valueOnly: false,
     propertyAlias: "box-decoration",
+    useRawValue: false,
     valueAliases: null,
   },
   "box-sizing": {
-    valueOnly: false,
     propertyAlias: "box",
+    useRawValue: false,
+
     valueAliases: {
       "border-box": "border",
       "content-box": "content",
     },
   },
   display: {
-    valueOnly: true,
-    propertyAlias: null,
+    propertyAlias: "",
+    useRawValue: false,
+
     valueAliases: {
       none: "hidden",
     },
   },
   float: {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   clear: {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
+
     valueAliases: {
       "inline-start": "start",
       "inline-end": "end",
     },
   },
   isolation: {
-    valueOnly: true,
-    propertyAlias: null,
+    propertyAlias: "",
+    useRawValue: false,
     valueAliases: null,
   },
   "object-fit": {
-    valueOnly: false,
     propertyAlias: "object",
+    useRawValue: false,
     valueAliases: null,
   },
   "object-position": {
-    valueOnly: false,
     propertyAlias: "object",
+    useRawValue: false,
     valueAliases: null,
   },
   overflow: {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "overflow-x": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "overflow-y": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "overscroll-behavior": {
-    valueOnly: false,
     propertyAlias: "overscroll",
+    useRawValue: false,
     valueAliases: null,
   },
   position: {
-    valueOnly: true,
-    propertyAlias: null,
+    propertyAlias: "",
+    useRawValue: false,
     valueAliases: null,
   },
-  // inset - Problematic
-  visibility: {
-    valueOnly: true,
+  inset: {
+    propertyAlias: "inset",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "inset-inline": {
+    propertyAlias: "inset-x",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "inset-block": {
+    propertyAlias: "inset-y",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "inset-inline-start": {
+    propertyAlias: "start",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "inset-inline-end": {
+    propertyAlias: "end",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  top: {
     propertyAlias: null,
+    useRawValue: false,
+    valueAliases: null,
+  },
+  right: {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: null,
+  },
+  bottom: {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: null,
+  },
+  left: {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: null,
+  },
+  visibility: {
+    propertyAlias: "",
+    useRawValue: false,
+
     valueAliases: {
       hidden: "invisible",
     },
   },
   "z-index": {
-    valueOnly: false,
     propertyAlias: "z",
+    useRawValue: false,
     valueAliases: null,
   },
   "flex-basis": {
-    valueOnly: false,
     propertyAlias: "basis",
+    useRawValue: false,
     valueAliases: null,
   },
   "flex-direction": {
-    valueOnly: false,
     propertyAlias: "flex",
+    useRawValue: false,
     valueAliases: null,
   },
   "flex-wrap": {
-    valueOnly: false,
     propertyAlias: "flex",
+    useRawValue: false,
     valueAliases: null,
   },
   flex: {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "flex-grow": {
-    valueOnly: false,
     propertyAlias: "grow",
+    useRawValue: false,
+
     valueAliases: {
-      "1": "", // Problematic
+      "1": "",
     },
   },
   "flex-shrink": {
-    valueOnly: false,
     propertyAlias: "shrink",
+    useRawValue: false,
+
     valueAliases: {
-      "1": "", // Problematic
+      "1": "",
     },
   },
   order: {
-    // Problematic
-    valueOnly: false,
-    propertyAlias: null,
+    propertyAlias: "order",
+    useRawValue: false,
+
     valueAliases: {
       "calc(-infinity)": "first",
       "calc(infinity)": "last",
     },
   },
   "grid-template-columns": {
-    valueOnly: false,
     propertyAlias: "grid-cols",
-    valueAliases: null, // see this
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+      subgrid: "subgrid",
+    },
   },
   "grid-column": {
-    valueOnly: false,
     propertyAlias: "col-span",
+    useRawValue: false,
+
     valueAliases: {
       "1 / -1": "full",
     },
   },
-  // Grid properties
+  "grid-template-rows": {
+    propertyAlias: "grid-rows",
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+      subgrid: "subgrid",
+    },
+  },
+  "grid-row": {
+    propertyAlias: "row-span",
+    useRawValue: true,
+    valueAliases: {
+      "1 / -1": "span-full",
+      auto: "auto",
+    },
+  },
+  "grid-row-start": {
+    propertyAlias: "row-start",
+    useRawValue: false,
+    valueAliases: null,
+  },
+
+  "grid-row-end": {
+    propertyAlias: "row-end",
+    useRawValue: true,
+    valueAliases: { auto: "auto" },
+  },
+
+  "grid-auto-flow": {
+    propertyAlias: "grid-flow",
+    useRawValue: false,
+    valueAliases: {
+      column: "col",
+      "row dense": "row-dense",
+      "column dense": "col-dense",
+    },
+  },
+  "grid-auto-columns": {
+    propertyAlias: "auto-cols",
+    useRawValue: false,
+    valueAliases: {
+      "min-content": "min",
+      "max-content": "max",
+      "minmax(0, 1fr)": "fr",
+    },
+  },
+  "grid-auto-rows": {
+    propertyAlias: "auto-rows",
+    useRawValue: false,
+    valueAliases: {
+      "min-content": "min",
+      "max-content": "max",
+      "minmax(0, 1fr)": "fr",
+    },
+  },
   gap: {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "column-gap": {
-    valueOnly: false,
     propertyAlias: "gap-x",
+    useRawValue: false,
     valueAliases: null,
   },
   "row-gap": {
-    valueOnly: false,
     propertyAlias: "gap-y",
+    useRawValue: false,
     valueAliases: null,
   },
   "justify-content": {
-    valueOnly: false,
     propertyAlias: "justify",
+    useRawValue: false,
+
     valueAliases: {
       "flex-start": "start",
       "flex-end": "end",
@@ -319,18 +416,19 @@ const TAILWIND_MAP: Record<string, TailwindItem> = {
     },
   },
   "justify-items": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "justify-self": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "align-content": {
-    valueOnly: false,
     propertyAlias: "content",
+    useRawValue: false,
+
     valueAliases: {
       "flex-start": "start",
       "flex-end": "end",
@@ -340,24 +438,26 @@ const TAILWIND_MAP: Record<string, TailwindItem> = {
     },
   },
   "align-items": {
-    valueOnly: false,
     propertyAlias: "items",
+    useRawValue: false,
+
     valueAliases: {
       "flex-start": "start",
       "flex-end": "end",
     },
   },
   "align-self": {
-    valueOnly: false,
     propertyAlias: "self",
+    useRawValue: false,
+
     valueAliases: {
       "flex-start": "start",
       "flex-end": "end",
     },
   },
   "place-content": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: {
       "space-between": "between",
       "space-around": "around",
@@ -365,26 +465,535 @@ const TAILWIND_MAP: Record<string, TailwindItem> = {
     },
   },
   "place-items": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
   "place-self": {
-    valueOnly: false,
     propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
-  // Spacing
-  // Sizing
-  // Typography
+  padding: {
+    propertyAlias: "p",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-inline": {
+    propertyAlias: "px",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-block": {
+    propertyAlias: "py",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-inline-start": {
+    propertyAlias: "ps",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-inline-end": {
+    propertyAlias: "pe",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-top": {
+    propertyAlias: "pt",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-right": {
+    propertyAlias: "pr",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-bottom": {
+    propertyAlias: "pb",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "padding-left": {
+    propertyAlias: "pl",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  margin: {
+    propertyAlias: "m",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-inline": {
+    propertyAlias: "mx",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-block": {
+    propertyAlias: "my",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-inline-start": {
+    propertyAlias: "ms",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-inline-end": {
+    propertyAlias: "me",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-top": {
+    propertyAlias: "mt",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-block-start": {
+    propertyAlias: "mt",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-right": {
+    propertyAlias: "mr",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-bottom": {
+    propertyAlias: "mb",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-block-end": {
+    propertyAlias: "mb",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "margin-left": {
+    propertyAlias: "ml",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  width: {
+    propertyAlias: "w",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+  "inline-size": {
+    propertyAlias: "w",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+  "min-width": {
+    propertyAlias: "min-w",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+  "max-width": {
+    propertyAlias: "max-w",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+  height: {
+    propertyAlias: "h",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+
+  "block-size": {
+    propertyAlias: "h",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+  "min-height": {
+    propertyAlias: "min-h",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+  "max-height": {
+    propertyAlias: "max-h",
+    useRawValue: false,
+
+    valueAliases: {
+      "1px": "px",
+      "100%": "full",
+      "100vw": "screen",
+      "100dvw": "dvw",
+      "100dvh": "dvh",
+      "100lvw": "lvw",
+      "100lvh": "lvh",
+      "100svw": "svw",
+      "100svh": "svh",
+      "min-content": "min",
+      "max-content": "max",
+      "fit-content": "fit",
+    },
+  },
+  "font-family": {
+    propertyAlias: "font",
+    useRawValue: false,
+
+    valueAliases: {
+      "var(--font-sans)": "sans",
+      "var(--font-serif)": "serif",
+      "var(--font-mono)": "mono",
+    },
+  },
+  "font-size": {
+    propertyAlias: "text",
+    useRawValue: true,
+
+    valueAliases: null,
+  },
+  "-webkit-font-smoothing": {
+    propertyAlias: "",
+    useRawValue: false,
+    valueAliases: { auto: "subpixel-antialiased" },
+  },
+  "-moz-osx-font-smoothing": {
+    propertyAlias: "",
+    useRawValue: false,
+    valueAliases: {
+      auto: "subpixel-antialiased",
+      grayscale: "antialiased",
+    },
+  },
+  "font-style": {
+    propertyAlias: "",
+    useRawValue: false,
+    valueAliases: {
+      normal: "non-italic",
+    },
+  },
+  "font-weight": {
+    propertyAlias: "font",
+    useRawValue: true,
+    valueAliases: {
+      "100": "thin",
+      "200": "extralight",
+      "300": "light",
+      "400": "normal",
+      "500": "medium",
+      "600": "semibold",
+      "700": "bold",
+      "800": "extrabold",
+      "900": "black",
+    },
+  },
+  "font-stretch": {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "font-variant-numeric": {
+    propertyAlias: "",
+    useRawValue: false,
+    valueAliases: {
+      normal: "normal-nums",
+    },
+  },
+  "letter-spacing": {
+    propertyAlias: "tracking",
+    useRawValue: true,
+    valueAliases: {
+      "var(--tracking-tighter)": "tighter",
+      "var(--tracking-tight)": "tight",
+      "var(--tracking-normal)": "normal",
+      "var(--tracking-wide)": "wide",
+      "var(--tracking-wider)": "wider",
+      "var(--tracking-widest)": "widest",
+    },
+  },
+  "-webkit-line-clamp": {
+    propertyAlias: "line-clamp",
+    useRawValue: true,
+    valueAliases: { unset: "none" },
+  },
+  "line-height": {
+    propertyAlias: "leading",
+    useRawValue: true,
+    valueAliases: { "1": "none" },
+  },
+  "list-style-image": {
+    propertyAlias: "list-image",
+    useRawValue: true,
+    valueAliases: { none: "none" },
+  },
+  "list-style-position": {
+    propertyAlias: "list",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "list-style-type": {
+    propertyAlias: "list",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "text-align": {
+    propertyAlias: "text",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  color: {
+    propertyAlias: "text",
+    useRawValue: true,
+    valueAliases: {
+      inherit: "inherit",
+      currentColor: "current",
+      transparent: "transparent",
+    },
+  },
+  "text-decoration-line": {
+    propertyAlias: "",
+    useRawValue: false,
+    valueAliases: { none: "no-underline" },
+  },
+  "text-decoration-color": {
+    propertyAlias: "decoration",
+    useRawValue: true,
+    valueAliases: {
+      inherit: "inherit",
+      currentColor: "current",
+      transparent: "transparent",
+    },
+  },
+  "text-decoration-style": {
+    propertyAlias: "decoration",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "text-decoration-thickness": {
+    propertyAlias: "decoration",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "text-underline-offset": {
+    propertyAlias: "underline-offset",
+    useRawValue: true,
+    valueAliases: { auto: "auto" },
+  },
+  "text-transform": {
+    propertyAlias: "",
+    useRawValue: false,
+    valueAliases: {
+      none: "normal-case",
+    },
+  },
+  "text-overflow": {
+    propertyAlias: "text",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "text-wrap": {
+    propertyAlias: "text",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "text-indent": {
+    propertyAlias: "indent",
+    useRawValue: true,
+    valueAliases: {
+      "1px": "px",
+    },
+  },
+  "vertical-align": {
+    propertyAlias: "align",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "white-space": {
+    propertyAlias: "whitespace",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "word-break": {
+    propertyAlias: "break",
+    useRawValue: false,
+    valueAliases: {
+      "break-word": "words",
+      "break-all": "all",
+      "keep-all": "keep",
+    },
+  },
+  hyphens: {
+    propertyAlias: "hyphens",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  content: {
+    propertyAlias: "content",
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+    },
+  },
   "background-attachment": {
-    valueOnly: false,
     propertyAlias: "bg",
+    useRawValue: false,
     valueAliases: null,
   },
   "background-clip": {
-    valueOnly: false,
     propertyAlias: "bg-clip",
+    useRawValue: false,
+
     valueAliases: {
       "border-box": "border",
       "padding-box": "padding",
@@ -392,123 +1001,566 @@ const TAILWIND_MAP: Record<string, TailwindItem> = {
     },
   },
   "background-color": {
-    valueOnly: false,
     propertyAlias: "bg",
+    useRawValue: true,
     valueAliases: {
       currentColor: "current",
     },
   },
-  // backgrounds
-  "border-radius": {
-    valueOnly: false,
-    propertyAlias: "rounded",
+  "background-image": {
+    propertyAlias: "bg",
+    useRawValue: true,
+
     valueAliases: {
-      "0": "none",
-      // "calc(infinity * 1px)": "full",
+      none: "none",
     },
   },
-  // border-start-start-radius etc
+  "background-origin": {
+    propertyAlias: "bg-origin",
+    useRawValue: false,
+
+    valueAliases: {
+      "border-box": "border",
+      "padding-box": "padding",
+      "content-box": "content",
+    },
+  },
+  "background-position": {
+    propertyAlias: "bg",
+    useRawValue: false,
+    valueAliases: {
+      "left bottom": "left-bottom",
+      "left top": "left-top",
+      "right bottom": "right-bottom",
+      "right top": "right-top",
+    },
+  },
+  "background-repeat": {
+    propertyAlias: "bg",
+    useRawValue: false,
+    valueAliases: {
+      space: "repeat-space",
+      round: "repeat-round",
+    },
+  },
+  "background-size": {
+    propertyAlias: "bg",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "border-radius": {
+    propertyAlias: "rounded",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-start-start-radius": {
+    propertyAlias: "rounded-ss",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-start-end-radius": {
+    propertyAlias: "rounded-se",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-end-end-radius": {
+    propertyAlias: "rounded-ee",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-end-start-radius": {
+    propertyAlias: "rounded-es",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-top-left-radius": {
+    propertyAlias: "rounded-tl",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-top-right-radius": {
+    propertyAlias: "rounded-tr",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-bottom-right-radius": {
+    propertyAlias: "rounded-br",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+  "border-bottom-left-radius": {
+    propertyAlias: "rounded-bl",
+    useRawValue: false,
+    valueAliases: {
+      "0": "none",
+      "calc(infinity * 1px)": "full",
+    },
+  },
+
   "border-width": {
-    valueOnly: false,
     propertyAlias: "border",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-inline-width": {
-    valueOnly: false,
     propertyAlias: "border-x",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-block-width": {
-    valueOnly: false,
     propertyAlias: "border-y",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-inline-start-width": {
-    valueOnly: false,
     propertyAlias: "border-s",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-inline-end-width": {
-    valueOnly: false,
     propertyAlias: "border-e",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-top-width": {
-    valueOnly: false,
     propertyAlias: "border-t",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-right-width": {
-    valueOnly: false,
     propertyAlias: "border-r",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-bottom-width": {
-    valueOnly: false,
     propertyAlias: "border-b",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-left-width": {
-    valueOnly: false,
     propertyAlias: "border-l",
+    useRawValue: false,
     valueAliases: null,
   },
   "border-color": {
-    valueOnly: false,
     propertyAlias: "border",
+    useRawValue: false,
     valueAliases: {
       currentColor: "current",
     },
   },
   "border-style": {
-    // check divides
-    valueOnly: false,
     propertyAlias: "border",
+    useRawValue: false,
     valueAliases: null,
   },
   "outline-width": {
-    valueOnly: false,
     propertyAlias: "outline",
+    useRawValue: false,
     valueAliases: null,
   },
   "outline-color": {
-    valueOnly: false,
     propertyAlias: "outline",
+    useRawValue: false,
     valueAliases: {
       currentColor: "current",
     },
   },
   "outline-style": {
-    valueOnly: false,
     propertyAlias: "outline",
-    valueAliases: null, // check outline-hidden
-  },
-  "outline-offset": {
-    valueOnly: false,
-    propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
-  // box shadow
-  opacity: {
-    // opacity: 100% is opacity-100. Problematic
-    valueOnly: false,
+  "outline-offset": {
     propertyAlias: null,
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "box-shadow": {
+    propertyAlias: "shadow",
+    useRawValue: true,
+    valueAliases: {
+      "0 0 #0000": "none",
+    },
+  },
+  opacity: {
+    propertyAlias: null,
+    useRawValue: true,
     valueAliases: null,
   },
   "mix-blend-mode": {
-    valueOnly: false,
+    useRawValue: false,
     propertyAlias: "mix-blend",
     valueAliases: null,
   },
   "background-blend-mode": {
-    valueOnly: false,
+    useRawValue: false,
     propertyAlias: "bg-blend",
     valueAliases: null,
   },
-  // Filters
+  filter: {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: null,
+  },
   "border-collapse": {
-    valueOnly: false,
     propertyAlias: "border",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "border-spacing": {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "table-layout": {
+    propertyAlias: "table",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "caption-side": {
+    propertyAlias: "caption",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "transition-property": {
+    propertyAlias: "transition",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "transition-behavior": {
+    propertyAlias: "transition",
+    useRawValue: false,
+
+    valueAliases: {
+      "allow-discrete": "discrete",
+    },
+  },
+  "transition-duration": {
+    propertyAlias: "duration",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "transition-timing-function": {
+    propertyAlias: "ease",
+    valueAliases: {
+      linear: "linear",
+      initial: "initial",
+    },
+    useRawValue: true,
+  },
+  "transition-delay": {
+    propertyAlias: "delay",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  animation: {
+    propertyAlias: "animate",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "backface-visibility": {
+    propertyAlias: "backface",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  perspective: {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+    },
+  },
+  "perspective-origin": {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: {
+      "top right": "top-right",
+      "bottom right": "bottom-right",
+      "bottom left": "bottom-left",
+      "top left": "top-left",
+    },
+  },
+  rotate: {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+    },
+  },
+  scale: {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+    },
+  },
+  transform: {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+    },
+  },
+  "transform-origin": {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: {
+      "top right": "top-right",
+      "bottom right": "bottom-right",
+      "bottom left": "bottom-left",
+      "top left": "top-left",
+    },
+  },
+  "transform-style": {
+    propertyAlias: "transform",
+    useRawValue: false,
+
+    valueAliases: {
+      "preserve-3d": "3d",
+    },
+  },
+  translate: {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+    },
+  },
+  "accent-color": {
+    propertyAlias: "accent",
+    valueAliases: {
+      inherit: "inherit",
+      currentColor: "current",
+      transparent: "transparent",
+    },
+    useRawValue: true,
+  },
+  appearance: {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "caret-color": {
+    propertyAlias: "caret",
+    valueAliases: {
+      inherit: "inherit",
+      currentColor: "current",
+      transparent: "transparent",
+    },
+    useRawValue: true,
+  },
+  "color-scheme": {
+    propertyAlias: "scheme",
+    useRawValue: false,
+    valueAliases: {
+      "light dark": "light-dark",
+      "only dark": "only-dark",
+      "only light": "only-light",
+    },
+  },
+  "field-sizing": {
+    propertyAlias: null,
+
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "pointer-events": {
+    propertyAlias: null,
+
+    useRawValue: false,
+    valueAliases: null,
+  },
+  resize: {
+    propertyAlias: null,
+
+    useRawValue: false,
+    valueAliases: {
+      both: "",
+      vertical: "y",
+      horizontal: "x",
+    },
+  },
+  "scroll-behavior": {
+    propertyAlias: "scroll",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "scroll-margin": {
+    propertyAlias: "scroll-m",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-inline": {
+    propertyAlias: "scroll-mx",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-block": {
+    propertyAlias: "scroll-my",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-inline-start": {
+    propertyAlias: "scroll-ms",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-inline-end": {
+    propertyAlias: "scroll-me",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-top": {
+    propertyAlias: "scroll-mt",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-right": {
+    propertyAlias: "scroll-mr",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-bottom": {
+    propertyAlias: "scroll-mb",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-margin-left": {
+    propertyAlias: "scroll-ml",
+    useRawValue: true,
+    valueAliases: null,
+  },
+
+  "scroll-padding": {
+    propertyAlias: "scroll-p",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-inline": {
+    propertyAlias: "scroll-px",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-block": {
+    propertyAlias: "scroll-py",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-inline-start": {
+    propertyAlias: "scroll-ps",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-inline-end": {
+    propertyAlias: "scroll-pe",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-top": {
+    propertyAlias: "scroll-pt",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-right": {
+    propertyAlias: "scroll-pr",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-bottom": {
+    propertyAlias: "scroll-pb",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-padding-left": {
+    propertyAlias: "scroll-pl",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "scroll-snap-align": {
+    propertyAlias: "snap",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "scroll-snap-stop": {
+    propertyAlias: "snap",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "scroll-snap-type": {
+    propertyAlias: "snap",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "touch-action": {
+    propertyAlias: "touch",
+    useRawValue: true,
+    valueAliases: null,
+  },
+  "user-select": {
+    propertyAlias: "select",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "will-change": {
+    propertyAlias: null,
+    useRawValue: false,
+    valueAliases: {
+      "scroll-position": "scroll",
+    },
+  },
+  fill: {
+    propertyAlias: null,
+    useRawValue: true,
+    valueAliases: {
+      none: "none",
+      inherit: "inherit",
+      currentColor: "current",
+      transparent: "transparent",
+    },
+  },
+  stroke: {
+    propertyAlias: null,
+    valueAliases: {
+      none: "none",
+      inherit: "inherit",
+      currentColor: "current",
+      transparent: "transparent",
+    },
+    useRawValue: true,
+  },
+  "stroke-width": {
+    propertyAlias: "stroke",
+    useRawValue: false,
+    valueAliases: null,
+  },
+  "force-color-adjust": {
+    propertyAlias: null,
+    useRawValue: false,
     valueAliases: null,
   },
 };

@@ -11,9 +11,7 @@ const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const parseCss = () => {
-  const file = fs.readFileSync(
-    path.resolve(__dirname, "../../components/themes/website/Button.css")
-  );
+  const file = fs.readFileSync(path.resolve(__dirname, "../../components/themes/website/Test.css"));
 
   const root = postcss.parse(file.toString());
   postcss([toTailwindPlugin])

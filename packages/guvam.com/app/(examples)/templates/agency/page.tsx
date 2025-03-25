@@ -219,11 +219,11 @@ export default function Page() {
 
                 <TabsContent>
                   <div className="Components-container">
-                    <section>
+                    <section className="Layout-section">
                       <div className="GridTwo">
-                        <hgroup className="Hgroup-custom">
+                        <hgroup className="Hgroup-custom Content-variant">
                           <h3>Your community, courses, and content – all in one place.</h3>
-                          <p>
+                          <p className="Tabs-content-p">
                             Gone are the days of needing to make a whole bunch of different tools
                             work together. With Circle, you can combine the exciting, interactive
                             nature of a community with your content — all in one seamless
@@ -231,7 +231,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Util-image"
+                          className="Util-imageCover Util-imageCover--medium"
                           src="/blocks/services/services-1.jpg"
                           alt="Placeholder"
                           width={1465}
@@ -243,11 +243,11 @@ export default function Page() {
                   <div className="Components-container">
                     <section>
                       <div className="GridTwo">
-                        <hgroup className="Hgroup-custom">
+                        <hgroup className="Hgroup-custom Content-variant">
                           <h3>
                             Courses, live streams, group chats, events, rich profile, and more.
                           </h3>
-                          <p>
+                          <p className="Tabs-content-p">
                             Your members are the star of the show — they just need the tools to
                             connect with each other and shine. You want an active, buzzing
                             community. And so do your members. With Circle you get powerful
@@ -256,7 +256,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Util-image"
+                          className="Util-imageCover Util-imageCover--medium"
                           src="/blocks/services/services-3.jpg"
                           alt="Placeholder"
                           width={1465}
@@ -268,12 +268,12 @@ export default function Page() {
                   <div className="Components-container">
                     <section>
                       <div className="GridTwo">
-                        <hgroup className="Hgroup-custom">
+                        <hgroup className="Hgroup-custom Content-variant">
                           <h3>
                             Whether you’re offering a course, a membership, one-time access to
                             content, or monthly recurring subscriptions — Circle has you covered.
                           </h3>
-                          <p>
+                          <p className="Tabs-content-p">
                             Many of the top creators and brands run their entire business on Circle.
                             You can easily start accepting payments in minutes. Whether you’re
                             offering a membership, one-time access to content, providing free trials
@@ -281,7 +281,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Util-image"
+                          className="Util-imageCover Util-imageCover--medium"
                           src="/blocks/services/services-4.jpg"
                           alt="Placeholder"
                           width={1465}
@@ -293,9 +293,9 @@ export default function Page() {
                   <div className="Components-container">
                     <section>
                       <div className="GridTwo">
-                        <hgroup className="Hgroup-custom">
+                        <hgroup className="Hgroup-custom Content-variant">
                           <h3>Manage and scale your community operations</h3>
-                          <p>
+                          <p className="Tabs-content-p">
                             Get back the precious time you currently spend on repetitive, manual
                             tasks so that you can focus on more meaningful work. Circle comes with
                             powerful workflows, integrations, and AI-powered content and analytics
@@ -303,7 +303,7 @@ export default function Page() {
                           </p>
                         </hgroup>
                         <Image
-                          className="Util-image"
+                          className="Util-imageCover Util-imageCover--medium"
                           src="/blocks/services/services-6.jpg"
                           alt="Placeholder"
                           width={1465}

@@ -8,6 +8,10 @@
   &.Util-imageCover--large {
     min-block-size: 600px;
   }
+
+  &.Util-imageCover--medium {
+    min-block-size: 450px;
+  }
 }
 
 .Util--center {

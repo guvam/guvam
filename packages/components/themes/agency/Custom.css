@@ -7,6 +7,14 @@
 
 .Hgroup-custom {
   text-align: start;
+
+  &.Content-variant {
+    max-inline-size: 450px;
+  }
+}
+
+.Tabs-content-p {
+  font-size: 18px;
 }
 
 .Carousel-menuCustom {

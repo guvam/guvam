@@ -37,19 +37,21 @@
 }
 
 .Team-hoverContent {
-  display: none;
-  transition-duration: 200ms;
-}
-
-.Content-teamCustom:hover .Team-hoverContent {
   position: absolute;
   display: flex;
   flex-direction: column;
   inline-size: 100%;
   block-size: 100%;
-  padding: 1em;
   color: var(--primaryText);
   background-color: var(--primary);
+  opacity: 0;
+  transition-duration: 200ms;
+}
+
+.Content-teamCustom:hover .Team-hoverContent {
+  position: absolute;
+  padding: 1em;
+  opacity: 1;
   transition-duration: 200ms;
 }
 
@@ -57,4 +59,31 @@
   position: relative;
   inset: 0;
   color: var(--primaryText);
+  transition-duration: 200ms;
+}
+
+.Custom-input {
+  display: flex;
+  justify-content: start;
+  min-inline-size: 400px;
+  padding-block: 1.1em;
+  padding-inline: 1.5em 9em;
+  text-align: start;
+  background-color: white;
+  border-radius: 50px;
+}
+
+.Custom-inputButton {
+  position: absolute;
+  inset-inline-end: 14.3em;
+  box-shadow: none;
+}
+
+.Custom-inputForm {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-block-start: 2em;
 }

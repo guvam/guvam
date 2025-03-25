@@ -78,12 +78,10 @@ export default function Page() {
                 <p className="Title-description">
                   Build a home for your community, events and courses - all under your own brand.
                 </p>
-                <div className="List List--centered">
-                  <button className="Button">Get Started</button>
-                  <button className="Button Button--type-text">
-                    Learn More <ArrowRight />
-                  </button>
-                </div>
+                <form className="Custom-inputForm">
+                  <input className="Custom-input" placeholder="Enter your Email Address"></input>
+                  <button className="Button Custom-inputButton">Get Started</button>
+                </form>
               </hgroup>
               <ul className="List List--row List--evenly">
                 <li>
@@ -96,14 +94,14 @@ export default function Page() {
                     Build a home for your community with memberships, discussions, events and
                     courses.
                   </p>
-                </li>{" "}
+                </li>
                 <li>
                   <h2>Monatize</h2>
                   <p>
                     Use our best-in-class payments stack to turn your community into a meaningful
                     business
                   </p>
-                </li>{" "}
+                </li>
                 <li>
                   <h2>Scale</h2>
                   <p>Scale your business to the next level with automations, AI and branded apps</p>
@@ -375,27 +373,27 @@ export default function Page() {
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Rich posts</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Content co-pilot</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Immersive courses</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Private spaces</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Automatic video transcripts</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Member directory</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Customized branding</p>
@@ -412,27 +410,27 @@ export default function Page() {
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Private messaging</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Event spaces</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Live streams</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Weekly digests</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Automated check-ins</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Gamified rewards</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Bulk DMs</p>
@@ -449,27 +447,27 @@ export default function Page() {
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>One-time payments</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Recurring subscriptions</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Gate access</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Free trials and upsells</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Payment installments</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Coupons and discounts</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Subscription renewal reminders</p>
@@ -486,27 +484,27 @@ export default function Page() {
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Automated workflows</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Custom profile fields</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>AI activity scores</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Bulk actions</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Single sign-on</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Roles & permissions</p>
-                  </li>{" "}
+                  </li>
                   <li className="List">
                     <CheckCircleFill className="Checkbox-SVG" />
                     <p>Auto-remove churned members</p>
@@ -569,15 +567,15 @@ export default function Page() {
                     <li className="List">
                       <CheckCircleFill className="Checkbox-SVG" />
                       <p>Drip lessons</p>
-                    </li>{" "}
+                    </li>
                     <li className="List">
                       <CheckCircleFill className="Checkbox-SVG" />
                       <p>Exclusive masterclasses</p>
-                    </li>{" "}
+                    </li>
                     <li className="List">
                       <CheckCircleFill className="Checkbox-SVG" />
                       <p>1:1 connections and DMs</p>
-                    </li>{" "}
+                    </li>
                   </ul>
                 </div>
                 <div className="">
@@ -589,15 +587,15 @@ export default function Page() {
                     <li className="List">
                       <CheckCircleFill className="Checkbox-SVG" />
                       <p>Weekly office hours</p>
-                    </li>{" "}
+                    </li>
                     <li className="List">
                       <CheckCircleFill className="Checkbox-SVG" />
                       <p>Personalized and group coaching</p>
-                    </li>{" "}
+                    </li>
                     <li className="List">
                       <CheckCircleFill className="Checkbox-SVG" />
                       <p>Live Q&As</p>
-                    </li>{" "}
+                    </li>
                   </ul>
                 </div>
               </ul>

@@ -6,6 +6,20 @@ import { clampChroma, converter, formatHex } from "culori";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 
+/*
+
+ - username min 5 char
+ - disable 10000 most common english words
+
+
+  /:username
+  /:username/:project
+  /settings
+  /docs
+  /blocks/
+
+ */
+
 const PALETTE = [
   { label: 50, value: 25 },
   { label: 100, value: 75 },
@@ -19,9 +33,10 @@ const PALETTE = [
   { label: 900, value: 740 },
   { label: 950, value: 820 },
 ];
+/*
 const HUES = {
   red: 20,
-  /*
+  /!*
   orange: 40,
   amber: 60,
   yellow: 80,
@@ -39,7 +54,7 @@ const HUES = {
   pink: 320,
   rose: 340,
   x: 360,
-*/
+*!/
 };
 
 const SURFACE_HUES = {
@@ -49,6 +64,7 @@ const SURFACE_HUES = {
   neutral: 310,
   stone: 330,
 };
+*/
 
 const oklch = converter("oklch");
 
@@ -108,7 +124,7 @@ export default function Page() {
             <div className="List">
               <input
                 type="color"
-                className="Input"
+                className="ColorList-picker"
                 value={formatHex(color)}
                 onChange={(event) => {
                   const color = oklch(event.currentTarget.value);

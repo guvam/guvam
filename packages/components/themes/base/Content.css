@@ -63,6 +63,10 @@ pre {
 }
 
 .Content-listDefined {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
   & > dt {
     display: block;
     font-weight: 600;

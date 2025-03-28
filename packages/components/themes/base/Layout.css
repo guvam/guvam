@@ -51,6 +51,14 @@
   gap: 1em;
   padding-block: 6em;
 
+  &.Layout-sectionContent--centered {
+    align-self: center;
+    justify-content: center;
+    inline-size: 100%;
+    max-inline-size: 400px;
+    min-block-size: calc(100dvh - 156px);
+  }
+
   @media (width <= 960px) {
     padding-block: 2em;
   }

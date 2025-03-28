@@ -232,7 +232,10 @@ interface CarouseMenuProps {
 }
 
 export const CarouseMenu: FC<
-  CarouseMenuProps & { children?: ReactNode; childClassname?: string }
+  CarouseMenuProps & {
+    children?: ReactElement<HTMLElement>[];
+    childClassname?: string;
+  }
 > = ({ classname = "Carousel-menu", childClassname = "Carousel-menuItem", children }) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
   const { slideCount } = useContext(CarouselSlideCountStateContext);
@@ -242,37 +245,24 @@ export const CarouseMenu: FC<
   return (
     <CarouselTag tag="menu" command="carousel:menu" className={classname}>
       {children
-        ? Array.isArray(children)
-          ? children.map((child, i) =>
-              isValidElement(child)
-                ? cloneElement(child, {
-                    key: i,
-                    onClick: () => setCurrentIndex(i),
-                    className: classList({
-                      [child.props.className || childClassname]: true,
-                      [`${child.props.className || childClassname}--active`]: i === activeIndex,
-                    }),
-                  })
-                : null
-            )
-          : isValidElement(children)
-            ? cloneElement(children, {
-                key: 0,
-                onClick: () => setCurrentIndex(0),
-                className: classList({
-                  [children.props.className || childClassname]: true,
-                  [`${children.props.className || childClassname}--active`]: 0 === activeIndex,
-                }),
-              })
-            : null
+        ? Children.map(children, (child, i) =>
+            cloneElement(child, {
+              key: i,
+              onclick: () => setCurrentIndex(i),
+              className: classList({
+                [child.props.className || childClassname]: true,
+                [`${child.props.className || childClassname}--active`]: i === activeIndex,
+              }),
+            })
+          )
         : [...Array(slideCount)].map((_, i) => (
             <li key={i}>
               <button
+                onClick={() => setCurrentIndex(i)}
                 className={classList({
                   [childClassname]: true,
                   [`${childClassname}--active`]: i === activeIndex,
                 })}
-                onClick={() => setCurrentIndex(i)}
               />
             </li>
           ))}

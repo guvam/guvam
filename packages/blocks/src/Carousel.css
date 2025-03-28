@@ -70,7 +70,7 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
-  align-items: end;
+  align-items: flex-end;
   align-self: center;
   inline-size: 88%;
   padding: 2em;

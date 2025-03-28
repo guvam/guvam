@@ -1,0 +1,8 @@
+mark {
+  padding: 0.1em;
+  margin-inline: 2px;
+  line-height: 1;
+  color: var(--primary);
+  white-space: nowrap;
+  background-color: transparent;
+}

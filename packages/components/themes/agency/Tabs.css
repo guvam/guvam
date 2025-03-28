@@ -1,0 +1,19 @@
+.Tabs-tab--active {
+  color: var(--primaryText) !important;
+  background-color: var(--surfaceText);
+}
+
+.Tabs-content {
+  display: none;
+
+  &.Tabs-content--active {
+    display: block;
+  }
+}
+
+.Tabs-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: center;
+}

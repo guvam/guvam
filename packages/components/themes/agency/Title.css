@@ -1,0 +1,28 @@
+.Title {
+  font-size: 4em;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: center;
+  text-wrap: wrap;
+
+  &.Align-start {
+    text-align: start;
+  }
+
+  &.Align-end {
+    text-align: end;
+  }
+}
+
+.Title-description {
+  margin-block-end: 1em;
+  line-height: 1.2;
+}
+
+.Title-info {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--primary);
+  text-wrap: balance;
+}

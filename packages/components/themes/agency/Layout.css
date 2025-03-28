@@ -1,0 +1,23 @@
+.Layout-sectionFull {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/4;
+
+  &.Layout-sectionFull--filled {
+    background-color: var(--primaryBlock);
+  }
+
+  &.Layout-sectionHalf--filled {
+    block-size: 60%;
+    background-color: var(--primaryBlock);
+    border-radius: 0 0 1.5em 1.5em;
+  }
+}
+
+.Layout-section {
+  border-inline: 1px solid transparent;
+}
+
+.Layout {
+  min-inline-size: 550px;
+}

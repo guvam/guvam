@@ -1,0 +1,6 @@
+.Checkbox-SVG {
+  padding: 1px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  fill: var(--primaryBlock);
+}

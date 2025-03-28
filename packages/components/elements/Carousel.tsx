@@ -2,6 +2,7 @@
 
 import { classList } from "@guvam/components";
 import type { FC, JSX, ReactElement, ReactNode } from "react";
+import { isValidElement } from "react";
 import {
   Children,
   cloneElement,
@@ -230,7 +231,12 @@ interface CarouseMenuProps {
   classname?: string;
 }
 
-export const CarouseMenu: FC<CarouseMenuProps> = ({ classname = "Carousel-menu" }) => {
+export const CarouseMenu: FC<
+  CarouseMenuProps & {
+    children?: ReactElement<HTMLElement>[];
+    childClassname?: string;
+  }
+> = ({ classname = "Carousel-menu", childClassname = "Carousel-menuItem", children }) => {
   const { currentIndex, setCurrentIndex } = useContext(CarouselIndexStateContext);
   const { slideCount } = useContext(CarouselSlideCountStateContext);
 
@@ -238,17 +244,28 @@ export const CarouseMenu: FC<CarouseMenuProps> = ({ classname = "Carousel-menu" 
 
   return (
     <CarouselTag tag="menu" command="carousel:menu" className={classname}>
-      {[...Array(slideCount)].map((_, i) => (
-        <li key={i}>
-          <button
-            className={classList({
-              "Carousel-menuItem": true,
-              "Carousel-menuItem--active": i === activeIndex,
-            })}
-            onClick={() => setCurrentIndex(i)}
-          />
-        </li>
-      ))}
+      {children
+        ? Children.map(children, (child, i) =>
+            cloneElement(child, {
+              key: i,
+              onclick: () => setCurrentIndex(i),
+              className: classList({
+                [child.props.className || childClassname]: true,
+                [`${child.props.className || childClassname}--active`]: i === activeIndex,
+              }),
+            })
+          )
+        : [...Array(slideCount)].map((_, i) => (
+            <li key={i}>
+              <button
+                onClick={() => setCurrentIndex(i)}
+                className={classList({
+                  [childClassname]: true,
+                  [`${childClassname}--active`]: i === activeIndex,
+                })}
+              />
+            </li>
+          ))}
     </CarouselTag>
   );
 };

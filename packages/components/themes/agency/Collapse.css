@@ -1,0 +1,54 @@
+.Collapse-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.Collapse > summary {
+  list-style: none;
+}
+
+.Collapse-action {
+  padding: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-block-end: 2px solid var(--surfaceBorder);
+  border-radius: 0;
+}
+
+.Collapse-action::after {
+  position: absolute;
+  inset-inline-end: 1rem;
+  font-size: 1.2rem;
+  content: "–";
+}
+
+details[open] > summary.Collapse-action {
+  border-block-end: 2px solid transparent;
+}
+
+details[open] > summary.Collapse-action::after {
+  content: "+";
+}
+
+.Collapse-content,
+.Collapse::details-content {
+  block-size: 0;
+  overflow: clip;
+  transition:
+    block-size 250ms ease-in,
+    content-visibility 250ms ease-in allow-discrete;
+}
+
+.Collapse-contentBlock {
+  padding: 1rem;
+  border-block-end: 2px solid var(--surfaceBorder);
+}
+
+.Collapse-content:has(:checked),
+.Collapse-content.Collapse-content--open,
+.Collapse[open]::details-content {
+  block-size: auto;
+}

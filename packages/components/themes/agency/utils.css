@@ -1,0 +1,22 @@
+.Util-imageCover {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+
+  &.Util-imageCover--large {
+    min-block-size: 600px;
+  }
+
+  &.Util-imageCover--medium {
+    min-block-size: 450px;
+  }
+}
+
+.Util--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

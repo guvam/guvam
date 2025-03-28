@@ -10,6 +10,9 @@ export default function Page() {
           <a className="Button Button--type-muted" href="/templates/portfolio/" target="_blank">
             Portfolio
           </a>
+          <a className="Button Button--type-muted" href="/templates/agency/" target="_blank">
+            Agency
+          </a>
         </div>
       </div>
     </div>
